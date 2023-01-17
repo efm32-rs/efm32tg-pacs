@@ -33,8 +33,5 @@ impl crate::Readable for FIFOLEVEL_SPEC {
 }
 #[doc = "`reset()` method sets FIFOLEVEL to value 0"]
 impl crate::Resettable for FIFOLEVEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

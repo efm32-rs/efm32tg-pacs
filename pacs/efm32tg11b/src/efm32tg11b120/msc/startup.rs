@@ -37,27 +37,27 @@ impl From<crate::W<STARTUP_SPEC>> for W {
 #[doc = "Field `STDLY0` reader - Startup Delay 0"]
 pub type STDLY0_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `STDLY0` writer - Startup Delay 0"]
-pub type STDLY0_W<'a> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u16, u16, 10, 0>;
+pub type STDLY0_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u16, u16, 10, O>;
 #[doc = "Field `STDLY1` reader - Startup Delay 0"]
 pub type STDLY1_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `STDLY1` writer - Startup Delay 0"]
-pub type STDLY1_W<'a> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u16, u16, 10, 12>;
+pub type STDLY1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u16, u16, 10, O>;
 #[doc = "Field `ASTWAIT` reader - Active Startup Wait"]
 pub type ASTWAIT_R = crate::BitReader<bool>;
 #[doc = "Field `ASTWAIT` writer - Active Startup Wait"]
-pub type ASTWAIT_W<'a> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, 24>;
+pub type ASTWAIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, O>;
 #[doc = "Field `STWSEN` reader - Startup Waitstates Enable"]
 pub type STWSEN_R = crate::BitReader<bool>;
 #[doc = "Field `STWSEN` writer - Startup Waitstates Enable"]
-pub type STWSEN_W<'a> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, 25>;
+pub type STWSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, O>;
 #[doc = "Field `STWSAEN` reader - Startup Waitstates Always Enable"]
 pub type STWSAEN_R = crate::BitReader<bool>;
 #[doc = "Field `STWSAEN` writer - Startup Waitstates Always Enable"]
-pub type STWSAEN_W<'a> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, 26>;
+pub type STWSAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, STARTUP_SPEC, bool, O>;
 #[doc = "Field `STWS` reader - Startup Waitstates"]
 pub type STWS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `STWS` writer - Startup Waitstates"]
-pub type STWS_W<'a> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u8, u8, 3, 28>;
+pub type STWS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, STARTUP_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:9 - Startup Delay 0"]
     #[inline(always)]
@@ -93,32 +93,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:9 - Startup Delay 0"]
     #[inline(always)]
-    pub fn stdly0(&mut self) -> STDLY0_W {
+    #[must_use]
+    pub fn stdly0(&mut self) -> STDLY0_W<0> {
         STDLY0_W::new(self)
     }
     #[doc = "Bits 12:21 - Startup Delay 0"]
     #[inline(always)]
-    pub fn stdly1(&mut self) -> STDLY1_W {
+    #[must_use]
+    pub fn stdly1(&mut self) -> STDLY1_W<12> {
         STDLY1_W::new(self)
     }
     #[doc = "Bit 24 - Active Startup Wait"]
     #[inline(always)]
-    pub fn astwait(&mut self) -> ASTWAIT_W {
+    #[must_use]
+    pub fn astwait(&mut self) -> ASTWAIT_W<24> {
         ASTWAIT_W::new(self)
     }
     #[doc = "Bit 25 - Startup Waitstates Enable"]
     #[inline(always)]
-    pub fn stwsen(&mut self) -> STWSEN_W {
+    #[must_use]
+    pub fn stwsen(&mut self) -> STWSEN_W<25> {
         STWSEN_W::new(self)
     }
     #[doc = "Bit 26 - Startup Waitstates Always Enable"]
     #[inline(always)]
-    pub fn stwsaen(&mut self) -> STWSAEN_W {
+    #[must_use]
+    pub fn stwsaen(&mut self) -> STWSAEN_W<26> {
         STWSAEN_W::new(self)
     }
     #[doc = "Bits 28:30 - Startup Waitstates"]
     #[inline(always)]
-    pub fn stws(&mut self) -> STWS_W {
+    #[must_use]
+    pub fn stws(&mut self) -> STWS_W<28> {
         STWS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -140,11 +146,10 @@ impl crate::Readable for STARTUP_SPEC {
 #[doc = "`write(|w| ..)` method takes [startup::W](W) writer structure"]
 impl crate::Writable for STARTUP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets STARTUP to value 0x1300_104d"]
 impl crate::Resettable for STARTUP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1300_104d
-    }
+    const RESET_VALUE: Self::Ux = 0x1300_104d;
 }

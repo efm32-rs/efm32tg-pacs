@@ -37,7 +37,8 @@ impl From<crate::W<SCANMASK0_SPEC>> for W {
 #[doc = "Field `SCANINPUTEN` reader - Scan Channel Mask"]
 pub type SCANINPUTEN_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `SCANINPUTEN` writer - Scan Channel Mask"]
-pub type SCANINPUTEN_W<'a> = crate::FieldWriter<'a, u32, SCANMASK0_SPEC, u32, u32, 32, 0>;
+pub type SCANINPUTEN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SCANMASK0_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Scan Channel Mask"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Scan Channel Mask"]
     #[inline(always)]
-    pub fn scaninputen(&mut self) -> SCANINPUTEN_W {
+    #[must_use]
+    pub fn scaninputen(&mut self) -> SCANINPUTEN_W<0> {
         SCANINPUTEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for SCANMASK0_SPEC {
 #[doc = "`write(|w| ..)` method takes [scanmask0::W](W) writer structure"]
 impl crate::Writable for SCANMASK0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCANMASK0 to value 0"]
 impl crate::Resettable for SCANMASK0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,27 +37,27 @@ impl From<crate::W<CC1_TIME_SPEC>> for W {
 #[doc = "Field `SECU` reader - Seconds, Units"]
 pub type SECU_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SECU` writer - Seconds, Units"]
-pub type SECU_W<'a> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 4, 0>;
+pub type SECU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 4, O>;
 #[doc = "Field `SECT` reader - Seconds, Tens"]
 pub type SECT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SECT` writer - Seconds, Tens"]
-pub type SECT_W<'a> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 3, 4>;
+pub type SECT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 3, O>;
 #[doc = "Field `MINU` reader - Minutes, Units"]
 pub type MINU_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MINU` writer - Minutes, Units"]
-pub type MINU_W<'a> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 4, 8>;
+pub type MINU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 4, O>;
 #[doc = "Field `MINT` reader - Minutes, Tens"]
 pub type MINT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MINT` writer - Minutes, Tens"]
-pub type MINT_W<'a> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 3, 12>;
+pub type MINT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 3, O>;
 #[doc = "Field `HOURU` reader - Hours, Units"]
 pub type HOURU_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HOURU` writer - Hours, Units"]
-pub type HOURU_W<'a> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 4, 16>;
+pub type HOURU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 4, O>;
 #[doc = "Field `HOURT` reader - Hours, Tens"]
 pub type HOURT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `HOURT` writer - Hours, Tens"]
-pub type HOURT_W<'a> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 2, 20>;
+pub type HOURT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CC1_TIME_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:3 - Seconds, Units"]
     #[inline(always)]
@@ -93,32 +93,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Seconds, Units"]
     #[inline(always)]
-    pub fn secu(&mut self) -> SECU_W {
+    #[must_use]
+    pub fn secu(&mut self) -> SECU_W<0> {
         SECU_W::new(self)
     }
     #[doc = "Bits 4:6 - Seconds, Tens"]
     #[inline(always)]
-    pub fn sect(&mut self) -> SECT_W {
+    #[must_use]
+    pub fn sect(&mut self) -> SECT_W<4> {
         SECT_W::new(self)
     }
     #[doc = "Bits 8:11 - Minutes, Units"]
     #[inline(always)]
-    pub fn minu(&mut self) -> MINU_W {
+    #[must_use]
+    pub fn minu(&mut self) -> MINU_W<8> {
         MINU_W::new(self)
     }
     #[doc = "Bits 12:14 - Minutes, Tens"]
     #[inline(always)]
-    pub fn mint(&mut self) -> MINT_W {
+    #[must_use]
+    pub fn mint(&mut self) -> MINT_W<12> {
         MINT_W::new(self)
     }
     #[doc = "Bits 16:19 - Hours, Units"]
     #[inline(always)]
-    pub fn houru(&mut self) -> HOURU_W {
+    #[must_use]
+    pub fn houru(&mut self) -> HOURU_W<16> {
         HOURU_W::new(self)
     }
     #[doc = "Bits 20:21 - Hours, Tens"]
     #[inline(always)]
-    pub fn hourt(&mut self) -> HOURT_W {
+    #[must_use]
+    pub fn hourt(&mut self) -> HOURT_W<20> {
         HOURT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -140,11 +146,10 @@ impl crate::Readable for CC1_TIME_SPEC {
 #[doc = "`write(|w| ..)` method takes [cc1_time::W](W) writer structure"]
 impl crate::Writable for CC1_TIME_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CC1_TIME to value 0"]
 impl crate::Resettable for CC1_TIME_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

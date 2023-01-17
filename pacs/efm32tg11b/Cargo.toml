@@ -14,10 +14,11 @@ edition = "2021"
 [dependencies]
 cortex-m = "~0.7"
 vcell = "~0.1"
+portable-atomic = "1.0.0"
 
 [features]
-default = [ "rt",]
-rt = [ "cortex-m-rt/device",]
+default = ["rt"]
+rt = ["cortex-m-rt/device"]
 efm32tg11b120 = []
 efm32tg11b140 = []
 efm32tg11b320 = []

@@ -37,31 +37,31 @@ impl From<crate::W<ROUTEPEN_SPEC>> for W {
 #[doc = "Field `CC0PEN` reader - CC Channel 0 Pin Enable"]
 pub type CC0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CC0PEN` writer - CC Channel 0 Pin Enable"]
-pub type CC0PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 0>;
+pub type CC0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CC1PEN` reader - CC Channel 1 Pin Enable"]
 pub type CC1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CC1PEN` writer - CC Channel 1 Pin Enable"]
-pub type CC1PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 1>;
+pub type CC1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CC2PEN` reader - CC Channel 2 Pin Enable"]
 pub type CC2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CC2PEN` writer - CC Channel 2 Pin Enable"]
-pub type CC2PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 2>;
+pub type CC2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CC3PEN` reader - CC Channel 3 Pin Enable"]
 pub type CC3PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CC3PEN` writer - CC Channel 3 Pin Enable"]
-pub type CC3PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 3>;
+pub type CC3PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CDTI0PEN` reader - CC Channel 0 Complementary Dead-Time Insertion Pin Enable"]
 pub type CDTI0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CDTI0PEN` writer - CC Channel 0 Complementary Dead-Time Insertion Pin Enable"]
-pub type CDTI0PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 8>;
+pub type CDTI0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CDTI1PEN` reader - CC Channel 1 Complementary Dead-Time Insertion Pin Enable"]
 pub type CDTI1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CDTI1PEN` writer - CC Channel 1 Complementary Dead-Time Insertion Pin Enable"]
-pub type CDTI1PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 9>;
+pub type CDTI1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CDTI2PEN` reader - CC Channel 2 Complementary Dead-Time Insertion Pin Enable"]
 pub type CDTI2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CDTI2PEN` writer - CC Channel 2 Complementary Dead-Time Insertion Pin Enable"]
-pub type CDTI2PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 10>;
+pub type CDTI2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - CC Channel 0 Pin Enable"]
     #[inline(always)]
@@ -102,37 +102,44 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CC Channel 0 Pin Enable"]
     #[inline(always)]
-    pub fn cc0pen(&mut self) -> CC0PEN_W {
+    #[must_use]
+    pub fn cc0pen(&mut self) -> CC0PEN_W<0> {
         CC0PEN_W::new(self)
     }
     #[doc = "Bit 1 - CC Channel 1 Pin Enable"]
     #[inline(always)]
-    pub fn cc1pen(&mut self) -> CC1PEN_W {
+    #[must_use]
+    pub fn cc1pen(&mut self) -> CC1PEN_W<1> {
         CC1PEN_W::new(self)
     }
     #[doc = "Bit 2 - CC Channel 2 Pin Enable"]
     #[inline(always)]
-    pub fn cc2pen(&mut self) -> CC2PEN_W {
+    #[must_use]
+    pub fn cc2pen(&mut self) -> CC2PEN_W<2> {
         CC2PEN_W::new(self)
     }
     #[doc = "Bit 3 - CC Channel 3 Pin Enable"]
     #[inline(always)]
-    pub fn cc3pen(&mut self) -> CC3PEN_W {
+    #[must_use]
+    pub fn cc3pen(&mut self) -> CC3PEN_W<3> {
         CC3PEN_W::new(self)
     }
     #[doc = "Bit 8 - CC Channel 0 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
-    pub fn cdti0pen(&mut self) -> CDTI0PEN_W {
+    #[must_use]
+    pub fn cdti0pen(&mut self) -> CDTI0PEN_W<8> {
         CDTI0PEN_W::new(self)
     }
     #[doc = "Bit 9 - CC Channel 1 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
-    pub fn cdti1pen(&mut self) -> CDTI1PEN_W {
+    #[must_use]
+    pub fn cdti1pen(&mut self) -> CDTI1PEN_W<9> {
         CDTI1PEN_W::new(self)
     }
     #[doc = "Bit 10 - CC Channel 2 Complementary Dead-Time Insertion Pin Enable"]
     #[inline(always)]
-    pub fn cdti2pen(&mut self) -> CDTI2PEN_W {
+    #[must_use]
+    pub fn cdti2pen(&mut self) -> CDTI2PEN_W<10> {
         CDTI2PEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -154,11 +161,10 @@ impl crate::Readable for ROUTEPEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [routepen::W](W) writer structure"]
 impl crate::Writable for ROUTEPEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTEPEN to value 0"]
 impl crate::Resettable for ROUTEPEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

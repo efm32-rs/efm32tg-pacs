@@ -34,8 +34,10 @@ impl From<crate::W<SCANINPUTSEL0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `INPUT0TO7SEL` reader - CSEN_INPUT0-7 Select"]
+pub type INPUT0TO7SEL_R = crate::FieldReader<u8, INPUT0TO7SEL_A>;
 #[doc = "CSEN_INPUT0-7 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT0TO7SEL_A {
     #[doc = "4: `100`"]
@@ -61,8 +63,6 @@ impl From<INPUT0TO7SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INPUT0TO7SEL` reader - CSEN_INPUT0-7 Select"]
-pub type INPUT0TO7SEL_R = crate::FieldReader<u8, INPUT0TO7SEL_A>;
 impl INPUT0TO7SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,9 +121,9 @@ impl INPUT0TO7SEL_R {
     }
 }
 #[doc = "Field `INPUT0TO7SEL` writer - CSEN_INPUT0-7 Select"]
-pub type INPUT0TO7SEL_W<'a> =
-    crate::FieldWriter<'a, u32, SCANINPUTSEL0_SPEC, u8, INPUT0TO7SEL_A, 4, 0>;
-impl<'a> INPUT0TO7SEL_W<'a> {
+pub type INPUT0TO7SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SCANINPUTSEL0_SPEC, u8, INPUT0TO7SEL_A, 4, O>;
+impl<'a, const O: u8> INPUT0TO7SEL_W<'a, O> {
     #[doc = "`100`"]
     #[inline(always)]
     pub fn aport1ch0to7(self) -> &'a mut W {
@@ -165,8 +165,10 @@ impl<'a> INPUT0TO7SEL_W<'a> {
         self.variant(INPUT0TO7SEL_A::APORT3CH24TO31)
     }
 }
+#[doc = "Field `INPUT8TO15SEL` reader - CSEN_INPUT8-15 Select"]
+pub type INPUT8TO15SEL_R = crate::FieldReader<u8, INPUT8TO15SEL_A>;
 #[doc = "CSEN_INPUT8-15 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT8TO15SEL_A {
     #[doc = "4: `100`"]
@@ -192,8 +194,6 @@ impl From<INPUT8TO15SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INPUT8TO15SEL` reader - CSEN_INPUT8-15 Select"]
-pub type INPUT8TO15SEL_R = crate::FieldReader<u8, INPUT8TO15SEL_A>;
 impl INPUT8TO15SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -252,9 +252,9 @@ impl INPUT8TO15SEL_R {
     }
 }
 #[doc = "Field `INPUT8TO15SEL` writer - CSEN_INPUT8-15 Select"]
-pub type INPUT8TO15SEL_W<'a> =
-    crate::FieldWriter<'a, u32, SCANINPUTSEL0_SPEC, u8, INPUT8TO15SEL_A, 4, 8>;
-impl<'a> INPUT8TO15SEL_W<'a> {
+pub type INPUT8TO15SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SCANINPUTSEL0_SPEC, u8, INPUT8TO15SEL_A, 4, O>;
+impl<'a, const O: u8> INPUT8TO15SEL_W<'a, O> {
     #[doc = "`100`"]
     #[inline(always)]
     pub fn aport1ch0to7(self) -> &'a mut W {
@@ -296,8 +296,10 @@ impl<'a> INPUT8TO15SEL_W<'a> {
         self.variant(INPUT8TO15SEL_A::APORT3CH24TO31)
     }
 }
+#[doc = "Field `INPUT16TO23SEL` reader - CSEN_INPUT16-23 Select"]
+pub type INPUT16TO23SEL_R = crate::FieldReader<u8, INPUT16TO23SEL_A>;
 #[doc = "CSEN_INPUT16-23 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT16TO23SEL_A {
     #[doc = "4: `100`"]
@@ -323,8 +325,6 @@ impl From<INPUT16TO23SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INPUT16TO23SEL` reader - CSEN_INPUT16-23 Select"]
-pub type INPUT16TO23SEL_R = crate::FieldReader<u8, INPUT16TO23SEL_A>;
 impl INPUT16TO23SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -383,9 +383,9 @@ impl INPUT16TO23SEL_R {
     }
 }
 #[doc = "Field `INPUT16TO23SEL` writer - CSEN_INPUT16-23 Select"]
-pub type INPUT16TO23SEL_W<'a> =
-    crate::FieldWriter<'a, u32, SCANINPUTSEL0_SPEC, u8, INPUT16TO23SEL_A, 4, 16>;
-impl<'a> INPUT16TO23SEL_W<'a> {
+pub type INPUT16TO23SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SCANINPUTSEL0_SPEC, u8, INPUT16TO23SEL_A, 4, O>;
+impl<'a, const O: u8> INPUT16TO23SEL_W<'a, O> {
     #[doc = "`100`"]
     #[inline(always)]
     pub fn aport1ch0to7(self) -> &'a mut W {
@@ -427,8 +427,10 @@ impl<'a> INPUT16TO23SEL_W<'a> {
         self.variant(INPUT16TO23SEL_A::APORT3CH24TO31)
     }
 }
+#[doc = "Field `INPUT24TO31SEL` reader - CSEN_INPUT24-31 Select"]
+pub type INPUT24TO31SEL_R = crate::FieldReader<u8, INPUT24TO31SEL_A>;
 #[doc = "CSEN_INPUT24-31 Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT24TO31SEL_A {
     #[doc = "4: `100`"]
@@ -454,8 +456,6 @@ impl From<INPUT24TO31SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INPUT24TO31SEL` reader - CSEN_INPUT24-31 Select"]
-pub type INPUT24TO31SEL_R = crate::FieldReader<u8, INPUT24TO31SEL_A>;
 impl INPUT24TO31SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -514,9 +514,9 @@ impl INPUT24TO31SEL_R {
     }
 }
 #[doc = "Field `INPUT24TO31SEL` writer - CSEN_INPUT24-31 Select"]
-pub type INPUT24TO31SEL_W<'a> =
-    crate::FieldWriter<'a, u32, SCANINPUTSEL0_SPEC, u8, INPUT24TO31SEL_A, 4, 24>;
-impl<'a> INPUT24TO31SEL_W<'a> {
+pub type INPUT24TO31SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SCANINPUTSEL0_SPEC, u8, INPUT24TO31SEL_A, 4, O>;
+impl<'a, const O: u8> INPUT24TO31SEL_W<'a, O> {
     #[doc = "`100`"]
     #[inline(always)]
     pub fn aport1ch0to7(self) -> &'a mut W {
@@ -583,22 +583,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - CSEN_INPUT0-7 Select"]
     #[inline(always)]
-    pub fn input0to7sel(&mut self) -> INPUT0TO7SEL_W {
+    #[must_use]
+    pub fn input0to7sel(&mut self) -> INPUT0TO7SEL_W<0> {
         INPUT0TO7SEL_W::new(self)
     }
     #[doc = "Bits 8:11 - CSEN_INPUT8-15 Select"]
     #[inline(always)]
-    pub fn input8to15sel(&mut self) -> INPUT8TO15SEL_W {
+    #[must_use]
+    pub fn input8to15sel(&mut self) -> INPUT8TO15SEL_W<8> {
         INPUT8TO15SEL_W::new(self)
     }
     #[doc = "Bits 16:19 - CSEN_INPUT16-23 Select"]
     #[inline(always)]
-    pub fn input16to23sel(&mut self) -> INPUT16TO23SEL_W {
+    #[must_use]
+    pub fn input16to23sel(&mut self) -> INPUT16TO23SEL_W<16> {
         INPUT16TO23SEL_W::new(self)
     }
     #[doc = "Bits 24:27 - CSEN_INPUT24-31 Select"]
     #[inline(always)]
-    pub fn input24to31sel(&mut self) -> INPUT24TO31SEL_W {
+    #[must_use]
+    pub fn input24to31sel(&mut self) -> INPUT24TO31SEL_W<24> {
         INPUT24TO31SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -620,11 +624,10 @@ impl crate::Readable for SCANINPUTSEL0_SPEC {
 #[doc = "`write(|w| ..)` method takes [scaninputsel0::W](W) writer structure"]
 impl crate::Writable for SCANINPUTSEL0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCANINPUTSEL0 to value 0"]
 impl crate::Resettable for SCANINPUTSEL0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

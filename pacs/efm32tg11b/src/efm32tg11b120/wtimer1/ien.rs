@@ -37,47 +37,47 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `OF` reader - OF Interrupt Enable"]
 pub type OF_R = crate::BitReader<bool>;
 #[doc = "Field `OF` writer - OF Interrupt Enable"]
-pub type OF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 0>;
+pub type OF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `UF` reader - UF Interrupt Enable"]
 pub type UF_R = crate::BitReader<bool>;
 #[doc = "Field `UF` writer - UF Interrupt Enable"]
-pub type UF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 1>;
+pub type UF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `DIRCHG` reader - DIRCHG Interrupt Enable"]
 pub type DIRCHG_R = crate::BitReader<bool>;
 #[doc = "Field `DIRCHG` writer - DIRCHG Interrupt Enable"]
-pub type DIRCHG_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 2>;
+pub type DIRCHG_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CC0` reader - CC0 Interrupt Enable"]
 pub type CC0_R = crate::BitReader<bool>;
 #[doc = "Field `CC0` writer - CC0 Interrupt Enable"]
-pub type CC0_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 4>;
+pub type CC0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CC1` reader - CC1 Interrupt Enable"]
 pub type CC1_R = crate::BitReader<bool>;
 #[doc = "Field `CC1` writer - CC1 Interrupt Enable"]
-pub type CC1_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 5>;
+pub type CC1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CC2` reader - CC2 Interrupt Enable"]
 pub type CC2_R = crate::BitReader<bool>;
 #[doc = "Field `CC2` writer - CC2 Interrupt Enable"]
-pub type CC2_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 6>;
+pub type CC2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CC3` reader - CC3 Interrupt Enable"]
 pub type CC3_R = crate::BitReader<bool>;
 #[doc = "Field `CC3` writer - CC3 Interrupt Enable"]
-pub type CC3_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 7>;
+pub type CC3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `ICBOF0` reader - ICBOF0 Interrupt Enable"]
 pub type ICBOF0_R = crate::BitReader<bool>;
 #[doc = "Field `ICBOF0` writer - ICBOF0 Interrupt Enable"]
-pub type ICBOF0_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 8>;
+pub type ICBOF0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `ICBOF1` reader - ICBOF1 Interrupt Enable"]
 pub type ICBOF1_R = crate::BitReader<bool>;
 #[doc = "Field `ICBOF1` writer - ICBOF1 Interrupt Enable"]
-pub type ICBOF1_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 9>;
+pub type ICBOF1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `ICBOF2` reader - ICBOF2 Interrupt Enable"]
 pub type ICBOF2_R = crate::BitReader<bool>;
 #[doc = "Field `ICBOF2` writer - ICBOF2 Interrupt Enable"]
-pub type ICBOF2_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 10>;
+pub type ICBOF2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `ICBOF3` reader - ICBOF3 Interrupt Enable"]
 pub type ICBOF3_R = crate::BitReader<bool>;
 #[doc = "Field `ICBOF3` writer - ICBOF3 Interrupt Enable"]
-pub type ICBOF3_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 11>;
+pub type ICBOF3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - OF Interrupt Enable"]
     #[inline(always)]
@@ -138,57 +138,68 @@ impl R {
 impl W {
     #[doc = "Bit 0 - OF Interrupt Enable"]
     #[inline(always)]
-    pub fn of(&mut self) -> OF_W {
+    #[must_use]
+    pub fn of(&mut self) -> OF_W<0> {
         OF_W::new(self)
     }
     #[doc = "Bit 1 - UF Interrupt Enable"]
     #[inline(always)]
-    pub fn uf(&mut self) -> UF_W {
+    #[must_use]
+    pub fn uf(&mut self) -> UF_W<1> {
         UF_W::new(self)
     }
     #[doc = "Bit 2 - DIRCHG Interrupt Enable"]
     #[inline(always)]
-    pub fn dirchg(&mut self) -> DIRCHG_W {
+    #[must_use]
+    pub fn dirchg(&mut self) -> DIRCHG_W<2> {
         DIRCHG_W::new(self)
     }
     #[doc = "Bit 4 - CC0 Interrupt Enable"]
     #[inline(always)]
-    pub fn cc0(&mut self) -> CC0_W {
+    #[must_use]
+    pub fn cc0(&mut self) -> CC0_W<4> {
         CC0_W::new(self)
     }
     #[doc = "Bit 5 - CC1 Interrupt Enable"]
     #[inline(always)]
-    pub fn cc1(&mut self) -> CC1_W {
+    #[must_use]
+    pub fn cc1(&mut self) -> CC1_W<5> {
         CC1_W::new(self)
     }
     #[doc = "Bit 6 - CC2 Interrupt Enable"]
     #[inline(always)]
-    pub fn cc2(&mut self) -> CC2_W {
+    #[must_use]
+    pub fn cc2(&mut self) -> CC2_W<6> {
         CC2_W::new(self)
     }
     #[doc = "Bit 7 - CC3 Interrupt Enable"]
     #[inline(always)]
-    pub fn cc3(&mut self) -> CC3_W {
+    #[must_use]
+    pub fn cc3(&mut self) -> CC3_W<7> {
         CC3_W::new(self)
     }
     #[doc = "Bit 8 - ICBOF0 Interrupt Enable"]
     #[inline(always)]
-    pub fn icbof0(&mut self) -> ICBOF0_W {
+    #[must_use]
+    pub fn icbof0(&mut self) -> ICBOF0_W<8> {
         ICBOF0_W::new(self)
     }
     #[doc = "Bit 9 - ICBOF1 Interrupt Enable"]
     #[inline(always)]
-    pub fn icbof1(&mut self) -> ICBOF1_W {
+    #[must_use]
+    pub fn icbof1(&mut self) -> ICBOF1_W<9> {
         ICBOF1_W::new(self)
     }
     #[doc = "Bit 10 - ICBOF2 Interrupt Enable"]
     #[inline(always)]
-    pub fn icbof2(&mut self) -> ICBOF2_W {
+    #[must_use]
+    pub fn icbof2(&mut self) -> ICBOF2_W<10> {
         ICBOF2_W::new(self)
     }
     #[doc = "Bit 11 - ICBOF3 Interrupt Enable"]
     #[inline(always)]
-    pub fn icbof3(&mut self) -> ICBOF3_W {
+    #[must_use]
+    pub fn icbof3(&mut self) -> ICBOF3_W<11> {
         ICBOF3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -210,11 +221,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

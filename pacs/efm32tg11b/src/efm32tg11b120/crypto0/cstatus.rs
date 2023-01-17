@@ -13,8 +13,10 @@ impl From<crate::R<CSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `V0` reader - Selected ALU Operand 0"]
+pub type V0_R = crate::FieldReader<u8, V0_A>;
 #[doc = "Selected ALU Operand 0\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum V0_A {
     #[doc = "0: `0`"]
@@ -40,8 +42,6 @@ impl From<V0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `V0` reader - Selected ALU Operand 0"]
-pub type V0_R = crate::FieldReader<u8, V0_A>;
 impl V0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -99,8 +99,10 @@ impl V0_R {
         *self == V0_A::DATA2
     }
 }
+#[doc = "Field `V1` reader - Selected ALU Operand 1"]
+pub type V1_R = crate::FieldReader<u8, V1_A>;
 #[doc = "Selected ALU Operand 1\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum V1_A {
     #[doc = "0: `0`"]
@@ -126,8 +128,6 @@ impl From<V1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `V1` reader - Selected ALU Operand 1"]
-pub type V1_R = crate::FieldReader<u8, V1_A>;
 impl V1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -229,8 +229,5 @@ impl crate::Readable for CSTATUS_SPEC {
 }
 #[doc = "`reset()` method sets CSTATUS to value 0x0201"]
 impl crate::Resettable for CSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0201
-    }
+    const RESET_VALUE: Self::Ux = 0x0201;
 }

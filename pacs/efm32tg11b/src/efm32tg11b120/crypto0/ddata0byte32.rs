@@ -37,7 +37,8 @@ impl From<crate::W<DDATA0BYTE32_SPEC>> for W {
 #[doc = "Field `DDATA0BYTE32` reader - Ddata 0 Byte 32 Access"]
 pub type DDATA0BYTE32_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DDATA0BYTE32` writer - Ddata 0 Byte 32 Access"]
-pub type DDATA0BYTE32_W<'a> = crate::FieldWriter<'a, u32, DDATA0BYTE32_SPEC, u8, u8, 4, 0>;
+pub type DDATA0BYTE32_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DDATA0BYTE32_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Ddata 0 Byte 32 Access"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Ddata 0 Byte 32 Access"]
     #[inline(always)]
-    pub fn ddata0byte32(&mut self) -> DDATA0BYTE32_W {
+    #[must_use]
+    pub fn ddata0byte32(&mut self) -> DDATA0BYTE32_W<0> {
         DDATA0BYTE32_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for DDATA0BYTE32_SPEC {
 #[doc = "`write(|w| ..)` method takes [ddata0byte32::W](W) writer structure"]
 impl crate::Writable for DDATA0BYTE32_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DDATA0BYTE32 to value 0"]
 impl crate::Resettable for DDATA0BYTE32_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

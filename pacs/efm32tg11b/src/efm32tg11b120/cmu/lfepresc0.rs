@@ -34,8 +34,10 @@ impl From<crate::W<LFEPRESC0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `RTCC` reader - Real-Time Counter and Calendar Prescaler"]
+pub type RTCC_R = crate::FieldReader<u8, RTCC_A>;
 #[doc = "Real-Time Counter and Calendar Prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RTCC_A {
     #[doc = "0: LFECLKRTCC = LFECLK"]
@@ -51,8 +53,6 @@ impl From<RTCC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RTCC` reader - Real-Time Counter and Calendar Prescaler"]
-pub type RTCC_R = crate::FieldReader<u8, RTCC_A>;
 impl RTCC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -81,8 +81,8 @@ impl RTCC_R {
     }
 }
 #[doc = "Field `RTCC` writer - Real-Time Counter and Calendar Prescaler"]
-pub type RTCC_W<'a> = crate::FieldWriter<'a, u32, LFEPRESC0_SPEC, u8, RTCC_A, 2, 0>;
-impl<'a> RTCC_W<'a> {
+pub type RTCC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFEPRESC0_SPEC, u8, RTCC_A, 2, O>;
+impl<'a, const O: u8> RTCC_W<'a, O> {
     #[doc = "LFECLKRTCC = LFECLK"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -109,7 +109,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Real-Time Counter and Calendar Prescaler"]
     #[inline(always)]
-    pub fn rtcc(&mut self) -> RTCC_W {
+    #[must_use]
+    pub fn rtcc(&mut self) -> RTCC_W<0> {
         RTCC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -131,11 +132,10 @@ impl crate::Readable for LFEPRESC0_SPEC {
 #[doc = "`write(|w| ..)` method takes [lfepresc0::W](W) writer structure"]
 impl crate::Writable for LFEPRESC0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LFEPRESC0 to value 0"]
 impl crate::Resettable for LFEPRESC0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

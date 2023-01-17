@@ -37,11 +37,11 @@ impl From<crate::W<BOOTLOADERCTRL_SPEC>> for W {
 #[doc = "Field `BLRDIS` reader - Flash Bootloader Read Disable"]
 pub type BLRDIS_R = crate::BitReader<bool>;
 #[doc = "Field `BLRDIS` writer - Flash Bootloader Read Disable"]
-pub type BLRDIS_W<'a> = crate::BitWriter<'a, u32, BOOTLOADERCTRL_SPEC, bool, 0>;
+pub type BLRDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, BOOTLOADERCTRL_SPEC, bool, O>;
 #[doc = "Field `BLWDIS` reader - Flash Bootloader Write/Erase Disable"]
 pub type BLWDIS_R = crate::BitReader<bool>;
 #[doc = "Field `BLWDIS` writer - Flash Bootloader Write/Erase Disable"]
-pub type BLWDIS_W<'a> = crate::BitWriter<'a, u32, BOOTLOADERCTRL_SPEC, bool, 1>;
+pub type BLWDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, BOOTLOADERCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Flash Bootloader Read Disable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Flash Bootloader Read Disable"]
     #[inline(always)]
-    pub fn blrdis(&mut self) -> BLRDIS_W {
+    #[must_use]
+    pub fn blrdis(&mut self) -> BLRDIS_W<0> {
         BLRDIS_W::new(self)
     }
     #[doc = "Bit 1 - Flash Bootloader Write/Erase Disable"]
     #[inline(always)]
-    pub fn blwdis(&mut self) -> BLWDIS_W {
+    #[must_use]
+    pub fn blwdis(&mut self) -> BLWDIS_W<1> {
         BLWDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for BOOTLOADERCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [bootloaderctrl::W](W) writer structure"]
 impl crate::Writable for BOOTLOADERCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BOOTLOADERCTRL to value 0"]
 impl crate::Resettable for BOOTLOADERCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -13,8 +13,10 @@ impl From<crate::R<HFCLKSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `SELECTED` reader - HFCLK Selected"]
+pub type SELECTED_R = crate::FieldReader<u8, SELECTED_A>;
 #[doc = "HFCLK Selected\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SELECTED_A {
     #[doc = "1: HFRCO is selected as HFCLK clock source"]
@@ -36,8 +38,6 @@ impl From<SELECTED_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SELECTED` reader - HFCLK Selected"]
-pub type SELECTED_R = crate::FieldReader<u8, SELECTED_A>;
 impl SELECTED_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -101,8 +101,5 @@ impl crate::Readable for HFCLKSTATUS_SPEC {
 }
 #[doc = "`reset()` method sets HFCLKSTATUS to value 0x01"]
 impl crate::Resettable for HFCLKSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

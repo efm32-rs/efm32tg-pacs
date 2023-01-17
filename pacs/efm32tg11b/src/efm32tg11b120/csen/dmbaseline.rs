@@ -37,11 +37,13 @@ impl From<crate::W<DMBASELINE_SPEC>> for W {
 #[doc = "Field `BASELINEUP` reader - Delta Modulator Integrator Initial Value"]
 pub type BASELINEUP_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BASELINEUP` writer - Delta Modulator Integrator Initial Value"]
-pub type BASELINEUP_W<'a> = crate::FieldWriter<'a, u32, DMBASELINE_SPEC, u16, u16, 16, 0>;
+pub type BASELINEUP_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DMBASELINE_SPEC, u16, u16, 16, O>;
 #[doc = "Field `BASELINEDN` reader - Delta Modulator Integrator Initial Value"]
 pub type BASELINEDN_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `BASELINEDN` writer - Delta Modulator Integrator Initial Value"]
-pub type BASELINEDN_W<'a> = crate::FieldWriter<'a, u32, DMBASELINE_SPEC, u16, u16, 16, 16>;
+pub type BASELINEDN_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DMBASELINE_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Delta Modulator Integrator Initial Value"]
     #[inline(always)]
@@ -57,12 +59,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Delta Modulator Integrator Initial Value"]
     #[inline(always)]
-    pub fn baselineup(&mut self) -> BASELINEUP_W {
+    #[must_use]
+    pub fn baselineup(&mut self) -> BASELINEUP_W<0> {
         BASELINEUP_W::new(self)
     }
     #[doc = "Bits 16:31 - Delta Modulator Integrator Initial Value"]
     #[inline(always)]
-    pub fn baselinedn(&mut self) -> BASELINEDN_W {
+    #[must_use]
+    pub fn baselinedn(&mut self) -> BASELINEDN_W<16> {
         BASELINEDN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +88,10 @@ impl crate::Readable for DMBASELINE_SPEC {
 #[doc = "`write(|w| ..)` method takes [dmbaseline::W](W) writer structure"]
 impl crate::Writable for DMBASELINE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DMBASELINE to value 0"]
 impl crate::Resettable for DMBASELINE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }
