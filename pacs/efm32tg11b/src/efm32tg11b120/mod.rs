@@ -28,9 +28,7 @@ pub use cortex_m::peripheral::{CBP, CPUID, DCB, DWT, FPB, ITM, MPU, NVIC, SCB, S
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
 #[allow(unused_imports)]
-use generic::*;
-#[doc = r"Common register and bit access and modify traits"]
-pub mod generic;
+use crate::generic::*;
 #[cfg(feature = "rt")]
 extern "C" {
     fn EMU();
