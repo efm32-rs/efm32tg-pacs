@@ -18,20 +18,20 @@
 mod generic;
 pub use self::generic::*;
 
-#[cfg(feature = "efm32tg11b120")]
+#[cfg(any(feature = "efm32tg11b120", doc))]
 pub mod efm32tg11b120;
 
-#[cfg(feature = "efm32tg11b140")]
+#[cfg(any(feature = "efm32tg11b140", doc))]
 pub mod efm32tg11b140;
 
-#[cfg(feature = "efm32tg11b320")]
+#[cfg(any(feature = "efm32tg11b320", doc))]
 pub mod efm32tg11b320;
 
-#[cfg(feature = "efm32tg11b340")]
+#[cfg(any(feature = "efm32tg11b340", doc))]
 pub mod efm32tg11b340;
 
-#[cfg(feature = "efm32tg11b520")]
+#[cfg(any(feature = "efm32tg11b520", doc))]
 pub mod efm32tg11b520;
 
-#[cfg(feature = "efm32tg11b540")]
+#[cfg(any(feature = "efm32tg11b540", doc))]
 pub mod efm32tg11b540;
