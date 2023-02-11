@@ -96,8 +96,5 @@ impl crate::Readable for APORTCONFLICT_SPEC {
 }
 #[doc = "`reset()` method sets APORTCONFLICT to value 0"]
 impl crate::Resettable for APORTCONFLICT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

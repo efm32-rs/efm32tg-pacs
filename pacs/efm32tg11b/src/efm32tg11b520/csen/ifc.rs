@@ -20,39 +20,44 @@ impl From<crate::W<IFC_SPEC>> for W {
     }
 }
 #[doc = "Field `CMP` writer - Clear CMP Interrupt Flag"]
-pub type CMP_W<'a> = crate::BitWriter<'a, u32, IFC_SPEC, bool, 0>;
+pub type CMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `CONV` writer - Clear CONV Interrupt Flag"]
-pub type CONV_W<'a> = crate::BitWriter<'a, u32, IFC_SPEC, bool, 1>;
+pub type CONV_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `EOS` writer - Clear EOS Interrupt Flag"]
-pub type EOS_W<'a> = crate::BitWriter<'a, u32, IFC_SPEC, bool, 2>;
+pub type EOS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `DMAOF` writer - Clear DMAOF Interrupt Flag"]
-pub type DMAOF_W<'a> = crate::BitWriter<'a, u32, IFC_SPEC, bool, 3>;
+pub type DMAOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 #[doc = "Field `APORTCONFLICT` writer - Clear APORTCONFLICT Interrupt Flag"]
-pub type APORTCONFLICT_W<'a> = crate::BitWriter<'a, u32, IFC_SPEC, bool, 4>;
+pub type APORTCONFLICT_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clear CMP Interrupt Flag"]
     #[inline(always)]
-    pub fn cmp(&mut self) -> CMP_W {
+    #[must_use]
+    pub fn cmp(&mut self) -> CMP_W<0> {
         CMP_W::new(self)
     }
     #[doc = "Bit 1 - Clear CONV Interrupt Flag"]
     #[inline(always)]
-    pub fn conv(&mut self) -> CONV_W {
+    #[must_use]
+    pub fn conv(&mut self) -> CONV_W<1> {
         CONV_W::new(self)
     }
     #[doc = "Bit 2 - Clear EOS Interrupt Flag"]
     #[inline(always)]
-    pub fn eos(&mut self) -> EOS_W {
+    #[must_use]
+    pub fn eos(&mut self) -> EOS_W<2> {
         EOS_W::new(self)
     }
     #[doc = "Bit 3 - Clear DMAOF Interrupt Flag"]
     #[inline(always)]
-    pub fn dmaof(&mut self) -> DMAOF_W {
+    #[must_use]
+    pub fn dmaof(&mut self) -> DMAOF_W<3> {
         DMAOF_W::new(self)
     }
     #[doc = "Bit 4 - Clear APORTCONFLICT Interrupt Flag"]
     #[inline(always)]
-    pub fn aportconflict(&mut self) -> APORTCONFLICT_W {
+    #[must_use]
+    pub fn aportconflict(&mut self) -> APORTCONFLICT_W<4> {
         APORTCONFLICT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +75,10 @@ impl crate::RegisterSpec for IFC_SPEC {
 #[doc = "`write(|w| ..)` method takes [ifc::W](W) writer structure"]
 impl crate::Writable for IFC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IFC to value 0"]
 impl crate::Resettable for IFC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

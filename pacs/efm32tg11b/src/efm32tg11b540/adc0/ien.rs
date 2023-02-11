@@ -37,59 +37,59 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `SINGLE` reader - SINGLE Interrupt Enable"]
 pub type SINGLE_R = crate::BitReader<bool>;
 #[doc = "Field `SINGLE` writer - SINGLE Interrupt Enable"]
-pub type SINGLE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 0>;
+pub type SINGLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SCAN` reader - SCAN Interrupt Enable"]
 pub type SCAN_R = crate::BitReader<bool>;
 #[doc = "Field `SCAN` writer - SCAN Interrupt Enable"]
-pub type SCAN_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 1>;
+pub type SCAN_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SINGLEOF` reader - SINGLEOF Interrupt Enable"]
 pub type SINGLEOF_R = crate::BitReader<bool>;
 #[doc = "Field `SINGLEOF` writer - SINGLEOF Interrupt Enable"]
-pub type SINGLEOF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 8>;
+pub type SINGLEOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SCANOF` reader - SCANOF Interrupt Enable"]
 pub type SCANOF_R = crate::BitReader<bool>;
 #[doc = "Field `SCANOF` writer - SCANOF Interrupt Enable"]
-pub type SCANOF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 9>;
+pub type SCANOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SINGLEUF` reader - SINGLEUF Interrupt Enable"]
 pub type SINGLEUF_R = crate::BitReader<bool>;
 #[doc = "Field `SINGLEUF` writer - SINGLEUF Interrupt Enable"]
-pub type SINGLEUF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 10>;
+pub type SINGLEUF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SCANUF` reader - SCANUF Interrupt Enable"]
 pub type SCANUF_R = crate::BitReader<bool>;
 #[doc = "Field `SCANUF` writer - SCANUF Interrupt Enable"]
-pub type SCANUF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 11>;
+pub type SCANUF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SINGLECMP` reader - SINGLECMP Interrupt Enable"]
 pub type SINGLECMP_R = crate::BitReader<bool>;
 #[doc = "Field `SINGLECMP` writer - SINGLECMP Interrupt Enable"]
-pub type SINGLECMP_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 16>;
+pub type SINGLECMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SCANCMP` reader - SCANCMP Interrupt Enable"]
 pub type SCANCMP_R = crate::BitReader<bool>;
 #[doc = "Field `SCANCMP` writer - SCANCMP Interrupt Enable"]
-pub type SCANCMP_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 17>;
+pub type SCANCMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `VREFOV` reader - VREFOV Interrupt Enable"]
 pub type VREFOV_R = crate::BitReader<bool>;
 #[doc = "Field `VREFOV` writer - VREFOV Interrupt Enable"]
-pub type VREFOV_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 24>;
+pub type VREFOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `PROGERR` reader - PROGERR Interrupt Enable"]
 pub type PROGERR_R = crate::BitReader<bool>;
 #[doc = "Field `PROGERR` writer - PROGERR Interrupt Enable"]
-pub type PROGERR_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 25>;
+pub type PROGERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SCANEXTPEND` reader - SCANEXTPEND Interrupt Enable"]
 pub type SCANEXTPEND_R = crate::BitReader<bool>;
 #[doc = "Field `SCANEXTPEND` writer - SCANEXTPEND Interrupt Enable"]
-pub type SCANEXTPEND_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 26>;
+pub type SCANEXTPEND_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SCANPEND` reader - SCANPEND Interrupt Enable"]
 pub type SCANPEND_R = crate::BitReader<bool>;
 #[doc = "Field `SCANPEND` writer - SCANPEND Interrupt Enable"]
-pub type SCANPEND_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 27>;
+pub type SCANPEND_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `PRSTIMEDERR` reader - PRSTIMEDERR Interrupt Enable"]
 pub type PRSTIMEDERR_R = crate::BitReader<bool>;
 #[doc = "Field `PRSTIMEDERR` writer - PRSTIMEDERR Interrupt Enable"]
-pub type PRSTIMEDERR_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 28>;
+pub type PRSTIMEDERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `EM23ERR` reader - EM23ERR Interrupt Enable"]
 pub type EM23ERR_R = crate::BitReader<bool>;
 #[doc = "Field `EM23ERR` writer - EM23ERR Interrupt Enable"]
-pub type EM23ERR_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 29>;
+pub type EM23ERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - SINGLE Interrupt Enable"]
     #[inline(always)]
@@ -165,72 +165,86 @@ impl R {
 impl W {
     #[doc = "Bit 0 - SINGLE Interrupt Enable"]
     #[inline(always)]
-    pub fn single(&mut self) -> SINGLE_W {
+    #[must_use]
+    pub fn single(&mut self) -> SINGLE_W<0> {
         SINGLE_W::new(self)
     }
     #[doc = "Bit 1 - SCAN Interrupt Enable"]
     #[inline(always)]
-    pub fn scan(&mut self) -> SCAN_W {
+    #[must_use]
+    pub fn scan(&mut self) -> SCAN_W<1> {
         SCAN_W::new(self)
     }
     #[doc = "Bit 8 - SINGLEOF Interrupt Enable"]
     #[inline(always)]
-    pub fn singleof(&mut self) -> SINGLEOF_W {
+    #[must_use]
+    pub fn singleof(&mut self) -> SINGLEOF_W<8> {
         SINGLEOF_W::new(self)
     }
     #[doc = "Bit 9 - SCANOF Interrupt Enable"]
     #[inline(always)]
-    pub fn scanof(&mut self) -> SCANOF_W {
+    #[must_use]
+    pub fn scanof(&mut self) -> SCANOF_W<9> {
         SCANOF_W::new(self)
     }
     #[doc = "Bit 10 - SINGLEUF Interrupt Enable"]
     #[inline(always)]
-    pub fn singleuf(&mut self) -> SINGLEUF_W {
+    #[must_use]
+    pub fn singleuf(&mut self) -> SINGLEUF_W<10> {
         SINGLEUF_W::new(self)
     }
     #[doc = "Bit 11 - SCANUF Interrupt Enable"]
     #[inline(always)]
-    pub fn scanuf(&mut self) -> SCANUF_W {
+    #[must_use]
+    pub fn scanuf(&mut self) -> SCANUF_W<11> {
         SCANUF_W::new(self)
     }
     #[doc = "Bit 16 - SINGLECMP Interrupt Enable"]
     #[inline(always)]
-    pub fn singlecmp(&mut self) -> SINGLECMP_W {
+    #[must_use]
+    pub fn singlecmp(&mut self) -> SINGLECMP_W<16> {
         SINGLECMP_W::new(self)
     }
     #[doc = "Bit 17 - SCANCMP Interrupt Enable"]
     #[inline(always)]
-    pub fn scancmp(&mut self) -> SCANCMP_W {
+    #[must_use]
+    pub fn scancmp(&mut self) -> SCANCMP_W<17> {
         SCANCMP_W::new(self)
     }
     #[doc = "Bit 24 - VREFOV Interrupt Enable"]
     #[inline(always)]
-    pub fn vrefov(&mut self) -> VREFOV_W {
+    #[must_use]
+    pub fn vrefov(&mut self) -> VREFOV_W<24> {
         VREFOV_W::new(self)
     }
     #[doc = "Bit 25 - PROGERR Interrupt Enable"]
     #[inline(always)]
-    pub fn progerr(&mut self) -> PROGERR_W {
+    #[must_use]
+    pub fn progerr(&mut self) -> PROGERR_W<25> {
         PROGERR_W::new(self)
     }
     #[doc = "Bit 26 - SCANEXTPEND Interrupt Enable"]
     #[inline(always)]
-    pub fn scanextpend(&mut self) -> SCANEXTPEND_W {
+    #[must_use]
+    pub fn scanextpend(&mut self) -> SCANEXTPEND_W<26> {
         SCANEXTPEND_W::new(self)
     }
     #[doc = "Bit 27 - SCANPEND Interrupt Enable"]
     #[inline(always)]
-    pub fn scanpend(&mut self) -> SCANPEND_W {
+    #[must_use]
+    pub fn scanpend(&mut self) -> SCANPEND_W<27> {
         SCANPEND_W::new(self)
     }
     #[doc = "Bit 28 - PRSTIMEDERR Interrupt Enable"]
     #[inline(always)]
-    pub fn prstimederr(&mut self) -> PRSTIMEDERR_W {
+    #[must_use]
+    pub fn prstimederr(&mut self) -> PRSTIMEDERR_W<28> {
         PRSTIMEDERR_W::new(self)
     }
     #[doc = "Bit 29 - EM23ERR Interrupt Enable"]
     #[inline(always)]
-    pub fn em23err(&mut self) -> EM23ERR_W {
+    #[must_use]
+    pub fn em23err(&mut self) -> EM23ERR_W<29> {
         EM23ERR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -252,11 +266,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -47,7 +47,7 @@ pub type FULLIF_R = crate::BitReader<bool>;
 #[doc = "Field `PREIF` reader - AIS31 Preliminary Noise Alarm interrupt status"]
 pub type PREIF_R = crate::BitReader<bool>;
 #[doc = "Field `PREIF` writer - AIS31 Preliminary Noise Alarm interrupt status"]
-pub type PREIF_W<'a> = crate::BitWriter<'a, u32, STATUS_SPEC, bool, 8>;
+pub type PREIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, STATUS_SPEC, bool, O>;
 #[doc = "Field `ALMIF` reader - AIS31 Noise Alarm interrupt status"]
 pub type ALMIF_R = crate::BitReader<bool>;
 impl R {
@@ -90,7 +90,8 @@ impl R {
 impl W {
     #[doc = "Bit 8 - AIS31 Preliminary Noise Alarm interrupt status"]
     #[inline(always)]
-    pub fn preif(&mut self) -> PREIF_W {
+    #[must_use]
+    pub fn preif(&mut self) -> PREIF_W<8> {
         PREIF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +113,10 @@ impl crate::Readable for STATUS_SPEC {
 #[doc = "`write(|w| ..)` method takes [status::W](W) writer structure"]
 impl crate::Writable for STATUS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets STATUS to value 0"]
 impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

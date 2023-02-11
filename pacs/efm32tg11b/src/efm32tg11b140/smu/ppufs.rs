@@ -13,8 +13,10 @@ impl From<crate::R<PPUFS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `PERIPHID` reader - "]
+pub type PERIPHID_R = crate::FieldReader<u8, PERIPHID_A>;
 #[doc = "\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PERIPHID_A {
     #[doc = "0: Analog Comparator 0"]
@@ -94,8 +96,6 @@ impl From<PERIPHID_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PERIPHID` reader - "]
-pub type PERIPHID_R = crate::FieldReader<u8, PERIPHID_A>;
 impl PERIPHID_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -333,8 +333,5 @@ impl crate::Readable for PPUFS_SPEC {
 }
 #[doc = "`reset()` method sets PPUFS to value 0"]
 impl crate::Resettable for PPUFS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

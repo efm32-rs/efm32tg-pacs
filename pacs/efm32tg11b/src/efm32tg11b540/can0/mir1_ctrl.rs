@@ -37,43 +37,43 @@ impl From<crate::W<MIR1_CTRL_SPEC>> for W {
 #[doc = "Field `DLC` reader - Data Length Code"]
 pub type DLC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DLC` writer - Data Length Code"]
-pub type DLC_W<'a> = crate::FieldWriter<'a, u32, MIR1_CTRL_SPEC, u8, u8, 4, 0>;
+pub type DLC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MIR1_CTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `EOB` reader - End of Buffer"]
 pub type EOB_R = crate::BitReader<bool>;
 #[doc = "Field `EOB` writer - End of Buffer"]
-pub type EOB_W<'a> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, 7>;
+pub type EOB_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, O>;
 #[doc = "Field `TXRQST` reader - Transmit Request"]
 pub type TXRQST_R = crate::BitReader<bool>;
 #[doc = "Field `TXRQST` writer - Transmit Request"]
-pub type TXRQST_W<'a> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, 8>;
+pub type TXRQST_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, O>;
 #[doc = "Field `RMTEN` reader - Remote Enable"]
 pub type RMTEN_R = crate::BitReader<bool>;
 #[doc = "Field `RMTEN` writer - Remote Enable"]
-pub type RMTEN_W<'a> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, 9>;
+pub type RMTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, O>;
 #[doc = "Field `RXIE` reader - Receive Interrupt Enable"]
 pub type RXIE_R = crate::BitReader<bool>;
 #[doc = "Field `RXIE` writer - Receive Interrupt Enable"]
-pub type RXIE_W<'a> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, 10>;
+pub type RXIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, O>;
 #[doc = "Field `TXIE` reader - Transmit Interrupt Enable"]
 pub type TXIE_R = crate::BitReader<bool>;
 #[doc = "Field `TXIE` writer - Transmit Interrupt Enable"]
-pub type TXIE_W<'a> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, 11>;
+pub type TXIE_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, O>;
 #[doc = "Field `UMASK` reader - Use Acceptance Mask"]
 pub type UMASK_R = crate::BitReader<bool>;
 #[doc = "Field `UMASK` writer - Use Acceptance Mask"]
-pub type UMASK_W<'a> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, 12>;
+pub type UMASK_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, O>;
 #[doc = "Field `INTPND` reader - Interrupt Pending"]
 pub type INTPND_R = crate::BitReader<bool>;
 #[doc = "Field `INTPND` writer - Interrupt Pending"]
-pub type INTPND_W<'a> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, 13>;
+pub type INTPND_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, O>;
 #[doc = "Field `MESSAGEOF` reader - Message Lost (only Valid for Message Objects With Direction = Receive)"]
 pub type MESSAGEOF_R = crate::BitReader<bool>;
 #[doc = "Field `MESSAGEOF` writer - Message Lost (only Valid for Message Objects With Direction = Receive)"]
-pub type MESSAGEOF_W<'a> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, 14>;
+pub type MESSAGEOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, O>;
 #[doc = "Field `DATAVALID` reader - New Data"]
 pub type DATAVALID_R = crate::BitReader<bool>;
 #[doc = "Field `DATAVALID` writer - New Data"]
-pub type DATAVALID_W<'a> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, 15>;
+pub type DATAVALID_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:3 - Data Length Code"]
     #[inline(always)]
@@ -129,52 +129,62 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Data Length Code"]
     #[inline(always)]
-    pub fn dlc(&mut self) -> DLC_W {
+    #[must_use]
+    pub fn dlc(&mut self) -> DLC_W<0> {
         DLC_W::new(self)
     }
     #[doc = "Bit 7 - End of Buffer"]
     #[inline(always)]
-    pub fn eob(&mut self) -> EOB_W {
+    #[must_use]
+    pub fn eob(&mut self) -> EOB_W<7> {
         EOB_W::new(self)
     }
     #[doc = "Bit 8 - Transmit Request"]
     #[inline(always)]
-    pub fn txrqst(&mut self) -> TXRQST_W {
+    #[must_use]
+    pub fn txrqst(&mut self) -> TXRQST_W<8> {
         TXRQST_W::new(self)
     }
     #[doc = "Bit 9 - Remote Enable"]
     #[inline(always)]
-    pub fn rmten(&mut self) -> RMTEN_W {
+    #[must_use]
+    pub fn rmten(&mut self) -> RMTEN_W<9> {
         RMTEN_W::new(self)
     }
     #[doc = "Bit 10 - Receive Interrupt Enable"]
     #[inline(always)]
-    pub fn rxie(&mut self) -> RXIE_W {
+    #[must_use]
+    pub fn rxie(&mut self) -> RXIE_W<10> {
         RXIE_W::new(self)
     }
     #[doc = "Bit 11 - Transmit Interrupt Enable"]
     #[inline(always)]
-    pub fn txie(&mut self) -> TXIE_W {
+    #[must_use]
+    pub fn txie(&mut self) -> TXIE_W<11> {
         TXIE_W::new(self)
     }
     #[doc = "Bit 12 - Use Acceptance Mask"]
     #[inline(always)]
-    pub fn umask(&mut self) -> UMASK_W {
+    #[must_use]
+    pub fn umask(&mut self) -> UMASK_W<12> {
         UMASK_W::new(self)
     }
     #[doc = "Bit 13 - Interrupt Pending"]
     #[inline(always)]
-    pub fn intpnd(&mut self) -> INTPND_W {
+    #[must_use]
+    pub fn intpnd(&mut self) -> INTPND_W<13> {
         INTPND_W::new(self)
     }
     #[doc = "Bit 14 - Message Lost (only Valid for Message Objects With Direction = Receive)"]
     #[inline(always)]
-    pub fn messageof(&mut self) -> MESSAGEOF_W {
+    #[must_use]
+    pub fn messageof(&mut self) -> MESSAGEOF_W<14> {
         MESSAGEOF_W::new(self)
     }
     #[doc = "Bit 15 - New Data"]
     #[inline(always)]
-    pub fn datavalid(&mut self) -> DATAVALID_W {
+    #[must_use]
+    pub fn datavalid(&mut self) -> DATAVALID_W<15> {
         DATAVALID_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -196,11 +206,10 @@ impl crate::Readable for MIR1_CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [mir1_ctrl::W](W) writer structure"]
 impl crate::Writable for MIR1_CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MIR1_CTRL to value 0"]
 impl crate::Resettable for MIR1_CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

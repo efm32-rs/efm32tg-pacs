@@ -37,18 +37,19 @@ impl From<crate::W<EMA_SPEC>> for W {
 #[doc = "Field `EMA` reader - Calculated Exponential Moving Average"]
 pub type EMA_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `EMA` writer - Calculated Exponential Moving Average"]
-pub type EMA_W<'a> = crate::FieldWriter<'a, u32, EMA_SPEC, u32, u32, 22, 0>;
+pub type EMA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EMA_SPEC, u32, u32, 22, O>;
 impl R {
     #[doc = "Bits 0:21 - Calculated Exponential Moving Average"]
     #[inline(always)]
     pub fn ema(&self) -> EMA_R {
-        EMA_R::new((self.bits & 0x003f_ffff) as u32)
+        EMA_R::new(self.bits & 0x003f_ffff)
     }
 }
 impl W {
     #[doc = "Bits 0:21 - Calculated Exponential Moving Average"]
     #[inline(always)]
-    pub fn ema(&mut self) -> EMA_W {
+    #[must_use]
+    pub fn ema(&mut self) -> EMA_W<0> {
         EMA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for EMA_SPEC {
 #[doc = "`write(|w| ..)` method takes [ema::W](W) writer structure"]
 impl crate::Writable for EMA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EMA to value 0"]
 impl crate::Resettable for EMA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

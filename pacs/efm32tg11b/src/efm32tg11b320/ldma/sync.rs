@@ -37,7 +37,7 @@ impl From<crate::W<SYNC_SPEC>> for W {
 #[doc = "Field `SYNCTRIG` reader - Synchronization Trigger"]
 pub type SYNCTRIG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SYNCTRIG` writer - Synchronization Trigger"]
-pub type SYNCTRIG_W<'a> = crate::FieldWriter<'a, u32, SYNC_SPEC, u8, u8, 8, 0>;
+pub type SYNCTRIG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SYNC_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Synchronization Trigger"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Synchronization Trigger"]
     #[inline(always)]
-    pub fn synctrig(&mut self) -> SYNCTRIG_W {
+    #[must_use]
+    pub fn synctrig(&mut self) -> SYNCTRIG_W<0> {
         SYNCTRIG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for SYNC_SPEC {
 #[doc = "`write(|w| ..)` method takes [sync::W](W) writer structure"]
 impl crate::Writable for SYNC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SYNC to value 0"]
 impl crate::Resettable for SYNC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

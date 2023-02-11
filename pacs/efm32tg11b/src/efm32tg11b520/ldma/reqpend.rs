@@ -33,8 +33,5 @@ impl crate::Readable for REQPEND_SPEC {
 }
 #[doc = "`reset()` method sets REQPEND to value 0"]
 impl crate::Resettable for REQPEND_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

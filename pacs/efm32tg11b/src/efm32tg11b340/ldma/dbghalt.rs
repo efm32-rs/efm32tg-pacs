@@ -37,7 +37,7 @@ impl From<crate::W<DBGHALT_SPEC>> for W {
 #[doc = "Field `DBGHALT` reader - DMA Debug Halt"]
 pub type DBGHALT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DBGHALT` writer - DMA Debug Halt"]
-pub type DBGHALT_W<'a> = crate::FieldWriter<'a, u32, DBGHALT_SPEC, u8, u8, 8, 0>;
+pub type DBGHALT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DBGHALT_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - DMA Debug Halt"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - DMA Debug Halt"]
     #[inline(always)]
-    pub fn dbghalt(&mut self) -> DBGHALT_W {
+    #[must_use]
+    pub fn dbghalt(&mut self) -> DBGHALT_W<0> {
         DBGHALT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for DBGHALT_SPEC {
 #[doc = "`write(|w| ..)` method takes [dbghalt::W](W) writer structure"]
 impl crate::Writable for DBGHALT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DBGHALT to value 0"]
 impl crate::Resettable for DBGHALT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

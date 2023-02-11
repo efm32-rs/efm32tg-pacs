@@ -37,13 +37,15 @@ impl From<crate::W<OPA0_MUX_SPEC>> for W {
 #[doc = "Field `POSSEL` reader - OPAx Non-inverting Input Mux"]
 pub type POSSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `POSSEL` writer - OPAx Non-inverting Input Mux"]
-pub type POSSEL_W<'a> = crate::FieldWriter<'a, u32, OPA0_MUX_SPEC, u8, u8, 8, 0>;
+pub type POSSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OPA0_MUX_SPEC, u8, u8, 8, O>;
 #[doc = "Field `NEGSEL` reader - OPAx Inverting Input Mux"]
 pub type NEGSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NEGSEL` writer - OPAx Inverting Input Mux"]
-pub type NEGSEL_W<'a> = crate::FieldWriter<'a, u32, OPA0_MUX_SPEC, u8, u8, 8, 8>;
+pub type NEGSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OPA0_MUX_SPEC, u8, u8, 8, O>;
+#[doc = "Field `RESINMUX` reader - OPAx Resistor Ladder Input Mux"]
+pub type RESINMUX_R = crate::FieldReader<u8, RESINMUX_A>;
 #[doc = "OPAx Resistor Ladder Input Mux\n\nValue on reset: 6"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RESINMUX_A {
     #[doc = "0: Set for Unity Gain"]
@@ -67,8 +69,6 @@ impl From<RESINMUX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RESINMUX` reader - OPAx Resistor Ladder Input Mux"]
-pub type RESINMUX_R = crate::FieldReader<u8, RESINMUX_A>;
 impl RESINMUX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,9 @@ impl RESINMUX_R {
     }
 }
 #[doc = "Field `RESINMUX` writer - OPAx Resistor Ladder Input Mux"]
-pub type RESINMUX_W<'a> = crate::FieldWriter<'a, u32, OPA0_MUX_SPEC, u8, RESINMUX_A, 3, 16>;
-impl<'a> RESINMUX_W<'a> {
+pub type RESINMUX_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, OPA0_MUX_SPEC, u8, RESINMUX_A, 3, O>;
+impl<'a, const O: u8> RESINMUX_W<'a, O> {
     #[doc = "Set for Unity Gain"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -162,9 +163,11 @@ impl<'a> RESINMUX_W<'a> {
 #[doc = "Field `GAIN3X` reader - OPAx Dedicated 3x Gain Resistor Ladder"]
 pub type GAIN3X_R = crate::BitReader<bool>;
 #[doc = "Field `GAIN3X` writer - OPAx Dedicated 3x Gain Resistor Ladder"]
-pub type GAIN3X_W<'a> = crate::BitWriter<'a, u32, OPA0_MUX_SPEC, bool, 20>;
+pub type GAIN3X_W<'a, const O: u8> = crate::BitWriter<'a, u32, OPA0_MUX_SPEC, bool, O>;
+#[doc = "Field `RESSEL` reader - OPAx Resistor Ladder Select"]
+pub type RESSEL_R = crate::FieldReader<u8, RESSEL_A>;
 #[doc = "OPAx Resistor Ladder Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RESSEL_A {
     #[doc = "0: Gain of 1/3"]
@@ -190,8 +193,6 @@ impl From<RESSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RESSEL` reader - OPAx Resistor Ladder Select"]
-pub type RESSEL_R = crate::FieldReader<u8, RESSEL_A>;
 impl RESSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -250,8 +251,9 @@ impl RESSEL_R {
     }
 }
 #[doc = "Field `RESSEL` writer - OPAx Resistor Ladder Select"]
-pub type RESSEL_W<'a> = crate::FieldWriterSafe<'a, u32, OPA0_MUX_SPEC, u8, RESSEL_A, 3, 24>;
-impl<'a> RESSEL_W<'a> {
+pub type RESSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, OPA0_MUX_SPEC, u8, RESSEL_A, 3, O>;
+impl<'a, const O: u8> RESSEL_W<'a, O> {
     #[doc = "Gain of 1/3"]
     #[inline(always)]
     pub fn res0(self) -> &'a mut W {
@@ -323,27 +325,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - OPAx Non-inverting Input Mux"]
     #[inline(always)]
-    pub fn possel(&mut self) -> POSSEL_W {
+    #[must_use]
+    pub fn possel(&mut self) -> POSSEL_W<0> {
         POSSEL_W::new(self)
     }
     #[doc = "Bits 8:15 - OPAx Inverting Input Mux"]
     #[inline(always)]
-    pub fn negsel(&mut self) -> NEGSEL_W {
+    #[must_use]
+    pub fn negsel(&mut self) -> NEGSEL_W<8> {
         NEGSEL_W::new(self)
     }
     #[doc = "Bits 16:18 - OPAx Resistor Ladder Input Mux"]
     #[inline(always)]
-    pub fn resinmux(&mut self) -> RESINMUX_W {
+    #[must_use]
+    pub fn resinmux(&mut self) -> RESINMUX_W<16> {
         RESINMUX_W::new(self)
     }
     #[doc = "Bit 20 - OPAx Dedicated 3x Gain Resistor Ladder"]
     #[inline(always)]
-    pub fn gain3x(&mut self) -> GAIN3X_W {
+    #[must_use]
+    pub fn gain3x(&mut self) -> GAIN3X_W<20> {
         GAIN3X_W::new(self)
     }
     #[doc = "Bits 24:26 - OPAx Resistor Ladder Select"]
     #[inline(always)]
-    pub fn ressel(&mut self) -> RESSEL_W {
+    #[must_use]
+    pub fn ressel(&mut self) -> RESSEL_W<24> {
         RESSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -365,11 +372,10 @@ impl crate::Readable for OPA0_MUX_SPEC {
 #[doc = "`write(|w| ..)` method takes [opa0_mux::W](W) writer structure"]
 impl crate::Writable for OPA0_MUX_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets OPA0_MUX to value 0x0016_f2f1"]
 impl crate::Resettable for OPA0_MUX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0016_f2f1
-    }
+    const RESET_VALUE: Self::Ux = 0x0016_f2f1;
 }

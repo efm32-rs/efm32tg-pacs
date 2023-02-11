@@ -37,20 +37,20 @@ impl From<crate::W<MIR0_MASK_SPEC>> for W {
 #[doc = "Field `MASK` reader - Identifier Mask"]
 pub type MASK_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `MASK` writer - Identifier Mask"]
-pub type MASK_W<'a> = crate::FieldWriter<'a, u32, MIR0_MASK_SPEC, u32, u32, 29, 0>;
+pub type MASK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MIR0_MASK_SPEC, u32, u32, 29, O>;
 #[doc = "Field `MDIR` reader - Mask Message Direction"]
 pub type MDIR_R = crate::BitReader<bool>;
 #[doc = "Field `MDIR` writer - Mask Message Direction"]
-pub type MDIR_W<'a> = crate::BitWriter<'a, u32, MIR0_MASK_SPEC, bool, 30>;
+pub type MDIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR0_MASK_SPEC, bool, O>;
 #[doc = "Field `MXTD` reader - Mask Extended Identifier"]
 pub type MXTD_R = crate::BitReader<bool>;
 #[doc = "Field `MXTD` writer - Mask Extended Identifier"]
-pub type MXTD_W<'a> = crate::BitWriter<'a, u32, MIR0_MASK_SPEC, bool, 31>;
+pub type MXTD_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR0_MASK_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:28 - Identifier Mask"]
     #[inline(always)]
     pub fn mask(&self) -> MASK_R {
-        MASK_R::new((self.bits & 0x1fff_ffff) as u32)
+        MASK_R::new(self.bits & 0x1fff_ffff)
     }
     #[doc = "Bit 30 - Mask Message Direction"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:28 - Identifier Mask"]
     #[inline(always)]
-    pub fn mask(&mut self) -> MASK_W {
+    #[must_use]
+    pub fn mask(&mut self) -> MASK_W<0> {
         MASK_W::new(self)
     }
     #[doc = "Bit 30 - Mask Message Direction"]
     #[inline(always)]
-    pub fn mdir(&mut self) -> MDIR_W {
+    #[must_use]
+    pub fn mdir(&mut self) -> MDIR_W<30> {
         MDIR_W::new(self)
     }
     #[doc = "Bit 31 - Mask Extended Identifier"]
     #[inline(always)]
-    pub fn mxtd(&mut self) -> MXTD_W {
+    #[must_use]
+    pub fn mxtd(&mut self) -> MXTD_W<31> {
         MXTD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for MIR0_MASK_SPEC {
 #[doc = "`write(|w| ..)` method takes [mir0_mask::W](W) writer structure"]
 impl crate::Writable for MIR0_MASK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MIR0_MASK to value 0xdfff_ffff"]
 impl crate::Resettable for MIR0_MASK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xdfff_ffff
-    }
+    const RESET_VALUE: Self::Ux = 0xdfff_ffff;
 }

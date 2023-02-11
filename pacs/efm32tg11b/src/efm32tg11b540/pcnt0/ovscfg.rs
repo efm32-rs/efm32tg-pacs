@@ -37,11 +37,11 @@ impl From<crate::W<OVSCFG_SPEC>> for W {
 #[doc = "Field `FILTLEN` reader - Configure Filter Length for Inputs S0IN and S1IN"]
 pub type FILTLEN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FILTLEN` writer - Configure Filter Length for Inputs S0IN and S1IN"]
-pub type FILTLEN_W<'a> = crate::FieldWriter<'a, u32, OVSCFG_SPEC, u8, u8, 8, 0>;
+pub type FILTLEN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OVSCFG_SPEC, u8, u8, 8, O>;
 #[doc = "Field `FLUTTERRM` reader - Flutter Remove"]
 pub type FLUTTERRM_R = crate::BitReader<bool>;
 #[doc = "Field `FLUTTERRM` writer - Flutter Remove"]
-pub type FLUTTERRM_W<'a> = crate::BitWriter<'a, u32, OVSCFG_SPEC, bool, 12>;
+pub type FLUTTERRM_W<'a, const O: u8> = crate::BitWriter<'a, u32, OVSCFG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Configure Filter Length for Inputs S0IN and S1IN"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Configure Filter Length for Inputs S0IN and S1IN"]
     #[inline(always)]
-    pub fn filtlen(&mut self) -> FILTLEN_W {
+    #[must_use]
+    pub fn filtlen(&mut self) -> FILTLEN_W<0> {
         FILTLEN_W::new(self)
     }
     #[doc = "Bit 12 - Flutter Remove"]
     #[inline(always)]
-    pub fn flutterrm(&mut self) -> FLUTTERRM_W {
+    #[must_use]
+    pub fn flutterrm(&mut self) -> FLUTTERRM_W<12> {
         FLUTTERRM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for OVSCFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [ovscfg::W](W) writer structure"]
 impl crate::Writable for OVSCFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets OVSCFG to value 0"]
 impl crate::Resettable for OVSCFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

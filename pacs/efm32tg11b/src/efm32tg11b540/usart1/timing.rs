@@ -34,8 +34,10 @@ impl From<crate::W<TIMING_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TXDELAY` reader - TX Frame Start Delay"]
+pub type TXDELAY_R = crate::FieldReader<u8, TXDELAY_A>;
 #[doc = "TX Frame Start Delay\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TXDELAY_A {
     #[doc = "0: Disable - TXDELAY in USARTn_CTRL can be used for legacy"]
@@ -61,8 +63,6 @@ impl From<TXDELAY_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TXDELAY` reader - TX Frame Start Delay"]
-pub type TXDELAY_R = crate::FieldReader<u8, TXDELAY_A>;
 impl TXDELAY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,9 @@ impl TXDELAY_R {
     }
 }
 #[doc = "Field `TXDELAY` writer - TX Frame Start Delay"]
-pub type TXDELAY_W<'a> = crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, TXDELAY_A, 3, 16>;
-impl<'a> TXDELAY_W<'a> {
+pub type TXDELAY_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, TXDELAY_A, 3, O>;
+impl<'a, const O: u8> TXDELAY_W<'a, O> {
     #[doc = "Disable - TXDELAY in USARTn_CTRL can be used for legacy"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -164,8 +165,10 @@ impl<'a> TXDELAY_W<'a> {
         self.variant(TXDELAY_A::TCMP2)
     }
 }
+#[doc = "Field `CSSETUP` reader - Chip Select Setup"]
+pub type CSSETUP_R = crate::FieldReader<u8, CSSETUP_A>;
 #[doc = "Chip Select Setup\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSSETUP_A {
     #[doc = "0: CS is not asserted before start of transmission"]
@@ -191,8 +194,6 @@ impl From<CSSETUP_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CSSETUP` reader - Chip Select Setup"]
-pub type CSSETUP_R = crate::FieldReader<u8, CSSETUP_A>;
 impl CSSETUP_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -251,8 +252,9 @@ impl CSSETUP_R {
     }
 }
 #[doc = "Field `CSSETUP` writer - Chip Select Setup"]
-pub type CSSETUP_W<'a> = crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, CSSETUP_A, 3, 20>;
-impl<'a> CSSETUP_W<'a> {
+pub type CSSETUP_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, CSSETUP_A, 3, O>;
+impl<'a, const O: u8> CSSETUP_W<'a, O> {
     #[doc = "CS is not asserted before start of transmission"]
     #[inline(always)]
     pub fn zero(self) -> &'a mut W {
@@ -294,8 +296,10 @@ impl<'a> CSSETUP_W<'a> {
         self.variant(CSSETUP_A::TCMP2)
     }
 }
+#[doc = "Field `ICS` reader - Inter-character Spacing"]
+pub type ICS_R = crate::FieldReader<u8, ICS_A>;
 #[doc = "Inter-character Spacing\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ICS_A {
     #[doc = "0: There is no space between charcters"]
@@ -321,8 +325,6 @@ impl From<ICS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ICS` reader - Inter-character Spacing"]
-pub type ICS_R = crate::FieldReader<u8, ICS_A>;
 impl ICS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -381,8 +383,8 @@ impl ICS_R {
     }
 }
 #[doc = "Field `ICS` writer - Inter-character Spacing"]
-pub type ICS_W<'a> = crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, ICS_A, 3, 24>;
-impl<'a> ICS_W<'a> {
+pub type ICS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, ICS_A, 3, O>;
+impl<'a, const O: u8> ICS_W<'a, O> {
     #[doc = "There is no space between charcters"]
     #[inline(always)]
     pub fn zero(self) -> &'a mut W {
@@ -424,8 +426,10 @@ impl<'a> ICS_W<'a> {
         self.variant(ICS_A::TCMP2)
     }
 }
+#[doc = "Field `CSHOLD` reader - Chip Select Hold"]
+pub type CSHOLD_R = crate::FieldReader<u8, CSHOLD_A>;
 #[doc = "Chip Select Hold\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSHOLD_A {
     #[doc = "0: Disable CS being asserted after the end of transmission"]
@@ -451,8 +455,6 @@ impl From<CSHOLD_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CSHOLD` reader - Chip Select Hold"]
-pub type CSHOLD_R = crate::FieldReader<u8, CSHOLD_A>;
 impl CSHOLD_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -511,8 +513,9 @@ impl CSHOLD_R {
     }
 }
 #[doc = "Field `CSHOLD` writer - Chip Select Hold"]
-pub type CSHOLD_W<'a> = crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, CSHOLD_A, 3, 28>;
-impl<'a> CSHOLD_W<'a> {
+pub type CSHOLD_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, TIMING_SPEC, u8, CSHOLD_A, 3, O>;
+impl<'a, const O: u8> CSHOLD_W<'a, O> {
     #[doc = "Disable CS being asserted after the end of transmission"]
     #[inline(always)]
     pub fn zero(self) -> &'a mut W {
@@ -579,22 +582,26 @@ impl R {
 impl W {
     #[doc = "Bits 16:18 - TX Frame Start Delay"]
     #[inline(always)]
-    pub fn txdelay(&mut self) -> TXDELAY_W {
+    #[must_use]
+    pub fn txdelay(&mut self) -> TXDELAY_W<16> {
         TXDELAY_W::new(self)
     }
     #[doc = "Bits 20:22 - Chip Select Setup"]
     #[inline(always)]
-    pub fn cssetup(&mut self) -> CSSETUP_W {
+    #[must_use]
+    pub fn cssetup(&mut self) -> CSSETUP_W<20> {
         CSSETUP_W::new(self)
     }
     #[doc = "Bits 24:26 - Inter-character Spacing"]
     #[inline(always)]
-    pub fn ics(&mut self) -> ICS_W {
+    #[must_use]
+    pub fn ics(&mut self) -> ICS_W<24> {
         ICS_W::new(self)
     }
     #[doc = "Bits 28:30 - Chip Select Hold"]
     #[inline(always)]
-    pub fn cshold(&mut self) -> CSHOLD_W {
+    #[must_use]
+    pub fn cshold(&mut self) -> CSHOLD_W<28> {
         CSHOLD_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -616,11 +623,10 @@ impl crate::Readable for TIMING_SPEC {
 #[doc = "`write(|w| ..)` method takes [timing::W](W) writer structure"]
 impl crate::Writable for TIMING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TIMING to value 0"]
 impl crate::Resettable for TIMING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

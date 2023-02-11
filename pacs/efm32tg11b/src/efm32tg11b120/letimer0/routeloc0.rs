@@ -34,8 +34,10 @@ impl From<crate::W<ROUTELOC0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `OUT0LOC` reader - I/O Location"]
+pub type OUT0LOC_R = crate::FieldReader<u8, OUT0LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OUT0LOC_A {
     #[doc = "0: Location 0"]
@@ -59,8 +61,6 @@ impl From<OUT0LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OUT0LOC` reader - I/O Location"]
-pub type OUT0LOC_R = crate::FieldReader<u8, OUT0LOC_A>;
 impl OUT0LOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -113,8 +113,9 @@ impl OUT0LOC_R {
     }
 }
 #[doc = "Field `OUT0LOC` writer - I/O Location"]
-pub type OUT0LOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, OUT0LOC_A, 6, 0>;
-impl<'a> OUT0LOC_W<'a> {
+pub type OUT0LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, OUT0LOC_A, 6, O>;
+impl<'a, const O: u8> OUT0LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -151,8 +152,10 @@ impl<'a> OUT0LOC_W<'a> {
         self.variant(OUT0LOC_A::LOC6)
     }
 }
+#[doc = "Field `OUT1LOC` reader - I/O Location"]
+pub type OUT1LOC_R = crate::FieldReader<u8, OUT1LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OUT1LOC_A {
     #[doc = "0: Location 0"]
@@ -176,8 +179,6 @@ impl From<OUT1LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OUT1LOC` reader - I/O Location"]
-pub type OUT1LOC_R = crate::FieldReader<u8, OUT1LOC_A>;
 impl OUT1LOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -230,8 +231,9 @@ impl OUT1LOC_R {
     }
 }
 #[doc = "Field `OUT1LOC` writer - I/O Location"]
-pub type OUT1LOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, OUT1LOC_A, 6, 8>;
-impl<'a> OUT1LOC_W<'a> {
+pub type OUT1LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC0_SPEC, u8, OUT1LOC_A, 6, O>;
+impl<'a, const O: u8> OUT1LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -283,12 +285,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn out0loc(&mut self) -> OUT0LOC_W {
+    #[must_use]
+    pub fn out0loc(&mut self) -> OUT0LOC_W<0> {
         OUT0LOC_W::new(self)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
-    pub fn out1loc(&mut self) -> OUT1LOC_W {
+    #[must_use]
+    pub fn out1loc(&mut self) -> OUT1LOC_W<8> {
         OUT1LOC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -310,11 +314,10 @@ impl crate::Readable for ROUTELOC0_SPEC {
 #[doc = "`write(|w| ..)` method takes [routeloc0::W](W) writer structure"]
 impl crate::Writable for ROUTELOC0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTELOC0 to value 0"]
 impl crate::Resettable for ROUTELOC0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

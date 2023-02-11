@@ -34,8 +34,10 @@ impl From<crate::W<SCANINPUTSEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `INPUT0TO7SEL` reader - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK"]
+pub type INPUT0TO7SEL_R = crate::FieldReader<u8, INPUT0TO7SEL_A>;
 #[doc = "Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT0TO7SEL_A {
     #[doc = "0: `0`"]
@@ -81,8 +83,6 @@ impl From<INPUT0TO7SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INPUT0TO7SEL` reader - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK"]
-pub type INPUT0TO7SEL_R = crate::FieldReader<u8, INPUT0TO7SEL_A>;
 impl INPUT0TO7SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -201,9 +201,9 @@ impl INPUT0TO7SEL_R {
     }
 }
 #[doc = "Field `INPUT0TO7SEL` writer - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK"]
-pub type INPUT0TO7SEL_W<'a> =
-    crate::FieldWriter<'a, u32, SCANINPUTSEL_SPEC, u8, INPUT0TO7SEL_A, 5, 0>;
-impl<'a> INPUT0TO7SEL_W<'a> {
+pub type INPUT0TO7SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SCANINPUTSEL_SPEC, u8, INPUT0TO7SEL_A, 5, O>;
+impl<'a, const O: u8> INPUT0TO7SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn aport0ch0to7(self) -> &'a mut W {
@@ -295,8 +295,10 @@ impl<'a> INPUT0TO7SEL_W<'a> {
         self.variant(INPUT0TO7SEL_A::APORT4CH24TO31)
     }
 }
+#[doc = "Field `INPUT8TO15SEL` reader - Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK"]
+pub type INPUT8TO15SEL_R = crate::FieldReader<u8, INPUT8TO15SEL_A>;
 #[doc = "Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT8TO15SEL_A {
     #[doc = "0: `0`"]
@@ -342,8 +344,6 @@ impl From<INPUT8TO15SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INPUT8TO15SEL` reader - Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK"]
-pub type INPUT8TO15SEL_R = crate::FieldReader<u8, INPUT8TO15SEL_A>;
 impl INPUT8TO15SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -462,9 +462,9 @@ impl INPUT8TO15SEL_R {
     }
 }
 #[doc = "Field `INPUT8TO15SEL` writer - Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK"]
-pub type INPUT8TO15SEL_W<'a> =
-    crate::FieldWriter<'a, u32, SCANINPUTSEL_SPEC, u8, INPUT8TO15SEL_A, 5, 8>;
-impl<'a> INPUT8TO15SEL_W<'a> {
+pub type INPUT8TO15SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SCANINPUTSEL_SPEC, u8, INPUT8TO15SEL_A, 5, O>;
+impl<'a, const O: u8> INPUT8TO15SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn aport0ch0to7(self) -> &'a mut W {
@@ -556,8 +556,10 @@ impl<'a> INPUT8TO15SEL_W<'a> {
         self.variant(INPUT8TO15SEL_A::APORT4CH24TO31)
     }
 }
+#[doc = "Field `INPUT16TO23SEL` reader - Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK"]
+pub type INPUT16TO23SEL_R = crate::FieldReader<u8, INPUT16TO23SEL_A>;
 #[doc = "Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT16TO23SEL_A {
     #[doc = "0: `0`"]
@@ -603,8 +605,6 @@ impl From<INPUT16TO23SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INPUT16TO23SEL` reader - Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK"]
-pub type INPUT16TO23SEL_R = crate::FieldReader<u8, INPUT16TO23SEL_A>;
 impl INPUT16TO23SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -723,9 +723,9 @@ impl INPUT16TO23SEL_R {
     }
 }
 #[doc = "Field `INPUT16TO23SEL` writer - Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK"]
-pub type INPUT16TO23SEL_W<'a> =
-    crate::FieldWriter<'a, u32, SCANINPUTSEL_SPEC, u8, INPUT16TO23SEL_A, 5, 16>;
-impl<'a> INPUT16TO23SEL_W<'a> {
+pub type INPUT16TO23SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SCANINPUTSEL_SPEC, u8, INPUT16TO23SEL_A, 5, O>;
+impl<'a, const O: u8> INPUT16TO23SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn aport0ch0to7(self) -> &'a mut W {
@@ -817,8 +817,10 @@ impl<'a> INPUT16TO23SEL_W<'a> {
         self.variant(INPUT16TO23SEL_A::APORT4CH24TO31)
     }
 }
+#[doc = "Field `INPUT24TO31SEL` reader - Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK"]
+pub type INPUT24TO31SEL_R = crate::FieldReader<u8, INPUT24TO31SEL_A>;
 #[doc = "Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum INPUT24TO31SEL_A {
     #[doc = "0: `0`"]
@@ -864,8 +866,6 @@ impl From<INPUT24TO31SEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `INPUT24TO31SEL` reader - Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK"]
-pub type INPUT24TO31SEL_R = crate::FieldReader<u8, INPUT24TO31SEL_A>;
 impl INPUT24TO31SEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -984,9 +984,9 @@ impl INPUT24TO31SEL_R {
     }
 }
 #[doc = "Field `INPUT24TO31SEL` writer - Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK"]
-pub type INPUT24TO31SEL_W<'a> =
-    crate::FieldWriter<'a, u32, SCANINPUTSEL_SPEC, u8, INPUT24TO31SEL_A, 5, 24>;
-impl<'a> INPUT24TO31SEL_W<'a> {
+pub type INPUT24TO31SEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SCANINPUTSEL_SPEC, u8, INPUT24TO31SEL_A, 5, O>;
+impl<'a, const O: u8> INPUT24TO31SEL_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn aport0ch0to7(self) -> &'a mut W {
@@ -1103,22 +1103,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - Inputs Chosen for ADCn_INPUT7-ADCn_INPUT0 as Referred in SCANMASK"]
     #[inline(always)]
-    pub fn input0to7sel(&mut self) -> INPUT0TO7SEL_W {
+    #[must_use]
+    pub fn input0to7sel(&mut self) -> INPUT0TO7SEL_W<0> {
         INPUT0TO7SEL_W::new(self)
     }
     #[doc = "Bits 8:12 - Inputs Chosen for ADCn_INPUT8-ADCn_INPUT15 as Referred in SCANMASK"]
     #[inline(always)]
-    pub fn input8to15sel(&mut self) -> INPUT8TO15SEL_W {
+    #[must_use]
+    pub fn input8to15sel(&mut self) -> INPUT8TO15SEL_W<8> {
         INPUT8TO15SEL_W::new(self)
     }
     #[doc = "Bits 16:20 - Inputs Chosen for ADCn_INPUT16-ADCn_INPUT23 as Referred in SCANMASK"]
     #[inline(always)]
-    pub fn input16to23sel(&mut self) -> INPUT16TO23SEL_W {
+    #[must_use]
+    pub fn input16to23sel(&mut self) -> INPUT16TO23SEL_W<16> {
         INPUT16TO23SEL_W::new(self)
     }
     #[doc = "Bits 24:28 - Inputs Chosen for ADCn_INPUT24-ADCn_INPUT31 as Referred in SCANMASK"]
     #[inline(always)]
-    pub fn input24to31sel(&mut self) -> INPUT24TO31SEL_W {
+    #[must_use]
+    pub fn input24to31sel(&mut self) -> INPUT24TO31SEL_W<24> {
         INPUT24TO31SEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -1140,11 +1144,10 @@ impl crate::Readable for SCANINPUTSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [scaninputsel::W](W) writer structure"]
 impl crate::Writable for SCANINPUTSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCANINPUTSEL to value 0"]
 impl crate::Resettable for SCANINPUTSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -2,7 +2,7 @@
 name = "efm32tg-pac"
 description = "Peripheral access API for EFM32TG MCU (generated using svd2rust)"
 homepage = "https://github.com/efm32-rs/efm32tg-pacs"
-version = "0.1.1"
+version = "0.1.2"
 authors = [ "Vladimir Petrigo <vladimir.petrigo@gmail.com>",]
 license = "BSD-3-Clause"
 keywords = [ "no-std", "arm", "cortex-m", "efm32",]
@@ -29,6 +29,14 @@ efm32tg822 = []
 efm32tg825 = []
 efm32tg840 = []
 efm32tg842 = []
+
+[dependencies.portable-atomic]
+version = "~1"
+default-features = false
+
+[dependencies.critical-section]
+version = "~1"
+optional = true
 
 [dependencies.cortex-m-rt]
 version = "~0.7"

@@ -34,8 +34,10 @@ impl From<crate::W<BIASPROG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ADCBIASPROG` reader - Bias Programming Value of Analog ADC Block"]
+pub type ADCBIASPROG_R = crate::FieldReader<u8, ADCBIASPROG_A>;
 #[doc = "Bias Programming Value of Analog ADC Block\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADCBIASPROG_A {
     #[doc = "0: Normal power (use for 1Msps operation)"]
@@ -57,8 +59,6 @@ impl From<ADCBIASPROG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADCBIASPROG` reader - Bias Programming Value of Analog ADC Block"]
-pub type ADCBIASPROG_R = crate::FieldReader<u8, ADCBIASPROG_A>;
 impl ADCBIASPROG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -105,8 +105,9 @@ impl ADCBIASPROG_R {
     }
 }
 #[doc = "Field `ADCBIASPROG` writer - Bias Programming Value of Analog ADC Block"]
-pub type ADCBIASPROG_W<'a> = crate::FieldWriter<'a, u32, BIASPROG_SPEC, u8, ADCBIASPROG_A, 4, 0>;
-impl<'a> ADCBIASPROG_W<'a> {
+pub type ADCBIASPROG_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, BIASPROG_SPEC, u8, ADCBIASPROG_A, 4, O>;
+impl<'a, const O: u8> ADCBIASPROG_W<'a, O> {
     #[doc = "Normal power (use for 1Msps operation)"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -141,11 +142,11 @@ impl<'a> ADCBIASPROG_W<'a> {
 #[doc = "Field `VFAULTCLR` reader - Clear VREFOF Flag"]
 pub type VFAULTCLR_R = crate::BitReader<bool>;
 #[doc = "Field `VFAULTCLR` writer - Clear VREFOF Flag"]
-pub type VFAULTCLR_W<'a> = crate::BitWriter<'a, u32, BIASPROG_SPEC, bool, 12>;
+pub type VFAULTCLR_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASPROG_SPEC, bool, O>;
 #[doc = "Field `GPBIASACC` reader - Accuracy Setting for the System Bias During ADC Operation"]
 pub type GPBIASACC_R = crate::BitReader<bool>;
 #[doc = "Field `GPBIASACC` writer - Accuracy Setting for the System Bias During ADC Operation"]
-pub type GPBIASACC_W<'a> = crate::BitWriter<'a, u32, BIASPROG_SPEC, bool, 16>;
+pub type GPBIASACC_W<'a, const O: u8> = crate::BitWriter<'a, u32, BIASPROG_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:3 - Bias Programming Value of Analog ADC Block"]
     #[inline(always)]
@@ -166,17 +167,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Bias Programming Value of Analog ADC Block"]
     #[inline(always)]
-    pub fn adcbiasprog(&mut self) -> ADCBIASPROG_W {
+    #[must_use]
+    pub fn adcbiasprog(&mut self) -> ADCBIASPROG_W<0> {
         ADCBIASPROG_W::new(self)
     }
     #[doc = "Bit 12 - Clear VREFOF Flag"]
     #[inline(always)]
-    pub fn vfaultclr(&mut self) -> VFAULTCLR_W {
+    #[must_use]
+    pub fn vfaultclr(&mut self) -> VFAULTCLR_W<12> {
         VFAULTCLR_W::new(self)
     }
     #[doc = "Bit 16 - Accuracy Setting for the System Bias During ADC Operation"]
     #[inline(always)]
-    pub fn gpbiasacc(&mut self) -> GPBIASACC_W {
+    #[must_use]
+    pub fn gpbiasacc(&mut self) -> GPBIASACC_W<16> {
         GPBIASACC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -198,11 +202,10 @@ impl crate::Readable for BIASPROG_SPEC {
 #[doc = "`write(|w| ..)` method takes [biasprog::W](W) writer structure"]
 impl crate::Writable for BIASPROG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BIASPROG to value 0"]
 impl crate::Resettable for BIASPROG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

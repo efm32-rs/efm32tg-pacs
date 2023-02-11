@@ -82,8 +82,5 @@ impl crate::Readable for CHWAITSTATUS_SPEC {
 }
 #[doc = "`reset()` method sets CHWAITSTATUS to value 0xff"]
 impl crate::Resettable for CHWAITSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xff
-    }
+    const RESET_VALUE: Self::Ux = 0xff;
 }

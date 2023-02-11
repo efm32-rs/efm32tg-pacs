@@ -37,7 +37,7 @@ impl From<crate::W<MIR0_CMDREQ_SPEC>> for W {
 #[doc = "Field `MSGNUM` reader - Message Number"]
 pub type MSGNUM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MSGNUM` writer - Message Number"]
-pub type MSGNUM_W<'a> = crate::FieldWriter<'a, u32, MIR0_CMDREQ_SPEC, u8, u8, 6, 0>;
+pub type MSGNUM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MIR0_CMDREQ_SPEC, u8, u8, 6, O>;
 #[doc = "Field `BUSY` reader - Busy Flag"]
 pub type BUSY_R = crate::BitReader<bool>;
 impl R {
@@ -55,7 +55,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Message Number"]
     #[inline(always)]
-    pub fn msgnum(&mut self) -> MSGNUM_W {
+    #[must_use]
+    pub fn msgnum(&mut self) -> MSGNUM_W<0> {
         MSGNUM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -77,11 +78,10 @@ impl crate::Readable for MIR0_CMDREQ_SPEC {
 #[doc = "`write(|w| ..)` method takes [mir0_cmdreq::W](W) writer structure"]
 impl crate::Writable for MIR0_CMDREQ_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MIR0_CMDREQ to value 0x01"]
 impl crate::Resettable for MIR0_CMDREQ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

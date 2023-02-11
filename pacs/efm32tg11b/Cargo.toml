@@ -2,7 +2,7 @@
 name = "efm32tg11b-pac"
 description = "Peripheral access API for EFM32TG11B MCU (generated using svd2rust)"
 homepage = "https://github.com/efm32-rs/efm32tg-pacs"
-version = "0.1.1"
+version = "0.1.2"
 authors = [ "Vladimir Petrigo <vladimir.petrigo@gmail.com>",]
 license = "BSD-3-Clause"
 keywords = [ "no-std", "arm", "cortex-m", "efm32",]
@@ -24,6 +24,14 @@ efm32tg11b320 = []
 efm32tg11b340 = []
 efm32tg11b520 = []
 efm32tg11b540 = []
+
+[dependencies.portable-atomic]
+version = "~1"
+default-features = false
+
+[dependencies.critical-section]
+version = "~1"
+optional = true
 
 [dependencies.cortex-m-rt]
 version = "~0.7"

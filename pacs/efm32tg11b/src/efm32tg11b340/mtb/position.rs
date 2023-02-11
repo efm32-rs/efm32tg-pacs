@@ -37,11 +37,11 @@ impl From<crate::W<POSITION_SPEC>> for W {
 #[doc = "Field `WRAP` reader - Trace wrap bit."]
 pub type WRAP_R = crate::BitReader<bool>;
 #[doc = "Field `WRAP` writer - Trace wrap bit."]
-pub type WRAP_W<'a> = crate::BitWriter<'a, u32, POSITION_SPEC, bool, 2>;
+pub type WRAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, POSITION_SPEC, bool, O>;
 #[doc = "Field `POINTER` reader - Trace packet location pointer."]
 pub type POINTER_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `POINTER` writer - Trace packet location pointer."]
-pub type POINTER_W<'a> = crate::FieldWriter<'a, u32, POSITION_SPEC, u32, u32, 29, 3>;
+pub type POINTER_W<'a, const O: u8> = crate::FieldWriter<'a, u32, POSITION_SPEC, u32, u32, 29, O>;
 impl R {
     #[doc = "Bit 2 - Trace wrap bit."]
     #[inline(always)]
@@ -51,18 +51,20 @@ impl R {
     #[doc = "Bits 3:31 - Trace packet location pointer."]
     #[inline(always)]
     pub fn pointer(&self) -> POINTER_R {
-        POINTER_R::new(((self.bits >> 3) & 0x1fff_ffff) as u32)
+        POINTER_R::new((self.bits >> 3) & 0x1fff_ffff)
     }
 }
 impl W {
     #[doc = "Bit 2 - Trace wrap bit."]
     #[inline(always)]
-    pub fn wrap(&mut self) -> WRAP_W {
+    #[must_use]
+    pub fn wrap(&mut self) -> WRAP_W<2> {
         WRAP_W::new(self)
     }
     #[doc = "Bits 3:31 - Trace packet location pointer."]
     #[inline(always)]
-    pub fn pointer(&mut self) -> POINTER_W {
+    #[must_use]
+    pub fn pointer(&mut self) -> POINTER_W<3> {
         POINTER_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for POSITION_SPEC {
 #[doc = "`write(|w| ..)` method takes [position::W](W) writer structure"]
 impl crate::Writable for POSITION_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets POSITION to value 0"]
 impl crate::Resettable for POSITION_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

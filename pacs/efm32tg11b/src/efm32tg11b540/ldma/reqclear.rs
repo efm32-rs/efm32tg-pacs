@@ -20,11 +20,12 @@ impl From<crate::W<REQCLEAR_SPEC>> for W {
     }
 }
 #[doc = "Field `REQCLEAR` writer - DMA Request Clear"]
-pub type REQCLEAR_W<'a> = crate::FieldWriter<'a, u32, REQCLEAR_SPEC, u8, u8, 8, 0>;
+pub type REQCLEAR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REQCLEAR_SPEC, u8, u8, 8, O>;
 impl W {
     #[doc = "Bits 0:7 - DMA Request Clear"]
     #[inline(always)]
-    pub fn reqclear(&mut self) -> REQCLEAR_W {
+    #[must_use]
+    pub fn reqclear(&mut self) -> REQCLEAR_W<0> {
         REQCLEAR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -42,11 +43,10 @@ impl crate::RegisterSpec for REQCLEAR_SPEC {
 #[doc = "`write(|w| ..)` method takes [reqclear::W](W) writer structure"]
 impl crate::Writable for REQCLEAR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets REQCLEAR to value 0"]
 impl crate::Resettable for REQCLEAR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

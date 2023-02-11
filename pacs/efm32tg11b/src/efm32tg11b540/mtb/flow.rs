@@ -37,15 +37,15 @@ impl From<crate::W<FLOW_SPEC>> for W {
 #[doc = "Field `AUTOSTOP` reader - AUTOSTOP enable."]
 pub type AUTOSTOP_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOSTOP` writer - AUTOSTOP enable."]
-pub type AUTOSTOP_W<'a> = crate::BitWriter<'a, u32, FLOW_SPEC, bool, 0>;
+pub type AUTOSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLOW_SPEC, bool, O>;
 #[doc = "Field `AUTOHALT` reader - AUTOHALT enable."]
 pub type AUTOHALT_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOHALT` writer - AUTOHALT enable."]
-pub type AUTOHALT_W<'a> = crate::BitWriter<'a, u32, FLOW_SPEC, bool, 1>;
+pub type AUTOHALT_W<'a, const O: u8> = crate::BitWriter<'a, u32, FLOW_SPEC, bool, O>;
 #[doc = "Field `WATERMARK` reader - WATERMARK value."]
 pub type WATERMARK_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `WATERMARK` writer - WATERMARK value."]
-pub type WATERMARK_W<'a> = crate::FieldWriter<'a, u32, FLOW_SPEC, u32, u32, 29, 3>;
+pub type WATERMARK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FLOW_SPEC, u32, u32, 29, O>;
 impl R {
     #[doc = "Bit 0 - AUTOSTOP enable."]
     #[inline(always)]
@@ -60,23 +60,26 @@ impl R {
     #[doc = "Bits 3:31 - WATERMARK value."]
     #[inline(always)]
     pub fn watermark(&self) -> WATERMARK_R {
-        WATERMARK_R::new(((self.bits >> 3) & 0x1fff_ffff) as u32)
+        WATERMARK_R::new((self.bits >> 3) & 0x1fff_ffff)
     }
 }
 impl W {
     #[doc = "Bit 0 - AUTOSTOP enable."]
     #[inline(always)]
-    pub fn autostop(&mut self) -> AUTOSTOP_W {
+    #[must_use]
+    pub fn autostop(&mut self) -> AUTOSTOP_W<0> {
         AUTOSTOP_W::new(self)
     }
     #[doc = "Bit 1 - AUTOHALT enable."]
     #[inline(always)]
-    pub fn autohalt(&mut self) -> AUTOHALT_W {
+    #[must_use]
+    pub fn autohalt(&mut self) -> AUTOHALT_W<1> {
         AUTOHALT_W::new(self)
     }
     #[doc = "Bits 3:31 - WATERMARK value."]
     #[inline(always)]
-    pub fn watermark(&mut self) -> WATERMARK_W {
+    #[must_use]
+    pub fn watermark(&mut self) -> WATERMARK_W<3> {
         WATERMARK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for FLOW_SPEC {
 #[doc = "`write(|w| ..)` method takes [flow::W](W) writer structure"]
 impl crate::Writable for FLOW_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FLOW to value 0"]
 impl crate::Resettable for FLOW_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

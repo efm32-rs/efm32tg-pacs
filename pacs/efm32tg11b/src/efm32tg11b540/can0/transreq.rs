@@ -13,8 +13,10 @@ impl From<crate::R<TRANSREQ_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `TXRQSTOUT` reader - Transmission Request Bits (Of All Message Objects)"]
+pub type TXRQSTOUT_R = crate::FieldReader<u32, TXRQSTOUT_A>;
 #[doc = "Transmission Request Bits (Of All Message Objects)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u32)]
 pub enum TXRQSTOUT_A {
     #[doc = "0: This Message Object is not waiting for transmission."]
@@ -28,8 +30,6 @@ impl From<TXRQSTOUT_A> for u32 {
         variant as _
     }
 }
-#[doc = "Field `TXRQSTOUT` reader - Transmission Request Bits (Of All Message Objects)"]
-pub type TXRQSTOUT_R = crate::FieldReader<u32, TXRQSTOUT_A>;
 impl TXRQSTOUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -69,8 +69,5 @@ impl crate::Readable for TRANSREQ_SPEC {
 }
 #[doc = "`reset()` method sets TRANSREQ to value 0"]
 impl crate::Resettable for TRANSREQ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,11 +20,12 @@ impl From<crate::W<SCANFIFOCLEAR_SPEC>> for W {
     }
 }
 #[doc = "Field `SCANFIFOCLEAR` writer - Clear Scan FIFO Content"]
-pub type SCANFIFOCLEAR_W<'a> = crate::BitWriter<'a, u32, SCANFIFOCLEAR_SPEC, bool, 0>;
+pub type SCANFIFOCLEAR_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCANFIFOCLEAR_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Clear Scan FIFO Content"]
     #[inline(always)]
-    pub fn scanfifoclear(&mut self) -> SCANFIFOCLEAR_W {
+    #[must_use]
+    pub fn scanfifoclear(&mut self) -> SCANFIFOCLEAR_W<0> {
         SCANFIFOCLEAR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -42,11 +43,10 @@ impl crate::RegisterSpec for SCANFIFOCLEAR_SPEC {
 #[doc = "`write(|w| ..)` method takes [scanfifoclear::W](W) writer structure"]
 impl crate::Writable for SCANFIFOCLEAR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCANFIFOCLEAR to value 0"]
 impl crate::Resettable for SCANFIFOCLEAR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

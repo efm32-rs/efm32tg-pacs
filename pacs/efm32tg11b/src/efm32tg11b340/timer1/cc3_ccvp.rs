@@ -33,8 +33,5 @@ impl crate::Readable for CC3_CCVP_SPEC {
 }
 #[doc = "`reset()` method sets CC3_CCVP to value 0"]
 impl crate::Resettable for CC3_CCVP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

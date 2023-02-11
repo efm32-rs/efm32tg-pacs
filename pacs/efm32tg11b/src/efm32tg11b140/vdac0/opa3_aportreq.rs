@@ -82,8 +82,5 @@ impl crate::Readable for OPA3_APORTREQ_SPEC {
 }
 #[doc = "`reset()` method sets OPA3_APORTREQ to value 0"]
 impl crate::Resettable for OPA3_APORTREQ_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

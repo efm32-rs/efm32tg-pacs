@@ -34,8 +34,10 @@ impl From<crate::W<HFXOCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - HFXO Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "HFXO Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: 4 MHz - 48 MHz crystal oscillator"]
@@ -53,8 +55,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - HFXO Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - HFXO Mode"]
-pub type MODE_W<'a> = crate::FieldWriterSafe<'a, u32, HFXOCTRL_SPEC, u8, MODE_A, 2, 0>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, HFXOCTRL_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "4 MHz - 48 MHz crystal oscillator"]
     #[inline(always)]
     pub fn xtal(self) -> &'a mut W {
@@ -112,8 +112,10 @@ impl<'a> MODE_W<'a> {
         self.variant(MODE_A::DIGEXTCLK)
     }
 }
+#[doc = "Field `PEAKDETMODE` reader - HFXO Automatic Peak Detection Mode"]
+pub type PEAKDETMODE_R = crate::FieldReader<u8, PEAKDETMODE_A>;
 #[doc = "HFXO Automatic Peak Detection Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PEAKDETMODE_A {
     #[doc = "0: Automatic control of HFXO peak detection sequence. Only performs peak detection on initial HFXO startup. CMU_CMD HFXOPEAKDETSTART allowed to be used after HFXORDY=1."]
@@ -131,8 +133,6 @@ impl From<PEAKDETMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PEAKDETMODE` reader - HFXO Automatic Peak Detection Mode"]
-pub type PEAKDETMODE_R = crate::FieldReader<u8, PEAKDETMODE_A>;
 impl PEAKDETMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -167,9 +167,9 @@ impl PEAKDETMODE_R {
     }
 }
 #[doc = "Field `PEAKDETMODE` writer - HFXO Automatic Peak Detection Mode"]
-pub type PEAKDETMODE_W<'a> =
-    crate::FieldWriterSafe<'a, u32, HFXOCTRL_SPEC, u8, PEAKDETMODE_A, 2, 4>;
-impl<'a> PEAKDETMODE_W<'a> {
+pub type PEAKDETMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, HFXOCTRL_SPEC, u8, PEAKDETMODE_A, 2, O>;
+impl<'a, const O: u8> PEAKDETMODE_W<'a, O> {
     #[doc = "Automatic control of HFXO peak detection sequence. Only performs peak detection on initial HFXO startup. CMU_CMD HFXOPEAKDETSTART allowed to be used after HFXORDY=1."]
     #[inline(always)]
     pub fn oncecmd(self) -> &'a mut W {
@@ -191,8 +191,10 @@ impl<'a> PEAKDETMODE_W<'a> {
         self.variant(PEAKDETMODE_A::MANUAL)
     }
 }
+#[doc = "Field `LFTIMEOUT` reader - HFXO Low Frequency Timeout"]
+pub type LFTIMEOUT_R = crate::FieldReader<u8, LFTIMEOUT_A>;
 #[doc = "HFXO Low Frequency Timeout\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LFTIMEOUT_A {
     #[doc = "0: Timeout period of 0 cycles (disabled)"]
@@ -218,8 +220,6 @@ impl From<LFTIMEOUT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LFTIMEOUT` reader - HFXO Low Frequency Timeout"]
-pub type LFTIMEOUT_R = crate::FieldReader<u8, LFTIMEOUT_A>;
 impl LFTIMEOUT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -278,8 +278,9 @@ impl LFTIMEOUT_R {
     }
 }
 #[doc = "Field `LFTIMEOUT` writer - HFXO Low Frequency Timeout"]
-pub type LFTIMEOUT_W<'a> = crate::FieldWriterSafe<'a, u32, HFXOCTRL_SPEC, u8, LFTIMEOUT_A, 3, 24>;
-impl<'a> LFTIMEOUT_W<'a> {
+pub type LFTIMEOUT_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, HFXOCTRL_SPEC, u8, LFTIMEOUT_A, 3, O>;
+impl<'a, const O: u8> LFTIMEOUT_W<'a, O> {
     #[doc = "Timeout period of 0 cycles (disabled)"]
     #[inline(always)]
     pub fn _0cycles(self) -> &'a mut W {
@@ -324,11 +325,11 @@ impl<'a> LFTIMEOUT_W<'a> {
 #[doc = "Field `AUTOSTARTEM0EM1` reader - Automatically Start of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
 pub type AUTOSTARTEM0EM1_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOSTARTEM0EM1` writer - Automatically Start of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
-pub type AUTOSTARTEM0EM1_W<'a> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, 28>;
+pub type AUTOSTARTEM0EM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, O>;
 #[doc = "Field `AUTOSTARTSELEM0EM1` reader - Automatically Start and Select of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
 pub type AUTOSTARTSELEM0EM1_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOSTARTSELEM0EM1` writer - Automatically Start and Select of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
-pub type AUTOSTARTSELEM0EM1_W<'a> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, 29>;
+pub type AUTOSTARTSELEM0EM1_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFXOCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - HFXO Mode"]
     #[inline(always)]
@@ -359,27 +360,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - HFXO Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
         MODE_W::new(self)
     }
     #[doc = "Bits 4:5 - HFXO Automatic Peak Detection Mode"]
     #[inline(always)]
-    pub fn peakdetmode(&mut self) -> PEAKDETMODE_W {
+    #[must_use]
+    pub fn peakdetmode(&mut self) -> PEAKDETMODE_W<4> {
         PEAKDETMODE_W::new(self)
     }
     #[doc = "Bits 24:26 - HFXO Low Frequency Timeout"]
     #[inline(always)]
-    pub fn lftimeout(&mut self) -> LFTIMEOUT_W {
+    #[must_use]
+    pub fn lftimeout(&mut self) -> LFTIMEOUT_W<24> {
         LFTIMEOUT_W::new(self)
     }
     #[doc = "Bit 28 - Automatically Start of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
     #[inline(always)]
-    pub fn autostartem0em1(&mut self) -> AUTOSTARTEM0EM1_W {
+    #[must_use]
+    pub fn autostartem0em1(&mut self) -> AUTOSTARTEM0EM1_W<28> {
         AUTOSTARTEM0EM1_W::new(self)
     }
     #[doc = "Bit 29 - Automatically Start and Select of HFXO Upon EM0/EM1 Entry From EM2/EM3"]
     #[inline(always)]
-    pub fn autostartselem0em1(&mut self) -> AUTOSTARTSELEM0EM1_W {
+    #[must_use]
+    pub fn autostartselem0em1(&mut self) -> AUTOSTARTSELEM0EM1_W<29> {
         AUTOSTARTSELEM0EM1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -401,11 +407,10 @@ impl crate::Readable for HFXOCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hfxoctrl::W](W) writer structure"]
 impl crate::Writable for HFXOCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HFXOCTRL to value 0"]
 impl crate::Resettable for HFXOCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

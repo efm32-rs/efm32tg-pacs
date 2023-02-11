@@ -13,8 +13,10 @@ impl From<crate::R<DSTATUS_SPEC>> for R {
         R(reader)
     }
 }
+#[doc = "Field `DATA0ZERO` reader - Data 0 Zero"]
+pub type DATA0ZERO_R = crate::FieldReader<u8, DATA0ZERO_A>;
 #[doc = "Data 0 Zero\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DATA0ZERO_A {
     #[doc = "1: In DATA0 bits 0 to 31 are all zero."]
@@ -32,8 +34,6 @@ impl From<DATA0ZERO_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DATA0ZERO` reader - Data 0 Zero"]
-pub type DATA0ZERO_R = crate::FieldReader<u8, DATA0ZERO_A>;
 impl DATA0ZERO_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -113,8 +113,5 @@ impl crate::Readable for DSTATUS_SPEC {
 }
 #[doc = "`reset()` method sets DSTATUS to value 0"]
 impl crate::Resettable for DSTATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

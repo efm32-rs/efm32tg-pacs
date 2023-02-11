@@ -20,60 +20,68 @@ impl From<crate::W<CHREQMASKC_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0REQMASKC` writer - Channel 0 Request Mask Clear"]
-pub type CH0REQMASKC_W<'a> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, 0>;
+pub type CH0REQMASKC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, O>;
 #[doc = "Field `CH1REQMASKC` writer - Channel 1 Request Mask Clear"]
-pub type CH1REQMASKC_W<'a> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, 1>;
+pub type CH1REQMASKC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, O>;
 #[doc = "Field `CH2REQMASKC` writer - Channel 2 Request Mask Clear"]
-pub type CH2REQMASKC_W<'a> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, 2>;
+pub type CH2REQMASKC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, O>;
 #[doc = "Field `CH3REQMASKC` writer - Channel 3 Request Mask Clear"]
-pub type CH3REQMASKC_W<'a> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, 3>;
+pub type CH3REQMASKC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, O>;
 #[doc = "Field `CH4REQMASKC` writer - Channel 4 Request Mask Clear"]
-pub type CH4REQMASKC_W<'a> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, 4>;
+pub type CH4REQMASKC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, O>;
 #[doc = "Field `CH5REQMASKC` writer - Channel 5 Request Mask Clear"]
-pub type CH5REQMASKC_W<'a> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, 5>;
+pub type CH5REQMASKC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, O>;
 #[doc = "Field `CH6REQMASKC` writer - Channel 6 Request Mask Clear"]
-pub type CH6REQMASKC_W<'a> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, 6>;
+pub type CH6REQMASKC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, O>;
 #[doc = "Field `CH7REQMASKC` writer - Channel 7 Request Mask Clear"]
-pub type CH7REQMASKC_W<'a> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, 7>;
+pub type CH7REQMASKC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHREQMASKC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Request Mask Clear"]
     #[inline(always)]
-    pub fn ch0reqmaskc(&mut self) -> CH0REQMASKC_W {
+    #[must_use]
+    pub fn ch0reqmaskc(&mut self) -> CH0REQMASKC_W<0> {
         CH0REQMASKC_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Request Mask Clear"]
     #[inline(always)]
-    pub fn ch1reqmaskc(&mut self) -> CH1REQMASKC_W {
+    #[must_use]
+    pub fn ch1reqmaskc(&mut self) -> CH1REQMASKC_W<1> {
         CH1REQMASKC_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Request Mask Clear"]
     #[inline(always)]
-    pub fn ch2reqmaskc(&mut self) -> CH2REQMASKC_W {
+    #[must_use]
+    pub fn ch2reqmaskc(&mut self) -> CH2REQMASKC_W<2> {
         CH2REQMASKC_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Request Mask Clear"]
     #[inline(always)]
-    pub fn ch3reqmaskc(&mut self) -> CH3REQMASKC_W {
+    #[must_use]
+    pub fn ch3reqmaskc(&mut self) -> CH3REQMASKC_W<3> {
         CH3REQMASKC_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 Request Mask Clear"]
     #[inline(always)]
-    pub fn ch4reqmaskc(&mut self) -> CH4REQMASKC_W {
+    #[must_use]
+    pub fn ch4reqmaskc(&mut self) -> CH4REQMASKC_W<4> {
         CH4REQMASKC_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 Request Mask Clear"]
     #[inline(always)]
-    pub fn ch5reqmaskc(&mut self) -> CH5REQMASKC_W {
+    #[must_use]
+    pub fn ch5reqmaskc(&mut self) -> CH5REQMASKC_W<5> {
         CH5REQMASKC_W::new(self)
     }
     #[doc = "Bit 6 - Channel 6 Request Mask Clear"]
     #[inline(always)]
-    pub fn ch6reqmaskc(&mut self) -> CH6REQMASKC_W {
+    #[must_use]
+    pub fn ch6reqmaskc(&mut self) -> CH6REQMASKC_W<6> {
         CH6REQMASKC_W::new(self)
     }
     #[doc = "Bit 7 - Channel 7 Request Mask Clear"]
     #[inline(always)]
-    pub fn ch7reqmaskc(&mut self) -> CH7REQMASKC_W {
+    #[must_use]
+    pub fn ch7reqmaskc(&mut self) -> CH7REQMASKC_W<7> {
         CH7REQMASKC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -91,11 +99,10 @@ impl crate::RegisterSpec for CHREQMASKC_SPEC {
 #[doc = "`write(|w| ..)` method takes [chreqmaskc::W](W) writer structure"]
 impl crate::Writable for CHREQMASKC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHREQMASKC to value 0"]
 impl crate::Resettable for CHREQMASKC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<HFEXPPRESC_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PRESC` reader - HFEXPCLK Prescaler"]
+pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 #[doc = "HFEXPCLK Prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRESC_A {
     #[doc = "0: `0`"]
@@ -47,8 +49,6 @@ impl From<PRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRESC` reader - HFEXPCLK Prescaler"]
-pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 impl PRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -65,8 +65,8 @@ impl PRESC_R {
     }
 }
 #[doc = "Field `PRESC` writer - HFEXPCLK Prescaler"]
-pub type PRESC_W<'a> = crate::FieldWriter<'a, u32, HFEXPPRESC_SPEC, u8, PRESC_A, 5, 8>;
-impl<'a> PRESC_W<'a> {
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFEXPPRESC_SPEC, u8, PRESC_A, 5, O>;
+impl<'a, const O: u8> PRESC_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn nodivision(self) -> &'a mut W {
@@ -83,7 +83,8 @@ impl R {
 impl W {
     #[doc = "Bits 8:12 - HFEXPCLK Prescaler"]
     #[inline(always)]
-    pub fn presc(&mut self) -> PRESC_W {
+    #[must_use]
+    pub fn presc(&mut self) -> PRESC_W<8> {
         PRESC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -105,11 +106,10 @@ impl crate::Readable for HFEXPPRESC_SPEC {
 #[doc = "`write(|w| ..)` method takes [hfexppresc::W](W) writer structure"]
 impl crate::Writable for HFEXPPRESC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HFEXPPRESC to value 0"]
 impl crate::Resettable for HFEXPPRESC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

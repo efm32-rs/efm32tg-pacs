@@ -37,25 +37,27 @@ impl From<crate::W<HFRCOCTRL_SPEC>> for W {
 #[doc = "Field `TUNING` reader - HFRCO Tuning Value"]
 pub type TUNING_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TUNING` writer - HFRCO Tuning Value"]
-pub type TUNING_W<'a> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 7, 0>;
+pub type TUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 7, O>;
 #[doc = "Field `FINETUNING` reader - HFRCO Fine Tuning Value"]
 pub type FINETUNING_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FINETUNING` writer - HFRCO Fine Tuning Value"]
-pub type FINETUNING_W<'a> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 6, 8>;
+pub type FINETUNING_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 6, O>;
 #[doc = "Field `FREQRANGE` reader - HFRCO Frequency Range"]
 pub type FREQRANGE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `FREQRANGE` writer - HFRCO Frequency Range"]
-pub type FREQRANGE_W<'a> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 5, 16>;
+pub type FREQRANGE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 5, O>;
 #[doc = "Field `CMPBIAS` reader - HFRCO Comparator Bias Current"]
 pub type CMPBIAS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CMPBIAS` writer - HFRCO Comparator Bias Current"]
-pub type CMPBIAS_W<'a> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 3, 21>;
+pub type CMPBIAS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `LDOHP` reader - HFRCO LDO High Power Mode"]
 pub type LDOHP_R = crate::BitReader<bool>;
 #[doc = "Field `LDOHP` writer - HFRCO LDO High Power Mode"]
-pub type LDOHP_W<'a> = crate::BitWriter<'a, u32, HFRCOCTRL_SPEC, bool, 24>;
+pub type LDOHP_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFRCOCTRL_SPEC, bool, O>;
+#[doc = "Field `CLKDIV` reader - Locally Divide HFRCO Clock Output"]
+pub type CLKDIV_R = crate::FieldReader<u8, CLKDIV_A>;
 #[doc = "Locally Divide HFRCO Clock Output\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKDIV_A {
     #[doc = "0: Divide by 1."]
@@ -71,8 +73,6 @@ impl From<CLKDIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLKDIV` reader - Locally Divide HFRCO Clock Output"]
-pub type CLKDIV_R = crate::FieldReader<u8, CLKDIV_A>;
 impl CLKDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -101,8 +101,9 @@ impl CLKDIV_R {
     }
 }
 #[doc = "Field `CLKDIV` writer - Locally Divide HFRCO Clock Output"]
-pub type CLKDIV_W<'a> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, CLKDIV_A, 2, 25>;
-impl<'a> CLKDIV_W<'a> {
+pub type CLKDIV_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, CLKDIV_A, 2, O>;
+impl<'a, const O: u8> CLKDIV_W<'a, O> {
     #[doc = "Divide by 1."]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -122,11 +123,11 @@ impl<'a> CLKDIV_W<'a> {
 #[doc = "Field `FINETUNINGEN` reader - Enable Reference for Fine Tuning"]
 pub type FINETUNINGEN_R = crate::BitReader<bool>;
 #[doc = "Field `FINETUNINGEN` writer - Enable Reference for Fine Tuning"]
-pub type FINETUNINGEN_W<'a> = crate::BitWriter<'a, u32, HFRCOCTRL_SPEC, bool, 27>;
+pub type FINETUNINGEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, HFRCOCTRL_SPEC, bool, O>;
 #[doc = "Field `VREFTC` reader - HFRCO Temperature Coefficient Trim on Comparator Reference"]
 pub type VREFTC_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VREFTC` writer - HFRCO Temperature Coefficient Trim on Comparator Reference"]
-pub type VREFTC_W<'a> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 4, 28>;
+pub type VREFTC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFRCOCTRL_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:6 - HFRCO Tuning Value"]
     #[inline(always)]
@@ -172,42 +173,50 @@ impl R {
 impl W {
     #[doc = "Bits 0:6 - HFRCO Tuning Value"]
     #[inline(always)]
-    pub fn tuning(&mut self) -> TUNING_W {
+    #[must_use]
+    pub fn tuning(&mut self) -> TUNING_W<0> {
         TUNING_W::new(self)
     }
     #[doc = "Bits 8:13 - HFRCO Fine Tuning Value"]
     #[inline(always)]
-    pub fn finetuning(&mut self) -> FINETUNING_W {
+    #[must_use]
+    pub fn finetuning(&mut self) -> FINETUNING_W<8> {
         FINETUNING_W::new(self)
     }
     #[doc = "Bits 16:20 - HFRCO Frequency Range"]
     #[inline(always)]
-    pub fn freqrange(&mut self) -> FREQRANGE_W {
+    #[must_use]
+    pub fn freqrange(&mut self) -> FREQRANGE_W<16> {
         FREQRANGE_W::new(self)
     }
     #[doc = "Bits 21:23 - HFRCO Comparator Bias Current"]
     #[inline(always)]
-    pub fn cmpbias(&mut self) -> CMPBIAS_W {
+    #[must_use]
+    pub fn cmpbias(&mut self) -> CMPBIAS_W<21> {
         CMPBIAS_W::new(self)
     }
     #[doc = "Bit 24 - HFRCO LDO High Power Mode"]
     #[inline(always)]
-    pub fn ldohp(&mut self) -> LDOHP_W {
+    #[must_use]
+    pub fn ldohp(&mut self) -> LDOHP_W<24> {
         LDOHP_W::new(self)
     }
     #[doc = "Bits 25:26 - Locally Divide HFRCO Clock Output"]
     #[inline(always)]
-    pub fn clkdiv(&mut self) -> CLKDIV_W {
+    #[must_use]
+    pub fn clkdiv(&mut self) -> CLKDIV_W<25> {
         CLKDIV_W::new(self)
     }
     #[doc = "Bit 27 - Enable Reference for Fine Tuning"]
     #[inline(always)]
-    pub fn finetuningen(&mut self) -> FINETUNINGEN_W {
+    #[must_use]
+    pub fn finetuningen(&mut self) -> FINETUNINGEN_W<27> {
         FINETUNINGEN_W::new(self)
     }
     #[doc = "Bits 28:31 - HFRCO Temperature Coefficient Trim on Comparator Reference"]
     #[inline(always)]
-    pub fn vreftc(&mut self) -> VREFTC_W {
+    #[must_use]
+    pub fn vreftc(&mut self) -> VREFTC_W<28> {
         VREFTC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -229,11 +238,10 @@ impl crate::Readable for HFRCOCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hfrcoctrl::W](W) writer structure"]
 impl crate::Writable for HFRCOCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HFRCOCTRL to value 0xb148_1f7f"]
 impl crate::Resettable for HFRCOCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xb148_1f7f
-    }
+    const RESET_VALUE: Self::Ux = 0xb148_1f7f;
 }

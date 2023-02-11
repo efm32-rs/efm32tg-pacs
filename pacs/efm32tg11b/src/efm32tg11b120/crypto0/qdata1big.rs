@@ -37,7 +37,8 @@ impl From<crate::W<QDATA1BIG_SPEC>> for W {
 #[doc = "Field `QDATA1BIG` reader - Quad Data 1 Big Endian Access"]
 pub type QDATA1BIG_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `QDATA1BIG` writer - Quad Data 1 Big Endian Access"]
-pub type QDATA1BIG_W<'a> = crate::FieldWriter<'a, u32, QDATA1BIG_SPEC, u32, u32, 32, 0>;
+pub type QDATA1BIG_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, QDATA1BIG_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Quad Data 1 Big Endian Access"]
     #[inline(always)]
@@ -48,7 +49,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Quad Data 1 Big Endian Access"]
     #[inline(always)]
-    pub fn qdata1big(&mut self) -> QDATA1BIG_W {
+    #[must_use]
+    pub fn qdata1big(&mut self) -> QDATA1BIG_W<0> {
         QDATA1BIG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +72,10 @@ impl crate::Readable for QDATA1BIG_SPEC {
 #[doc = "`write(|w| ..)` method takes [qdata1big::W](W) writer structure"]
 impl crate::Writable for QDATA1BIG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets QDATA1BIG to value 0"]
 impl crate::Resettable for QDATA1BIG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

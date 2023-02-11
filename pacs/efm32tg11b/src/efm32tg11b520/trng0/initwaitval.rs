@@ -37,7 +37,7 @@ impl From<crate::W<INITWAITVAL_SPEC>> for W {
 #[doc = "Field `VALUE` reader - Wait counter value"]
 pub type VALUE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `VALUE` writer - Wait counter value"]
-pub type VALUE_W<'a> = crate::FieldWriter<'a, u32, INITWAITVAL_SPEC, u8, u8, 8, 0>;
+pub type VALUE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, INITWAITVAL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Wait counter value"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Wait counter value"]
     #[inline(always)]
-    pub fn value(&mut self) -> VALUE_W {
+    #[must_use]
+    pub fn value(&mut self) -> VALUE_W<0> {
         VALUE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for INITWAITVAL_SPEC {
 #[doc = "`write(|w| ..)` method takes [initwaitval::W](W) writer structure"]
 impl crate::Writable for INITWAITVAL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets INITWAITVAL to value 0xff"]
 impl crate::Resettable for INITWAITVAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xff
-    }
+    const RESET_VALUE: Self::Ux = 0xff;
 }

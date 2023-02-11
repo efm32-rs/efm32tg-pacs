@@ -37,11 +37,11 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `DONE` reader - DONE Interrupt Enable"]
 pub type DONE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DONE` writer - DONE Interrupt Enable"]
-pub type DONE_W<'a> = crate::FieldWriter<'a, u32, IEN_SPEC, u8, u8, 8, 0>;
+pub type DONE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IEN_SPEC, u8, u8, 8, O>;
 #[doc = "Field `ERROR` reader - ERROR Interrupt Enable"]
 pub type ERROR_R = crate::BitReader<bool>;
 #[doc = "Field `ERROR` writer - ERROR Interrupt Enable"]
-pub type ERROR_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 31>;
+pub type ERROR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - DONE Interrupt Enable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - DONE Interrupt Enable"]
     #[inline(always)]
-    pub fn done(&mut self) -> DONE_W {
+    #[must_use]
+    pub fn done(&mut self) -> DONE_W<0> {
         DONE_W::new(self)
     }
     #[doc = "Bit 31 - ERROR Interrupt Enable"]
     #[inline(always)]
-    pub fn error(&mut self) -> ERROR_W {
+    #[must_use]
+    pub fn error(&mut self) -> ERROR_W<31> {
         ERROR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

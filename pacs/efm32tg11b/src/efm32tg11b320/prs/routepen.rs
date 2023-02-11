@@ -37,35 +37,35 @@ impl From<crate::W<ROUTEPEN_SPEC>> for W {
 #[doc = "Field `CH0PEN` reader - CH0 Pin Enable"]
 pub type CH0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH0PEN` writer - CH0 Pin Enable"]
-pub type CH0PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 0>;
+pub type CH0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CH1PEN` reader - CH1 Pin Enable"]
 pub type CH1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH1PEN` writer - CH1 Pin Enable"]
-pub type CH1PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 1>;
+pub type CH1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CH2PEN` reader - CH2 Pin Enable"]
 pub type CH2PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH2PEN` writer - CH2 Pin Enable"]
-pub type CH2PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 2>;
+pub type CH2PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CH3PEN` reader - CH3 Pin Enable"]
 pub type CH3PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH3PEN` writer - CH3 Pin Enable"]
-pub type CH3PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 3>;
+pub type CH3PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CH4PEN` reader - CH4 Pin Enable"]
 pub type CH4PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH4PEN` writer - CH4 Pin Enable"]
-pub type CH4PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 4>;
+pub type CH4PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CH5PEN` reader - CH5 Pin Enable"]
 pub type CH5PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH5PEN` writer - CH5 Pin Enable"]
-pub type CH5PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 5>;
+pub type CH5PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CH6PEN` reader - CH6 Pin Enable"]
 pub type CH6PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH6PEN` writer - CH6 Pin Enable"]
-pub type CH6PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 6>;
+pub type CH6PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CH7PEN` reader - CH7 Pin Enable"]
 pub type CH7PEN_R = crate::BitReader<bool>;
 #[doc = "Field `CH7PEN` writer - CH7 Pin Enable"]
-pub type CH7PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 7>;
+pub type CH7PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - CH0 Pin Enable"]
     #[inline(always)]
@@ -111,42 +111,50 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CH0 Pin Enable"]
     #[inline(always)]
-    pub fn ch0pen(&mut self) -> CH0PEN_W {
+    #[must_use]
+    pub fn ch0pen(&mut self) -> CH0PEN_W<0> {
         CH0PEN_W::new(self)
     }
     #[doc = "Bit 1 - CH1 Pin Enable"]
     #[inline(always)]
-    pub fn ch1pen(&mut self) -> CH1PEN_W {
+    #[must_use]
+    pub fn ch1pen(&mut self) -> CH1PEN_W<1> {
         CH1PEN_W::new(self)
     }
     #[doc = "Bit 2 - CH2 Pin Enable"]
     #[inline(always)]
-    pub fn ch2pen(&mut self) -> CH2PEN_W {
+    #[must_use]
+    pub fn ch2pen(&mut self) -> CH2PEN_W<2> {
         CH2PEN_W::new(self)
     }
     #[doc = "Bit 3 - CH3 Pin Enable"]
     #[inline(always)]
-    pub fn ch3pen(&mut self) -> CH3PEN_W {
+    #[must_use]
+    pub fn ch3pen(&mut self) -> CH3PEN_W<3> {
         CH3PEN_W::new(self)
     }
     #[doc = "Bit 4 - CH4 Pin Enable"]
     #[inline(always)]
-    pub fn ch4pen(&mut self) -> CH4PEN_W {
+    #[must_use]
+    pub fn ch4pen(&mut self) -> CH4PEN_W<4> {
         CH4PEN_W::new(self)
     }
     #[doc = "Bit 5 - CH5 Pin Enable"]
     #[inline(always)]
-    pub fn ch5pen(&mut self) -> CH5PEN_W {
+    #[must_use]
+    pub fn ch5pen(&mut self) -> CH5PEN_W<5> {
         CH5PEN_W::new(self)
     }
     #[doc = "Bit 6 - CH6 Pin Enable"]
     #[inline(always)]
-    pub fn ch6pen(&mut self) -> CH6PEN_W {
+    #[must_use]
+    pub fn ch6pen(&mut self) -> CH6PEN_W<6> {
         CH6PEN_W::new(self)
     }
     #[doc = "Bit 7 - CH7 Pin Enable"]
     #[inline(always)]
-    pub fn ch7pen(&mut self) -> CH7PEN_W {
+    #[must_use]
+    pub fn ch7pen(&mut self) -> CH7PEN_W<7> {
         CH7PEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -168,11 +176,10 @@ impl crate::Readable for ROUTEPEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [routepen::W](W) writer structure"]
 impl crate::Writable for ROUTEPEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTEPEN to value 0"]
 impl crate::Resettable for ROUTEPEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<READCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MODE` reader - Read Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Read Mode\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Zero wait-states inserted in fetch or read transfers."]
@@ -53,8 +55,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - Read Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Read Mode"]
-pub type MODE_W<'a> = crate::FieldWriter<'a, u32, READCTRL_SPEC, u8, MODE_A, 3, 0>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, READCTRL_SPEC, u8, MODE_A, 3, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Zero wait-states inserted in fetch or read transfers."]
     #[inline(always)]
     pub fn ws0(self) -> &'a mut W {
@@ -115,15 +115,15 @@ impl<'a> MODE_W<'a> {
 #[doc = "Field `IFCDIS` reader - Internal Flash Cache Disable"]
 pub type IFCDIS_R = crate::BitReader<bool>;
 #[doc = "Field `IFCDIS` writer - Internal Flash Cache Disable"]
-pub type IFCDIS_W<'a> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, 3>;
+pub type IFCDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
 #[doc = "Field `AIDIS` reader - Automatic Invalidate Disable"]
 pub type AIDIS_R = crate::BitReader<bool>;
 #[doc = "Field `AIDIS` writer - Automatic Invalidate Disable"]
-pub type AIDIS_W<'a> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, 4>;
+pub type AIDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
 #[doc = "Field `ICCDIS` reader - Interrupt Context Cache Disable"]
 pub type ICCDIS_R = crate::BitReader<bool>;
 #[doc = "Field `ICCDIS` writer - Interrupt Context Cache Disable"]
-pub type ICCDIS_W<'a> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, 5>;
+pub type ICCDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, READCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - Read Mode"]
     #[inline(always)]
@@ -149,22 +149,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Read Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<0> {
         MODE_W::new(self)
     }
     #[doc = "Bit 3 - Internal Flash Cache Disable"]
     #[inline(always)]
-    pub fn ifcdis(&mut self) -> IFCDIS_W {
+    #[must_use]
+    pub fn ifcdis(&mut self) -> IFCDIS_W<3> {
         IFCDIS_W::new(self)
     }
     #[doc = "Bit 4 - Automatic Invalidate Disable"]
     #[inline(always)]
-    pub fn aidis(&mut self) -> AIDIS_W {
+    #[must_use]
+    pub fn aidis(&mut self) -> AIDIS_W<4> {
         AIDIS_W::new(self)
     }
     #[doc = "Bit 5 - Interrupt Context Cache Disable"]
     #[inline(always)]
-    pub fn iccdis(&mut self) -> ICCDIS_W {
+    #[must_use]
+    pub fn iccdis(&mut self) -> ICCDIS_W<5> {
         ICCDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -186,11 +190,10 @@ impl crate::Readable for READCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [readctrl::W](W) writer structure"]
 impl crate::Writable for READCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets READCTRL to value 0x01"]
 impl crate::Resettable for READCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x01
-    }
+    const RESET_VALUE: Self::Ux = 0x01;
 }

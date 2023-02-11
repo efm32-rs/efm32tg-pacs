@@ -26,7 +26,7 @@ impl R {
     #[doc = "Bits 15:31 - Counter Value"]
     #[inline(always)]
     pub fn cntlsb(&self) -> CNTLSB_R {
-        CNTLSB_R::new(((self.bits >> 15) & 0x0001_ffff) as u32)
+        CNTLSB_R::new((self.bits >> 15) & 0x0001_ffff)
     }
 }
 #[doc = "Combined Pre-Counter and Counter Value Register\n\nThis register you can [`read`](crate::generic::Reg::read). See [API](https://docs.rs/svd2rust/#read--modify--write-api).\n\nFor information about available fields see [combcnt](index.html) module"]
@@ -40,8 +40,5 @@ impl crate::Readable for COMBCNT_SPEC {
 }
 #[doc = "`reset()` method sets COMBCNT to value 0"]
 impl crate::Resettable for COMBCNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

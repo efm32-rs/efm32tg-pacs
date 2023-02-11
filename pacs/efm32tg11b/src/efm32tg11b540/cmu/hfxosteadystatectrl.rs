@@ -37,20 +37,23 @@ impl From<crate::W<HFXOSTEADYSTATECTRL_SPEC>> for W {
 #[doc = "Field `IBTRIMXOCORE` reader - Sets the Steady State Oscillator Core Bias Current."]
 pub type IBTRIMXOCORE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `IBTRIMXOCORE` writer - Sets the Steady State Oscillator Core Bias Current."]
-pub type IBTRIMXOCORE_W<'a> =
-    crate::FieldWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, u16, u16, 11, 0>;
+pub type IBTRIMXOCORE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, u16, u16, 11, O>;
 #[doc = "Field `CTUNE` reader - Sets Oscillator Tuning Capacitance"]
 pub type CTUNE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CTUNE` writer - Sets Oscillator Tuning Capacitance"]
-pub type CTUNE_W<'a> = crate::FieldWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, u16, u16, 9, 11>;
+pub type CTUNE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, u16, u16, 9, O>;
 #[doc = "Field `PEAKDETEN` reader - Enables Oscillator Peak Detectors"]
 pub type PEAKDETEN_R = crate::BitReader<bool>;
 #[doc = "Field `PEAKDETEN` writer - Enables Oscillator Peak Detectors"]
-pub type PEAKDETEN_W<'a> = crate::BitWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, bool, 26>;
+pub type PEAKDETEN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, bool, O>;
 #[doc = "Field `PEAKMONEN` reader - Automatically Perform Peak Monitoring Algorithm on Every Rising Edge of ULFRCO"]
 pub type PEAKMONEN_R = crate::BitReader<bool>;
 #[doc = "Field `PEAKMONEN` writer - Automatically Perform Peak Monitoring Algorithm on Every Rising Edge of ULFRCO"]
-pub type PEAKMONEN_W<'a> = crate::BitWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, bool, 27>;
+pub type PEAKMONEN_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, HFXOSTEADYSTATECTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:10 - Sets the Steady State Oscillator Core Bias Current."]
     #[inline(always)]
@@ -76,22 +79,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - Sets the Steady State Oscillator Core Bias Current."]
     #[inline(always)]
-    pub fn ibtrimxocore(&mut self) -> IBTRIMXOCORE_W {
+    #[must_use]
+    pub fn ibtrimxocore(&mut self) -> IBTRIMXOCORE_W<0> {
         IBTRIMXOCORE_W::new(self)
     }
     #[doc = "Bits 11:19 - Sets Oscillator Tuning Capacitance"]
     #[inline(always)]
-    pub fn ctune(&mut self) -> CTUNE_W {
+    #[must_use]
+    pub fn ctune(&mut self) -> CTUNE_W<11> {
         CTUNE_W::new(self)
     }
     #[doc = "Bit 26 - Enables Oscillator Peak Detectors"]
     #[inline(always)]
-    pub fn peakdeten(&mut self) -> PEAKDETEN_W {
+    #[must_use]
+    pub fn peakdeten(&mut self) -> PEAKDETEN_W<26> {
         PEAKDETEN_W::new(self)
     }
     #[doc = "Bit 27 - Automatically Perform Peak Monitoring Algorithm on Every Rising Edge of ULFRCO"]
     #[inline(always)]
-    pub fn peakmonen(&mut self) -> PEAKMONEN_W {
+    #[must_use]
+    pub fn peakmonen(&mut self) -> PEAKMONEN_W<27> {
         PEAKMONEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -113,11 +120,10 @@ impl crate::Readable for HFXOSTEADYSTATECTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hfxosteadystatectrl::W](W) writer structure"]
 impl crate::Writable for HFXOSTEADYSTATECTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HFXOSTEADYSTATECTRL to value 0x0800_0100"]
 impl crate::Resettable for HFXOSTEADYSTATECTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0800_0100
-    }
+    const RESET_VALUE: Self::Ux = 0x0800_0100;
 }

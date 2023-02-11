@@ -37,35 +37,43 @@ impl From<crate::W<APORTMASTERDIS_SPEC>> for W {
 #[doc = "Field `APORT1XMASTERDIS` reader - APORT1X Master Disable"]
 pub type APORT1XMASTERDIS_R = crate::BitReader<bool>;
 #[doc = "Field `APORT1XMASTERDIS` writer - APORT1X Master Disable"]
-pub type APORT1XMASTERDIS_W<'a> = crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, 2>;
+pub type APORT1XMASTERDIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, O>;
 #[doc = "Field `APORT1YMASTERDIS` reader - APORT1Y Master Disable"]
 pub type APORT1YMASTERDIS_R = crate::BitReader<bool>;
 #[doc = "Field `APORT1YMASTERDIS` writer - APORT1Y Master Disable"]
-pub type APORT1YMASTERDIS_W<'a> = crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, 3>;
+pub type APORT1YMASTERDIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, O>;
 #[doc = "Field `APORT2XMASTERDIS` reader - APORT2X Master Disable"]
 pub type APORT2XMASTERDIS_R = crate::BitReader<bool>;
 #[doc = "Field `APORT2XMASTERDIS` writer - APORT2X Master Disable"]
-pub type APORT2XMASTERDIS_W<'a> = crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, 4>;
+pub type APORT2XMASTERDIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, O>;
 #[doc = "Field `APORT2YMASTERDIS` reader - APORT2Y Master Disable"]
 pub type APORT2YMASTERDIS_R = crate::BitReader<bool>;
 #[doc = "Field `APORT2YMASTERDIS` writer - APORT2Y Master Disable"]
-pub type APORT2YMASTERDIS_W<'a> = crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, 5>;
+pub type APORT2YMASTERDIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, O>;
 #[doc = "Field `APORT3XMASTERDIS` reader - APORT3X Master Disable"]
 pub type APORT3XMASTERDIS_R = crate::BitReader<bool>;
 #[doc = "Field `APORT3XMASTERDIS` writer - APORT3X Master Disable"]
-pub type APORT3XMASTERDIS_W<'a> = crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, 6>;
+pub type APORT3XMASTERDIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, O>;
 #[doc = "Field `APORT3YMASTERDIS` reader - APORT3Y Master Disable"]
 pub type APORT3YMASTERDIS_R = crate::BitReader<bool>;
 #[doc = "Field `APORT3YMASTERDIS` writer - APORT3Y Master Disable"]
-pub type APORT3YMASTERDIS_W<'a> = crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, 7>;
+pub type APORT3YMASTERDIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, O>;
 #[doc = "Field `APORT4XMASTERDIS` reader - APORT4X Master Disable"]
 pub type APORT4XMASTERDIS_R = crate::BitReader<bool>;
 #[doc = "Field `APORT4XMASTERDIS` writer - APORT4X Master Disable"]
-pub type APORT4XMASTERDIS_W<'a> = crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, 8>;
+pub type APORT4XMASTERDIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, O>;
 #[doc = "Field `APORT4YMASTERDIS` reader - APORT4Y Master Disable"]
 pub type APORT4YMASTERDIS_R = crate::BitReader<bool>;
 #[doc = "Field `APORT4YMASTERDIS` writer - APORT4Y Master Disable"]
-pub type APORT4YMASTERDIS_W<'a> = crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, 9>;
+pub type APORT4YMASTERDIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, APORTMASTERDIS_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 2 - APORT1X Master Disable"]
     #[inline(always)]
@@ -111,42 +119,50 @@ impl R {
 impl W {
     #[doc = "Bit 2 - APORT1X Master Disable"]
     #[inline(always)]
-    pub fn aport1xmasterdis(&mut self) -> APORT1XMASTERDIS_W {
+    #[must_use]
+    pub fn aport1xmasterdis(&mut self) -> APORT1XMASTERDIS_W<2> {
         APORT1XMASTERDIS_W::new(self)
     }
     #[doc = "Bit 3 - APORT1Y Master Disable"]
     #[inline(always)]
-    pub fn aport1ymasterdis(&mut self) -> APORT1YMASTERDIS_W {
+    #[must_use]
+    pub fn aport1ymasterdis(&mut self) -> APORT1YMASTERDIS_W<3> {
         APORT1YMASTERDIS_W::new(self)
     }
     #[doc = "Bit 4 - APORT2X Master Disable"]
     #[inline(always)]
-    pub fn aport2xmasterdis(&mut self) -> APORT2XMASTERDIS_W {
+    #[must_use]
+    pub fn aport2xmasterdis(&mut self) -> APORT2XMASTERDIS_W<4> {
         APORT2XMASTERDIS_W::new(self)
     }
     #[doc = "Bit 5 - APORT2Y Master Disable"]
     #[inline(always)]
-    pub fn aport2ymasterdis(&mut self) -> APORT2YMASTERDIS_W {
+    #[must_use]
+    pub fn aport2ymasterdis(&mut self) -> APORT2YMASTERDIS_W<5> {
         APORT2YMASTERDIS_W::new(self)
     }
     #[doc = "Bit 6 - APORT3X Master Disable"]
     #[inline(always)]
-    pub fn aport3xmasterdis(&mut self) -> APORT3XMASTERDIS_W {
+    #[must_use]
+    pub fn aport3xmasterdis(&mut self) -> APORT3XMASTERDIS_W<6> {
         APORT3XMASTERDIS_W::new(self)
     }
     #[doc = "Bit 7 - APORT3Y Master Disable"]
     #[inline(always)]
-    pub fn aport3ymasterdis(&mut self) -> APORT3YMASTERDIS_W {
+    #[must_use]
+    pub fn aport3ymasterdis(&mut self) -> APORT3YMASTERDIS_W<7> {
         APORT3YMASTERDIS_W::new(self)
     }
     #[doc = "Bit 8 - APORT4X Master Disable"]
     #[inline(always)]
-    pub fn aport4xmasterdis(&mut self) -> APORT4XMASTERDIS_W {
+    #[must_use]
+    pub fn aport4xmasterdis(&mut self) -> APORT4XMASTERDIS_W<8> {
         APORT4XMASTERDIS_W::new(self)
     }
     #[doc = "Bit 9 - APORT4Y Master Disable"]
     #[inline(always)]
-    pub fn aport4ymasterdis(&mut self) -> APORT4YMASTERDIS_W {
+    #[must_use]
+    pub fn aport4ymasterdis(&mut self) -> APORT4YMASTERDIS_W<9> {
         APORT4YMASTERDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -168,11 +184,10 @@ impl crate::Readable for APORTMASTERDIS_SPEC {
 #[doc = "`write(|w| ..)` method takes [aportmasterdis::W](W) writer structure"]
 impl crate::Writable for APORTMASTERDIS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets APORTMASTERDIS to value 0"]
 impl crate::Resettable for APORTMASTERDIS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

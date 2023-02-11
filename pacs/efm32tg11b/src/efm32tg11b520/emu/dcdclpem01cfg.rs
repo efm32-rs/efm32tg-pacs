@@ -34,8 +34,10 @@ impl From<crate::W<DCDCLPEM01CFG_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LPCMPBIASEM01` reader - LP Mode Comparator Bias Selection for EM01"]
+pub type LPCMPBIASEM01_R = crate::FieldReader<u8, LPCMPBIASEM01_A>;
 #[doc = "LP Mode Comparator Bias Selection for EM01\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LPCMPBIASEM01_A {
     #[doc = "0: Maximum load current less than 75uA."]
@@ -53,8 +55,6 @@ impl From<LPCMPBIASEM01_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LPCMPBIASEM01` reader - LP Mode Comparator Bias Selection for EM01"]
-pub type LPCMPBIASEM01_R = crate::FieldReader<u8, LPCMPBIASEM01_A>;
 impl LPCMPBIASEM01_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,9 +89,9 @@ impl LPCMPBIASEM01_R {
     }
 }
 #[doc = "Field `LPCMPBIASEM01` writer - LP Mode Comparator Bias Selection for EM01"]
-pub type LPCMPBIASEM01_W<'a> =
-    crate::FieldWriterSafe<'a, u32, DCDCLPEM01CFG_SPEC, u8, LPCMPBIASEM01_A, 2, 8>;
-impl<'a> LPCMPBIASEM01_W<'a> {
+pub type LPCMPBIASEM01_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DCDCLPEM01CFG_SPEC, u8, LPCMPBIASEM01_A, 2, O>;
+impl<'a, const O: u8> LPCMPBIASEM01_W<'a, O> {
     #[doc = "Maximum load current less than 75uA."]
     #[inline(always)]
     pub fn bias0(self) -> &'a mut W {
@@ -116,7 +116,8 @@ impl<'a> LPCMPBIASEM01_W<'a> {
 #[doc = "Field `LPCMPHYSSELEM01` reader - LP Mode Hysteresis Selection for EM01"]
 pub type LPCMPHYSSELEM01_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LPCMPHYSSELEM01` writer - LP Mode Hysteresis Selection for EM01"]
-pub type LPCMPHYSSELEM01_W<'a> = crate::FieldWriter<'a, u32, DCDCLPEM01CFG_SPEC, u8, u8, 4, 12>;
+pub type LPCMPHYSSELEM01_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DCDCLPEM01CFG_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 8:9 - LP Mode Comparator Bias Selection for EM01"]
     #[inline(always)]
@@ -132,12 +133,14 @@ impl R {
 impl W {
     #[doc = "Bits 8:9 - LP Mode Comparator Bias Selection for EM01"]
     #[inline(always)]
-    pub fn lpcmpbiasem01(&mut self) -> LPCMPBIASEM01_W {
+    #[must_use]
+    pub fn lpcmpbiasem01(&mut self) -> LPCMPBIASEM01_W<8> {
         LPCMPBIASEM01_W::new(self)
     }
     #[doc = "Bits 12:15 - LP Mode Hysteresis Selection for EM01"]
     #[inline(always)]
-    pub fn lpcmphysselem01(&mut self) -> LPCMPHYSSELEM01_W {
+    #[must_use]
+    pub fn lpcmphysselem01(&mut self) -> LPCMPHYSSELEM01_W<12> {
         LPCMPHYSSELEM01_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -159,11 +162,10 @@ impl crate::Readable for DCDCLPEM01CFG_SPEC {
 #[doc = "`write(|w| ..)` method takes [dcdclpem01cfg::W](W) writer structure"]
 impl crate::Writable for DCDCLPEM01CFG_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DCDCLPEM01CFG to value 0x0300"]
 impl crate::Resettable for DCDCLPEM01CFG_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0300
-    }
+    const RESET_VALUE: Self::Ux = 0x0300;
 }

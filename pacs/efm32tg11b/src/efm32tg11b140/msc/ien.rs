@@ -37,35 +37,35 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `ERASE` reader - ERASE Interrupt Enable"]
 pub type ERASE_R = crate::BitReader<bool>;
 #[doc = "Field `ERASE` writer - ERASE Interrupt Enable"]
-pub type ERASE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 0>;
+pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `WRITE` reader - WRITE Interrupt Enable"]
 pub type WRITE_R = crate::BitReader<bool>;
 #[doc = "Field `WRITE` writer - WRITE Interrupt Enable"]
-pub type WRITE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 1>;
+pub type WRITE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CHOF` reader - CHOF Interrupt Enable"]
 pub type CHOF_R = crate::BitReader<bool>;
 #[doc = "Field `CHOF` writer - CHOF Interrupt Enable"]
-pub type CHOF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 2>;
+pub type CHOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CMOF` reader - CMOF Interrupt Enable"]
 pub type CMOF_R = crate::BitReader<bool>;
 #[doc = "Field `CMOF` writer - CMOF Interrupt Enable"]
-pub type CMOF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 3>;
+pub type CMOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `PWRUPF` reader - PWRUPF Interrupt Enable"]
 pub type PWRUPF_R = crate::BitReader<bool>;
 #[doc = "Field `PWRUPF` writer - PWRUPF Interrupt Enable"]
-pub type PWRUPF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 4>;
+pub type PWRUPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `ICACHERR` reader - ICACHERR Interrupt Enable"]
 pub type ICACHERR_R = crate::BitReader<bool>;
 #[doc = "Field `ICACHERR` writer - ICACHERR Interrupt Enable"]
-pub type ICACHERR_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 5>;
+pub type ICACHERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `WDATAOV` reader - WDATAOV Interrupt Enable"]
 pub type WDATAOV_R = crate::BitReader<bool>;
 #[doc = "Field `WDATAOV` writer - WDATAOV Interrupt Enable"]
-pub type WDATAOV_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 6>;
+pub type WDATAOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `LVEWRITE` reader - LVEWRITE Interrupt Enable"]
 pub type LVEWRITE_R = crate::BitReader<bool>;
 #[doc = "Field `LVEWRITE` writer - LVEWRITE Interrupt Enable"]
-pub type LVEWRITE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 8>;
+pub type LVEWRITE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - ERASE Interrupt Enable"]
     #[inline(always)]
@@ -111,42 +111,50 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ERASE Interrupt Enable"]
     #[inline(always)]
-    pub fn erase(&mut self) -> ERASE_W {
+    #[must_use]
+    pub fn erase(&mut self) -> ERASE_W<0> {
         ERASE_W::new(self)
     }
     #[doc = "Bit 1 - WRITE Interrupt Enable"]
     #[inline(always)]
-    pub fn write(&mut self) -> WRITE_W {
+    #[must_use]
+    pub fn write(&mut self) -> WRITE_W<1> {
         WRITE_W::new(self)
     }
     #[doc = "Bit 2 - CHOF Interrupt Enable"]
     #[inline(always)]
-    pub fn chof(&mut self) -> CHOF_W {
+    #[must_use]
+    pub fn chof(&mut self) -> CHOF_W<2> {
         CHOF_W::new(self)
     }
     #[doc = "Bit 3 - CMOF Interrupt Enable"]
     #[inline(always)]
-    pub fn cmof(&mut self) -> CMOF_W {
+    #[must_use]
+    pub fn cmof(&mut self) -> CMOF_W<3> {
         CMOF_W::new(self)
     }
     #[doc = "Bit 4 - PWRUPF Interrupt Enable"]
     #[inline(always)]
-    pub fn pwrupf(&mut self) -> PWRUPF_W {
+    #[must_use]
+    pub fn pwrupf(&mut self) -> PWRUPF_W<4> {
         PWRUPF_W::new(self)
     }
     #[doc = "Bit 5 - ICACHERR Interrupt Enable"]
     #[inline(always)]
-    pub fn icacherr(&mut self) -> ICACHERR_W {
+    #[must_use]
+    pub fn icacherr(&mut self) -> ICACHERR_W<5> {
         ICACHERR_W::new(self)
     }
     #[doc = "Bit 6 - WDATAOV Interrupt Enable"]
     #[inline(always)]
-    pub fn wdataov(&mut self) -> WDATAOV_W {
+    #[must_use]
+    pub fn wdataov(&mut self) -> WDATAOV_W<6> {
         WDATAOV_W::new(self)
     }
     #[doc = "Bit 8 - LVEWRITE Interrupt Enable"]
     #[inline(always)]
-    pub fn lvewrite(&mut self) -> LVEWRITE_W {
+    #[must_use]
+    pub fn lvewrite(&mut self) -> LVEWRITE_W<8> {
         LVEWRITE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -168,11 +176,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<ROUTELOC1_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CTSLOC` reader - I/O Location"]
+pub type CTSLOC_R = crate::FieldReader<u8, CTSLOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CTSLOC_A {
     #[doc = "0: Location 0"]
@@ -59,8 +61,6 @@ impl From<CTSLOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CTSLOC` reader - I/O Location"]
-pub type CTSLOC_R = crate::FieldReader<u8, CTSLOC_A>;
 impl CTSLOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -113,8 +113,9 @@ impl CTSLOC_R {
     }
 }
 #[doc = "Field `CTSLOC` writer - I/O Location"]
-pub type CTSLOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, CTSLOC_A, 6, 0>;
-impl<'a> CTSLOC_W<'a> {
+pub type CTSLOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, CTSLOC_A, 6, O>;
+impl<'a, const O: u8> CTSLOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -151,8 +152,10 @@ impl<'a> CTSLOC_W<'a> {
         self.variant(CTSLOC_A::LOC6)
     }
 }
+#[doc = "Field `RTSLOC` reader - I/O Location"]
+pub type RTSLOC_R = crate::FieldReader<u8, RTSLOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RTSLOC_A {
     #[doc = "0: Location 0"]
@@ -176,8 +179,6 @@ impl From<RTSLOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RTSLOC` reader - I/O Location"]
-pub type RTSLOC_R = crate::FieldReader<u8, RTSLOC_A>;
 impl RTSLOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -230,8 +231,9 @@ impl RTSLOC_R {
     }
 }
 #[doc = "Field `RTSLOC` writer - I/O Location"]
-pub type RTSLOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, RTSLOC_A, 6, 8>;
-impl<'a> RTSLOC_W<'a> {
+pub type RTSLOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC1_SPEC, u8, RTSLOC_A, 6, O>;
+impl<'a, const O: u8> RTSLOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -283,12 +285,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn ctsloc(&mut self) -> CTSLOC_W {
+    #[must_use]
+    pub fn ctsloc(&mut self) -> CTSLOC_W<0> {
         CTSLOC_W::new(self)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
-    pub fn rtsloc(&mut self) -> RTSLOC_W {
+    #[must_use]
+    pub fn rtsloc(&mut self) -> RTSLOC_W<8> {
         RTSLOC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -310,11 +314,10 @@ impl crate::Readable for ROUTELOC1_SPEC {
 #[doc = "`write(|w| ..)` method takes [routeloc1::W](W) writer structure"]
 impl crate::Writable for ROUTELOC1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTELOC1 to value 0"]
 impl crate::Resettable for ROUTELOC1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

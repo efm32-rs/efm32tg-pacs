@@ -37,13 +37,15 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `EN` reader - CSEN Enable"]
 pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - CSEN Enable"]
-pub type EN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 1>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `CMPPOL` reader - CSEN Digital Comparator Polarity Select"]
 pub type CMPPOL_R = crate::BitReader<bool>;
 #[doc = "Field `CMPPOL` writer - CSEN Digital Comparator Polarity Select"]
-pub type CMPPOL_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 2>;
+pub type CMPPOL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `CM` reader - CSEN Conversion Mode Select"]
+pub type CM_R = crate::FieldReader<u8, CM_A>;
 #[doc = "CSEN Conversion Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CM_A {
     #[doc = "0: Single Channel Mode: One conversion of a single channel (when MCE = 0) or set of bonded channels (when MCE = 1) per conversion trigger."]
@@ -61,8 +63,6 @@ impl From<CM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CM` reader - CSEN Conversion Mode Select"]
-pub type CM_R = crate::FieldReader<u8, CM_A>;
 impl CM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -97,8 +97,8 @@ impl CM_R {
     }
 }
 #[doc = "Field `CM` writer - CSEN Conversion Mode Select"]
-pub type CM_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, CM_A, 2, 4>;
-impl<'a> CM_W<'a> {
+pub type CM_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, CM_A, 2, O>;
+impl<'a, const O: u8> CM_W<'a, O> {
     #[doc = "Single Channel Mode: One conversion of a single channel (when MCE = 0) or set of bonded channels (when MCE = 1) per conversion trigger."]
     #[inline(always)]
     pub fn sgl(self) -> &'a mut W {
@@ -120,8 +120,10 @@ impl<'a> CM_W<'a> {
         self.variant(CM_A::CONTSCAN)
     }
 }
+#[doc = "Field `SARCR` reader - SAR Conversion Resolution."]
+pub type SARCR_R = crate::FieldReader<u8, SARCR_A>;
 #[doc = "SAR Conversion Resolution.\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SARCR_A {
     #[doc = "0: Conversions last 10 internal CSEN clocks and are 10-bits in length."]
@@ -139,8 +141,6 @@ impl From<SARCR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SARCR` reader - SAR Conversion Resolution."]
-pub type SARCR_R = crate::FieldReader<u8, SARCR_A>;
 impl SARCR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -175,8 +175,8 @@ impl SARCR_R {
     }
 }
 #[doc = "Field `SARCR` writer - SAR Conversion Resolution."]
-pub type SARCR_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, SARCR_A, 2, 8>;
-impl<'a> SARCR_W<'a> {
+pub type SARCR_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, SARCR_A, 2, O>;
+impl<'a, const O: u8> SARCR_W<'a, O> {
     #[doc = "Conversions last 10 internal CSEN clocks and are 10-bits in length."]
     #[inline(always)]
     pub fn clk10(self) -> &'a mut W {
@@ -198,8 +198,10 @@ impl<'a> SARCR_W<'a> {
         self.variant(SARCR_A::CLK16)
     }
 }
+#[doc = "Field `ACU` reader - CSEN Accumulator Mode Select"]
+pub type ACU_R = crate::FieldReader<u8, ACU_A>;
 #[doc = "CSEN Accumulator Mode Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ACU_A {
     #[doc = "0: Accumulate 1 sample."]
@@ -223,8 +225,6 @@ impl From<ACU_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ACU` reader - CSEN Accumulator Mode Select"]
-pub type ACU_R = crate::FieldReader<u8, ACU_A>;
 impl ACU_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -277,8 +277,8 @@ impl ACU_R {
     }
 }
 #[doc = "Field `ACU` writer - CSEN Accumulator Mode Select"]
-pub type ACU_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, ACU_A, 3, 12>;
-impl<'a> ACU_W<'a> {
+pub type ACU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, ACU_A, 3, O>;
+impl<'a, const O: u8> ACU_W<'a, O> {
     #[doc = "Accumulate 1 sample."]
     #[inline(always)]
     pub fn acc1(self) -> &'a mut W {
@@ -318,9 +318,11 @@ impl<'a> ACU_W<'a> {
 #[doc = "Field `MCEN` reader - CSEN Multiple Channel Enable"]
 pub type MCEN_R = crate::BitReader<bool>;
 #[doc = "Field `MCEN` writer - CSEN Multiple Channel Enable"]
-pub type MCEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 15>;
+pub type MCEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `STM` reader - Start Trigger Select"]
+pub type STM_R = crate::FieldReader<u8, STM_A>;
 #[doc = "Start Trigger Select\n\nValue on reset: 3"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STM_A {
     #[doc = "0: PRS Triggering. Conversions are triggered by the PRS channel selected in PRSSEL."]
@@ -336,8 +338,6 @@ impl From<STM_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `STM` reader - Start Trigger Select"]
-pub type STM_R = crate::FieldReader<u8, STM_A>;
 impl STM_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -366,8 +366,8 @@ impl STM_R {
     }
 }
 #[doc = "Field `STM` writer - Start Trigger Select"]
-pub type STM_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, STM_A, 2, 16>;
-impl<'a> STM_W<'a> {
+pub type STM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, STM_A, 2, O>;
+impl<'a, const O: u8> STM_W<'a, O> {
     #[doc = "PRS Triggering. Conversions are triggered by the PRS channel selected in PRSSEL."]
     #[inline(always)]
     pub fn prs(self) -> &'a mut W {
@@ -387,47 +387,47 @@ impl<'a> STM_W<'a> {
 #[doc = "Field `CMPEN` reader - CSEN Digital Comparator Enable"]
 pub type CMPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CMPEN` writer - CSEN Digital Comparator Enable"]
-pub type CMPEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 18>;
+pub type CMPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `DRSF` reader - CSEN Disable Right-Shift"]
 pub type DRSF_R = crate::BitReader<bool>;
 #[doc = "Field `DRSF` writer - CSEN Disable Right-Shift"]
-pub type DRSF_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 19>;
+pub type DRSF_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `DMAEN` reader - CSEN DMA Enable Bit"]
 pub type DMAEN_R = crate::BitReader<bool>;
 #[doc = "Field `DMAEN` writer - CSEN DMA Enable Bit"]
-pub type DMAEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 20>;
+pub type DMAEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `CONVSEL` reader - CSEN Converter Select"]
 pub type CONVSEL_R = crate::BitReader<bool>;
 #[doc = "Field `CONVSEL` writer - CSEN Converter Select"]
-pub type CONVSEL_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 21>;
+pub type CONVSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `CHOPEN` reader - CSEN Chop Enable"]
 pub type CHOPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CHOPEN` writer - CSEN Chop Enable"]
-pub type CHOPEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 22>;
+pub type CHOPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `AUTOGND` reader - CSEN Automatic Ground Enable"]
 pub type AUTOGND_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOGND` writer - CSEN Automatic Ground Enable"]
-pub type AUTOGND_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 23>;
+pub type AUTOGND_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `MXUC` reader - CSEN Mux Disconnect"]
 pub type MXUC_R = crate::BitReader<bool>;
 #[doc = "Field `MXUC` writer - CSEN Mux Disconnect"]
-pub type MXUC_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 24>;
+pub type MXUC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EMACMPEN` reader - Greater and Less Than Comparison Using the Exponential Moving Average (EMA) is Enabled"]
 pub type EMACMPEN_R = crate::BitReader<bool>;
 #[doc = "Field `EMACMPEN` writer - Greater and Less Than Comparison Using the Exponential Moving Average (EMA) is Enabled"]
-pub type EMACMPEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 25>;
+pub type EMACMPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `WARMUPMODE` reader - Select Warmup Mode for CSEN"]
 pub type WARMUPMODE_R = crate::BitReader<bool>;
 #[doc = "Field `WARMUPMODE` writer - Select Warmup Mode for CSEN"]
-pub type WARMUPMODE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 26>;
+pub type WARMUPMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `LOCALSENS` reader - Local Sensing Enable"]
 pub type LOCALSENS_R = crate::BitReader<bool>;
 #[doc = "Field `LOCALSENS` writer - Local Sensing Enable"]
-pub type LOCALSENS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 27>;
+pub type LOCALSENS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `CPACCURACY` reader - Charge Pump Accuracy"]
 pub type CPACCURACY_R = crate::BitReader<bool>;
 #[doc = "Field `CPACCURACY` writer - Charge Pump Accuracy"]
-pub type CPACCURACY_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 28>;
+pub type CPACCURACY_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 1 - CSEN Enable"]
     #[inline(always)]
@@ -523,92 +523,110 @@ impl R {
 impl W {
     #[doc = "Bit 1 - CSEN Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<1> {
         EN_W::new(self)
     }
     #[doc = "Bit 2 - CSEN Digital Comparator Polarity Select"]
     #[inline(always)]
-    pub fn cmppol(&mut self) -> CMPPOL_W {
+    #[must_use]
+    pub fn cmppol(&mut self) -> CMPPOL_W<2> {
         CMPPOL_W::new(self)
     }
     #[doc = "Bits 4:5 - CSEN Conversion Mode Select"]
     #[inline(always)]
-    pub fn cm(&mut self) -> CM_W {
+    #[must_use]
+    pub fn cm(&mut self) -> CM_W<4> {
         CM_W::new(self)
     }
     #[doc = "Bits 8:9 - SAR Conversion Resolution."]
     #[inline(always)]
-    pub fn sarcr(&mut self) -> SARCR_W {
+    #[must_use]
+    pub fn sarcr(&mut self) -> SARCR_W<8> {
         SARCR_W::new(self)
     }
     #[doc = "Bits 12:14 - CSEN Accumulator Mode Select"]
     #[inline(always)]
-    pub fn acu(&mut self) -> ACU_W {
+    #[must_use]
+    pub fn acu(&mut self) -> ACU_W<12> {
         ACU_W::new(self)
     }
     #[doc = "Bit 15 - CSEN Multiple Channel Enable"]
     #[inline(always)]
-    pub fn mcen(&mut self) -> MCEN_W {
+    #[must_use]
+    pub fn mcen(&mut self) -> MCEN_W<15> {
         MCEN_W::new(self)
     }
     #[doc = "Bits 16:17 - Start Trigger Select"]
     #[inline(always)]
-    pub fn stm(&mut self) -> STM_W {
+    #[must_use]
+    pub fn stm(&mut self) -> STM_W<16> {
         STM_W::new(self)
     }
     #[doc = "Bit 18 - CSEN Digital Comparator Enable"]
     #[inline(always)]
-    pub fn cmpen(&mut self) -> CMPEN_W {
+    #[must_use]
+    pub fn cmpen(&mut self) -> CMPEN_W<18> {
         CMPEN_W::new(self)
     }
     #[doc = "Bit 19 - CSEN Disable Right-Shift"]
     #[inline(always)]
-    pub fn drsf(&mut self) -> DRSF_W {
+    #[must_use]
+    pub fn drsf(&mut self) -> DRSF_W<19> {
         DRSF_W::new(self)
     }
     #[doc = "Bit 20 - CSEN DMA Enable Bit"]
     #[inline(always)]
-    pub fn dmaen(&mut self) -> DMAEN_W {
+    #[must_use]
+    pub fn dmaen(&mut self) -> DMAEN_W<20> {
         DMAEN_W::new(self)
     }
     #[doc = "Bit 21 - CSEN Converter Select"]
     #[inline(always)]
-    pub fn convsel(&mut self) -> CONVSEL_W {
+    #[must_use]
+    pub fn convsel(&mut self) -> CONVSEL_W<21> {
         CONVSEL_W::new(self)
     }
     #[doc = "Bit 22 - CSEN Chop Enable"]
     #[inline(always)]
-    pub fn chopen(&mut self) -> CHOPEN_W {
+    #[must_use]
+    pub fn chopen(&mut self) -> CHOPEN_W<22> {
         CHOPEN_W::new(self)
     }
     #[doc = "Bit 23 - CSEN Automatic Ground Enable"]
     #[inline(always)]
-    pub fn autognd(&mut self) -> AUTOGND_W {
+    #[must_use]
+    pub fn autognd(&mut self) -> AUTOGND_W<23> {
         AUTOGND_W::new(self)
     }
     #[doc = "Bit 24 - CSEN Mux Disconnect"]
     #[inline(always)]
-    pub fn mxuc(&mut self) -> MXUC_W {
+    #[must_use]
+    pub fn mxuc(&mut self) -> MXUC_W<24> {
         MXUC_W::new(self)
     }
     #[doc = "Bit 25 - Greater and Less Than Comparison Using the Exponential Moving Average (EMA) is Enabled"]
     #[inline(always)]
-    pub fn emacmpen(&mut self) -> EMACMPEN_W {
+    #[must_use]
+    pub fn emacmpen(&mut self) -> EMACMPEN_W<25> {
         EMACMPEN_W::new(self)
     }
     #[doc = "Bit 26 - Select Warmup Mode for CSEN"]
     #[inline(always)]
-    pub fn warmupmode(&mut self) -> WARMUPMODE_W {
+    #[must_use]
+    pub fn warmupmode(&mut self) -> WARMUPMODE_W<26> {
         WARMUPMODE_W::new(self)
     }
     #[doc = "Bit 27 - Local Sensing Enable"]
     #[inline(always)]
-    pub fn localsens(&mut self) -> LOCALSENS_W {
+    #[must_use]
+    pub fn localsens(&mut self) -> LOCALSENS_W<27> {
         LOCALSENS_W::new(self)
     }
     #[doc = "Bit 28 - Charge Pump Accuracy"]
     #[inline(always)]
-    pub fn cpaccuracy(&mut self) -> CPACCURACY_W {
+    #[must_use]
+    pub fn cpaccuracy(&mut self) -> CPACCURACY_W<28> {
         CPACCURACY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -630,11 +648,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x0003_0000"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0003_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0003_0000;
 }

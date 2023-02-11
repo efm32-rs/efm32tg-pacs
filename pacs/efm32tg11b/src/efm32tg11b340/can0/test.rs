@@ -37,17 +37,19 @@ impl From<crate::W<TEST_SPEC>> for W {
 #[doc = "Field `BASIC` reader - Basic Mode"]
 pub type BASIC_R = crate::BitReader<bool>;
 #[doc = "Field `BASIC` writer - Basic Mode"]
-pub type BASIC_W<'a> = crate::BitWriter<'a, u32, TEST_SPEC, bool, 2>;
+pub type BASIC_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
 #[doc = "Field `SILENT` reader - Silent Mode"]
 pub type SILENT_R = crate::BitReader<bool>;
 #[doc = "Field `SILENT` writer - Silent Mode"]
-pub type SILENT_W<'a> = crate::BitWriter<'a, u32, TEST_SPEC, bool, 3>;
+pub type SILENT_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
 #[doc = "Field `LBACK` reader - Loopback Mode"]
 pub type LBACK_R = crate::BitReader<bool>;
 #[doc = "Field `LBACK` writer - Loopback Mode"]
-pub type LBACK_W<'a> = crate::BitWriter<'a, u32, TEST_SPEC, bool, 4>;
+pub type LBACK_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEST_SPEC, bool, O>;
+#[doc = "Field `TX` reader - Control of CAN_TX Pin"]
+pub type TX_R = crate::FieldReader<u8, TX_A>;
 #[doc = "Control of CAN_TX Pin\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum TX_A {
     #[doc = "0: Reset value, CAN_TX is controlled by the CAN Core."]
@@ -65,8 +67,6 @@ impl From<TX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `TX` reader - Control of CAN_TX Pin"]
-pub type TX_R = crate::FieldReader<u8, TX_A>;
 impl TX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -101,8 +101,8 @@ impl TX_R {
     }
 }
 #[doc = "Field `TX` writer - Control of CAN_TX Pin"]
-pub type TX_W<'a> = crate::FieldWriterSafe<'a, u32, TEST_SPEC, u8, TX_A, 2, 5>;
-impl<'a> TX_W<'a> {
+pub type TX_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, TEST_SPEC, u8, TX_A, 2, O>;
+impl<'a, const O: u8> TX_W<'a, O> {
     #[doc = "Reset value, CAN_TX is controlled by the CAN Core."]
     #[inline(always)]
     pub fn core(self) -> &'a mut W {
@@ -156,22 +156,26 @@ impl R {
 impl W {
     #[doc = "Bit 2 - Basic Mode"]
     #[inline(always)]
-    pub fn basic(&mut self) -> BASIC_W {
+    #[must_use]
+    pub fn basic(&mut self) -> BASIC_W<2> {
         BASIC_W::new(self)
     }
     #[doc = "Bit 3 - Silent Mode"]
     #[inline(always)]
-    pub fn silent(&mut self) -> SILENT_W {
+    #[must_use]
+    pub fn silent(&mut self) -> SILENT_W<3> {
         SILENT_W::new(self)
     }
     #[doc = "Bit 4 - Loopback Mode"]
     #[inline(always)]
-    pub fn lback(&mut self) -> LBACK_W {
+    #[must_use]
+    pub fn lback(&mut self) -> LBACK_W<4> {
         LBACK_W::new(self)
     }
     #[doc = "Bits 5:6 - Control of CAN_TX Pin"]
     #[inline(always)]
-    pub fn tx(&mut self) -> TX_W {
+    #[must_use]
+    pub fn tx(&mut self) -> TX_W<5> {
         TX_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -193,11 +197,10 @@ impl crate::Readable for TEST_SPEC {
 #[doc = "`write(|w| ..)` method takes [test::W](W) writer structure"]
 impl crate::Writable for TEST_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TEST to value 0"]
 impl crate::Resettable for TEST_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

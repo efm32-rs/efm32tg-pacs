@@ -2,33 +2,33 @@
 #[repr(C)]
 pub struct RegisterBlock {
     #[doc = "0x00 - Control Register"]
-    pub ctrl: crate::Reg<ctrl::CTRL_SPEC>,
+    pub ctrl: CTRL,
     #[doc = "0x04 - Reset Cause Register"]
-    pub rstcause: crate::Reg<rstcause::RSTCAUSE_SPEC>,
+    pub rstcause: RSTCAUSE,
     #[doc = "0x08 - Command Register"]
-    pub cmd: crate::Reg<cmd::CMD_SPEC>,
+    pub cmd: CMD,
     #[doc = "0x0c - Reset Control Register"]
-    pub rst: crate::Reg<rst::RST_SPEC>,
+    pub rst: RST,
     #[doc = "0x10 - Configuration Lock Register"]
-    pub lock: crate::Reg<lock::LOCK_SPEC>,
+    pub lock: LOCK,
 }
-#[doc = "CTRL register accessor: an alias for `Reg<CTRL_SPEC>`"]
+#[doc = "CTRL (rw) register accessor: an alias for `Reg<CTRL_SPEC>`"]
 pub type CTRL = crate::Reg<ctrl::CTRL_SPEC>;
 #[doc = "Control Register"]
 pub mod ctrl;
-#[doc = "RSTCAUSE register accessor: an alias for `Reg<RSTCAUSE_SPEC>`"]
+#[doc = "RSTCAUSE (r) register accessor: an alias for `Reg<RSTCAUSE_SPEC>`"]
 pub type RSTCAUSE = crate::Reg<rstcause::RSTCAUSE_SPEC>;
 #[doc = "Reset Cause Register"]
 pub mod rstcause;
-#[doc = "CMD register accessor: an alias for `Reg<CMD_SPEC>`"]
+#[doc = "CMD (w) register accessor: an alias for `Reg<CMD_SPEC>`"]
 pub type CMD = crate::Reg<cmd::CMD_SPEC>;
 #[doc = "Command Register"]
 pub mod cmd;
-#[doc = "RST register accessor: an alias for `Reg<RST_SPEC>`"]
+#[doc = "RST (rw) register accessor: an alias for `Reg<RST_SPEC>`"]
 pub type RST = crate::Reg<rst::RST_SPEC>;
 #[doc = "Reset Control Register"]
 pub mod rst;
-#[doc = "LOCK register accessor: an alias for `Reg<LOCK_SPEC>`"]
+#[doc = "LOCK (rw) register accessor: an alias for `Reg<LOCK_SPEC>`"]
 pub type LOCK = crate::Reg<lock::LOCK_SPEC>;
 #[doc = "Configuration Lock Register"]
 pub mod lock;

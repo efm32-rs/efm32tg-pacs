@@ -82,8 +82,5 @@ impl crate::Readable for OPA0_APORTCONFLICT_SPEC {
 }
 #[doc = "`reset()` method sets OPA0_APORTCONFLICT to value 0"]
 impl crate::Resettable for OPA0_APORTCONFLICT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

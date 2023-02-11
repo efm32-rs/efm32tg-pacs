@@ -37,11 +37,12 @@ impl From<crate::W<DCDCCLIMCTRL_SPEC>> for W {
 #[doc = "Field `CLIMBLANKDLY` reader - Reserved for internal use. Do not change."]
 pub type CLIMBLANKDLY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CLIMBLANKDLY` writer - Reserved for internal use. Do not change."]
-pub type CLIMBLANKDLY_W<'a> = crate::FieldWriter<'a, u32, DCDCCLIMCTRL_SPEC, u8, u8, 2, 8>;
+pub type CLIMBLANKDLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DCDCCLIMCTRL_SPEC, u8, u8, 2, O>;
 #[doc = "Field `BYPLIMEN` reader - Bypass Current Limit Enable"]
 pub type BYPLIMEN_R = crate::BitReader<bool>;
 #[doc = "Field `BYPLIMEN` writer - Bypass Current Limit Enable"]
-pub type BYPLIMEN_W<'a> = crate::BitWriter<'a, u32, DCDCCLIMCTRL_SPEC, bool, 13>;
+pub type BYPLIMEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCCLIMCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 8:9 - Reserved for internal use. Do not change."]
     #[inline(always)]
@@ -57,12 +58,14 @@ impl R {
 impl W {
     #[doc = "Bits 8:9 - Reserved for internal use. Do not change."]
     #[inline(always)]
-    pub fn climblankdly(&mut self) -> CLIMBLANKDLY_W {
+    #[must_use]
+    pub fn climblankdly(&mut self) -> CLIMBLANKDLY_W<8> {
         CLIMBLANKDLY_W::new(self)
     }
     #[doc = "Bit 13 - Bypass Current Limit Enable"]
     #[inline(always)]
-    pub fn byplimen(&mut self) -> BYPLIMEN_W {
+    #[must_use]
+    pub fn byplimen(&mut self) -> BYPLIMEN_W<13> {
         BYPLIMEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +87,10 @@ impl crate::Readable for DCDCCLIMCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dcdcclimctrl::W](W) writer structure"]
 impl crate::Writable for DCDCCLIMCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DCDCCLIMCTRL to value 0x0100"]
 impl crate::Resettable for DCDCCLIMCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0100
-    }
+    const RESET_VALUE: Self::Ux = 0x0100;
 }

@@ -37,11 +37,11 @@ impl From<crate::W<DCDCLPVCTRL_SPEC>> for W {
 #[doc = "Field `LPATT` reader - Low Power Feedback Attenuation"]
 pub type LPATT_R = crate::BitReader<bool>;
 #[doc = "Field `LPATT` writer - Low Power Feedback Attenuation"]
-pub type LPATT_W<'a> = crate::BitWriter<'a, u32, DCDCLPVCTRL_SPEC, bool, 0>;
+pub type LPATT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCLPVCTRL_SPEC, bool, O>;
 #[doc = "Field `LPVREF` reader - LP Mode Reference Selection for EM23 and EM4H"]
 pub type LPVREF_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LPVREF` writer - LP Mode Reference Selection for EM23 and EM4H"]
-pub type LPVREF_W<'a> = crate::FieldWriter<'a, u32, DCDCLPVCTRL_SPEC, u8, u8, 8, 1>;
+pub type LPVREF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCLPVCTRL_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bit 0 - Low Power Feedback Attenuation"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Low Power Feedback Attenuation"]
     #[inline(always)]
-    pub fn lpatt(&mut self) -> LPATT_W {
+    #[must_use]
+    pub fn lpatt(&mut self) -> LPATT_W<0> {
         LPATT_W::new(self)
     }
     #[doc = "Bits 1:8 - LP Mode Reference Selection for EM23 and EM4H"]
     #[inline(always)]
-    pub fn lpvref(&mut self) -> LPVREF_W {
+    #[must_use]
+    pub fn lpvref(&mut self) -> LPVREF_W<1> {
         LPVREF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for DCDCLPVCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dcdclpvctrl::W](W) writer structure"]
 impl crate::Writable for DCDCLPVCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DCDCLPVCTRL to value 0x0168"]
 impl crate::Resettable for DCDCLPVCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0168
-    }
+    const RESET_VALUE: Self::Ux = 0x0168;
 }

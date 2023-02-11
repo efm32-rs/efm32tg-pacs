@@ -37,11 +37,11 @@ impl From<crate::W<CMPTHR_SPEC>> for W {
 #[doc = "Field `ADLT` reader - Less Than Compare Threshold"]
 pub type ADLT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ADLT` writer - Less Than Compare Threshold"]
-pub type ADLT_W<'a> = crate::FieldWriter<'a, u32, CMPTHR_SPEC, u16, u16, 16, 0>;
+pub type ADLT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPTHR_SPEC, u16, u16, 16, O>;
 #[doc = "Field `ADGT` reader - Greater Than Compare Threshold"]
 pub type ADGT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `ADGT` writer - Greater Than Compare Threshold"]
-pub type ADGT_W<'a> = crate::FieldWriter<'a, u32, CMPTHR_SPEC, u16, u16, 16, 16>;
+pub type ADGT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMPTHR_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Less Than Compare Threshold"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Less Than Compare Threshold"]
     #[inline(always)]
-    pub fn adlt(&mut self) -> ADLT_W {
+    #[must_use]
+    pub fn adlt(&mut self) -> ADLT_W<0> {
         ADLT_W::new(self)
     }
     #[doc = "Bits 16:31 - Greater Than Compare Threshold"]
     #[inline(always)]
-    pub fn adgt(&mut self) -> ADGT_W {
+    #[must_use]
+    pub fn adgt(&mut self) -> ADGT_W<16> {
         ADGT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for CMPTHR_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmpthr::W](W) writer structure"]
 impl crate::Writable for CMPTHR_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMPTHR to value 0"]
 impl crate::Resettable for CMPTHR_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

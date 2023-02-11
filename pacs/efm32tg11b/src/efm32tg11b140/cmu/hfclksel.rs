@@ -20,7 +20,7 @@ impl From<crate::W<HFCLKSEL_SPEC>> for W {
     }
 }
 #[doc = "HFCLK Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HF_AW {
     #[doc = "1: Select HFRCO as HFCLK"]
@@ -43,8 +43,8 @@ impl From<HF_AW> for u8 {
     }
 }
 #[doc = "Field `HF` writer - HFCLK Select"]
-pub type HF_W<'a> = crate::FieldWriter<'a, u32, HFCLKSEL_SPEC, u8, HF_AW, 3, 0>;
-impl<'a> HF_W<'a> {
+pub type HF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFCLKSEL_SPEC, u8, HF_AW, 3, O>;
+impl<'a, const O: u8> HF_W<'a, O> {
     #[doc = "Select HFRCO as HFCLK"]
     #[inline(always)]
     pub fn hfrco(self) -> &'a mut W {
@@ -79,7 +79,8 @@ impl<'a> HF_W<'a> {
 impl W {
     #[doc = "Bits 0:2 - HFCLK Select"]
     #[inline(always)]
-    pub fn hf(&mut self) -> HF_W {
+    #[must_use]
+    pub fn hf(&mut self) -> HF_W<0> {
         HF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -97,11 +98,10 @@ impl crate::RegisterSpec for HFCLKSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hfclksel::W](W) writer structure"]
 impl crate::Writable for HFCLKSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HFCLKSEL to value 0"]
 impl crate::Resettable for HFCLKSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

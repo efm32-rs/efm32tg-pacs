@@ -37,7 +37,7 @@ impl From<crate::W<BRPE_SPEC>> for W {
 #[doc = "Field `BRPE` reader - Baud Rate Prescaler Extension"]
 pub type BRPE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BRPE` writer - Baud Rate Prescaler Extension"]
-pub type BRPE_W<'a> = crate::FieldWriter<'a, u32, BRPE_SPEC, u8, u8, 4, 0>;
+pub type BRPE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BRPE_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:3 - Baud Rate Prescaler Extension"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Baud Rate Prescaler Extension"]
     #[inline(always)]
-    pub fn brpe(&mut self) -> BRPE_W {
+    #[must_use]
+    pub fn brpe(&mut self) -> BRPE_W<0> {
         BRPE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for BRPE_SPEC {
 #[doc = "`write(|w| ..)` method takes [brpe::W](W) writer structure"]
 impl crate::Writable for BRPE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BRPE to value 0"]
 impl crate::Resettable for BRPE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

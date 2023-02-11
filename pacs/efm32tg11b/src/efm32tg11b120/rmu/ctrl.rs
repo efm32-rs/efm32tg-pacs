@@ -34,8 +34,10 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `WDOGRMODE` reader - WDOG Reset Mode"]
+pub type WDOGRMODE_R = crate::FieldReader<u8, WDOGRMODE_A>;
 #[doc = "WDOG Reset Mode\n\nValue on reset: 4"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WDOGRMODE_A {
     #[doc = "0: Reset request is blocked. This disable bit is redundant with enable/disable bit in WDOG"]
@@ -53,8 +55,6 @@ impl From<WDOGRMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WDOGRMODE` reader - WDOG Reset Mode"]
-pub type WDOGRMODE_R = crate::FieldReader<u8, WDOGRMODE_A>;
 impl WDOGRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,9 @@ impl WDOGRMODE_R {
     }
 }
 #[doc = "Field `WDOGRMODE` writer - WDOG Reset Mode"]
-pub type WDOGRMODE_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, WDOGRMODE_A, 3, 0>;
-impl<'a> WDOGRMODE_W<'a> {
+pub type WDOGRMODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, WDOGRMODE_A, 3, O>;
+impl<'a, const O: u8> WDOGRMODE_W<'a, O> {
     #[doc = "Reset request is blocked. This disable bit is redundant with enable/disable bit in WDOG"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -112,8 +113,10 @@ impl<'a> WDOGRMODE_W<'a> {
         self.variant(WDOGRMODE_A::FULL)
     }
 }
+#[doc = "Field `LOCKUPRMODE` reader - Core LOCKUP Reset Mode"]
+pub type LOCKUPRMODE_R = crate::FieldReader<u8, LOCKUPRMODE_A>;
 #[doc = "Core LOCKUP Reset Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LOCKUPRMODE_A {
     #[doc = "0: Reset request is blocked."]
@@ -131,8 +134,6 @@ impl From<LOCKUPRMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LOCKUPRMODE` reader - Core LOCKUP Reset Mode"]
-pub type LOCKUPRMODE_R = crate::FieldReader<u8, LOCKUPRMODE_A>;
 impl LOCKUPRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -167,8 +168,9 @@ impl LOCKUPRMODE_R {
     }
 }
 #[doc = "Field `LOCKUPRMODE` writer - Core LOCKUP Reset Mode"]
-pub type LOCKUPRMODE_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, LOCKUPRMODE_A, 3, 4>;
-impl<'a> LOCKUPRMODE_W<'a> {
+pub type LOCKUPRMODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, LOCKUPRMODE_A, 3, O>;
+impl<'a, const O: u8> LOCKUPRMODE_W<'a, O> {
     #[doc = "Reset request is blocked."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -190,8 +192,10 @@ impl<'a> LOCKUPRMODE_W<'a> {
         self.variant(LOCKUPRMODE_A::FULL)
     }
 }
+#[doc = "Field `SYSRMODE` reader - Core Sysreset Reset Mode"]
+pub type SYSRMODE_R = crate::FieldReader<u8, SYSRMODE_A>;
 #[doc = "Core Sysreset Reset Mode\n\nValue on reset: 2"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SYSRMODE_A {
     #[doc = "0: Reset request is blocked."]
@@ -209,8 +213,6 @@ impl From<SYSRMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SYSRMODE` reader - Core Sysreset Reset Mode"]
-pub type SYSRMODE_R = crate::FieldReader<u8, SYSRMODE_A>;
 impl SYSRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -245,8 +247,8 @@ impl SYSRMODE_R {
     }
 }
 #[doc = "Field `SYSRMODE` writer - Core Sysreset Reset Mode"]
-pub type SYSRMODE_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, SYSRMODE_A, 3, 8>;
-impl<'a> SYSRMODE_W<'a> {
+pub type SYSRMODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, SYSRMODE_A, 3, O>;
+impl<'a, const O: u8> SYSRMODE_W<'a, O> {
     #[doc = "Reset request is blocked."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -268,8 +270,10 @@ impl<'a> SYSRMODE_W<'a> {
         self.variant(SYSRMODE_A::FULL)
     }
 }
+#[doc = "Field `PINRMODE` reader - PIN Reset Mode"]
+pub type PINRMODE_R = crate::FieldReader<u8, PINRMODE_A>;
 #[doc = "PIN Reset Mode\n\nValue on reset: 4"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PINRMODE_A {
     #[doc = "0: Reset request is blocked."]
@@ -287,8 +291,6 @@ impl From<PINRMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PINRMODE` reader - PIN Reset Mode"]
-pub type PINRMODE_R = crate::FieldReader<u8, PINRMODE_A>;
 impl PINRMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -323,8 +325,8 @@ impl PINRMODE_R {
     }
 }
 #[doc = "Field `PINRMODE` writer - PIN Reset Mode"]
-pub type PINRMODE_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PINRMODE_A, 3, 12>;
-impl<'a> PINRMODE_W<'a> {
+pub type PINRMODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PINRMODE_A, 3, O>;
+impl<'a, const O: u8> PINRMODE_W<'a, O> {
     #[doc = "Reset request is blocked."]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -349,7 +351,7 @@ impl<'a> PINRMODE_W<'a> {
 #[doc = "Field `RESETSTATE` reader - System Software Reset State"]
 pub type RESETSTATE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RESETSTATE` writer - System Software Reset State"]
-pub type RESETSTATE_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 2, 24>;
+pub type RESETSTATE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 0:2 - WDOG Reset Mode"]
     #[inline(always)]
@@ -380,27 +382,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - WDOG Reset Mode"]
     #[inline(always)]
-    pub fn wdogrmode(&mut self) -> WDOGRMODE_W {
+    #[must_use]
+    pub fn wdogrmode(&mut self) -> WDOGRMODE_W<0> {
         WDOGRMODE_W::new(self)
     }
     #[doc = "Bits 4:6 - Core LOCKUP Reset Mode"]
     #[inline(always)]
-    pub fn lockuprmode(&mut self) -> LOCKUPRMODE_W {
+    #[must_use]
+    pub fn lockuprmode(&mut self) -> LOCKUPRMODE_W<4> {
         LOCKUPRMODE_W::new(self)
     }
     #[doc = "Bits 8:10 - Core Sysreset Reset Mode"]
     #[inline(always)]
-    pub fn sysrmode(&mut self) -> SYSRMODE_W {
+    #[must_use]
+    pub fn sysrmode(&mut self) -> SYSRMODE_W<8> {
         SYSRMODE_W::new(self)
     }
     #[doc = "Bits 12:14 - PIN Reset Mode"]
     #[inline(always)]
-    pub fn pinrmode(&mut self) -> PINRMODE_W {
+    #[must_use]
+    pub fn pinrmode(&mut self) -> PINRMODE_W<12> {
         PINRMODE_W::new(self)
     }
     #[doc = "Bits 24:25 - System Software Reset State"]
     #[inline(always)]
-    pub fn resetstate(&mut self) -> RESETSTATE_W {
+    #[must_use]
+    pub fn resetstate(&mut self) -> RESETSTATE_W<24> {
         RESETSTATE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -422,11 +429,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x4204"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x4204
-    }
+    const RESET_VALUE: Self::Ux = 0x4204;
 }

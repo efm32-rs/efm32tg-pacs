@@ -37,11 +37,11 @@ impl From<crate::W<HFRCOSS_SPEC>> for W {
 #[doc = "Field `SSAMP` reader - Spread Spectrum Amplitude"]
 pub type SSAMP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SSAMP` writer - Spread Spectrum Amplitude"]
-pub type SSAMP_W<'a> = crate::FieldWriter<'a, u32, HFRCOSS_SPEC, u8, u8, 3, 0>;
+pub type SSAMP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFRCOSS_SPEC, u8, u8, 3, O>;
 #[doc = "Field `SSINV` reader - Spread Spectrum Update Interval"]
 pub type SSINV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SSINV` writer - Spread Spectrum Update Interval"]
-pub type SSINV_W<'a> = crate::FieldWriter<'a, u32, HFRCOSS_SPEC, u8, u8, 5, 8>;
+pub type SSINV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HFRCOSS_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:2 - Spread Spectrum Amplitude"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Spread Spectrum Amplitude"]
     #[inline(always)]
-    pub fn ssamp(&mut self) -> SSAMP_W {
+    #[must_use]
+    pub fn ssamp(&mut self) -> SSAMP_W<0> {
         SSAMP_W::new(self)
     }
     #[doc = "Bits 8:12 - Spread Spectrum Update Interval"]
     #[inline(always)]
-    pub fn ssinv(&mut self) -> SSINV_W {
+    #[must_use]
+    pub fn ssinv(&mut self) -> SSINV_W<8> {
         SSINV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for HFRCOSS_SPEC {
 #[doc = "`write(|w| ..)` method takes [hfrcoss::W](W) writer structure"]
 impl crate::Writable for HFRCOSS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HFRCOSS to value 0"]
 impl crate::Resettable for HFRCOSS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

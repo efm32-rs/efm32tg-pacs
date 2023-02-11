@@ -37,21 +37,23 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `EM2BLOCK` reader - Energy Mode 2 Block"]
 pub type EM2BLOCK_R = crate::BitReader<bool>;
 #[doc = "Field `EM2BLOCK` writer - Energy Mode 2 Block"]
-pub type EM2BLOCK_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 1>;
+pub type EM2BLOCK_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EM2BODDIS` reader - Disable BOD in EM2"]
 pub type EM2BODDIS_R = crate::BitReader<bool>;
 #[doc = "Field `EM2BODDIS` writer - Disable BOD in EM2"]
-pub type EM2BODDIS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 2>;
+pub type EM2BODDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EM01LD` reader - Reserved for internal use. Do not change."]
 pub type EM01LD_R = crate::BitReader<bool>;
 #[doc = "Field `EM01LD` writer - Reserved for internal use. Do not change."]
-pub type EM01LD_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 3>;
+pub type EM01LD_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `EM23VSCALEAUTOWSEN` reader - Automatically Configures Flash and Frequency to Wakeup From EM2 or EM3 at Low Voltage"]
 pub type EM23VSCALEAUTOWSEN_R = crate::BitReader<bool>;
 #[doc = "Field `EM23VSCALEAUTOWSEN` writer - Automatically Configures Flash and Frequency to Wakeup From EM2 or EM3 at Low Voltage"]
-pub type EM23VSCALEAUTOWSEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 4>;
+pub type EM23VSCALEAUTOWSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `EM23VSCALE` reader - EM23 Voltage Scale"]
+pub type EM23VSCALE_R = crate::FieldReader<u8, EM23VSCALE_A>;
 #[doc = "EM23 Voltage Scale\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EM23VSCALE_A {
     #[doc = "0: Voltage Scale Level 2"]
@@ -67,8 +69,6 @@ impl From<EM23VSCALE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EM23VSCALE` reader - EM23 Voltage Scale"]
-pub type EM23VSCALE_R = crate::FieldReader<u8, EM23VSCALE_A>;
 impl EM23VSCALE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -97,8 +97,9 @@ impl EM23VSCALE_R {
     }
 }
 #[doc = "Field `EM23VSCALE` writer - EM23 Voltage Scale"]
-pub type EM23VSCALE_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, EM23VSCALE_A, 2, 8>;
-impl<'a> EM23VSCALE_W<'a> {
+pub type EM23VSCALE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, EM23VSCALE_A, 2, O>;
+impl<'a, const O: u8> EM23VSCALE_W<'a, O> {
     #[doc = "Voltage Scale Level 2"]
     #[inline(always)]
     pub fn vscale2(self) -> &'a mut W {
@@ -115,8 +116,10 @@ impl<'a> EM23VSCALE_W<'a> {
         self.variant(EM23VSCALE_A::RESV)
     }
 }
+#[doc = "Field `EM4HVSCALE` reader - EM4H Voltage Scale"]
+pub type EM4HVSCALE_R = crate::FieldReader<u8, EM4HVSCALE_A>;
 #[doc = "EM4H Voltage Scale\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum EM4HVSCALE_A {
     #[doc = "0: Voltage Scale Level 2"]
@@ -132,8 +135,6 @@ impl From<EM4HVSCALE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `EM4HVSCALE` reader - EM4H Voltage Scale"]
-pub type EM4HVSCALE_R = crate::FieldReader<u8, EM4HVSCALE_A>;
 impl EM4HVSCALE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -162,8 +163,9 @@ impl EM4HVSCALE_R {
     }
 }
 #[doc = "Field `EM4HVSCALE` writer - EM4H Voltage Scale"]
-pub type EM4HVSCALE_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, EM4HVSCALE_A, 2, 16>;
-impl<'a> EM4HVSCALE_W<'a> {
+pub type EM4HVSCALE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, EM4HVSCALE_A, 2, O>;
+impl<'a, const O: u8> EM4HVSCALE_W<'a, O> {
     #[doc = "Voltage Scale Level 2"]
     #[inline(always)]
     pub fn vscale2(self) -> &'a mut W {
@@ -215,32 +217,38 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Energy Mode 2 Block"]
     #[inline(always)]
-    pub fn em2block(&mut self) -> EM2BLOCK_W {
+    #[must_use]
+    pub fn em2block(&mut self) -> EM2BLOCK_W<1> {
         EM2BLOCK_W::new(self)
     }
     #[doc = "Bit 2 - Disable BOD in EM2"]
     #[inline(always)]
-    pub fn em2boddis(&mut self) -> EM2BODDIS_W {
+    #[must_use]
+    pub fn em2boddis(&mut self) -> EM2BODDIS_W<2> {
         EM2BODDIS_W::new(self)
     }
     #[doc = "Bit 3 - Reserved for internal use. Do not change."]
     #[inline(always)]
-    pub fn em01ld(&mut self) -> EM01LD_W {
+    #[must_use]
+    pub fn em01ld(&mut self) -> EM01LD_W<3> {
         EM01LD_W::new(self)
     }
     #[doc = "Bit 4 - Automatically Configures Flash and Frequency to Wakeup From EM2 or EM3 at Low Voltage"]
     #[inline(always)]
-    pub fn em23vscaleautowsen(&mut self) -> EM23VSCALEAUTOWSEN_W {
+    #[must_use]
+    pub fn em23vscaleautowsen(&mut self) -> EM23VSCALEAUTOWSEN_W<4> {
         EM23VSCALEAUTOWSEN_W::new(self)
     }
     #[doc = "Bits 8:9 - EM23 Voltage Scale"]
     #[inline(always)]
-    pub fn em23vscale(&mut self) -> EM23VSCALE_W {
+    #[must_use]
+    pub fn em23vscale(&mut self) -> EM23VSCALE_W<8> {
         EM23VSCALE_W::new(self)
     }
     #[doc = "Bits 16:17 - EM4H Voltage Scale"]
     #[inline(always)]
-    pub fn em4hvscale(&mut self) -> EM4HVSCALE_W {
+    #[must_use]
+    pub fn em4hvscale(&mut self) -> EM4HVSCALE_W<16> {
         EM4HVSCALE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -262,11 +270,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

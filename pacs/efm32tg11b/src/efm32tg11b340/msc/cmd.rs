@@ -20,11 +20,12 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `PWRUP` writer - Flash Power Up Command"]
-pub type PWRUP_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 0>;
+pub type PWRUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Flash Power Up Command"]
     #[inline(always)]
-    pub fn pwrup(&mut self) -> PWRUP_W {
+    #[must_use]
+    pub fn pwrup(&mut self) -> PWRUP_W<0> {
         PWRUP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -42,11 +43,10 @@ impl crate::RegisterSpec for CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmd::W](W) writer structure"]
 impl crate::Writable for CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
 impl crate::Resettable for CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

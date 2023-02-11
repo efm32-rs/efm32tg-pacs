@@ -37,27 +37,27 @@ impl From<crate::W<ROUTEPEN_SPEC>> for W {
 #[doc = "Field `RXPEN` reader - RX Pin Enable"]
 pub type RXPEN_R = crate::BitReader<bool>;
 #[doc = "Field `RXPEN` writer - RX Pin Enable"]
-pub type RXPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 0>;
+pub type RXPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `TXPEN` reader - TX Pin Enable"]
 pub type TXPEN_R = crate::BitReader<bool>;
 #[doc = "Field `TXPEN` writer - TX Pin Enable"]
-pub type TXPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 1>;
+pub type TXPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CSPEN` reader - CS Pin Enable"]
 pub type CSPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CSPEN` writer - CS Pin Enable"]
-pub type CSPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 2>;
+pub type CSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CLKPEN` reader - CLK Pin Enable"]
 pub type CLKPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CLKPEN` writer - CLK Pin Enable"]
-pub type CLKPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 3>;
+pub type CLKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `CTSPEN` reader - CTS Pin Enable"]
 pub type CTSPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CTSPEN` writer - CTS Pin Enable"]
-pub type CTSPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 4>;
+pub type CTSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `RTSPEN` reader - RTS Pin Enable"]
 pub type RTSPEN_R = crate::BitReader<bool>;
 #[doc = "Field `RTSPEN` writer - RTS Pin Enable"]
-pub type RTSPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 5>;
+pub type RTSPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - RX Pin Enable"]
     #[inline(always)]
@@ -93,32 +93,38 @@ impl R {
 impl W {
     #[doc = "Bit 0 - RX Pin Enable"]
     #[inline(always)]
-    pub fn rxpen(&mut self) -> RXPEN_W {
+    #[must_use]
+    pub fn rxpen(&mut self) -> RXPEN_W<0> {
         RXPEN_W::new(self)
     }
     #[doc = "Bit 1 - TX Pin Enable"]
     #[inline(always)]
-    pub fn txpen(&mut self) -> TXPEN_W {
+    #[must_use]
+    pub fn txpen(&mut self) -> TXPEN_W<1> {
         TXPEN_W::new(self)
     }
     #[doc = "Bit 2 - CS Pin Enable"]
     #[inline(always)]
-    pub fn cspen(&mut self) -> CSPEN_W {
+    #[must_use]
+    pub fn cspen(&mut self) -> CSPEN_W<2> {
         CSPEN_W::new(self)
     }
     #[doc = "Bit 3 - CLK Pin Enable"]
     #[inline(always)]
-    pub fn clkpen(&mut self) -> CLKPEN_W {
+    #[must_use]
+    pub fn clkpen(&mut self) -> CLKPEN_W<3> {
         CLKPEN_W::new(self)
     }
     #[doc = "Bit 4 - CTS Pin Enable"]
     #[inline(always)]
-    pub fn ctspen(&mut self) -> CTSPEN_W {
+    #[must_use]
+    pub fn ctspen(&mut self) -> CTSPEN_W<4> {
         CTSPEN_W::new(self)
     }
     #[doc = "Bit 5 - RTS Pin Enable"]
     #[inline(always)]
-    pub fn rtspen(&mut self) -> RTSPEN_W {
+    #[must_use]
+    pub fn rtspen(&mut self) -> RTSPEN_W<5> {
         RTSPEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -140,11 +146,10 @@ impl crate::Readable for ROUTEPEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [routepen::W](W) writer structure"]
 impl crate::Writable for ROUTEPEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTEPEN to value 0"]
 impl crate::Resettable for ROUTEPEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

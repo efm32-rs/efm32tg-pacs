@@ -1,9 +1,9 @@
 //! Peripheral access API for EFM32TG11B microcontrollers
 //! (generated using [svd2rust](https://github.com/rust-embedded/svd2rust)
-//! 0.24.0)
+//! 0.28.0)
 //!
 //! You can find an overview of the API here:
-//! [svd2rust/#peripheral-api](https://docs.rs/svd2rust/0.24.0/svd2rust/#peripheral-api)
+//! [svd2rust/#peripheral-api](https://docs.rs/svd2rust/0.28.0/svd2rust/#peripheral-api)
 //!
 //! For more details see the README here:
 //! [efm32-rs](https://github.com/efm32-rs/efm32tg-pacs)
@@ -20,18 +20,18 @@ pub use self::generic::*;
 
 #[cfg(feature = "efm32tg11b120")]
 pub mod efm32tg11b120;
-
+
 #[cfg(feature = "efm32tg11b140")]
 pub mod efm32tg11b140;
-
+
 #[cfg(feature = "efm32tg11b320")]
 pub mod efm32tg11b320;
-
+
 #[cfg(feature = "efm32tg11b340")]
 pub mod efm32tg11b340;
-
+
 #[cfg(feature = "efm32tg11b520")]
 pub mod efm32tg11b520;
-
+
 #[cfg(feature = "efm32tg11b540")]
 pub mod efm32tg11b540;

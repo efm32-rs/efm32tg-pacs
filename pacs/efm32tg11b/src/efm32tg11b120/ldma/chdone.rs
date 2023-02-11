@@ -37,7 +37,7 @@ impl From<crate::W<CHDONE_SPEC>> for W {
 #[doc = "Field `CHDONE` reader - DMA Channel Linking or Done"]
 pub type CHDONE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CHDONE` writer - DMA Channel Linking or Done"]
-pub type CHDONE_W<'a> = crate::FieldWriter<'a, u32, CHDONE_SPEC, u8, u8, 8, 0>;
+pub type CHDONE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CHDONE_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - DMA Channel Linking or Done"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - DMA Channel Linking or Done"]
     #[inline(always)]
-    pub fn chdone(&mut self) -> CHDONE_W {
+    #[must_use]
+    pub fn chdone(&mut self) -> CHDONE_W<0> {
         CHDONE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for CHDONE_SPEC {
 #[doc = "`write(|w| ..)` method takes [chdone::W](W) writer structure"]
 impl crate::Writable for CHDONE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHDONE to value 0"]
 impl crate::Resettable for CHDONE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -23,8 +23,10 @@ pub type SCANPENDING_R = crate::BitReader<bool>;
 pub type SINGLEREFWARM_R = crate::BitReader<bool>;
 #[doc = "Field `SCANREFWARM` reader - Scan Reference Warmed Up"]
 pub type SCANREFWARM_R = crate::BitReader<bool>;
+#[doc = "Field `PROGERR` reader - Programming Error Status"]
+pub type PROGERR_R = crate::FieldReader<u8, PROGERR_A>;
 #[doc = "Programming Error Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PROGERR_A {
     #[doc = "1: `1`"]
@@ -38,8 +40,6 @@ impl From<PROGERR_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PROGERR` reader - Programming Error Status"]
-pub type PROGERR_R = crate::FieldReader<u8, PROGERR_A>;
 impl PROGERR_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -125,8 +125,5 @@ impl crate::Readable for STATUS_SPEC {
 }
 #[doc = "`reset()` method sets STATUS to value 0"]
 impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

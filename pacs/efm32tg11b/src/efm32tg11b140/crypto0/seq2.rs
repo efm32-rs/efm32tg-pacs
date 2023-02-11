@@ -37,19 +37,19 @@ impl From<crate::W<SEQ2_SPEC>> for W {
 #[doc = "Field `INSTR8` reader - Sequence Instruction 8"]
 pub type INSTR8_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INSTR8` writer - Sequence Instruction 8"]
-pub type INSTR8_W<'a> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, 0>;
+pub type INSTR8_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, O>;
 #[doc = "Field `INSTR9` reader - Sequence Instruction 9"]
 pub type INSTR9_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INSTR9` writer - Sequence Instruction 9"]
-pub type INSTR9_W<'a> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, 8>;
+pub type INSTR9_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, O>;
 #[doc = "Field `INSTR10` reader - Sequence Instruction 10"]
 pub type INSTR10_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INSTR10` writer - Sequence Instruction 10"]
-pub type INSTR10_W<'a> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, 16>;
+pub type INSTR10_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, O>;
 #[doc = "Field `INSTR11` reader - Sequence Instruction 11"]
 pub type INSTR11_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INSTR11` writer - Sequence Instruction 11"]
-pub type INSTR11_W<'a> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, 24>;
+pub type INSTR11_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQ2_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Sequence Instruction 8"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Sequence Instruction 8"]
     #[inline(always)]
-    pub fn instr8(&mut self) -> INSTR8_W {
+    #[must_use]
+    pub fn instr8(&mut self) -> INSTR8_W<0> {
         INSTR8_W::new(self)
     }
     #[doc = "Bits 8:15 - Sequence Instruction 9"]
     #[inline(always)]
-    pub fn instr9(&mut self) -> INSTR9_W {
+    #[must_use]
+    pub fn instr9(&mut self) -> INSTR9_W<8> {
         INSTR9_W::new(self)
     }
     #[doc = "Bits 16:23 - Sequence Instruction 10"]
     #[inline(always)]
-    pub fn instr10(&mut self) -> INSTR10_W {
+    #[must_use]
+    pub fn instr10(&mut self) -> INSTR10_W<16> {
         INSTR10_W::new(self)
     }
     #[doc = "Bits 24:31 - Sequence Instruction 11"]
     #[inline(always)]
-    pub fn instr11(&mut self) -> INSTR11_W {
+    #[must_use]
+    pub fn instr11(&mut self) -> INSTR11_W<24> {
         INSTR11_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for SEQ2_SPEC {
 #[doc = "`write(|w| ..)` method takes [seq2::W](W) writer structure"]
 impl crate::Writable for SEQ2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SEQ2 to value 0"]
 impl crate::Resettable for SEQ2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<DBGCLKSEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `DBG` reader - Debug Trace Clock"]
+pub type DBG_R = crate::FieldReader<u8, DBG_A>;
 #[doc = "Debug Trace Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum DBG_A {
     #[doc = "0: AUXHFRCO is the debug trace clock"]
@@ -51,8 +53,6 @@ impl From<DBG_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `DBG` reader - Debug Trace Clock"]
-pub type DBG_R = crate::FieldReader<u8, DBG_A>;
 impl DBG_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -81,8 +81,8 @@ impl DBG_R {
     }
 }
 #[doc = "Field `DBG` writer - Debug Trace Clock"]
-pub type DBG_W<'a> = crate::FieldWriter<'a, u32, DBGCLKSEL_SPEC, u8, DBG_A, 2, 0>;
-impl<'a> DBG_W<'a> {
+pub type DBG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DBGCLKSEL_SPEC, u8, DBG_A, 2, O>;
+impl<'a, const O: u8> DBG_W<'a, O> {
     #[doc = "AUXHFRCO is the debug trace clock"]
     #[inline(always)]
     pub fn auxhfrco(self) -> &'a mut W {
@@ -109,7 +109,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Debug Trace Clock"]
     #[inline(always)]
-    pub fn dbg(&mut self) -> DBG_W {
+    #[must_use]
+    pub fn dbg(&mut self) -> DBG_W<0> {
         DBG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -131,11 +132,10 @@ impl crate::Readable for DBGCLKSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dbgclksel::W](W) writer structure"]
 impl crate::Writable for DBGCLKSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DBGCLKSEL to value 0"]
 impl crate::Resettable for DBGCLKSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

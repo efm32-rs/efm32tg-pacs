@@ -37,19 +37,19 @@ impl From<crate::W<CTRLX_SPEC>> for W {
 #[doc = "Field `DBGHALT` reader - Debug Halt"]
 pub type DBGHALT_R = crate::BitReader<bool>;
 #[doc = "Field `DBGHALT` writer - Debug Halt"]
-pub type DBGHALT_W<'a> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, 0>;
+pub type DBGHALT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, O>;
 #[doc = "Field `CTSINV` reader - CTS Pin Inversion"]
 pub type CTSINV_R = crate::BitReader<bool>;
 #[doc = "Field `CTSINV` writer - CTS Pin Inversion"]
-pub type CTSINV_W<'a> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, 1>;
+pub type CTSINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, O>;
 #[doc = "Field `CTSEN` reader - CTS Function Enabled"]
 pub type CTSEN_R = crate::BitReader<bool>;
 #[doc = "Field `CTSEN` writer - CTS Function Enabled"]
-pub type CTSEN_W<'a> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, 2>;
+pub type CTSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, O>;
 #[doc = "Field `RTSINV` reader - RTS Pin Inversion"]
 pub type RTSINV_R = crate::BitReader<bool>;
 #[doc = "Field `RTSINV` writer - RTS Pin Inversion"]
-pub type RTSINV_W<'a> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, 3>;
+pub type RTSINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRLX_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Debug Halt"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Debug Halt"]
     #[inline(always)]
-    pub fn dbghalt(&mut self) -> DBGHALT_W {
+    #[must_use]
+    pub fn dbghalt(&mut self) -> DBGHALT_W<0> {
         DBGHALT_W::new(self)
     }
     #[doc = "Bit 1 - CTS Pin Inversion"]
     #[inline(always)]
-    pub fn ctsinv(&mut self) -> CTSINV_W {
+    #[must_use]
+    pub fn ctsinv(&mut self) -> CTSINV_W<1> {
         CTSINV_W::new(self)
     }
     #[doc = "Bit 2 - CTS Function Enabled"]
     #[inline(always)]
-    pub fn ctsen(&mut self) -> CTSEN_W {
+    #[must_use]
+    pub fn ctsen(&mut self) -> CTSEN_W<2> {
         CTSEN_W::new(self)
     }
     #[doc = "Bit 3 - RTS Pin Inversion"]
     #[inline(always)]
-    pub fn rtsinv(&mut self) -> RTSINV_W {
+    #[must_use]
+    pub fn rtsinv(&mut self) -> RTSINV_W<3> {
         RTSINV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for CTRLX_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrlx::W](W) writer structure"]
 impl crate::Writable for CTRLX_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRLX to value 0"]
 impl crate::Resettable for CTRLX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

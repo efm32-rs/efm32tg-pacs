@@ -37,31 +37,31 @@ impl From<crate::W<OPA3_CAL_SPEC>> for W {
 #[doc = "Field `CM1` reader - Compensation Cap Cm1 Trim Value"]
 pub type CM1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CM1` writer - Compensation Cap Cm1 Trim Value"]
-pub type CM1_W<'a> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 4, 0>;
+pub type CM1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `CM2` reader - Compensation Cap Cm2 Trim Value"]
 pub type CM2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CM2` writer - Compensation Cap Cm2 Trim Value"]
-pub type CM2_W<'a> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 4, 5>;
+pub type CM2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `CM3` reader - Compensation Cap Cm3 Trim Value"]
 pub type CM3_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CM3` writer - Compensation Cap Cm3 Trim Value"]
-pub type CM3_W<'a> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 2, 10>;
+pub type CM3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 2, O>;
 #[doc = "Field `GM` reader - Gm Trim Value"]
 pub type GM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GM` writer - Gm Trim Value"]
-pub type GM_W<'a> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 3, 13>;
+pub type GM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `GM3` reader - Gm3 Trim Value"]
 pub type GM3_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GM3` writer - Gm3 Trim Value"]
-pub type GM3_W<'a> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 2, 17>;
+pub type GM3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 2, O>;
 #[doc = "Field `OFFSETP` reader - OPAx Non-Inverting Input Offset Configuration Value"]
 pub type OFFSETP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OFFSETP` writer - OPAx Non-Inverting Input Offset Configuration Value"]
-pub type OFFSETP_W<'a> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 5, 20>;
+pub type OFFSETP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 5, O>;
 #[doc = "Field `OFFSETN` reader - OPAx Inverting Input Offset Configuration Value"]
 pub type OFFSETN_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OFFSETN` writer - OPAx Inverting Input Offset Configuration Value"]
-pub type OFFSETN_W<'a> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 5, 26>;
+pub type OFFSETN_W<'a, const O: u8> = crate::FieldWriter<'a, u32, OPA3_CAL_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:3 - Compensation Cap Cm1 Trim Value"]
     #[inline(always)]
@@ -102,37 +102,44 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Compensation Cap Cm1 Trim Value"]
     #[inline(always)]
-    pub fn cm1(&mut self) -> CM1_W {
+    #[must_use]
+    pub fn cm1(&mut self) -> CM1_W<0> {
         CM1_W::new(self)
     }
     #[doc = "Bits 5:8 - Compensation Cap Cm2 Trim Value"]
     #[inline(always)]
-    pub fn cm2(&mut self) -> CM2_W {
+    #[must_use]
+    pub fn cm2(&mut self) -> CM2_W<5> {
         CM2_W::new(self)
     }
     #[doc = "Bits 10:11 - Compensation Cap Cm3 Trim Value"]
     #[inline(always)]
-    pub fn cm3(&mut self) -> CM3_W {
+    #[must_use]
+    pub fn cm3(&mut self) -> CM3_W<10> {
         CM3_W::new(self)
     }
     #[doc = "Bits 13:15 - Gm Trim Value"]
     #[inline(always)]
-    pub fn gm(&mut self) -> GM_W {
+    #[must_use]
+    pub fn gm(&mut self) -> GM_W<13> {
         GM_W::new(self)
     }
     #[doc = "Bits 17:18 - Gm3 Trim Value"]
     #[inline(always)]
-    pub fn gm3(&mut self) -> GM3_W {
+    #[must_use]
+    pub fn gm3(&mut self) -> GM3_W<17> {
         GM3_W::new(self)
     }
     #[doc = "Bits 20:24 - OPAx Non-Inverting Input Offset Configuration Value"]
     #[inline(always)]
-    pub fn offsetp(&mut self) -> OFFSETP_W {
+    #[must_use]
+    pub fn offsetp(&mut self) -> OFFSETP_W<20> {
         OFFSETP_W::new(self)
     }
     #[doc = "Bits 26:30 - OPAx Inverting Input Offset Configuration Value"]
     #[inline(always)]
-    pub fn offsetn(&mut self) -> OFFSETN_W {
+    #[must_use]
+    pub fn offsetn(&mut self) -> OFFSETN_W<26> {
         OFFSETN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -154,11 +161,10 @@ impl crate::Readable for OPA3_CAL_SPEC {
 #[doc = "`write(|w| ..)` method takes [opa3_cal::W](W) writer structure"]
 impl crate::Writable for OPA3_CAL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets OPA3_CAL to value 0x80e7"]
 impl crate::Resettable for OPA3_CAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x80e7
-    }
+    const RESET_VALUE: Self::Ux = 0x80e7;
 }

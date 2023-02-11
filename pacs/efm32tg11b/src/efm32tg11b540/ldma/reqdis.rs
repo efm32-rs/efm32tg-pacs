@@ -37,7 +37,7 @@ impl From<crate::W<REQDIS_SPEC>> for W {
 #[doc = "Field `REQDIS` reader - DMA Request Disables"]
 pub type REQDIS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `REQDIS` writer - DMA Request Disables"]
-pub type REQDIS_W<'a> = crate::FieldWriter<'a, u32, REQDIS_SPEC, u8, u8, 8, 0>;
+pub type REQDIS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, REQDIS_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - DMA Request Disables"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - DMA Request Disables"]
     #[inline(always)]
-    pub fn reqdis(&mut self) -> REQDIS_W {
+    #[must_use]
+    pub fn reqdis(&mut self) -> REQDIS_W<0> {
         REQDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for REQDIS_SPEC {
 #[doc = "`write(|w| ..)` method takes [reqdis::W](W) writer structure"]
 impl crate::Writable for REQDIS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets REQDIS to value 0"]
 impl crate::Resettable for REQDIS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

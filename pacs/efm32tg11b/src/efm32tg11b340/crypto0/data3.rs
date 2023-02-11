@@ -37,7 +37,7 @@ impl From<crate::W<DATA3_SPEC>> for W {
 #[doc = "Field `DATA3` reader - Data 3 Access"]
 pub type DATA3_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DATA3` writer - Data 3 Access"]
-pub type DATA3_W<'a> = crate::FieldWriter<'a, u32, DATA3_SPEC, u32, u32, 32, 0>;
+pub type DATA3_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DATA3_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Data 3 Access"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Data 3 Access"]
     #[inline(always)]
-    pub fn data3(&mut self) -> DATA3_W {
+    #[must_use]
+    pub fn data3(&mut self) -> DATA3_W<0> {
         DATA3_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for DATA3_SPEC {
 #[doc = "`write(|w| ..)` method takes [data3::W](W) writer structure"]
 impl crate::Writable for DATA3_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DATA3 to value 0"]
 impl crate::Resettable for DATA3_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

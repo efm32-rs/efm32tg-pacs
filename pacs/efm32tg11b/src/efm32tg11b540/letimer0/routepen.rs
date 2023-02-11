@@ -37,11 +37,11 @@ impl From<crate::W<ROUTEPEN_SPEC>> for W {
 #[doc = "Field `OUT0PEN` reader - Output 0 Pin Enable"]
 pub type OUT0PEN_R = crate::BitReader<bool>;
 #[doc = "Field `OUT0PEN` writer - Output 0 Pin Enable"]
-pub type OUT0PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 0>;
+pub type OUT0PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 #[doc = "Field `OUT1PEN` reader - Output 1 Pin Enable"]
 pub type OUT1PEN_R = crate::BitReader<bool>;
 #[doc = "Field `OUT1PEN` writer - Output 1 Pin Enable"]
-pub type OUT1PEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 1>;
+pub type OUT1PEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Output 0 Pin Enable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Output 0 Pin Enable"]
     #[inline(always)]
-    pub fn out0pen(&mut self) -> OUT0PEN_W {
+    #[must_use]
+    pub fn out0pen(&mut self) -> OUT0PEN_W<0> {
         OUT0PEN_W::new(self)
     }
     #[doc = "Bit 1 - Output 1 Pin Enable"]
     #[inline(always)]
-    pub fn out1pen(&mut self) -> OUT1PEN_W {
+    #[must_use]
+    pub fn out1pen(&mut self) -> OUT1PEN_W<1> {
         OUT1PEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for ROUTEPEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [routepen::W](W) writer structure"]
 impl crate::Writable for ROUTEPEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTEPEN to value 0"]
 impl crate::Resettable for ROUTEPEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

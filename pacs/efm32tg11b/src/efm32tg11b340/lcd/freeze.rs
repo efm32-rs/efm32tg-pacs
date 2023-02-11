@@ -37,11 +37,11 @@ impl From<crate::W<FREEZE_SPEC>> for W {
 #[doc = "Field `REGFREEZE` reader - Register Update Freeze"]
 pub type REGFREEZE_R = crate::BitReader<bool>;
 #[doc = "Field `REGFREEZE` writer - Register Update Freeze"]
-pub type REGFREEZE_W<'a> = crate::BitWriter<'a, u32, FREEZE_SPEC, bool, 0>;
+pub type REGFREEZE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FREEZE_SPEC, bool, O>;
 #[doc = "Field `LCDGATE` reader - LCD Gate"]
 pub type LCDGATE_R = crate::BitReader<bool>;
 #[doc = "Field `LCDGATE` writer - LCD Gate"]
-pub type LCDGATE_W<'a> = crate::BitWriter<'a, u32, FREEZE_SPEC, bool, 1>;
+pub type LCDGATE_W<'a, const O: u8> = crate::BitWriter<'a, u32, FREEZE_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Register Update Freeze"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Register Update Freeze"]
     #[inline(always)]
-    pub fn regfreeze(&mut self) -> REGFREEZE_W {
+    #[must_use]
+    pub fn regfreeze(&mut self) -> REGFREEZE_W<0> {
         REGFREEZE_W::new(self)
     }
     #[doc = "Bit 1 - LCD Gate"]
     #[inline(always)]
-    pub fn lcdgate(&mut self) -> LCDGATE_W {
+    #[must_use]
+    pub fn lcdgate(&mut self) -> LCDGATE_W<1> {
         LCDGATE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for FREEZE_SPEC {
 #[doc = "`write(|w| ..)` method takes [freeze::W](W) writer structure"]
 impl crate::Writable for FREEZE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FREEZE to value 0"]
 impl crate::Resettable for FREEZE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

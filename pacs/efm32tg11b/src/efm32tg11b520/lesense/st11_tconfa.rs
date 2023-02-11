@@ -37,27 +37,27 @@ impl From<crate::W<ST11_TCONFA_SPEC>> for W {
 #[doc = "Field `COMP` reader - Sensor Compare Value"]
 pub type COMP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `COMP` writer - Sensor Compare Value"]
-pub type COMP_W<'a> = crate::FieldWriter<'a, u32, ST11_TCONFA_SPEC, u8, u8, 4, 0>;
+pub type COMP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST11_TCONFA_SPEC, u8, u8, 4, O>;
 #[doc = "Field `MASK` reader - Sensor Mask"]
 pub type MASK_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MASK` writer - Sensor Mask"]
-pub type MASK_W<'a> = crate::FieldWriter<'a, u32, ST11_TCONFA_SPEC, u8, u8, 4, 4>;
+pub type MASK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST11_TCONFA_SPEC, u8, u8, 4, O>;
 #[doc = "Field `NEXTSTATE` reader - Next State Index"]
 pub type NEXTSTATE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `NEXTSTATE` writer - Next State Index"]
-pub type NEXTSTATE_W<'a> = crate::FieldWriter<'a, u32, ST11_TCONFA_SPEC, u8, u8, 5, 8>;
+pub type NEXTSTATE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST11_TCONFA_SPEC, u8, u8, 5, O>;
 #[doc = "Field `CHAIN` reader - Enable State Descriptor Chaining"]
 pub type CHAIN_R = crate::BitReader<bool>;
 #[doc = "Field `CHAIN` writer - Enable State Descriptor Chaining"]
-pub type CHAIN_W<'a> = crate::BitWriter<'a, u32, ST11_TCONFA_SPEC, bool, 14>;
+pub type CHAIN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ST11_TCONFA_SPEC, bool, O>;
 #[doc = "Field `SETIF` reader - Set Interrupt Flag Enable"]
 pub type SETIF_R = crate::BitReader<bool>;
 #[doc = "Field `SETIF` writer - Set Interrupt Flag Enable"]
-pub type SETIF_W<'a> = crate::BitWriter<'a, u32, ST11_TCONFA_SPEC, bool, 15>;
+pub type SETIF_W<'a, const O: u8> = crate::BitWriter<'a, u32, ST11_TCONFA_SPEC, bool, O>;
 #[doc = "Field `PRSACT` reader - Configure Transition Action"]
 pub type PRSACT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PRSACT` writer - Configure Transition Action"]
-pub type PRSACT_W<'a> = crate::FieldWriter<'a, u32, ST11_TCONFA_SPEC, u8, u8, 3, 16>;
+pub type PRSACT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ST11_TCONFA_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:3 - Sensor Compare Value"]
     #[inline(always)]
@@ -93,32 +93,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Sensor Compare Value"]
     #[inline(always)]
-    pub fn comp(&mut self) -> COMP_W {
+    #[must_use]
+    pub fn comp(&mut self) -> COMP_W<0> {
         COMP_W::new(self)
     }
     #[doc = "Bits 4:7 - Sensor Mask"]
     #[inline(always)]
-    pub fn mask(&mut self) -> MASK_W {
+    #[must_use]
+    pub fn mask(&mut self) -> MASK_W<4> {
         MASK_W::new(self)
     }
     #[doc = "Bits 8:12 - Next State Index"]
     #[inline(always)]
-    pub fn nextstate(&mut self) -> NEXTSTATE_W {
+    #[must_use]
+    pub fn nextstate(&mut self) -> NEXTSTATE_W<8> {
         NEXTSTATE_W::new(self)
     }
     #[doc = "Bit 14 - Enable State Descriptor Chaining"]
     #[inline(always)]
-    pub fn chain(&mut self) -> CHAIN_W {
+    #[must_use]
+    pub fn chain(&mut self) -> CHAIN_W<14> {
         CHAIN_W::new(self)
     }
     #[doc = "Bit 15 - Set Interrupt Flag Enable"]
     #[inline(always)]
-    pub fn setif(&mut self) -> SETIF_W {
+    #[must_use]
+    pub fn setif(&mut self) -> SETIF_W<15> {
         SETIF_W::new(self)
     }
     #[doc = "Bits 16:18 - Configure Transition Action"]
     #[inline(always)]
-    pub fn prsact(&mut self) -> PRSACT_W {
+    #[must_use]
+    pub fn prsact(&mut self) -> PRSACT_W<16> {
         PRSACT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -140,11 +146,10 @@ impl crate::Readable for ST11_TCONFA_SPEC {
 #[doc = "`write(|w| ..)` method takes [st11_tconfa::W](W) writer structure"]
 impl crate::Writable for ST11_TCONFA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ST11_TCONFA to value 0"]
 impl crate::Resettable for ST11_TCONFA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

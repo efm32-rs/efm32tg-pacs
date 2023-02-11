@@ -34,8 +34,10 @@ impl From<crate::W<HYSTERESIS0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `HYST` reader - Hysteresis Select When ACMPOUT=0"]
+pub type HYST_R = crate::FieldReader<u8, HYST_A>;
 #[doc = "Hysteresis Select When ACMPOUT=0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum HYST_A {
     #[doc = "0: No hysteresis"]
@@ -77,8 +79,6 @@ impl From<HYST_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `HYST` reader - Hysteresis Select When ACMPOUT=0"]
-pub type HYST_R = crate::FieldReader<u8, HYST_A>;
 impl HYST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -185,8 +185,9 @@ impl HYST_R {
     }
 }
 #[doc = "Field `HYST` writer - Hysteresis Select When ACMPOUT=0"]
-pub type HYST_W<'a> = crate::FieldWriterSafe<'a, u32, HYSTERESIS0_SPEC, u8, HYST_A, 4, 0>;
-impl<'a> HYST_W<'a> {
+pub type HYST_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, HYSTERESIS0_SPEC, u8, HYST_A, 4, O>;
+impl<'a, const O: u8> HYST_W<'a, O> {
     #[doc = "No hysteresis"]
     #[inline(always)]
     pub fn hyst0(self) -> &'a mut W {
@@ -271,11 +272,11 @@ impl<'a> HYST_W<'a> {
 #[doc = "Field `DIVVA` reader - Divider for VA Voltage When ACMPOUT=0"]
 pub type DIVVA_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIVVA` writer - Divider for VA Voltage When ACMPOUT=0"]
-pub type DIVVA_W<'a> = crate::FieldWriter<'a, u32, HYSTERESIS0_SPEC, u8, u8, 6, 16>;
+pub type DIVVA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HYSTERESIS0_SPEC, u8, u8, 6, O>;
 #[doc = "Field `DIVVB` reader - Divider for VB Voltage When ACMPOUT=0"]
 pub type DIVVB_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `DIVVB` writer - Divider for VB Voltage When ACMPOUT=0"]
-pub type DIVVB_W<'a> = crate::FieldWriter<'a, u32, HYSTERESIS0_SPEC, u8, u8, 6, 24>;
+pub type DIVVB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, HYSTERESIS0_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:3 - Hysteresis Select When ACMPOUT=0"]
     #[inline(always)]
@@ -296,17 +297,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Hysteresis Select When ACMPOUT=0"]
     #[inline(always)]
-    pub fn hyst(&mut self) -> HYST_W {
+    #[must_use]
+    pub fn hyst(&mut self) -> HYST_W<0> {
         HYST_W::new(self)
     }
     #[doc = "Bits 16:21 - Divider for VA Voltage When ACMPOUT=0"]
     #[inline(always)]
-    pub fn divva(&mut self) -> DIVVA_W {
+    #[must_use]
+    pub fn divva(&mut self) -> DIVVA_W<16> {
         DIVVA_W::new(self)
     }
     #[doc = "Bits 24:29 - Divider for VB Voltage When ACMPOUT=0"]
     #[inline(always)]
-    pub fn divvb(&mut self) -> DIVVB_W {
+    #[must_use]
+    pub fn divvb(&mut self) -> DIVVB_W<24> {
         DIVVB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -328,11 +332,10 @@ impl crate::Readable for HYSTERESIS0_SPEC {
 #[doc = "`write(|w| ..)` method takes [hysteresis0::W](W) writer structure"]
 impl crate::Writable for HYSTERESIS0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HYSTERESIS0 to value 0"]
 impl crate::Resettable for HYSTERESIS0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

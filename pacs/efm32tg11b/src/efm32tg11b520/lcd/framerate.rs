@@ -37,7 +37,7 @@ impl From<crate::W<FRAMERATE_SPEC>> for W {
 #[doc = "Field `FRDIV` reader - Frame Rate Divider"]
 pub type FRDIV_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `FRDIV` writer - Frame Rate Divider"]
-pub type FRDIV_W<'a> = crate::FieldWriter<'a, u32, FRAMERATE_SPEC, u16, u16, 9, 0>;
+pub type FRDIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, FRAMERATE_SPEC, u16, u16, 9, O>;
 impl R {
     #[doc = "Bits 0:8 - Frame Rate Divider"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:8 - Frame Rate Divider"]
     #[inline(always)]
-    pub fn frdiv(&mut self) -> FRDIV_W {
+    #[must_use]
+    pub fn frdiv(&mut self) -> FRDIV_W<0> {
         FRDIV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for FRAMERATE_SPEC {
 #[doc = "`write(|w| ..)` method takes [framerate::W](W) writer structure"]
 impl crate::Writable for FRAMERATE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets FRAMERATE to value 0"]
 impl crate::Resettable for FRAMERATE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

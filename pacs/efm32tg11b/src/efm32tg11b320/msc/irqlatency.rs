@@ -37,7 +37,7 @@ impl From<crate::W<IRQLATENCY_SPEC>> for W {
 #[doc = "Field `IRQLATENCY` reader - Irq Latency Register"]
 pub type IRQLATENCY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IRQLATENCY` writer - Irq Latency Register"]
-pub type IRQLATENCY_W<'a> = crate::FieldWriter<'a, u32, IRQLATENCY_SPEC, u8, u8, 8, 0>;
+pub type IRQLATENCY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IRQLATENCY_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Irq Latency Register"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Irq Latency Register"]
     #[inline(always)]
-    pub fn irqlatency(&mut self) -> IRQLATENCY_W {
+    #[must_use]
+    pub fn irqlatency(&mut self) -> IRQLATENCY_W<0> {
         IRQLATENCY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for IRQLATENCY_SPEC {
 #[doc = "`write(|w| ..)` method takes [irqlatency::W](W) writer structure"]
 impl crate::Writable for IRQLATENCY_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IRQLATENCY to value 0"]
 impl crate::Resettable for IRQLATENCY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

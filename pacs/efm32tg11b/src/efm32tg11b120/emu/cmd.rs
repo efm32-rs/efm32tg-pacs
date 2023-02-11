@@ -20,25 +20,28 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `EM4UNLATCH` writer - EM4 Unlatch"]
-pub type EM4UNLATCH_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 0>;
+pub type EM4UNLATCH_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `EM01VSCALE0` writer - EM01 Voltage Scale Command to Scale to Voltage Scale Level 0"]
-pub type EM01VSCALE0_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 4>;
+pub type EM01VSCALE0_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `EM01VSCALE2` writer - EM01 Voltage Scale Command to Scale to Voltage Scale Level 2"]
-pub type EM01VSCALE2_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 6>;
+pub type EM01VSCALE2_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - EM4 Unlatch"]
     #[inline(always)]
-    pub fn em4unlatch(&mut self) -> EM4UNLATCH_W {
+    #[must_use]
+    pub fn em4unlatch(&mut self) -> EM4UNLATCH_W<0> {
         EM4UNLATCH_W::new(self)
     }
     #[doc = "Bit 4 - EM01 Voltage Scale Command to Scale to Voltage Scale Level 0"]
     #[inline(always)]
-    pub fn em01vscale0(&mut self) -> EM01VSCALE0_W {
+    #[must_use]
+    pub fn em01vscale0(&mut self) -> EM01VSCALE0_W<4> {
         EM01VSCALE0_W::new(self)
     }
     #[doc = "Bit 6 - EM01 Voltage Scale Command to Scale to Voltage Scale Level 2"]
     #[inline(always)]
-    pub fn em01vscale2(&mut self) -> EM01VSCALE2_W {
+    #[must_use]
+    pub fn em01vscale2(&mut self) -> EM01VSCALE2_W<6> {
         EM01VSCALE2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -56,11 +59,10 @@ impl crate::RegisterSpec for CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmd::W](W) writer structure"]
 impl crate::Writable for CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
 impl crate::Resettable for CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

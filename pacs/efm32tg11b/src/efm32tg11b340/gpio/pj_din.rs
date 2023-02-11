@@ -33,8 +33,5 @@ impl crate::Readable for PJ_DIN_SPEC {
 }
 #[doc = "`reset()` method sets PJ_DIN to value 0"]
 impl crate::Resettable for PJ_DIN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

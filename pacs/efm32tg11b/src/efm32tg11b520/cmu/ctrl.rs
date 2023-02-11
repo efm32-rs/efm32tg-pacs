@@ -34,8 +34,10 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CLKOUTSEL0` reader - Clock Output Select 0"]
+pub type CLKOUTSEL0_R = crate::FieldReader<u8, CLKOUTSEL0_A>;
 #[doc = "Clock Output Select 0\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKOUTSEL0_A {
     #[doc = "0: Disabled"]
@@ -71,8 +73,6 @@ impl From<CLKOUTSEL0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLKOUTSEL0` reader - Clock Output Select 0"]
-pub type CLKOUTSEL0_R = crate::FieldReader<u8, CLKOUTSEL0_A>;
 impl CLKOUTSEL0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -161,8 +161,9 @@ impl CLKOUTSEL0_R {
     }
 }
 #[doc = "Field `CLKOUTSEL0` writer - Clock Output Select 0"]
-pub type CLKOUTSEL0_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLKOUTSEL0_A, 4, 0>;
-impl<'a> CLKOUTSEL0_W<'a> {
+pub type CLKOUTSEL0_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLKOUTSEL0_A, 4, O>;
+impl<'a, const O: u8> CLKOUTSEL0_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -229,8 +230,10 @@ impl<'a> CLKOUTSEL0_W<'a> {
         self.variant(CLKOUTSEL0_A::HFSRCCLK)
     }
 }
+#[doc = "Field `CLKOUTSEL1` reader - Clock Output Select 1"]
+pub type CLKOUTSEL1_R = crate::FieldReader<u8, CLKOUTSEL1_A>;
 #[doc = "Clock Output Select 1\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKOUTSEL1_A {
     #[doc = "0: Disabled"]
@@ -266,8 +269,6 @@ impl From<CLKOUTSEL1_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLKOUTSEL1` reader - Clock Output Select 1"]
-pub type CLKOUTSEL1_R = crate::FieldReader<u8, CLKOUTSEL1_A>;
 impl CLKOUTSEL1_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -356,8 +357,9 @@ impl CLKOUTSEL1_R {
     }
 }
 #[doc = "Field `CLKOUTSEL1` writer - Clock Output Select 1"]
-pub type CLKOUTSEL1_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLKOUTSEL1_A, 4, 5>;
-impl<'a> CLKOUTSEL1_W<'a> {
+pub type CLKOUTSEL1_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLKOUTSEL1_A, 4, O>;
+impl<'a, const O: u8> CLKOUTSEL1_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -424,8 +426,10 @@ impl<'a> CLKOUTSEL1_W<'a> {
         self.variant(CLKOUTSEL1_A::HFSRCCLK)
     }
 }
+#[doc = "Field `CLKOUTSEL2` reader - Clock Output Select 2"]
+pub type CLKOUTSEL2_R = crate::FieldReader<u8, CLKOUTSEL2_A>;
 #[doc = "Clock Output Select 2\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CLKOUTSEL2_A {
     #[doc = "0: Disabled"]
@@ -463,8 +467,6 @@ impl From<CLKOUTSEL2_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CLKOUTSEL2` reader - Clock Output Select 2"]
-pub type CLKOUTSEL2_R = crate::FieldReader<u8, CLKOUTSEL2_A>;
 impl CLKOUTSEL2_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -559,8 +561,9 @@ impl CLKOUTSEL2_R {
     }
 }
 #[doc = "Field `CLKOUTSEL2` writer - Clock Output Select 2"]
-pub type CLKOUTSEL2_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLKOUTSEL2_A, 4, 10>;
-impl<'a> CLKOUTSEL2_W<'a> {
+pub type CLKOUTSEL2_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CLKOUTSEL2_A, 4, O>;
+impl<'a, const O: u8> CLKOUTSEL2_W<'a, O> {
     #[doc = "Disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -635,11 +638,11 @@ impl<'a> CLKOUTSEL2_W<'a> {
 #[doc = "Field `WSHFLE` reader - Wait State for High-Frequency LE Interface"]
 pub type WSHFLE_R = crate::BitReader<bool>;
 #[doc = "Field `WSHFLE` writer - Wait State for High-Frequency LE Interface"]
-pub type WSHFLE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 16>;
+pub type WSHFLE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `HFPERCLKEN` reader - HFPERCLK Enable"]
 pub type HFPERCLKEN_R = crate::BitReader<bool>;
 #[doc = "Field `HFPERCLKEN` writer - HFPERCLK Enable"]
-pub type HFPERCLKEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 20>;
+pub type HFPERCLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:3 - Clock Output Select 0"]
     #[inline(always)]
@@ -670,27 +673,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:3 - Clock Output Select 0"]
     #[inline(always)]
-    pub fn clkoutsel0(&mut self) -> CLKOUTSEL0_W {
+    #[must_use]
+    pub fn clkoutsel0(&mut self) -> CLKOUTSEL0_W<0> {
         CLKOUTSEL0_W::new(self)
     }
     #[doc = "Bits 5:8 - Clock Output Select 1"]
     #[inline(always)]
-    pub fn clkoutsel1(&mut self) -> CLKOUTSEL1_W {
+    #[must_use]
+    pub fn clkoutsel1(&mut self) -> CLKOUTSEL1_W<5> {
         CLKOUTSEL1_W::new(self)
     }
     #[doc = "Bits 10:13 - Clock Output Select 2"]
     #[inline(always)]
-    pub fn clkoutsel2(&mut self) -> CLKOUTSEL2_W {
+    #[must_use]
+    pub fn clkoutsel2(&mut self) -> CLKOUTSEL2_W<10> {
         CLKOUTSEL2_W::new(self)
     }
     #[doc = "Bit 16 - Wait State for High-Frequency LE Interface"]
     #[inline(always)]
-    pub fn wshfle(&mut self) -> WSHFLE_W {
+    #[must_use]
+    pub fn wshfle(&mut self) -> WSHFLE_W<16> {
         WSHFLE_W::new(self)
     }
     #[doc = "Bit 20 - HFPERCLK Enable"]
     #[inline(always)]
-    pub fn hfperclken(&mut self) -> HFPERCLKEN_W {
+    #[must_use]
+    pub fn hfperclken(&mut self) -> HFPERCLKEN_W<20> {
         HFPERCLKEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -712,11 +720,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x0010_0000"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0010_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0010_0000;
 }

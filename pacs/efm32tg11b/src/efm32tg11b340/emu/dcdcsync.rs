@@ -33,8 +33,5 @@ impl crate::Readable for DCDCSYNC_SPEC {
 }
 #[doc = "`reset()` method sets DCDCSYNC to value 0"]
 impl crate::Resettable for DCDCSYNC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

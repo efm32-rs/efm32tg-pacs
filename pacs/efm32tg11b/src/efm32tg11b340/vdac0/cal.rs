@@ -37,15 +37,15 @@ impl From<crate::W<CAL_SPEC>> for W {
 #[doc = "Field `OFFSETTRIM` reader - Input Buffer Offset Calibration Value"]
 pub type OFFSETTRIM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `OFFSETTRIM` writer - Input Buffer Offset Calibration Value"]
-pub type OFFSETTRIM_W<'a> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 3, 0>;
+pub type OFFSETTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `GAINERRTRIM` reader - Gain Error Trim Value"]
 pub type GAINERRTRIM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GAINERRTRIM` writer - Gain Error Trim Value"]
-pub type GAINERRTRIM_W<'a> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 6, 8>;
+pub type GAINERRTRIM_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 6, O>;
 #[doc = "Field `GAINERRTRIMCH1` reader - Gain Error Trim Value for CH1"]
 pub type GAINERRTRIMCH1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `GAINERRTRIMCH1` writer - Gain Error Trim Value for CH1"]
-pub type GAINERRTRIMCH1_W<'a> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 4, 16>;
+pub type GAINERRTRIMCH1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CAL_SPEC, u8, u8, 4, O>;
 impl R {
     #[doc = "Bits 0:2 - Input Buffer Offset Calibration Value"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Input Buffer Offset Calibration Value"]
     #[inline(always)]
-    pub fn offsettrim(&mut self) -> OFFSETTRIM_W {
+    #[must_use]
+    pub fn offsettrim(&mut self) -> OFFSETTRIM_W<0> {
         OFFSETTRIM_W::new(self)
     }
     #[doc = "Bits 8:13 - Gain Error Trim Value"]
     #[inline(always)]
-    pub fn gainerrtrim(&mut self) -> GAINERRTRIM_W {
+    #[must_use]
+    pub fn gainerrtrim(&mut self) -> GAINERRTRIM_W<8> {
         GAINERRTRIM_W::new(self)
     }
     #[doc = "Bits 16:19 - Gain Error Trim Value for CH1"]
     #[inline(always)]
-    pub fn gainerrtrimch1(&mut self) -> GAINERRTRIMCH1_W {
+    #[must_use]
+    pub fn gainerrtrimch1(&mut self) -> GAINERRTRIMCH1_W<16> {
         GAINERRTRIMCH1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for CAL_SPEC {
 #[doc = "`write(|w| ..)` method takes [cal::W](W) writer structure"]
 impl crate::Writable for CAL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CAL to value 0x0008_2004"]
 impl crate::Resettable for CAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0008_2004
-    }
+    const RESET_VALUE: Self::Ux = 0x0008_2004;
 }

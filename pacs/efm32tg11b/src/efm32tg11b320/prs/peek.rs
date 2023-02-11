@@ -82,8 +82,5 @@ impl crate::Readable for PEEK_SPEC {
 }
 #[doc = "`reset()` method sets PEEK to value 0"]
 impl crate::Resettable for PEEK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

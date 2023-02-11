@@ -37,24 +37,24 @@ impl From<crate::W<MIR1_ARB_SPEC>> for W {
 #[doc = "Field `ID` reader - Message Identifier"]
 pub type ID_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `ID` writer - Message Identifier"]
-pub type ID_W<'a> = crate::FieldWriter<'a, u32, MIR1_ARB_SPEC, u32, u32, 29, 0>;
+pub type ID_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MIR1_ARB_SPEC, u32, u32, 29, O>;
 #[doc = "Field `DIR` reader - Message Direction"]
 pub type DIR_R = crate::BitReader<bool>;
 #[doc = "Field `DIR` writer - Message Direction"]
-pub type DIR_W<'a> = crate::BitWriter<'a, u32, MIR1_ARB_SPEC, bool, 29>;
+pub type DIR_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_ARB_SPEC, bool, O>;
 #[doc = "Field `XTD` reader - Extended Identifier"]
 pub type XTD_R = crate::BitReader<bool>;
 #[doc = "Field `XTD` writer - Extended Identifier"]
-pub type XTD_W<'a> = crate::BitWriter<'a, u32, MIR1_ARB_SPEC, bool, 30>;
+pub type XTD_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_ARB_SPEC, bool, O>;
 #[doc = "Field `MSGVAL` reader - Message Valid"]
 pub type MSGVAL_R = crate::BitReader<bool>;
 #[doc = "Field `MSGVAL` writer - Message Valid"]
-pub type MSGVAL_W<'a> = crate::BitWriter<'a, u32, MIR1_ARB_SPEC, bool, 31>;
+pub type MSGVAL_W<'a, const O: u8> = crate::BitWriter<'a, u32, MIR1_ARB_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:28 - Message Identifier"]
     #[inline(always)]
     pub fn id(&self) -> ID_R {
-        ID_R::new((self.bits & 0x1fff_ffff) as u32)
+        ID_R::new(self.bits & 0x1fff_ffff)
     }
     #[doc = "Bit 29 - Message Direction"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:28 - Message Identifier"]
     #[inline(always)]
-    pub fn id(&mut self) -> ID_W {
+    #[must_use]
+    pub fn id(&mut self) -> ID_W<0> {
         ID_W::new(self)
     }
     #[doc = "Bit 29 - Message Direction"]
     #[inline(always)]
-    pub fn dir(&mut self) -> DIR_W {
+    #[must_use]
+    pub fn dir(&mut self) -> DIR_W<29> {
         DIR_W::new(self)
     }
     #[doc = "Bit 30 - Extended Identifier"]
     #[inline(always)]
-    pub fn xtd(&mut self) -> XTD_W {
+    #[must_use]
+    pub fn xtd(&mut self) -> XTD_W<30> {
         XTD_W::new(self)
     }
     #[doc = "Bit 31 - Message Valid"]
     #[inline(always)]
-    pub fn msgval(&mut self) -> MSGVAL_W {
+    #[must_use]
+    pub fn msgval(&mut self) -> MSGVAL_W<31> {
         MSGVAL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for MIR1_ARB_SPEC {
 #[doc = "`write(|w| ..)` method takes [mir1_arb::W](W) writer structure"]
 impl crate::Writable for MIR1_ARB_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MIR1_ARB to value 0"]
 impl crate::Resettable for MIR1_ARB_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

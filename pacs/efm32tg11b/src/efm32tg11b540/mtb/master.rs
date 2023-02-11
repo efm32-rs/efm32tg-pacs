@@ -37,23 +37,23 @@ impl From<crate::W<MASTER_SPEC>> for W {
 #[doc = "Field `MASK` reader - This value determines the maximum size of the trace buffer in SRAM."]
 pub type MASK_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `MASK` writer - This value determines the maximum size of the trace buffer in SRAM."]
-pub type MASK_W<'a> = crate::FieldWriter<'a, u32, MASTER_SPEC, u8, u8, 5, 0>;
+pub type MASK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, MASTER_SPEC, u8, u8, 5, O>;
 #[doc = "Field `TSTARTEN` reader - Trace start input enable."]
 pub type TSTARTEN_R = crate::BitReader<bool>;
 #[doc = "Field `TSTARTEN` writer - Trace start input enable."]
-pub type TSTARTEN_W<'a> = crate::BitWriter<'a, u32, MASTER_SPEC, bool, 5>;
+pub type TSTARTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MASTER_SPEC, bool, O>;
 #[doc = "Field `TSTOPEN` reader - Trace stop input enable."]
 pub type TSTOPEN_R = crate::BitReader<bool>;
 #[doc = "Field `TSTOPEN` writer - Trace stop input enable."]
-pub type TSTOPEN_W<'a> = crate::BitWriter<'a, u32, MASTER_SPEC, bool, 6>;
+pub type TSTOPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MASTER_SPEC, bool, O>;
 #[doc = "Field `HALTREQ` reader - Halt request bit."]
 pub type HALTREQ_R = crate::BitReader<bool>;
 #[doc = "Field `HALTREQ` writer - Halt request bit."]
-pub type HALTREQ_W<'a> = crate::BitWriter<'a, u32, MASTER_SPEC, bool, 9>;
+pub type HALTREQ_W<'a, const O: u8> = crate::BitWriter<'a, u32, MASTER_SPEC, bool, O>;
 #[doc = "Field `EN` reader - Main trace enable bit."]
 pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - Main trace enable bit."]
-pub type EN_W<'a> = crate::BitWriter<'a, u32, MASTER_SPEC, bool, 31>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, MASTER_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:4 - This value determines the maximum size of the trace buffer in SRAM."]
     #[inline(always)]
@@ -84,27 +84,32 @@ impl R {
 impl W {
     #[doc = "Bits 0:4 - This value determines the maximum size of the trace buffer in SRAM."]
     #[inline(always)]
-    pub fn mask(&mut self) -> MASK_W {
+    #[must_use]
+    pub fn mask(&mut self) -> MASK_W<0> {
         MASK_W::new(self)
     }
     #[doc = "Bit 5 - Trace start input enable."]
     #[inline(always)]
-    pub fn tstarten(&mut self) -> TSTARTEN_W {
+    #[must_use]
+    pub fn tstarten(&mut self) -> TSTARTEN_W<5> {
         TSTARTEN_W::new(self)
     }
     #[doc = "Bit 6 - Trace stop input enable."]
     #[inline(always)]
-    pub fn tstopen(&mut self) -> TSTOPEN_W {
+    #[must_use]
+    pub fn tstopen(&mut self) -> TSTOPEN_W<6> {
         TSTOPEN_W::new(self)
     }
     #[doc = "Bit 9 - Halt request bit."]
     #[inline(always)]
-    pub fn haltreq(&mut self) -> HALTREQ_W {
+    #[must_use]
+    pub fn haltreq(&mut self) -> HALTREQ_W<9> {
         HALTREQ_W::new(self)
     }
     #[doc = "Bit 31 - Main trace enable bit."]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<31> {
         EN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -126,11 +131,10 @@ impl crate::Readable for MASTER_SPEC {
 #[doc = "`write(|w| ..)` method takes [master::W](W) writer structure"]
 impl crate::Writable for MASTER_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets MASTER to value 0"]
 impl crate::Resettable for MASTER_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -20,60 +20,68 @@ impl From<crate::W<CHENS_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0ENS` writer - Channel 0 Enable Set"]
-pub type CH0ENS_W<'a> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, 0>;
+pub type CH0ENS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, O>;
 #[doc = "Field `CH1ENS` writer - Channel 1 Enable Set"]
-pub type CH1ENS_W<'a> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, 1>;
+pub type CH1ENS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, O>;
 #[doc = "Field `CH2ENS` writer - Channel 2 Enable Set"]
-pub type CH2ENS_W<'a> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, 2>;
+pub type CH2ENS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, O>;
 #[doc = "Field `CH3ENS` writer - Channel 3 Enable Set"]
-pub type CH3ENS_W<'a> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, 3>;
+pub type CH3ENS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, O>;
 #[doc = "Field `CH4ENS` writer - Channel 4 Enable Set"]
-pub type CH4ENS_W<'a> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, 4>;
+pub type CH4ENS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, O>;
 #[doc = "Field `CH5ENS` writer - Channel 5 Enable Set"]
-pub type CH5ENS_W<'a> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, 5>;
+pub type CH5ENS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, O>;
 #[doc = "Field `CH6ENS` writer - Channel 6 Enable Set"]
-pub type CH6ENS_W<'a> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, 6>;
+pub type CH6ENS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, O>;
 #[doc = "Field `CH7ENS` writer - Channel 7 Enable Set"]
-pub type CH7ENS_W<'a> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, 7>;
+pub type CH7ENS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHENS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Enable Set"]
     #[inline(always)]
-    pub fn ch0ens(&mut self) -> CH0ENS_W {
+    #[must_use]
+    pub fn ch0ens(&mut self) -> CH0ENS_W<0> {
         CH0ENS_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Enable Set"]
     #[inline(always)]
-    pub fn ch1ens(&mut self) -> CH1ENS_W {
+    #[must_use]
+    pub fn ch1ens(&mut self) -> CH1ENS_W<1> {
         CH1ENS_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Enable Set"]
     #[inline(always)]
-    pub fn ch2ens(&mut self) -> CH2ENS_W {
+    #[must_use]
+    pub fn ch2ens(&mut self) -> CH2ENS_W<2> {
         CH2ENS_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Enable Set"]
     #[inline(always)]
-    pub fn ch3ens(&mut self) -> CH3ENS_W {
+    #[must_use]
+    pub fn ch3ens(&mut self) -> CH3ENS_W<3> {
         CH3ENS_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 Enable Set"]
     #[inline(always)]
-    pub fn ch4ens(&mut self) -> CH4ENS_W {
+    #[must_use]
+    pub fn ch4ens(&mut self) -> CH4ENS_W<4> {
         CH4ENS_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 Enable Set"]
     #[inline(always)]
-    pub fn ch5ens(&mut self) -> CH5ENS_W {
+    #[must_use]
+    pub fn ch5ens(&mut self) -> CH5ENS_W<5> {
         CH5ENS_W::new(self)
     }
     #[doc = "Bit 6 - Channel 6 Enable Set"]
     #[inline(always)]
-    pub fn ch6ens(&mut self) -> CH6ENS_W {
+    #[must_use]
+    pub fn ch6ens(&mut self) -> CH6ENS_W<6> {
         CH6ENS_W::new(self)
     }
     #[doc = "Bit 7 - Channel 7 Enable Set"]
     #[inline(always)]
-    pub fn ch7ens(&mut self) -> CH7ENS_W {
+    #[must_use]
+    pub fn ch7ens(&mut self) -> CH7ENS_W<7> {
         CH7ENS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -91,11 +99,10 @@ impl crate::RegisterSpec for CHENS_SPEC {
 #[doc = "`write(|w| ..)` method takes [chens::W](W) writer structure"]
 impl crate::Writable for CHENS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHENS to value 0"]
 impl crate::Resettable for CHENS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

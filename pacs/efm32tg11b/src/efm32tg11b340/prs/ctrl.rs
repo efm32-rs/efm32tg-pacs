@@ -37,9 +37,11 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `SEVONPRS` reader - Set Event on PRS"]
 pub type SEVONPRS_R = crate::BitReader<bool>;
 #[doc = "Field `SEVONPRS` writer - Set Event on PRS"]
-pub type SEVONPRS_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type SEVONPRS_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `SEVONPRSSEL` reader - SEVONPRS PRS Channel Select"]
+pub type SEVONPRSSEL_R = crate::FieldReader<u8, SEVONPRSSEL_A>;
 #[doc = "SEVONPRS PRS Channel Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SEVONPRSSEL_A {
     #[doc = "0: PRS Channel 0 selected"]
@@ -65,8 +67,6 @@ impl From<SEVONPRSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SEVONPRSSEL` reader - SEVONPRS PRS Channel Select"]
-pub type SEVONPRSSEL_R = crate::FieldReader<u8, SEVONPRSSEL_A>;
 impl SEVONPRSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -125,8 +125,9 @@ impl SEVONPRSSEL_R {
     }
 }
 #[doc = "Field `SEVONPRSSEL` writer - SEVONPRS PRS Channel Select"]
-pub type SEVONPRSSEL_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, SEVONPRSSEL_A, 3, 1>;
-impl<'a> SEVONPRSSEL_W<'a> {
+pub type SEVONPRSSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, SEVONPRSSEL_A, 3, O>;
+impl<'a, const O: u8> SEVONPRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -183,12 +184,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Set Event on PRS"]
     #[inline(always)]
-    pub fn sevonprs(&mut self) -> SEVONPRS_W {
+    #[must_use]
+    pub fn sevonprs(&mut self) -> SEVONPRS_W<0> {
         SEVONPRS_W::new(self)
     }
     #[doc = "Bits 1:3 - SEVONPRS PRS Channel Select"]
     #[inline(always)]
-    pub fn sevonprssel(&mut self) -> SEVONPRSSEL_W {
+    #[must_use]
+    pub fn sevonprssel(&mut self) -> SEVONPRSSEL_W<1> {
         SEVONPRSSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -210,11 +213,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

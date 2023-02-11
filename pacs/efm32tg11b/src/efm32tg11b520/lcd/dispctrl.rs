@@ -34,8 +34,10 @@ impl From<crate::W<DISPCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `MUX` reader - Mux Configuration"]
+pub type MUX_R = crate::FieldReader<u8, MUX_A>;
 #[doc = "Mux Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MUX_A {
     #[doc = "0: Static"]
@@ -57,8 +59,6 @@ impl From<MUX_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MUX` reader - Mux Configuration"]
-pub type MUX_R = crate::FieldReader<u8, MUX_A>;
 impl MUX_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -105,8 +105,8 @@ impl MUX_R {
     }
 }
 #[doc = "Field `MUX` writer - Mux Configuration"]
-pub type MUX_W<'a> = crate::FieldWriter<'a, u32, DISPCTRL_SPEC, u8, MUX_A, 3, 0>;
-impl<'a> MUX_W<'a> {
+pub type MUX_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DISPCTRL_SPEC, u8, MUX_A, 3, O>;
+impl<'a, const O: u8> MUX_W<'a, O> {
     #[doc = "Static"]
     #[inline(always)]
     pub fn static_(self) -> &'a mut W {
@@ -141,13 +141,15 @@ impl<'a> MUX_W<'a> {
 #[doc = "Field `WAVE` reader - Waveform Selection"]
 pub type WAVE_R = crate::BitReader<bool>;
 #[doc = "Field `WAVE` writer - Waveform Selection"]
-pub type WAVE_W<'a> = crate::BitWriter<'a, u32, DISPCTRL_SPEC, bool, 4>;
+pub type WAVE_W<'a, const O: u8> = crate::BitWriter<'a, u32, DISPCTRL_SPEC, bool, O>;
 #[doc = "Field `CONTRAST` reader - Contrast Control"]
 pub type CONTRAST_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `CONTRAST` writer - Contrast Control"]
-pub type CONTRAST_W<'a> = crate::FieldWriter<'a, u32, DISPCTRL_SPEC, u8, u8, 6, 8>;
+pub type CONTRAST_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DISPCTRL_SPEC, u8, u8, 6, O>;
+#[doc = "Field `CHGRDST` reader - Charge Redistribution Cycles"]
+pub type CHGRDST_R = crate::FieldReader<u8, CHGRDST_A>;
 #[doc = "Charge Redistribution Cycles\n\nValue on reset: 1"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHGRDST_A {
     #[doc = "0: Disable charge redistribution."]
@@ -167,8 +169,6 @@ impl From<CHGRDST_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHGRDST` reader - Charge Redistribution Cycles"]
-pub type CHGRDST_R = crate::FieldReader<u8, CHGRDST_A>;
 impl CHGRDST_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -209,8 +209,9 @@ impl CHGRDST_R {
     }
 }
 #[doc = "Field `CHGRDST` writer - Charge Redistribution Cycles"]
-pub type CHGRDST_W<'a> = crate::FieldWriter<'a, u32, DISPCTRL_SPEC, u8, CHGRDST_A, 3, 20>;
-impl<'a> CHGRDST_W<'a> {
+pub type CHGRDST_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DISPCTRL_SPEC, u8, CHGRDST_A, 3, O>;
+impl<'a, const O: u8> CHGRDST_W<'a, O> {
     #[doc = "Disable charge redistribution."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -237,8 +238,10 @@ impl<'a> CHGRDST_W<'a> {
         self.variant(CHGRDST_A::FOUR)
     }
 }
+#[doc = "Field `BIAS` reader - Bias Configuration"]
+pub type BIAS_R = crate::FieldReader<u8, BIAS_A>;
 #[doc = "Bias Configuration\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum BIAS_A {
     #[doc = "0: Static"]
@@ -256,8 +259,6 @@ impl From<BIAS_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `BIAS` reader - Bias Configuration"]
-pub type BIAS_R = crate::FieldReader<u8, BIAS_A>;
 impl BIAS_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -292,8 +293,8 @@ impl BIAS_R {
     }
 }
 #[doc = "Field `BIAS` writer - Bias Configuration"]
-pub type BIAS_W<'a> = crate::FieldWriterSafe<'a, u32, DISPCTRL_SPEC, u8, BIAS_A, 2, 24>;
-impl<'a> BIAS_W<'a> {
+pub type BIAS_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, DISPCTRL_SPEC, u8, BIAS_A, 2, O>;
+impl<'a, const O: u8> BIAS_W<'a, O> {
     #[doc = "Static"]
     #[inline(always)]
     pub fn static_(self) -> &'a mut W {
@@ -315,8 +316,10 @@ impl<'a> BIAS_W<'a> {
         self.variant(BIAS_A::ONEFOURTH)
     }
 }
+#[doc = "Field `MODE` reader - Mode Setting"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Mode Setting\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\]
@@ -335,8 +338,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - Mode Setting"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -365,8 +366,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Mode Setting"]
-pub type MODE_W<'a> = crate::FieldWriter<'a, u32, DISPCTRL_SPEC, u8, MODE_A, 2, 28>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DISPCTRL_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "No External Cap. Uses an internal current source to generate VLCD. Use CONTRAST\\[4:0\\]
 to control VLCD."]
     #[inline(always)]
@@ -421,32 +422,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Mux Configuration"]
     #[inline(always)]
-    pub fn mux(&mut self) -> MUX_W {
+    #[must_use]
+    pub fn mux(&mut self) -> MUX_W<0> {
         MUX_W::new(self)
     }
     #[doc = "Bit 4 - Waveform Selection"]
     #[inline(always)]
-    pub fn wave(&mut self) -> WAVE_W {
+    #[must_use]
+    pub fn wave(&mut self) -> WAVE_W<4> {
         WAVE_W::new(self)
     }
     #[doc = "Bits 8:13 - Contrast Control"]
     #[inline(always)]
-    pub fn contrast(&mut self) -> CONTRAST_W {
+    #[must_use]
+    pub fn contrast(&mut self) -> CONTRAST_W<8> {
         CONTRAST_W::new(self)
     }
     #[doc = "Bits 20:22 - Charge Redistribution Cycles"]
     #[inline(always)]
-    pub fn chgrdst(&mut self) -> CHGRDST_W {
+    #[must_use]
+    pub fn chgrdst(&mut self) -> CHGRDST_W<20> {
         CHGRDST_W::new(self)
     }
     #[doc = "Bits 24:25 - Bias Configuration"]
     #[inline(always)]
-    pub fn bias(&mut self) -> BIAS_W {
+    #[must_use]
+    pub fn bias(&mut self) -> BIAS_W<24> {
         BIAS_W::new(self)
     }
     #[doc = "Bits 28:29 - Mode Setting"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<28> {
         MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -468,11 +475,10 @@ impl crate::Readable for DISPCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dispctrl::W](W) writer structure"]
 impl crate::Writable for DISPCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DISPCTRL to value 0x0010_3f00"]
 impl crate::Resettable for DISPCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0010_3f00
-    }
+    const RESET_VALUE: Self::Ux = 0x0010_3f00;
 }

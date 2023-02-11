@@ -37,15 +37,15 @@ impl From<crate::W<TEMPLIMITS_SPEC>> for W {
 #[doc = "Field `TEMPLOW` reader - Temperature Low Limit"]
 pub type TEMPLOW_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TEMPLOW` writer - Temperature Low Limit"]
-pub type TEMPLOW_W<'a> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u8, u8, 8, 0>;
+pub type TEMPLOW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u8, u8, 8, O>;
 #[doc = "Field `TEMPHIGH` reader - Temperature High Limit"]
 pub type TEMPHIGH_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TEMPHIGH` writer - Temperature High Limit"]
-pub type TEMPHIGH_W<'a> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u8, u8, 8, 8>;
+pub type TEMPHIGH_W<'a, const O: u8> = crate::FieldWriter<'a, u32, TEMPLIMITS_SPEC, u8, u8, 8, O>;
 #[doc = "Field `EM4WUEN` reader - Enable EM4 Wakeup Due to Low/high Temperature"]
 pub type EM4WUEN_R = crate::BitReader<bool>;
 #[doc = "Field `EM4WUEN` writer - Enable EM4 Wakeup Due to Low/high Temperature"]
-pub type EM4WUEN_W<'a> = crate::BitWriter<'a, u32, TEMPLIMITS_SPEC, bool, 16>;
+pub type EM4WUEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, TEMPLIMITS_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Temperature Low Limit"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Temperature Low Limit"]
     #[inline(always)]
-    pub fn templow(&mut self) -> TEMPLOW_W {
+    #[must_use]
+    pub fn templow(&mut self) -> TEMPLOW_W<0> {
         TEMPLOW_W::new(self)
     }
     #[doc = "Bits 8:15 - Temperature High Limit"]
     #[inline(always)]
-    pub fn temphigh(&mut self) -> TEMPHIGH_W {
+    #[must_use]
+    pub fn temphigh(&mut self) -> TEMPHIGH_W<8> {
         TEMPHIGH_W::new(self)
     }
     #[doc = "Bit 16 - Enable EM4 Wakeup Due to Low/high Temperature"]
     #[inline(always)]
-    pub fn em4wuen(&mut self) -> EM4WUEN_W {
+    #[must_use]
+    pub fn em4wuen(&mut self) -> EM4WUEN_W<16> {
         EM4WUEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for TEMPLIMITS_SPEC {
 #[doc = "`write(|w| ..)` method takes [templimits::W](W) writer structure"]
 impl crate::Writable for TEMPLIMITS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets TEMPLIMITS to value 0xff00"]
 impl crate::Resettable for TEMPLIMITS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0xff00
-    }
+    const RESET_VALUE: Self::Ux = 0xff00;
 }

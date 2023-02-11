@@ -33,8 +33,5 @@ impl crate::Readable for AUXCNT_SPEC {
 }
 #[doc = "`reset()` method sets AUXCNT to value 0"]
 impl crate::Resettable for AUXCNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

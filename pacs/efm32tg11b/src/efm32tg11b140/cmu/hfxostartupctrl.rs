@@ -37,11 +37,13 @@ impl From<crate::W<HFXOSTARTUPCTRL_SPEC>> for W {
 #[doc = "Field `IBTRIMXOCORE` reader - Sets the Startup Oscillator Core Bias Current"]
 pub type IBTRIMXOCORE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `IBTRIMXOCORE` writer - Sets the Startup Oscillator Core Bias Current"]
-pub type IBTRIMXOCORE_W<'a> = crate::FieldWriter<'a, u32, HFXOSTARTUPCTRL_SPEC, u16, u16, 11, 0>;
+pub type IBTRIMXOCORE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXOSTARTUPCTRL_SPEC, u16, u16, 11, O>;
 #[doc = "Field `CTUNE` reader - Sets Oscillator Tuning Capacitance"]
 pub type CTUNE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `CTUNE` writer - Sets Oscillator Tuning Capacitance"]
-pub type CTUNE_W<'a> = crate::FieldWriter<'a, u32, HFXOSTARTUPCTRL_SPEC, u16, u16, 9, 11>;
+pub type CTUNE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, HFXOSTARTUPCTRL_SPEC, u16, u16, 9, O>;
 impl R {
     #[doc = "Bits 0:10 - Sets the Startup Oscillator Core Bias Current"]
     #[inline(always)]
@@ -57,12 +59,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:10 - Sets the Startup Oscillator Core Bias Current"]
     #[inline(always)]
-    pub fn ibtrimxocore(&mut self) -> IBTRIMXOCORE_W {
+    #[must_use]
+    pub fn ibtrimxocore(&mut self) -> IBTRIMXOCORE_W<0> {
         IBTRIMXOCORE_W::new(self)
     }
     #[doc = "Bits 11:19 - Sets Oscillator Tuning Capacitance"]
     #[inline(always)]
-    pub fn ctune(&mut self) -> CTUNE_W {
+    #[must_use]
+    pub fn ctune(&mut self) -> CTUNE_W<11> {
         CTUNE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +88,10 @@ impl crate::Readable for HFXOSTARTUPCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [hfxostartupctrl::W](W) writer structure"]
 impl crate::Writable for HFXOSTARTUPCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets HFXOSTARTUPCTRL to value 0x0600"]
 impl crate::Resettable for HFXOSTARTUPCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0600
-    }
+    const RESET_VALUE: Self::Ux = 0x0600;
 }

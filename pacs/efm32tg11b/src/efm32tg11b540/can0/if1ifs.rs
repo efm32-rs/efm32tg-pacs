@@ -20,11 +20,12 @@ impl From<crate::W<IF1IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `STATUS` writer - Set STATUS Interrupt Flag"]
-pub type STATUS_W<'a> = crate::BitWriter<'a, u32, IF1IFS_SPEC, bool, 0>;
+pub type STATUS_W<'a, const O: u8> = crate::BitWriter<'a, u32, IF1IFS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Set STATUS Interrupt Flag"]
     #[inline(always)]
-    pub fn status(&mut self) -> STATUS_W {
+    #[must_use]
+    pub fn status(&mut self) -> STATUS_W<0> {
         STATUS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -42,11 +43,10 @@ impl crate::RegisterSpec for IF1IFS_SPEC {
 #[doc = "`write(|w| ..)` method takes [if1ifs::W](W) writer structure"]
 impl crate::Writable for IF1IFS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF1IFS to value 0"]
 impl crate::Resettable for IF1IFS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

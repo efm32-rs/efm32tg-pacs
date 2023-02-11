@@ -37,7 +37,7 @@ impl From<crate::W<ROUTEPEN_SPEC>> for W {
 #[doc = "Field `OUTPEN` reader - ACMP Output Pin Enable"]
 pub type OUTPEN_R = crate::BitReader<bool>;
 #[doc = "Field `OUTPEN` writer - ACMP Output Pin Enable"]
-pub type OUTPEN_W<'a> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, 0>;
+pub type OUTPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTEPEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - ACMP Output Pin Enable"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bit 0 - ACMP Output Pin Enable"]
     #[inline(always)]
-    pub fn outpen(&mut self) -> OUTPEN_W {
+    #[must_use]
+    pub fn outpen(&mut self) -> OUTPEN_W<0> {
         OUTPEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for ROUTEPEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [routepen::W](W) writer structure"]
 impl crate::Writable for ROUTEPEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTEPEN to value 0"]
 impl crate::Resettable for ROUTEPEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,7 +37,7 @@ impl From<crate::W<PERIODSEL_SPEC>> for W {
 #[doc = "Field `PERIODSEL` reader - Interrupts/Wakeup Events Period Setting"]
 pub type PERIODSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `PERIODSEL` writer - Interrupts/Wakeup Events Period Setting"]
-pub type PERIODSEL_W<'a> = crate::FieldWriter<'a, u32, PERIODSEL_SPEC, u8, u8, 6, 0>;
+pub type PERIODSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PERIODSEL_SPEC, u8, u8, 6, O>;
 impl R {
     #[doc = "Bits 0:5 - Interrupts/Wakeup Events Period Setting"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Interrupts/Wakeup Events Period Setting"]
     #[inline(always)]
-    pub fn periodsel(&mut self) -> PERIODSEL_W {
+    #[must_use]
+    pub fn periodsel(&mut self) -> PERIODSEL_W<0> {
         PERIODSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for PERIODSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [periodsel::W](W) writer structure"]
 impl crate::Writable for PERIODSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PERIODSEL to value 0x20"]
 impl crate::Resettable for PERIODSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x20
-    }
+    const RESET_VALUE: Self::Ux = 0x20;
 }

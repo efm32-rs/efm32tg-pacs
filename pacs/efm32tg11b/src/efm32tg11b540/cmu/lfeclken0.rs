@@ -37,7 +37,7 @@ impl From<crate::W<LFECLKEN0_SPEC>> for W {
 #[doc = "Field `RTCC` reader - Real-Time Counter and Calendar Clock Enable"]
 pub type RTCC_R = crate::BitReader<bool>;
 #[doc = "Field `RTCC` writer - Real-Time Counter and Calendar Clock Enable"]
-pub type RTCC_W<'a> = crate::BitWriter<'a, u32, LFECLKEN0_SPEC, bool, 0>;
+pub type RTCC_W<'a, const O: u8> = crate::BitWriter<'a, u32, LFECLKEN0_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Real-Time Counter and Calendar Clock Enable"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Real-Time Counter and Calendar Clock Enable"]
     #[inline(always)]
-    pub fn rtcc(&mut self) -> RTCC_W {
+    #[must_use]
+    pub fn rtcc(&mut self) -> RTCC_W<0> {
         RTCC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for LFECLKEN0_SPEC {
 #[doc = "`write(|w| ..)` method takes [lfeclken0::W](W) writer structure"]
 impl crate::Writable for LFECLKEN0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LFECLKEN0 to value 0"]
 impl crate::Resettable for LFECLKEN0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

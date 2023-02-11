@@ -34,8 +34,10 @@ impl From<crate::W<STATUS_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LEC` reader - Last Error Code"]
+pub type LEC_R = crate::FieldReader<u8, LEC_A>;
 #[doc = "Last Error Code\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LEC_A {
     #[doc = "0: No error occurred during last CAN bus event."]
@@ -61,8 +63,6 @@ impl From<LEC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LEC` reader - Last Error Code"]
-pub type LEC_R = crate::FieldReader<u8, LEC_A>;
 impl LEC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,8 @@ impl LEC_R {
     }
 }
 #[doc = "Field `LEC` writer - Last Error Code"]
-pub type LEC_W<'a> = crate::FieldWriterSafe<'a, u32, STATUS_SPEC, u8, LEC_A, 3, 0>;
-impl<'a> LEC_W<'a> {
+pub type LEC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, STATUS_SPEC, u8, LEC_A, 3, O>;
+impl<'a, const O: u8> LEC_W<'a, O> {
     #[doc = "No error occurred during last CAN bus event."]
     #[inline(always)]
     pub fn none(self) -> &'a mut W {
@@ -167,11 +167,11 @@ impl<'a> LEC_W<'a> {
 #[doc = "Field `TXOK` reader - Transmitted a Message Successfully"]
 pub type TXOK_R = crate::BitReader<bool>;
 #[doc = "Field `TXOK` writer - Transmitted a Message Successfully"]
-pub type TXOK_W<'a> = crate::BitWriter<'a, u32, STATUS_SPEC, bool, 3>;
+pub type TXOK_W<'a, const O: u8> = crate::BitWriter<'a, u32, STATUS_SPEC, bool, O>;
 #[doc = "Field `RXOK` reader - Received a Message Successfully"]
 pub type RXOK_R = crate::BitReader<bool>;
 #[doc = "Field `RXOK` writer - Received a Message Successfully"]
-pub type RXOK_W<'a> = crate::BitWriter<'a, u32, STATUS_SPEC, bool, 4>;
+pub type RXOK_W<'a, const O: u8> = crate::BitWriter<'a, u32, STATUS_SPEC, bool, O>;
 #[doc = "Field `EPASS` reader - Error Passive"]
 pub type EPASS_R = crate::BitReader<bool>;
 #[doc = "Field `EWARN` reader - Warning Status"]
@@ -213,17 +213,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Last Error Code"]
     #[inline(always)]
-    pub fn lec(&mut self) -> LEC_W {
+    #[must_use]
+    pub fn lec(&mut self) -> LEC_W<0> {
         LEC_W::new(self)
     }
     #[doc = "Bit 3 - Transmitted a Message Successfully"]
     #[inline(always)]
-    pub fn txok(&mut self) -> TXOK_W {
+    #[must_use]
+    pub fn txok(&mut self) -> TXOK_W<3> {
         TXOK_W::new(self)
     }
     #[doc = "Bit 4 - Received a Message Successfully"]
     #[inline(always)]
-    pub fn rxok(&mut self) -> RXOK_W {
+    #[must_use]
+    pub fn rxok(&mut self) -> RXOK_W<4> {
         RXOK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -245,11 +248,10 @@ impl crate::Readable for STATUS_SPEC {
 #[doc = "`write(|w| ..)` method takes [status::W](W) writer structure"]
 impl crate::Writable for STATUS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets STATUS to value 0"]
 impl crate::Resettable for STATUS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

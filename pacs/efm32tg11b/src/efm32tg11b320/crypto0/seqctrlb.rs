@@ -37,15 +37,15 @@ impl From<crate::W<SEQCTRLB_SPEC>> for W {
 #[doc = "Field `LENGTHB` reader - Buffer Length B in Bytes"]
 pub type LENGTHB_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `LENGTHB` writer - Buffer Length B in Bytes"]
-pub type LENGTHB_W<'a> = crate::FieldWriter<'a, u32, SEQCTRLB_SPEC, u16, u16, 14, 0>;
+pub type LENGTHB_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SEQCTRLB_SPEC, u16, u16, 14, O>;
 #[doc = "Field `DMA0PRESB` reader - DMA0 Preserve B"]
 pub type DMA0PRESB_R = crate::BitReader<bool>;
 #[doc = "Field `DMA0PRESB` writer - DMA0 Preserve B"]
-pub type DMA0PRESB_W<'a> = crate::BitWriter<'a, u32, SEQCTRLB_SPEC, bool, 28>;
+pub type DMA0PRESB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQCTRLB_SPEC, bool, O>;
 #[doc = "Field `DMA1PRESB` reader - DMA1 Preserve B"]
 pub type DMA1PRESB_R = crate::BitReader<bool>;
 #[doc = "Field `DMA1PRESB` writer - DMA1 Preserve B"]
-pub type DMA1PRESB_W<'a> = crate::BitWriter<'a, u32, SEQCTRLB_SPEC, bool, 29>;
+pub type DMA1PRESB_W<'a, const O: u8> = crate::BitWriter<'a, u32, SEQCTRLB_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:13 - Buffer Length B in Bytes"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:13 - Buffer Length B in Bytes"]
     #[inline(always)]
-    pub fn lengthb(&mut self) -> LENGTHB_W {
+    #[must_use]
+    pub fn lengthb(&mut self) -> LENGTHB_W<0> {
         LENGTHB_W::new(self)
     }
     #[doc = "Bit 28 - DMA0 Preserve B"]
     #[inline(always)]
-    pub fn dma0presb(&mut self) -> DMA0PRESB_W {
+    #[must_use]
+    pub fn dma0presb(&mut self) -> DMA0PRESB_W<28> {
         DMA0PRESB_W::new(self)
     }
     #[doc = "Bit 29 - DMA1 Preserve B"]
     #[inline(always)]
-    pub fn dma1presb(&mut self) -> DMA1PRESB_W {
+    #[must_use]
+    pub fn dma1presb(&mut self) -> DMA1PRESB_W<29> {
         DMA1PRESB_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for SEQCTRLB_SPEC {
 #[doc = "`write(|w| ..)` method takes [seqctrlb::W](W) writer structure"]
 impl crate::Writable for SEQCTRLB_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SEQCTRLB to value 0"]
 impl crate::Resettable for SEQCTRLB_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -34,8 +34,10 @@ impl From<crate::W<CTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `WARMUPMODE` reader - Warm-up Mode"]
+pub type WARMUPMODE_R = crate::FieldReader<u8, WARMUPMODE_A>;
 #[doc = "Warm-up Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WARMUPMODE_A {
     #[doc = "0: ADC is shut down after each conversion. 5us warmup time is used before each conversion."]
@@ -53,8 +55,6 @@ impl From<WARMUPMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WARMUPMODE` reader - Warm-up Mode"]
-pub type WARMUPMODE_R = crate::FieldReader<u8, WARMUPMODE_A>;
 impl WARMUPMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,9 @@ impl WARMUPMODE_R {
     }
 }
 #[doc = "Field `WARMUPMODE` writer - Warm-up Mode"]
-pub type WARMUPMODE_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, WARMUPMODE_A, 2, 0>;
-impl<'a> WARMUPMODE_W<'a> {
+pub type WARMUPMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, WARMUPMODE_A, 2, O>;
+impl<'a, const O: u8> WARMUPMODE_W<'a, O> {
     #[doc = "ADC is shut down after each conversion. 5us warmup time is used before each conversion."]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -115,25 +116,27 @@ impl<'a> WARMUPMODE_W<'a> {
 #[doc = "Field `SINGLEDMAWU` reader - SINGLEFIFO DMA Wakeup"]
 pub type SINGLEDMAWU_R = crate::BitReader<bool>;
 #[doc = "Field `SINGLEDMAWU` writer - SINGLEFIFO DMA Wakeup"]
-pub type SINGLEDMAWU_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 2>;
+pub type SINGLEDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `SCANDMAWU` reader - SCANFIFO DMA Wakeup"]
 pub type SCANDMAWU_R = crate::BitReader<bool>;
 #[doc = "Field `SCANDMAWU` writer - SCANFIFO DMA Wakeup"]
-pub type SCANDMAWU_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 3>;
+pub type SCANDMAWU_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `TAILGATE` reader - Conversion Tailgating"]
 pub type TAILGATE_R = crate::BitReader<bool>;
 #[doc = "Field `TAILGATE` writer - Conversion Tailgating"]
-pub type TAILGATE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 4>;
+pub type TAILGATE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `ASYNCCLKEN` reader - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1"]
 pub type ASYNCCLKEN_R = crate::BitReader<bool>;
 #[doc = "Field `ASYNCCLKEN` writer - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1"]
-pub type ASYNCCLKEN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 6>;
+pub type ASYNCCLKEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `ADCCLKMODE` reader - ADC Clock Mode"]
 pub type ADCCLKMODE_R = crate::BitReader<bool>;
 #[doc = "Field `ADCCLKMODE` writer - ADC Clock Mode"]
-pub type ADCCLKMODE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 7>;
+pub type ADCCLKMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `PRESC` reader - Prescalar Setting for ADC Sample and Conversion Clock"]
+pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 #[doc = "Prescalar Setting for ADC Sample and Conversion Clock\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRESC_A {
     #[doc = "0: `0`"]
@@ -145,8 +148,6 @@ impl From<PRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRESC` reader - Prescalar Setting for ADC Sample and Conversion Clock"]
-pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 impl PRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -163,8 +164,8 @@ impl PRESC_R {
     }
 }
 #[doc = "Field `PRESC` writer - Prescalar Setting for ADC Sample and Conversion Clock"]
-pub type PRESC_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PRESC_A, 7, 8>;
-impl<'a> PRESC_W<'a> {
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, PRESC_A, 7, O>;
+impl<'a, const O: u8> PRESC_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn nodivision(self) -> &'a mut W {
@@ -174,9 +175,11 @@ impl<'a> PRESC_W<'a> {
 #[doc = "Field `TIMEBASE` reader - 1us Time Base"]
 pub type TIMEBASE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TIMEBASE` writer - 1us Time Base"]
-pub type TIMEBASE_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 7, 16>;
+pub type TIMEBASE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, u8, 7, O>;
+#[doc = "Field `OVSRSEL` reader - Oversample Rate Select"]
+pub type OVSRSEL_R = crate::FieldReader<u8, OVSRSEL_A>;
 #[doc = "Oversample Rate Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OVSRSEL_A {
     #[doc = "0: 2 samples for each conversion result"]
@@ -210,8 +213,6 @@ impl From<OVSRSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OVSRSEL` reader - Oversample Rate Select"]
-pub type OVSRSEL_R = crate::FieldReader<u8, OVSRSEL_A>;
 impl OVSRSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -294,8 +295,8 @@ impl OVSRSEL_R {
     }
 }
 #[doc = "Field `OVSRSEL` writer - Oversample Rate Select"]
-pub type OVSRSEL_W<'a> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, OVSRSEL_A, 4, 24>;
-impl<'a> OVSRSEL_W<'a> {
+pub type OVSRSEL_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CTRL_SPEC, u8, OVSRSEL_A, 4, O>;
+impl<'a, const O: u8> OVSRSEL_W<'a, O> {
     #[doc = "2 samples for each conversion result"]
     #[inline(always)]
     pub fn x2(self) -> &'a mut W {
@@ -360,13 +361,15 @@ impl<'a> OVSRSEL_W<'a> {
 #[doc = "Field `DBGHALT` reader - Debug Mode Halt Enable"]
 pub type DBGHALT_R = crate::BitReader<bool>;
 #[doc = "Field `DBGHALT` writer - Debug Mode Halt Enable"]
-pub type DBGHALT_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 28>;
+pub type DBGHALT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `CHCONMODE` reader - Channel Connect"]
 pub type CHCONMODE_R = crate::BitReader<bool>;
 #[doc = "Field `CHCONMODE` writer - Channel Connect"]
-pub type CHCONMODE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 29>;
+pub type CHCONMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `CHCONREFWARMIDLE` reader - Channel Connect and Reference Warm Sel When ADC is IDLE"]
+pub type CHCONREFWARMIDLE_R = crate::FieldReader<u8, CHCONREFWARMIDLE_A>;
 #[doc = "Channel Connect and Reference Warm Sel When ADC is IDLE\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CHCONREFWARMIDLE_A {
     #[doc = "0: Keep scan reference warm and APORT switches for first scan channel closed if WARMUPMODE is not NORMAL"]
@@ -382,8 +385,6 @@ impl From<CHCONREFWARMIDLE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CHCONREFWARMIDLE` reader - Channel Connect and Reference Warm Sel When ADC is IDLE"]
-pub type CHCONREFWARMIDLE_R = crate::FieldReader<u8, CHCONREFWARMIDLE_A>;
 impl CHCONREFWARMIDLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -412,9 +413,9 @@ impl CHCONREFWARMIDLE_R {
     }
 }
 #[doc = "Field `CHCONREFWARMIDLE` writer - Channel Connect and Reference Warm Sel When ADC is IDLE"]
-pub type CHCONREFWARMIDLE_W<'a> =
-    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CHCONREFWARMIDLE_A, 2, 30>;
-impl<'a> CHCONREFWARMIDLE_W<'a> {
+pub type CHCONREFWARMIDLE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CTRL_SPEC, u8, CHCONREFWARMIDLE_A, 2, O>;
+impl<'a, const O: u8> CHCONREFWARMIDLE_W<'a, O> {
     #[doc = "Keep scan reference warm and APORT switches for first scan channel closed if WARMUPMODE is not NORMAL"]
     #[inline(always)]
     pub fn prefscan(self) -> &'a mut W {
@@ -496,62 +497,74 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - Warm-up Mode"]
     #[inline(always)]
-    pub fn warmupmode(&mut self) -> WARMUPMODE_W {
+    #[must_use]
+    pub fn warmupmode(&mut self) -> WARMUPMODE_W<0> {
         WARMUPMODE_W::new(self)
     }
     #[doc = "Bit 2 - SINGLEFIFO DMA Wakeup"]
     #[inline(always)]
-    pub fn singledmawu(&mut self) -> SINGLEDMAWU_W {
+    #[must_use]
+    pub fn singledmawu(&mut self) -> SINGLEDMAWU_W<2> {
         SINGLEDMAWU_W::new(self)
     }
     #[doc = "Bit 3 - SCANFIFO DMA Wakeup"]
     #[inline(always)]
-    pub fn scandmawu(&mut self) -> SCANDMAWU_W {
+    #[must_use]
+    pub fn scandmawu(&mut self) -> SCANDMAWU_W<3> {
         SCANDMAWU_W::new(self)
     }
     #[doc = "Bit 4 - Conversion Tailgating"]
     #[inline(always)]
-    pub fn tailgate(&mut self) -> TAILGATE_W {
+    #[must_use]
+    pub fn tailgate(&mut self) -> TAILGATE_W<4> {
         TAILGATE_W::new(self)
     }
     #[doc = "Bit 6 - Selects ASYNC CLK Enable Mode When ADCCLKMODE=1"]
     #[inline(always)]
-    pub fn asyncclken(&mut self) -> ASYNCCLKEN_W {
+    #[must_use]
+    pub fn asyncclken(&mut self) -> ASYNCCLKEN_W<6> {
         ASYNCCLKEN_W::new(self)
     }
     #[doc = "Bit 7 - ADC Clock Mode"]
     #[inline(always)]
-    pub fn adcclkmode(&mut self) -> ADCCLKMODE_W {
+    #[must_use]
+    pub fn adcclkmode(&mut self) -> ADCCLKMODE_W<7> {
         ADCCLKMODE_W::new(self)
     }
     #[doc = "Bits 8:14 - Prescalar Setting for ADC Sample and Conversion Clock"]
     #[inline(always)]
-    pub fn presc(&mut self) -> PRESC_W {
+    #[must_use]
+    pub fn presc(&mut self) -> PRESC_W<8> {
         PRESC_W::new(self)
     }
     #[doc = "Bits 16:22 - 1us Time Base"]
     #[inline(always)]
-    pub fn timebase(&mut self) -> TIMEBASE_W {
+    #[must_use]
+    pub fn timebase(&mut self) -> TIMEBASE_W<16> {
         TIMEBASE_W::new(self)
     }
     #[doc = "Bits 24:27 - Oversample Rate Select"]
     #[inline(always)]
-    pub fn ovsrsel(&mut self) -> OVSRSEL_W {
+    #[must_use]
+    pub fn ovsrsel(&mut self) -> OVSRSEL_W<24> {
         OVSRSEL_W::new(self)
     }
     #[doc = "Bit 28 - Debug Mode Halt Enable"]
     #[inline(always)]
-    pub fn dbghalt(&mut self) -> DBGHALT_W {
+    #[must_use]
+    pub fn dbghalt(&mut self) -> DBGHALT_W<28> {
         DBGHALT_W::new(self)
     }
     #[doc = "Bit 29 - Channel Connect"]
     #[inline(always)]
-    pub fn chconmode(&mut self) -> CHCONMODE_W {
+    #[must_use]
+    pub fn chconmode(&mut self) -> CHCONMODE_W<29> {
         CHCONMODE_W::new(self)
     }
     #[doc = "Bits 30:31 - Channel Connect and Reference Warm Sel When ADC is IDLE"]
     #[inline(always)]
-    pub fn chconrefwarmidle(&mut self) -> CHCONREFWARMIDLE_W {
+    #[must_use]
+    pub fn chconrefwarmidle(&mut self) -> CHCONREFWARMIDLE_W<30> {
         CHCONREFWARMIDLE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -573,11 +586,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0x001f_0000"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x001f_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x001f_0000;
 }

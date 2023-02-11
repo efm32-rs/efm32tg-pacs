@@ -37,15 +37,16 @@ impl From<crate::W<DCDCLPCTRL_SPEC>> for W {
 #[doc = "Field `LPCMPHYSSELEM234H` reader - LP Mode Hysteresis Selection for EM23 and EM4H"]
 pub type LPCMPHYSSELEM234H_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LPCMPHYSSELEM234H` writer - LP Mode Hysteresis Selection for EM23 and EM4H"]
-pub type LPCMPHYSSELEM234H_W<'a> = crate::FieldWriter<'a, u32, DCDCLPCTRL_SPEC, u8, u8, 4, 12>;
+pub type LPCMPHYSSELEM234H_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DCDCLPCTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `LPVREFDUTYEN` reader - LP Mode Duty Cycling Enable"]
 pub type LPVREFDUTYEN_R = crate::BitReader<bool>;
 #[doc = "Field `LPVREFDUTYEN` writer - LP Mode Duty Cycling Enable"]
-pub type LPVREFDUTYEN_W<'a> = crate::BitWriter<'a, u32, DCDCLPCTRL_SPEC, bool, 24>;
+pub type LPVREFDUTYEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCLPCTRL_SPEC, bool, O>;
 #[doc = "Field `LPBLANK` reader - Reserved for internal use. Do not change."]
 pub type LPBLANK_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LPBLANK` writer - Reserved for internal use. Do not change."]
-pub type LPBLANK_W<'a> = crate::FieldWriter<'a, u32, DCDCLPCTRL_SPEC, u8, u8, 2, 25>;
+pub type LPBLANK_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCLPCTRL_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 12:15 - LP Mode Hysteresis Selection for EM23 and EM4H"]
     #[inline(always)]
@@ -66,17 +67,20 @@ impl R {
 impl W {
     #[doc = "Bits 12:15 - LP Mode Hysteresis Selection for EM23 and EM4H"]
     #[inline(always)]
-    pub fn lpcmphysselem234h(&mut self) -> LPCMPHYSSELEM234H_W {
+    #[must_use]
+    pub fn lpcmphysselem234h(&mut self) -> LPCMPHYSSELEM234H_W<12> {
         LPCMPHYSSELEM234H_W::new(self)
     }
     #[doc = "Bit 24 - LP Mode Duty Cycling Enable"]
     #[inline(always)]
-    pub fn lpvrefdutyen(&mut self) -> LPVREFDUTYEN_W {
+    #[must_use]
+    pub fn lpvrefdutyen(&mut self) -> LPVREFDUTYEN_W<24> {
         LPVREFDUTYEN_W::new(self)
     }
     #[doc = "Bits 25:26 - Reserved for internal use. Do not change."]
     #[inline(always)]
-    pub fn lpblank(&mut self) -> LPBLANK_W {
+    #[must_use]
+    pub fn lpblank(&mut self) -> LPBLANK_W<25> {
         LPBLANK_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +102,10 @@ impl crate::Readable for DCDCLPCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dcdclpctrl::W](W) writer structure"]
 impl crate::Writable for DCDCLPCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DCDCLPCTRL to value 0x0300_0000"]
 impl crate::Resettable for DCDCLPCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0300_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x0300_0000;
 }

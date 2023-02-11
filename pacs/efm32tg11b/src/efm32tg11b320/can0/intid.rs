@@ -40,8 +40,5 @@ impl crate::Readable for INTID_SPEC {
 }
 #[doc = "`reset()` method sets INTID to value 0"]
 impl crate::Resettable for INTID_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

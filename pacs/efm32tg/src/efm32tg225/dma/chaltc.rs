@@ -20,60 +20,68 @@ impl From<crate::W<CHALTC_SPEC>> for W {
     }
 }
 #[doc = "Field `CH0ALTC` writer - Channel 0 Alternate Clear"]
-pub type CH0ALTC_W<'a> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, 0>;
+pub type CH0ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH1ALTC` writer - Channel 1 Alternate Clear"]
-pub type CH1ALTC_W<'a> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, 1>;
+pub type CH1ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH2ALTC` writer - Channel 2 Alternate Clear"]
-pub type CH2ALTC_W<'a> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, 2>;
+pub type CH2ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH3ALTC` writer - Channel 3 Alternate Clear"]
-pub type CH3ALTC_W<'a> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, 3>;
+pub type CH3ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH4ALTC` writer - Channel 4 Alternate Clear"]
-pub type CH4ALTC_W<'a> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, 4>;
+pub type CH4ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH5ALTC` writer - Channel 5 Alternate Clear"]
-pub type CH5ALTC_W<'a> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, 5>;
+pub type CH5ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH6ALTC` writer - Channel 6 Alternate Clear"]
-pub type CH6ALTC_W<'a> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, 6>;
+pub type CH6ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 #[doc = "Field `CH7ALTC` writer - Channel 7 Alternate Clear"]
-pub type CH7ALTC_W<'a> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, 7>;
+pub type CH7ALTC_W<'a, const O: u8> = crate::BitWriter<'a, u32, CHALTC_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Channel 0 Alternate Clear"]
     #[inline(always)]
-    pub fn ch0altc(&mut self) -> CH0ALTC_W {
+    #[must_use]
+    pub fn ch0altc(&mut self) -> CH0ALTC_W<0> {
         CH0ALTC_W::new(self)
     }
     #[doc = "Bit 1 - Channel 1 Alternate Clear"]
     #[inline(always)]
-    pub fn ch1altc(&mut self) -> CH1ALTC_W {
+    #[must_use]
+    pub fn ch1altc(&mut self) -> CH1ALTC_W<1> {
         CH1ALTC_W::new(self)
     }
     #[doc = "Bit 2 - Channel 2 Alternate Clear"]
     #[inline(always)]
-    pub fn ch2altc(&mut self) -> CH2ALTC_W {
+    #[must_use]
+    pub fn ch2altc(&mut self) -> CH2ALTC_W<2> {
         CH2ALTC_W::new(self)
     }
     #[doc = "Bit 3 - Channel 3 Alternate Clear"]
     #[inline(always)]
-    pub fn ch3altc(&mut self) -> CH3ALTC_W {
+    #[must_use]
+    pub fn ch3altc(&mut self) -> CH3ALTC_W<3> {
         CH3ALTC_W::new(self)
     }
     #[doc = "Bit 4 - Channel 4 Alternate Clear"]
     #[inline(always)]
-    pub fn ch4altc(&mut self) -> CH4ALTC_W {
+    #[must_use]
+    pub fn ch4altc(&mut self) -> CH4ALTC_W<4> {
         CH4ALTC_W::new(self)
     }
     #[doc = "Bit 5 - Channel 5 Alternate Clear"]
     #[inline(always)]
-    pub fn ch5altc(&mut self) -> CH5ALTC_W {
+    #[must_use]
+    pub fn ch5altc(&mut self) -> CH5ALTC_W<5> {
         CH5ALTC_W::new(self)
     }
     #[doc = "Bit 6 - Channel 6 Alternate Clear"]
     #[inline(always)]
-    pub fn ch6altc(&mut self) -> CH6ALTC_W {
+    #[must_use]
+    pub fn ch6altc(&mut self) -> CH6ALTC_W<6> {
         CH6ALTC_W::new(self)
     }
     #[doc = "Bit 7 - Channel 7 Alternate Clear"]
     #[inline(always)]
-    pub fn ch7altc(&mut self) -> CH7ALTC_W {
+    #[must_use]
+    pub fn ch7altc(&mut self) -> CH7ALTC_W<7> {
         CH7ALTC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -91,11 +99,10 @@ impl crate::RegisterSpec for CHALTC_SPEC {
 #[doc = "`write(|w| ..)` method takes [chaltc::W](W) writer structure"]
 impl crate::Writable for CHALTC_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CHALTC to value 0"]
 impl crate::Resettable for CHALTC_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,16 +37,16 @@ impl From<crate::W<CLKDIV_SPEC>> for W {
 #[doc = "Field `DIV` reader - Fractional Clock Divider"]
 pub type DIV_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `DIV` writer - Fractional Clock Divider"]
-pub type DIV_W<'a> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u32, u32, 20, 3>;
+pub type DIV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CLKDIV_SPEC, u32, u32, 20, O>;
 #[doc = "Field `AUTOBAUDEN` reader - AUTOBAUD Detection Enable"]
 pub type AUTOBAUDEN_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOBAUDEN` writer - AUTOBAUD Detection Enable"]
-pub type AUTOBAUDEN_W<'a> = crate::BitWriter<'a, u32, CLKDIV_SPEC, bool, 31>;
+pub type AUTOBAUDEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CLKDIV_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 3:22 - Fractional Clock Divider"]
     #[inline(always)]
     pub fn div(&self) -> DIV_R {
-        DIV_R::new(((self.bits >> 3) & 0x000f_ffff) as u32)
+        DIV_R::new((self.bits >> 3) & 0x000f_ffff)
     }
     #[doc = "Bit 31 - AUTOBAUD Detection Enable"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 3:22 - Fractional Clock Divider"]
     #[inline(always)]
-    pub fn div(&mut self) -> DIV_W {
+    #[must_use]
+    pub fn div(&mut self) -> DIV_W<3> {
         DIV_W::new(self)
     }
     #[doc = "Bit 31 - AUTOBAUD Detection Enable"]
     #[inline(always)]
-    pub fn autobauden(&mut self) -> AUTOBAUDEN_W {
+    #[must_use]
+    pub fn autobauden(&mut self) -> AUTOBAUDEN_W<31> {
         AUTOBAUDEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for CLKDIV_SPEC {
 #[doc = "`write(|w| ..)` method takes [clkdiv::W](W) writer structure"]
 impl crate::Writable for CLKDIV_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CLKDIV to value 0"]
 impl crate::Resettable for CLKDIV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

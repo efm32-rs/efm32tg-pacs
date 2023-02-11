@@ -37,9 +37,11 @@ impl From<crate::W<EXTIFCTRL_SPEC>> for W {
 #[doc = "Field `EN` reader - Enable External Interface"]
 pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - Enable External Interface"]
-pub type EN_W<'a> = crate::BitWriter<'a, u32, EXTIFCTRL_SPEC, bool, 0>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, EXTIFCTRL_SPEC, bool, O>;
+#[doc = "Field `APORTSEL` reader - APORT Selection for External Interface"]
+pub type APORTSEL_R = crate::FieldReader<u8, APORTSEL_A>;
 #[doc = "APORT Selection for External Interface\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum APORTSEL_A {
     #[doc = "0: APORT0X used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT0XCH0."]
@@ -77,8 +79,6 @@ impl From<APORTSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `APORTSEL` reader - APORT Selection for External Interface"]
-pub type APORTSEL_R = crate::FieldReader<u8, APORTSEL_A>;
 impl APORTSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -173,8 +173,9 @@ impl APORTSEL_R {
     }
 }
 #[doc = "Field `APORTSEL` writer - APORT Selection for External Interface"]
-pub type APORTSEL_W<'a> = crate::FieldWriter<'a, u32, EXTIFCTRL_SPEC, u8, APORTSEL_A, 4, 4>;
-impl<'a> APORTSEL_W<'a> {
+pub type APORTSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, EXTIFCTRL_SPEC, u8, APORTSEL_A, 4, O>;
+impl<'a, const O: u8> APORTSEL_W<'a, O> {
     #[doc = "APORT0X used. EXT_BASE = ACMP_INPUTSEL_POSSEL_APORT0XCH0."]
     #[inline(always)]
     pub fn aport0x(self) -> &'a mut W {
@@ -261,12 +262,14 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable External Interface"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
         EN_W::new(self)
     }
     #[doc = "Bits 4:7 - APORT Selection for External Interface"]
     #[inline(always)]
-    pub fn aportsel(&mut self) -> APORTSEL_W {
+    #[must_use]
+    pub fn aportsel(&mut self) -> APORTSEL_W<4> {
         APORTSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -288,11 +291,10 @@ impl crate::Readable for EXTIFCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [extifctrl::W](W) writer structure"]
 impl crate::Writable for EXTIFCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EXTIFCTRL to value 0"]
 impl crate::Resettable for EXTIFCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

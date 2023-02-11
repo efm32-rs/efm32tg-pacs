@@ -37,15 +37,15 @@ impl From<crate::W<BIASCTRL_SPEC>> for W {
 #[doc = "Field `SPEED` reader - SPEED Adjustment"]
 pub type SPEED_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SPEED` writer - SPEED Adjustment"]
-pub type SPEED_W<'a> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 3, 0>;
+pub type SPEED_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `BUFDRV` reader - Buffer Drive Strength"]
 pub type BUFDRV_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BUFDRV` writer - Buffer Drive Strength"]
-pub type BUFDRV_W<'a> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 4, 4>;
+pub type BUFDRV_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 4, O>;
 #[doc = "Field `BUFBIAS` reader - Buffer Bias Setting"]
 pub type BUFBIAS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BUFBIAS` writer - Buffer Bias Setting"]
-pub type BUFBIAS_W<'a> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 3, 10>;
+pub type BUFBIAS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BIASCTRL_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:2 - SPEED Adjustment"]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - SPEED Adjustment"]
     #[inline(always)]
-    pub fn speed(&mut self) -> SPEED_W {
+    #[must_use]
+    pub fn speed(&mut self) -> SPEED_W<0> {
         SPEED_W::new(self)
     }
     #[doc = "Bits 4:7 - Buffer Drive Strength"]
     #[inline(always)]
-    pub fn bufdrv(&mut self) -> BUFDRV_W {
+    #[must_use]
+    pub fn bufdrv(&mut self) -> BUFDRV_W<4> {
         BUFDRV_W::new(self)
     }
     #[doc = "Bits 10:12 - Buffer Bias Setting"]
     #[inline(always)]
-    pub fn bufbias(&mut self) -> BUFBIAS_W {
+    #[must_use]
+    pub fn bufbias(&mut self) -> BUFBIAS_W<10> {
         BUFBIAS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for BIASCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [biasctrl::W](W) writer structure"]
 impl crate::Writable for BIASCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BIASCTRL to value 0"]
 impl crate::Resettable for BIASCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

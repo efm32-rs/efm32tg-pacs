@@ -37,11 +37,11 @@ impl From<crate::W<SCANRES_SPEC>> for W {
 #[doc = "Field `SCANRES` reader - Scan Results"]
 pub type SCANRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `SCANRES` writer - Scan Results"]
-pub type SCANRES_W<'a> = crate::FieldWriter<'a, u32, SCANRES_SPEC, u16, u16, 16, 0>;
+pub type SCANRES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCANRES_SPEC, u16, u16, 16, O>;
 #[doc = "Field `STEPDIR` reader - Direction of Previous Step Detection"]
 pub type STEPDIR_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `STEPDIR` writer - Direction of Previous Step Detection"]
-pub type STEPDIR_W<'a> = crate::FieldWriter<'a, u32, SCANRES_SPEC, u16, u16, 16, 16>;
+pub type STEPDIR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCANRES_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Scan Results"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Scan Results"]
     #[inline(always)]
-    pub fn scanres(&mut self) -> SCANRES_W {
+    #[must_use]
+    pub fn scanres(&mut self) -> SCANRES_W<0> {
         SCANRES_W::new(self)
     }
     #[doc = "Bits 16:31 - Direction of Previous Step Detection"]
     #[inline(always)]
-    pub fn stepdir(&mut self) -> STEPDIR_W {
+    #[must_use]
+    pub fn stepdir(&mut self) -> STEPDIR_W<16> {
         STEPDIR_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for SCANRES_SPEC {
 #[doc = "`write(|w| ..)` method takes [scanres::W](W) writer structure"]
 impl crate::Writable for SCANRES_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCANRES to value 0"]
 impl crate::Resettable for SCANRES_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

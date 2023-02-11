@@ -37,11 +37,11 @@ impl From<crate::W<DCDCLNVCTRL_SPEC>> for W {
 #[doc = "Field `LNATT` reader - Low Noise Mode Feedback Attenuation"]
 pub type LNATT_R = crate::BitReader<bool>;
 #[doc = "Field `LNATT` writer - Low Noise Mode Feedback Attenuation"]
-pub type LNATT_W<'a> = crate::BitWriter<'a, u32, DCDCLNVCTRL_SPEC, bool, 1>;
+pub type LNATT_W<'a, const O: u8> = crate::BitWriter<'a, u32, DCDCLNVCTRL_SPEC, bool, O>;
 #[doc = "Field `LNVREF` reader - Low Noise Mode VREF Trim"]
 pub type LNVREF_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LNVREF` writer - Low Noise Mode VREF Trim"]
-pub type LNVREF_W<'a> = crate::FieldWriter<'a, u32, DCDCLNVCTRL_SPEC, u8, u8, 7, 8>;
+pub type LNVREF_W<'a, const O: u8> = crate::FieldWriter<'a, u32, DCDCLNVCTRL_SPEC, u8, u8, 7, O>;
 impl R {
     #[doc = "Bit 1 - Low Noise Mode Feedback Attenuation"]
     #[inline(always)]
@@ -57,12 +57,14 @@ impl R {
 impl W {
     #[doc = "Bit 1 - Low Noise Mode Feedback Attenuation"]
     #[inline(always)]
-    pub fn lnatt(&mut self) -> LNATT_W {
+    #[must_use]
+    pub fn lnatt(&mut self) -> LNATT_W<1> {
         LNATT_W::new(self)
     }
     #[doc = "Bits 8:14 - Low Noise Mode VREF Trim"]
     #[inline(always)]
-    pub fn lnvref(&mut self) -> LNVREF_W {
+    #[must_use]
+    pub fn lnvref(&mut self) -> LNVREF_W<8> {
         LNVREF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +86,10 @@ impl crate::Readable for DCDCLNVCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dcdclnvctrl::W](W) writer structure"]
 impl crate::Writable for DCDCLNVCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DCDCLNVCTRL to value 0x7100"]
 impl crate::Resettable for DCDCLNVCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x7100
-    }
+    const RESET_VALUE: Self::Ux = 0x7100;
 }

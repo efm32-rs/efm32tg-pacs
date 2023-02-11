@@ -20,11 +20,12 @@ impl From<crate::W<AAPUNLOCKCMD_SPEC>> for W {
     }
 }
 #[doc = "Field `UNLOCKAAP` writer - Software Unlock AAP Command"]
-pub type UNLOCKAAP_W<'a> = crate::BitWriter<'a, u32, AAPUNLOCKCMD_SPEC, bool, 0>;
+pub type UNLOCKAAP_W<'a, const O: u8> = crate::BitWriter<'a, u32, AAPUNLOCKCMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Software Unlock AAP Command"]
     #[inline(always)]
-    pub fn unlockaap(&mut self) -> UNLOCKAAP_W {
+    #[must_use]
+    pub fn unlockaap(&mut self) -> UNLOCKAAP_W<0> {
         UNLOCKAAP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -42,11 +43,10 @@ impl crate::RegisterSpec for AAPUNLOCKCMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [aapunlockcmd::W](W) writer structure"]
 impl crate::Writable for AAPUNLOCKCMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets AAPUNLOCKCMD to value 0"]
 impl crate::Resettable for AAPUNLOCKCMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

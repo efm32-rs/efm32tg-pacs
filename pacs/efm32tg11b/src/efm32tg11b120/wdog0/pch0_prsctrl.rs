@@ -34,8 +34,10 @@ impl From<crate::W<PCH0_PRSCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PRSSEL` reader - PRS Channel PRS Select"]
+pub type PRSSEL_R = crate::FieldReader<u8, PRSSEL_A>;
 #[doc = "PRS Channel PRS Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSEL_A {
     #[doc = "0: PRS Channel 0 selected as input"]
@@ -61,8 +63,6 @@ impl From<PRSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRSSEL` reader - PRS Channel PRS Select"]
-pub type PRSSEL_R = crate::FieldReader<u8, PRSSEL_A>;
 impl PRSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,9 @@ impl PRSSEL_R {
     }
 }
 #[doc = "Field `PRSSEL` writer - PRS Channel PRS Select"]
-pub type PRSSEL_W<'a> = crate::FieldWriterSafe<'a, u32, PCH0_PRSCTRL_SPEC, u8, PRSSEL_A, 3, 0>;
-impl<'a> PRSSEL_W<'a> {
+pub type PRSSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PCH0_PRSCTRL_SPEC, u8, PRSSEL_A, 3, O>;
+impl<'a, const O: u8> PRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected as input"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -167,7 +168,7 @@ impl<'a> PRSSEL_W<'a> {
 #[doc = "Field `PRSMISSRSTEN` reader - PRS Missing Event Will Trigger a Watchdog Reset"]
 pub type PRSMISSRSTEN_R = crate::BitReader<bool>;
 #[doc = "Field `PRSMISSRSTEN` writer - PRS Missing Event Will Trigger a Watchdog Reset"]
-pub type PRSMISSRSTEN_W<'a> = crate::BitWriter<'a, u32, PCH0_PRSCTRL_SPEC, bool, 8>;
+pub type PRSMISSRSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PCH0_PRSCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:2 - PRS Channel PRS Select"]
     #[inline(always)]
@@ -183,12 +184,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - PRS Channel PRS Select"]
     #[inline(always)]
-    pub fn prssel(&mut self) -> PRSSEL_W {
+    #[must_use]
+    pub fn prssel(&mut self) -> PRSSEL_W<0> {
         PRSSEL_W::new(self)
     }
     #[doc = "Bit 8 - PRS Missing Event Will Trigger a Watchdog Reset"]
     #[inline(always)]
-    pub fn prsmissrsten(&mut self) -> PRSMISSRSTEN_W {
+    #[must_use]
+    pub fn prsmissrsten(&mut self) -> PRSMISSRSTEN_W<8> {
         PRSMISSRSTEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -210,11 +213,10 @@ impl crate::Readable for PCH0_PRSCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [pch0_prsctrl::W](W) writer structure"]
 impl crate::Writable for PCH0_PRSCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PCH0_PRSCTRL to value 0"]
 impl crate::Resettable for PCH0_PRSCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

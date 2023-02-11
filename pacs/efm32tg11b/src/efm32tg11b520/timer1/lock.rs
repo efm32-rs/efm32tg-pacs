@@ -34,8 +34,10 @@ impl From<crate::W<LOCK_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `TIMERLOCKKEY` reader - Timer Lock Key"]
+pub type TIMERLOCKKEY_R = crate::FieldReader<u16, TIMERLOCKKEY_A>;
 #[doc = "Timer Lock Key\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum TIMERLOCKKEY_A {
     #[doc = "0: `0`"]
@@ -49,8 +51,6 @@ impl From<TIMERLOCKKEY_A> for u16 {
         variant as _
     }
 }
-#[doc = "Field `TIMERLOCKKEY` reader - Timer Lock Key"]
-pub type TIMERLOCKKEY_R = crate::FieldReader<u16, TIMERLOCKKEY_A>;
 impl TIMERLOCKKEY_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -73,8 +73,9 @@ impl TIMERLOCKKEY_R {
     }
 }
 #[doc = "Field `TIMERLOCKKEY` writer - Timer Lock Key"]
-pub type TIMERLOCKKEY_W<'a> = crate::FieldWriter<'a, u32, LOCK_SPEC, u16, TIMERLOCKKEY_A, 16, 0>;
-impl<'a> TIMERLOCKKEY_W<'a> {
+pub type TIMERLOCKKEY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, LOCK_SPEC, u16, TIMERLOCKKEY_A, 16, O>;
+impl<'a, const O: u8> TIMERLOCKKEY_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn unlocked(self) -> &'a mut W {
@@ -96,7 +97,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Timer Lock Key"]
     #[inline(always)]
-    pub fn timerlockkey(&mut self) -> TIMERLOCKKEY_W {
+    #[must_use]
+    pub fn timerlockkey(&mut self) -> TIMERLOCKKEY_W<0> {
         TIMERLOCKKEY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -118,11 +120,10 @@ impl crate::Readable for LOCK_SPEC {
 #[doc = "`write(|w| ..)` method takes [lock::W](W) writer structure"]
 impl crate::Writable for LOCK_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LOCK to value 0"]
 impl crate::Resettable for LOCK_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

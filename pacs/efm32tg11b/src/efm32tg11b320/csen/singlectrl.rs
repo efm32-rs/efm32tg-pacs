@@ -34,8 +34,10 @@ impl From<crate::W<SINGLECTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SINGLESEL` reader - Single Channel Input Select"]
+pub type SINGLESEL_R = crate::FieldReader<u8, SINGLESEL_A>;
 #[doc = "Single Channel Input Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SINGLESEL_A {
     #[doc = "32: `100000`"]
@@ -173,8 +175,6 @@ impl From<SINGLESEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SINGLESEL` reader - Single Channel Input Select"]
-pub type SINGLESEL_R = crate::FieldReader<u8, SINGLESEL_A>;
 impl SINGLESEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -569,8 +569,9 @@ impl SINGLESEL_R {
     }
 }
 #[doc = "Field `SINGLESEL` writer - Single Channel Input Select"]
-pub type SINGLESEL_W<'a> = crate::FieldWriter<'a, u32, SINGLECTRL_SPEC, u8, SINGLESEL_A, 7, 4>;
-impl<'a> SINGLESEL_W<'a> {
+pub type SINGLESEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, SINGLECTRL_SPEC, u8, SINGLESEL_A, 7, O>;
+impl<'a, const O: u8> SINGLESEL_W<'a, O> {
     #[doc = "`100000`"]
     #[inline(always)]
     pub fn aport1xch0(self) -> &'a mut W {
@@ -902,7 +903,8 @@ impl R {
 impl W {
     #[doc = "Bits 4:10 - Single Channel Input Select"]
     #[inline(always)]
-    pub fn singlesel(&mut self) -> SINGLESEL_W {
+    #[must_use]
+    pub fn singlesel(&mut self) -> SINGLESEL_W<4> {
         SINGLESEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -924,11 +926,10 @@ impl crate::Readable for SINGLECTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [singlectrl::W](W) writer structure"]
 impl crate::Writable for SINGLECTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SINGLECTRL to value 0"]
 impl crate::Resettable for SINGLECTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,13 +37,13 @@ impl From<crate::W<CMD_SPEC>> for W {
 #[doc = "Field `INSTR` reader - Execute Instruction"]
 pub type INSTR_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `INSTR` writer - Execute Instruction"]
-pub type INSTR_W<'a> = crate::FieldWriter<'a, u32, CMD_SPEC, u8, u8, 8, 0>;
+pub type INSTR_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CMD_SPEC, u8, u8, 8, O>;
 #[doc = "Field `SEQSTART` writer - Encryption/Decryption SEQUENCE Start"]
-pub type SEQSTART_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 9>;
+pub type SEQSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SEQSTOP` writer - Sequence Stop"]
-pub type SEQSTOP_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 10>;
+pub type SEQSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `SEQSTEP` writer - Sequence Step"]
-pub type SEQSTEP_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 11>;
+pub type SEQSTEP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:7 - Execute Instruction"]
     #[inline(always)]
@@ -54,22 +54,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Execute Instruction"]
     #[inline(always)]
-    pub fn instr(&mut self) -> INSTR_W {
+    #[must_use]
+    pub fn instr(&mut self) -> INSTR_W<0> {
         INSTR_W::new(self)
     }
     #[doc = "Bit 9 - Encryption/Decryption SEQUENCE Start"]
     #[inline(always)]
-    pub fn seqstart(&mut self) -> SEQSTART_W {
+    #[must_use]
+    pub fn seqstart(&mut self) -> SEQSTART_W<9> {
         SEQSTART_W::new(self)
     }
     #[doc = "Bit 10 - Sequence Stop"]
     #[inline(always)]
-    pub fn seqstop(&mut self) -> SEQSTOP_W {
+    #[must_use]
+    pub fn seqstop(&mut self) -> SEQSTOP_W<10> {
         SEQSTOP_W::new(self)
     }
     #[doc = "Bit 11 - Sequence Step"]
     #[inline(always)]
-    pub fn seqstep(&mut self) -> SEQSTEP_W {
+    #[must_use]
+    pub fn seqstep(&mut self) -> SEQSTEP_W<11> {
         SEQSTEP_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -91,11 +95,10 @@ impl crate::Readable for CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmd::W](W) writer structure"]
 impl crate::Writable for CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
 impl crate::Resettable for CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

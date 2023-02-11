@@ -37,27 +37,27 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `EN` reader - CRC Functionality Enable"]
 pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - CRC Functionality Enable"]
-pub type EN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `POLYSEL` reader - Polynomial Select"]
 pub type POLYSEL_R = crate::BitReader<bool>;
 #[doc = "Field `POLYSEL` writer - Polynomial Select"]
-pub type POLYSEL_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 4>;
+pub type POLYSEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `BYTEMODE` reader - Byte Mode Enable"]
 pub type BYTEMODE_R = crate::BitReader<bool>;
 #[doc = "Field `BYTEMODE` writer - Byte Mode Enable"]
-pub type BYTEMODE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 8>;
+pub type BYTEMODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `BITREVERSE` reader - Byte-level Bit Reverse Enable"]
 pub type BITREVERSE_R = crate::BitReader<bool>;
 #[doc = "Field `BITREVERSE` writer - Byte-level Bit Reverse Enable"]
-pub type BITREVERSE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 9>;
+pub type BITREVERSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `BYTEREVERSE` reader - Byte Reverse Mode"]
 pub type BYTEREVERSE_R = crate::BitReader<bool>;
 #[doc = "Field `BYTEREVERSE` writer - Byte Reverse Mode"]
-pub type BYTEREVERSE_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 10>;
+pub type BYTEREVERSE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `AUTOINIT` reader - Auto Init Enable"]
 pub type AUTOINIT_R = crate::BitReader<bool>;
 #[doc = "Field `AUTOINIT` writer - Auto Init Enable"]
-pub type AUTOINIT_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 13>;
+pub type AUTOINIT_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - CRC Functionality Enable"]
     #[inline(always)]
@@ -93,32 +93,38 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CRC Functionality Enable"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
         EN_W::new(self)
     }
     #[doc = "Bit 4 - Polynomial Select"]
     #[inline(always)]
-    pub fn polysel(&mut self) -> POLYSEL_W {
+    #[must_use]
+    pub fn polysel(&mut self) -> POLYSEL_W<4> {
         POLYSEL_W::new(self)
     }
     #[doc = "Bit 8 - Byte Mode Enable"]
     #[inline(always)]
-    pub fn bytemode(&mut self) -> BYTEMODE_W {
+    #[must_use]
+    pub fn bytemode(&mut self) -> BYTEMODE_W<8> {
         BYTEMODE_W::new(self)
     }
     #[doc = "Bit 9 - Byte-level Bit Reverse Enable"]
     #[inline(always)]
-    pub fn bitreverse(&mut self) -> BITREVERSE_W {
+    #[must_use]
+    pub fn bitreverse(&mut self) -> BITREVERSE_W<9> {
         BITREVERSE_W::new(self)
     }
     #[doc = "Bit 10 - Byte Reverse Mode"]
     #[inline(always)]
-    pub fn bytereverse(&mut self) -> BYTEREVERSE_W {
+    #[must_use]
+    pub fn bytereverse(&mut self) -> BYTEREVERSE_W<10> {
         BYTEREVERSE_W::new(self)
     }
     #[doc = "Bit 13 - Auto Init Enable"]
     #[inline(always)]
-    pub fn autoinit(&mut self) -> AUTOINIT_W {
+    #[must_use]
+    pub fn autoinit(&mut self) -> AUTOINIT_W<13> {
         AUTOINIT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -140,11 +146,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

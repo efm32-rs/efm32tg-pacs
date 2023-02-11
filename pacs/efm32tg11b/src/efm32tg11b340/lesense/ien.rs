@@ -37,95 +37,95 @@ impl From<crate::W<IEN_SPEC>> for W {
 #[doc = "Field `CH0` reader - CH0 Interrupt Enable"]
 pub type CH0_R = crate::BitReader<bool>;
 #[doc = "Field `CH0` writer - CH0 Interrupt Enable"]
-pub type CH0_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 0>;
+pub type CH0_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH1` reader - CH1 Interrupt Enable"]
 pub type CH1_R = crate::BitReader<bool>;
 #[doc = "Field `CH1` writer - CH1 Interrupt Enable"]
-pub type CH1_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 1>;
+pub type CH1_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH2` reader - CH2 Interrupt Enable"]
 pub type CH2_R = crate::BitReader<bool>;
 #[doc = "Field `CH2` writer - CH2 Interrupt Enable"]
-pub type CH2_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 2>;
+pub type CH2_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH3` reader - CH3 Interrupt Enable"]
 pub type CH3_R = crate::BitReader<bool>;
 #[doc = "Field `CH3` writer - CH3 Interrupt Enable"]
-pub type CH3_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 3>;
+pub type CH3_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH4` reader - CH4 Interrupt Enable"]
 pub type CH4_R = crate::BitReader<bool>;
 #[doc = "Field `CH4` writer - CH4 Interrupt Enable"]
-pub type CH4_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 4>;
+pub type CH4_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH5` reader - CH5 Interrupt Enable"]
 pub type CH5_R = crate::BitReader<bool>;
 #[doc = "Field `CH5` writer - CH5 Interrupt Enable"]
-pub type CH5_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 5>;
+pub type CH5_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH6` reader - CH6 Interrupt Enable"]
 pub type CH6_R = crate::BitReader<bool>;
 #[doc = "Field `CH6` writer - CH6 Interrupt Enable"]
-pub type CH6_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 6>;
+pub type CH6_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH7` reader - CH7 Interrupt Enable"]
 pub type CH7_R = crate::BitReader<bool>;
 #[doc = "Field `CH7` writer - CH7 Interrupt Enable"]
-pub type CH7_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 7>;
+pub type CH7_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH8` reader - CH8 Interrupt Enable"]
 pub type CH8_R = crate::BitReader<bool>;
 #[doc = "Field `CH8` writer - CH8 Interrupt Enable"]
-pub type CH8_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 8>;
+pub type CH8_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH9` reader - CH9 Interrupt Enable"]
 pub type CH9_R = crate::BitReader<bool>;
 #[doc = "Field `CH9` writer - CH9 Interrupt Enable"]
-pub type CH9_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 9>;
+pub type CH9_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH10` reader - CH10 Interrupt Enable"]
 pub type CH10_R = crate::BitReader<bool>;
 #[doc = "Field `CH10` writer - CH10 Interrupt Enable"]
-pub type CH10_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 10>;
+pub type CH10_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH11` reader - CH11 Interrupt Enable"]
 pub type CH11_R = crate::BitReader<bool>;
 #[doc = "Field `CH11` writer - CH11 Interrupt Enable"]
-pub type CH11_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 11>;
+pub type CH11_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH12` reader - CH12 Interrupt Enable"]
 pub type CH12_R = crate::BitReader<bool>;
 #[doc = "Field `CH12` writer - CH12 Interrupt Enable"]
-pub type CH12_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 12>;
+pub type CH12_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH13` reader - CH13 Interrupt Enable"]
 pub type CH13_R = crate::BitReader<bool>;
 #[doc = "Field `CH13` writer - CH13 Interrupt Enable"]
-pub type CH13_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 13>;
+pub type CH13_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH14` reader - CH14 Interrupt Enable"]
 pub type CH14_R = crate::BitReader<bool>;
 #[doc = "Field `CH14` writer - CH14 Interrupt Enable"]
-pub type CH14_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 14>;
+pub type CH14_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CH15` reader - CH15 Interrupt Enable"]
 pub type CH15_R = crate::BitReader<bool>;
 #[doc = "Field `CH15` writer - CH15 Interrupt Enable"]
-pub type CH15_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 15>;
+pub type CH15_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `SCANCOMPLETE` reader - SCANCOMPLETE Interrupt Enable"]
 pub type SCANCOMPLETE_R = crate::BitReader<bool>;
 #[doc = "Field `SCANCOMPLETE` writer - SCANCOMPLETE Interrupt Enable"]
-pub type SCANCOMPLETE_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 16>;
+pub type SCANCOMPLETE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `DEC` reader - DEC Interrupt Enable"]
 pub type DEC_R = crate::BitReader<bool>;
 #[doc = "Field `DEC` writer - DEC Interrupt Enable"]
-pub type DEC_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 17>;
+pub type DEC_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `DECERR` reader - DECERR Interrupt Enable"]
 pub type DECERR_R = crate::BitReader<bool>;
 #[doc = "Field `DECERR` writer - DECERR Interrupt Enable"]
-pub type DECERR_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 18>;
+pub type DECERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `BUFDATAV` reader - BUFDATAV Interrupt Enable"]
 pub type BUFDATAV_R = crate::BitReader<bool>;
 #[doc = "Field `BUFDATAV` writer - BUFDATAV Interrupt Enable"]
-pub type BUFDATAV_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 19>;
+pub type BUFDATAV_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `BUFLEVEL` reader - BUFLEVEL Interrupt Enable"]
 pub type BUFLEVEL_R = crate::BitReader<bool>;
 #[doc = "Field `BUFLEVEL` writer - BUFLEVEL Interrupt Enable"]
-pub type BUFLEVEL_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 20>;
+pub type BUFLEVEL_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `BUFOF` reader - BUFOF Interrupt Enable"]
 pub type BUFOF_R = crate::BitReader<bool>;
 #[doc = "Field `BUFOF` writer - BUFOF Interrupt Enable"]
-pub type BUFOF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 21>;
+pub type BUFOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 #[doc = "Field `CNTOF` reader - CNTOF Interrupt Enable"]
 pub type CNTOF_R = crate::BitReader<bool>;
 #[doc = "Field `CNTOF` writer - CNTOF Interrupt Enable"]
-pub type CNTOF_W<'a> = crate::BitWriter<'a, u32, IEN_SPEC, bool, 22>;
+pub type CNTOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IEN_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - CH0 Interrupt Enable"]
     #[inline(always)]
@@ -246,117 +246,140 @@ impl R {
 impl W {
     #[doc = "Bit 0 - CH0 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch0(&mut self) -> CH0_W {
+    #[must_use]
+    pub fn ch0(&mut self) -> CH0_W<0> {
         CH0_W::new(self)
     }
     #[doc = "Bit 1 - CH1 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch1(&mut self) -> CH1_W {
+    #[must_use]
+    pub fn ch1(&mut self) -> CH1_W<1> {
         CH1_W::new(self)
     }
     #[doc = "Bit 2 - CH2 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch2(&mut self) -> CH2_W {
+    #[must_use]
+    pub fn ch2(&mut self) -> CH2_W<2> {
         CH2_W::new(self)
     }
     #[doc = "Bit 3 - CH3 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch3(&mut self) -> CH3_W {
+    #[must_use]
+    pub fn ch3(&mut self) -> CH3_W<3> {
         CH3_W::new(self)
     }
     #[doc = "Bit 4 - CH4 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch4(&mut self) -> CH4_W {
+    #[must_use]
+    pub fn ch4(&mut self) -> CH4_W<4> {
         CH4_W::new(self)
     }
     #[doc = "Bit 5 - CH5 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch5(&mut self) -> CH5_W {
+    #[must_use]
+    pub fn ch5(&mut self) -> CH5_W<5> {
         CH5_W::new(self)
     }
     #[doc = "Bit 6 - CH6 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch6(&mut self) -> CH6_W {
+    #[must_use]
+    pub fn ch6(&mut self) -> CH6_W<6> {
         CH6_W::new(self)
     }
     #[doc = "Bit 7 - CH7 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch7(&mut self) -> CH7_W {
+    #[must_use]
+    pub fn ch7(&mut self) -> CH7_W<7> {
         CH7_W::new(self)
     }
     #[doc = "Bit 8 - CH8 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch8(&mut self) -> CH8_W {
+    #[must_use]
+    pub fn ch8(&mut self) -> CH8_W<8> {
         CH8_W::new(self)
     }
     #[doc = "Bit 9 - CH9 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch9(&mut self) -> CH9_W {
+    #[must_use]
+    pub fn ch9(&mut self) -> CH9_W<9> {
         CH9_W::new(self)
     }
     #[doc = "Bit 10 - CH10 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch10(&mut self) -> CH10_W {
+    #[must_use]
+    pub fn ch10(&mut self) -> CH10_W<10> {
         CH10_W::new(self)
     }
     #[doc = "Bit 11 - CH11 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch11(&mut self) -> CH11_W {
+    #[must_use]
+    pub fn ch11(&mut self) -> CH11_W<11> {
         CH11_W::new(self)
     }
     #[doc = "Bit 12 - CH12 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch12(&mut self) -> CH12_W {
+    #[must_use]
+    pub fn ch12(&mut self) -> CH12_W<12> {
         CH12_W::new(self)
     }
     #[doc = "Bit 13 - CH13 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch13(&mut self) -> CH13_W {
+    #[must_use]
+    pub fn ch13(&mut self) -> CH13_W<13> {
         CH13_W::new(self)
     }
     #[doc = "Bit 14 - CH14 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch14(&mut self) -> CH14_W {
+    #[must_use]
+    pub fn ch14(&mut self) -> CH14_W<14> {
         CH14_W::new(self)
     }
     #[doc = "Bit 15 - CH15 Interrupt Enable"]
     #[inline(always)]
-    pub fn ch15(&mut self) -> CH15_W {
+    #[must_use]
+    pub fn ch15(&mut self) -> CH15_W<15> {
         CH15_W::new(self)
     }
     #[doc = "Bit 16 - SCANCOMPLETE Interrupt Enable"]
     #[inline(always)]
-    pub fn scancomplete(&mut self) -> SCANCOMPLETE_W {
+    #[must_use]
+    pub fn scancomplete(&mut self) -> SCANCOMPLETE_W<16> {
         SCANCOMPLETE_W::new(self)
     }
     #[doc = "Bit 17 - DEC Interrupt Enable"]
     #[inline(always)]
-    pub fn dec(&mut self) -> DEC_W {
+    #[must_use]
+    pub fn dec(&mut self) -> DEC_W<17> {
         DEC_W::new(self)
     }
     #[doc = "Bit 18 - DECERR Interrupt Enable"]
     #[inline(always)]
-    pub fn decerr(&mut self) -> DECERR_W {
+    #[must_use]
+    pub fn decerr(&mut self) -> DECERR_W<18> {
         DECERR_W::new(self)
     }
     #[doc = "Bit 19 - BUFDATAV Interrupt Enable"]
     #[inline(always)]
-    pub fn bufdatav(&mut self) -> BUFDATAV_W {
+    #[must_use]
+    pub fn bufdatav(&mut self) -> BUFDATAV_W<19> {
         BUFDATAV_W::new(self)
     }
     #[doc = "Bit 20 - BUFLEVEL Interrupt Enable"]
     #[inline(always)]
-    pub fn buflevel(&mut self) -> BUFLEVEL_W {
+    #[must_use]
+    pub fn buflevel(&mut self) -> BUFLEVEL_W<20> {
         BUFLEVEL_W::new(self)
     }
     #[doc = "Bit 21 - BUFOF Interrupt Enable"]
     #[inline(always)]
-    pub fn bufof(&mut self) -> BUFOF_W {
+    #[must_use]
+    pub fn bufof(&mut self) -> BUFOF_W<21> {
         BUFOF_W::new(self)
     }
     #[doc = "Bit 22 - CNTOF Interrupt Enable"]
     #[inline(always)]
-    pub fn cntof(&mut self) -> CNTOF_W {
+    #[must_use]
+    pub fn cntof(&mut self) -> CNTOF_W<22> {
         CNTOF_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -378,11 +401,10 @@ impl crate::Readable for IEN_SPEC {
 #[doc = "`write(|w| ..)` method takes [ien::W](W) writer structure"]
 impl crate::Writable for IEN_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IEN to value 0"]
 impl crate::Resettable for IEN_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

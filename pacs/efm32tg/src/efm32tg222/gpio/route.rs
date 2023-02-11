@@ -37,17 +37,19 @@ impl From<crate::W<ROUTE_SPEC>> for W {
 #[doc = "Field `SWCLKPEN` reader - Serial Wire Clock Pin Enable"]
 pub type SWCLKPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SWCLKPEN` writer - Serial Wire Clock Pin Enable"]
-pub type SWCLKPEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 0>;
+pub type SWCLKPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `SWDIOPEN` reader - Serial Wire Data Pin Enable"]
 pub type SWDIOPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SWDIOPEN` writer - Serial Wire Data Pin Enable"]
-pub type SWDIOPEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 1>;
+pub type SWDIOPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
 #[doc = "Field `SWOPEN` reader - Serial Wire Viewer Output Pin Enable"]
 pub type SWOPEN_R = crate::BitReader<bool>;
 #[doc = "Field `SWOPEN` writer - Serial Wire Viewer Output Pin Enable"]
-pub type SWOPEN_W<'a> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, 2>;
+pub type SWOPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, ROUTE_SPEC, bool, O>;
+#[doc = "Field `SWLOCATION` reader - I/O Location"]
+pub type SWLOCATION_R = crate::FieldReader<u8, SWLOCATION_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SWLOCATION_A {
     #[doc = "0: Location 0"]
@@ -61,8 +63,6 @@ impl From<SWLOCATION_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SWLOCATION` reader - I/O Location"]
-pub type SWLOCATION_R = crate::FieldReader<u8, SWLOCATION_A>;
 impl SWLOCATION_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -85,8 +85,9 @@ impl SWLOCATION_R {
     }
 }
 #[doc = "Field `SWLOCATION` writer - I/O Location"]
-pub type SWLOCATION_W<'a> = crate::FieldWriter<'a, u32, ROUTE_SPEC, u8, SWLOCATION_A, 2, 8>;
-impl<'a> SWLOCATION_W<'a> {
+pub type SWLOCATION_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTE_SPEC, u8, SWLOCATION_A, 2, O>;
+impl<'a, const O: u8> SWLOCATION_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -123,22 +124,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Serial Wire Clock Pin Enable"]
     #[inline(always)]
-    pub fn swclkpen(&mut self) -> SWCLKPEN_W {
+    #[must_use]
+    pub fn swclkpen(&mut self) -> SWCLKPEN_W<0> {
         SWCLKPEN_W::new(self)
     }
     #[doc = "Bit 1 - Serial Wire Data Pin Enable"]
     #[inline(always)]
-    pub fn swdiopen(&mut self) -> SWDIOPEN_W {
+    #[must_use]
+    pub fn swdiopen(&mut self) -> SWDIOPEN_W<1> {
         SWDIOPEN_W::new(self)
     }
     #[doc = "Bit 2 - Serial Wire Viewer Output Pin Enable"]
     #[inline(always)]
-    pub fn swopen(&mut self) -> SWOPEN_W {
+    #[must_use]
+    pub fn swopen(&mut self) -> SWOPEN_W<2> {
         SWOPEN_W::new(self)
     }
     #[doc = "Bits 8:9 - I/O Location"]
     #[inline(always)]
-    pub fn swlocation(&mut self) -> SWLOCATION_W {
+    #[must_use]
+    pub fn swlocation(&mut self) -> SWLOCATION_W<8> {
         SWLOCATION_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -160,11 +165,10 @@ impl crate::Readable for ROUTE_SPEC {
 #[doc = "`write(|w| ..)` method takes [route::W](W) writer structure"]
 impl crate::Writable for ROUTE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTE to value 0x03"]
 impl crate::Resettable for ROUTE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x03
-    }
+    const RESET_VALUE: Self::Ux = 0x03;
 }

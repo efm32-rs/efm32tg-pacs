@@ -20,25 +20,28 @@ impl From<crate::W<CMD_SPEC>> for W {
     }
 }
 #[doc = "Field `CALSTART` writer - Calibration Start"]
-pub type CALSTART_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 0>;
+pub type CALSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `CALSTOP` writer - Calibration Stop"]
-pub type CALSTOP_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 1>;
+pub type CALSTOP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 #[doc = "Field `HFXOPEAKDETSTART` writer - HFXO Peak Detection Start"]
-pub type HFXOPEAKDETSTART_W<'a> = crate::BitWriter<'a, u32, CMD_SPEC, bool, 4>;
+pub type HFXOPEAKDETSTART_W<'a, const O: u8> = crate::BitWriter<'a, u32, CMD_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Calibration Start"]
     #[inline(always)]
-    pub fn calstart(&mut self) -> CALSTART_W {
+    #[must_use]
+    pub fn calstart(&mut self) -> CALSTART_W<0> {
         CALSTART_W::new(self)
     }
     #[doc = "Bit 1 - Calibration Stop"]
     #[inline(always)]
-    pub fn calstop(&mut self) -> CALSTOP_W {
+    #[must_use]
+    pub fn calstop(&mut self) -> CALSTOP_W<1> {
         CALSTOP_W::new(self)
     }
     #[doc = "Bit 4 - HFXO Peak Detection Start"]
     #[inline(always)]
-    pub fn hfxopeakdetstart(&mut self) -> HFXOPEAKDETSTART_W {
+    #[must_use]
+    pub fn hfxopeakdetstart(&mut self) -> HFXOPEAKDETSTART_W<4> {
         HFXOPEAKDETSTART_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -56,11 +59,10 @@ impl crate::RegisterSpec for CMD_SPEC {
 #[doc = "`write(|w| ..)` method takes [cmd::W](W) writer structure"]
 impl crate::Writable for CMD_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CMD to value 0"]
 impl crate::Resettable for CMD_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

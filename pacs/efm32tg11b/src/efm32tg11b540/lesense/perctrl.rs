@@ -37,29 +37,31 @@ impl From<crate::W<PERCTRL_SPEC>> for W {
 #[doc = "Field `DACCH0EN` reader - VDAC CH0 Enable"]
 pub type DACCH0EN_R = crate::BitReader<bool>;
 #[doc = "Field `DACCH0EN` writer - VDAC CH0 Enable"]
-pub type DACCH0EN_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 0>;
+pub type DACCH0EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
 #[doc = "Field `DACCH1EN` reader - VDAC CH1 Enable"]
 pub type DACCH1EN_R = crate::BitReader<bool>;
 #[doc = "Field `DACCH1EN` writer - VDAC CH1 Enable"]
-pub type DACCH1EN_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 1>;
+pub type DACCH1EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
 #[doc = "Field `DACCH0DATA` reader - VDAC CH0 Data Selection"]
 pub type DACCH0DATA_R = crate::BitReader<bool>;
 #[doc = "Field `DACCH0DATA` writer - VDAC CH0 Data Selection"]
-pub type DACCH0DATA_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 2>;
+pub type DACCH0DATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
 #[doc = "Field `DACCH1DATA` reader - VDAC CH1 Data Selection"]
 pub type DACCH1DATA_R = crate::BitReader<bool>;
 #[doc = "Field `DACCH1DATA` writer - VDAC CH1 Data Selection"]
-pub type DACCH1DATA_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 3>;
+pub type DACCH1DATA_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
 #[doc = "Field `DACSTARTUP` reader - VDAC Startup Configuration"]
 pub type DACSTARTUP_R = crate::BitReader<bool>;
 #[doc = "Field `DACSTARTUP` writer - VDAC Startup Configuration"]
-pub type DACSTARTUP_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 6>;
+pub type DACSTARTUP_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
 #[doc = "Field `DACCONVTRIG` reader - VDAC Conversion Trigger Configuration"]
 pub type DACCONVTRIG_R = crate::BitReader<bool>;
 #[doc = "Field `DACCONVTRIG` writer - VDAC Conversion Trigger Configuration"]
-pub type DACCONVTRIG_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 8>;
+pub type DACCONVTRIG_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
+#[doc = "Field `ACMP0MODE` reader - ACMP0 Mode"]
+pub type ACMP0MODE_R = crate::FieldReader<u8, ACMP0MODE_A>;
 #[doc = "ACMP0 Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ACMP0MODE_A {
     #[doc = "0: LESENSE does not control ACMP0"]
@@ -75,8 +77,6 @@ impl From<ACMP0MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ACMP0MODE` reader - ACMP0 Mode"]
-pub type ACMP0MODE_R = crate::FieldReader<u8, ACMP0MODE_A>;
 impl ACMP0MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -105,8 +105,9 @@ impl ACMP0MODE_R {
     }
 }
 #[doc = "Field `ACMP0MODE` writer - ACMP0 Mode"]
-pub type ACMP0MODE_W<'a> = crate::FieldWriter<'a, u32, PERCTRL_SPEC, u8, ACMP0MODE_A, 2, 20>;
-impl<'a> ACMP0MODE_W<'a> {
+pub type ACMP0MODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PERCTRL_SPEC, u8, ACMP0MODE_A, 2, O>;
+impl<'a, const O: u8> ACMP0MODE_W<'a, O> {
     #[doc = "LESENSE does not control ACMP0"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -123,8 +124,10 @@ impl<'a> ACMP0MODE_W<'a> {
         self.variant(ACMP0MODE_A::MUXTHRES)
     }
 }
+#[doc = "Field `ACMP1MODE` reader - ACMP1 Mode"]
+pub type ACMP1MODE_R = crate::FieldReader<u8, ACMP1MODE_A>;
 #[doc = "ACMP1 Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ACMP1MODE_A {
     #[doc = "0: LESENSE does not control ACMP1"]
@@ -140,8 +143,6 @@ impl From<ACMP1MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ACMP1MODE` reader - ACMP1 Mode"]
-pub type ACMP1MODE_R = crate::FieldReader<u8, ACMP1MODE_A>;
 impl ACMP1MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -170,8 +171,9 @@ impl ACMP1MODE_R {
     }
 }
 #[doc = "Field `ACMP1MODE` writer - ACMP1 Mode"]
-pub type ACMP1MODE_W<'a> = crate::FieldWriter<'a, u32, PERCTRL_SPEC, u8, ACMP1MODE_A, 2, 22>;
-impl<'a> ACMP1MODE_W<'a> {
+pub type ACMP1MODE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, PERCTRL_SPEC, u8, ACMP1MODE_A, 2, O>;
+impl<'a, const O: u8> ACMP1MODE_W<'a, O> {
     #[doc = "LESENSE does not control ACMP1"]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -191,21 +193,23 @@ impl<'a> ACMP1MODE_W<'a> {
 #[doc = "Field `ACMP0INV` reader - Invert Analog Comparator 0 Output"]
 pub type ACMP0INV_R = crate::BitReader<bool>;
 #[doc = "Field `ACMP0INV` writer - Invert Analog Comparator 0 Output"]
-pub type ACMP0INV_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 24>;
+pub type ACMP0INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
 #[doc = "Field `ACMP1INV` reader - Invert Analog Comparator 1 Output"]
 pub type ACMP1INV_R = crate::BitReader<bool>;
 #[doc = "Field `ACMP1INV` writer - Invert Analog Comparator 1 Output"]
-pub type ACMP1INV_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 25>;
+pub type ACMP1INV_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
 #[doc = "Field `ACMP0HYSTEN` reader - ACMP0 Hysteresis Enable"]
 pub type ACMP0HYSTEN_R = crate::BitReader<bool>;
 #[doc = "Field `ACMP0HYSTEN` writer - ACMP0 Hysteresis Enable"]
-pub type ACMP0HYSTEN_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 26>;
+pub type ACMP0HYSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
 #[doc = "Field `ACMP1HYSTEN` reader - ACMP1 Hysteresis Enable"]
 pub type ACMP1HYSTEN_R = crate::BitReader<bool>;
 #[doc = "Field `ACMP1HYSTEN` writer - ACMP1 Hysteresis Enable"]
-pub type ACMP1HYSTEN_W<'a> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, 27>;
+pub type ACMP1HYSTEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, PERCTRL_SPEC, bool, O>;
+#[doc = "Field `WARMUPMODE` reader - ACMP and VDAC Duty Cycle Mode"]
+pub type WARMUPMODE_R = crate::FieldReader<u8, WARMUPMODE_A>;
 #[doc = "ACMP and VDAC Duty Cycle Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum WARMUPMODE_A {
     #[doc = "0: The analog comparators and VDAC are shut down when LESENSE is idle"]
@@ -223,8 +227,6 @@ impl From<WARMUPMODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `WARMUPMODE` reader - ACMP and VDAC Duty Cycle Mode"]
-pub type WARMUPMODE_R = crate::FieldReader<u8, WARMUPMODE_A>;
 impl WARMUPMODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -259,8 +261,9 @@ impl WARMUPMODE_R {
     }
 }
 #[doc = "Field `WARMUPMODE` writer - ACMP and VDAC Duty Cycle Mode"]
-pub type WARMUPMODE_W<'a> = crate::FieldWriterSafe<'a, u32, PERCTRL_SPEC, u8, WARMUPMODE_A, 2, 28>;
-impl<'a> WARMUPMODE_W<'a> {
+pub type WARMUPMODE_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, PERCTRL_SPEC, u8, WARMUPMODE_A, 2, O>;
+impl<'a, const O: u8> WARMUPMODE_W<'a, O> {
     #[doc = "The analog comparators and VDAC are shut down when LESENSE is idle"]
     #[inline(always)]
     pub fn normal(self) -> &'a mut W {
@@ -352,67 +355,80 @@ impl R {
 impl W {
     #[doc = "Bit 0 - VDAC CH0 Enable"]
     #[inline(always)]
-    pub fn dacch0en(&mut self) -> DACCH0EN_W {
+    #[must_use]
+    pub fn dacch0en(&mut self) -> DACCH0EN_W<0> {
         DACCH0EN_W::new(self)
     }
     #[doc = "Bit 1 - VDAC CH1 Enable"]
     #[inline(always)]
-    pub fn dacch1en(&mut self) -> DACCH1EN_W {
+    #[must_use]
+    pub fn dacch1en(&mut self) -> DACCH1EN_W<1> {
         DACCH1EN_W::new(self)
     }
     #[doc = "Bit 2 - VDAC CH0 Data Selection"]
     #[inline(always)]
-    pub fn dacch0data(&mut self) -> DACCH0DATA_W {
+    #[must_use]
+    pub fn dacch0data(&mut self) -> DACCH0DATA_W<2> {
         DACCH0DATA_W::new(self)
     }
     #[doc = "Bit 3 - VDAC CH1 Data Selection"]
     #[inline(always)]
-    pub fn dacch1data(&mut self) -> DACCH1DATA_W {
+    #[must_use]
+    pub fn dacch1data(&mut self) -> DACCH1DATA_W<3> {
         DACCH1DATA_W::new(self)
     }
     #[doc = "Bit 6 - VDAC Startup Configuration"]
     #[inline(always)]
-    pub fn dacstartup(&mut self) -> DACSTARTUP_W {
+    #[must_use]
+    pub fn dacstartup(&mut self) -> DACSTARTUP_W<6> {
         DACSTARTUP_W::new(self)
     }
     #[doc = "Bit 8 - VDAC Conversion Trigger Configuration"]
     #[inline(always)]
-    pub fn dacconvtrig(&mut self) -> DACCONVTRIG_W {
+    #[must_use]
+    pub fn dacconvtrig(&mut self) -> DACCONVTRIG_W<8> {
         DACCONVTRIG_W::new(self)
     }
     #[doc = "Bits 20:21 - ACMP0 Mode"]
     #[inline(always)]
-    pub fn acmp0mode(&mut self) -> ACMP0MODE_W {
+    #[must_use]
+    pub fn acmp0mode(&mut self) -> ACMP0MODE_W<20> {
         ACMP0MODE_W::new(self)
     }
     #[doc = "Bits 22:23 - ACMP1 Mode"]
     #[inline(always)]
-    pub fn acmp1mode(&mut self) -> ACMP1MODE_W {
+    #[must_use]
+    pub fn acmp1mode(&mut self) -> ACMP1MODE_W<22> {
         ACMP1MODE_W::new(self)
     }
     #[doc = "Bit 24 - Invert Analog Comparator 0 Output"]
     #[inline(always)]
-    pub fn acmp0inv(&mut self) -> ACMP0INV_W {
+    #[must_use]
+    pub fn acmp0inv(&mut self) -> ACMP0INV_W<24> {
         ACMP0INV_W::new(self)
     }
     #[doc = "Bit 25 - Invert Analog Comparator 1 Output"]
     #[inline(always)]
-    pub fn acmp1inv(&mut self) -> ACMP1INV_W {
+    #[must_use]
+    pub fn acmp1inv(&mut self) -> ACMP1INV_W<25> {
         ACMP1INV_W::new(self)
     }
     #[doc = "Bit 26 - ACMP0 Hysteresis Enable"]
     #[inline(always)]
-    pub fn acmp0hysten(&mut self) -> ACMP0HYSTEN_W {
+    #[must_use]
+    pub fn acmp0hysten(&mut self) -> ACMP0HYSTEN_W<26> {
         ACMP0HYSTEN_W::new(self)
     }
     #[doc = "Bit 27 - ACMP1 Hysteresis Enable"]
     #[inline(always)]
-    pub fn acmp1hysten(&mut self) -> ACMP1HYSTEN_W {
+    #[must_use]
+    pub fn acmp1hysten(&mut self) -> ACMP1HYSTEN_W<27> {
         ACMP1HYSTEN_W::new(self)
     }
     #[doc = "Bits 28:29 - ACMP and VDAC Duty Cycle Mode"]
     #[inline(always)]
-    pub fn warmupmode(&mut self) -> WARMUPMODE_W {
+    #[must_use]
+    pub fn warmupmode(&mut self) -> WARMUPMODE_W<28> {
         WARMUPMODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -434,11 +450,10 @@ impl crate::Readable for PERCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [perctrl::W](W) writer structure"]
 impl crate::Writable for PERCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PERCTRL to value 0"]
 impl crate::Resettable for PERCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

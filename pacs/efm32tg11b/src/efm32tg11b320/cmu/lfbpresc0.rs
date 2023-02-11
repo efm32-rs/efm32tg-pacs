@@ -34,8 +34,10 @@ impl From<crate::W<LFBPRESC0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `SYSTICK` reader - Prescaler"]
+pub type SYSTICK_R = crate::FieldReader<u8, SYSTICK_A>;
 #[doc = "Prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum SYSTICK_A {
     #[doc = "0: LFBCLKSYSTICK = LFBCLK"]
@@ -47,8 +49,6 @@ impl From<SYSTICK_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `SYSTICK` reader - Prescaler"]
-pub type SYSTICK_R = crate::FieldReader<u8, SYSTICK_A>;
 impl SYSTICK_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -64,8 +64,10 @@ impl SYSTICK_R {
         *self == SYSTICK_A::DIV1
     }
 }
+#[doc = "Field `LEUART0` reader - Low Energy UART 0 Prescaler"]
+pub type LEUART0_R = crate::FieldReader<u8, LEUART0_A>;
 #[doc = "Low Energy UART 0 Prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LEUART0_A {
     #[doc = "0: LFBCLKLEUART0 = LFBCLK"]
@@ -83,8 +85,6 @@ impl From<LEUART0_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LEUART0` reader - Low Energy UART 0 Prescaler"]
-pub type LEUART0_R = crate::FieldReader<u8, LEUART0_A>;
 impl LEUART0_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -119,8 +119,9 @@ impl LEUART0_R {
     }
 }
 #[doc = "Field `LEUART0` writer - Low Energy UART 0 Prescaler"]
-pub type LEUART0_W<'a> = crate::FieldWriterSafe<'a, u32, LFBPRESC0_SPEC, u8, LEUART0_A, 2, 4>;
-impl<'a> LEUART0_W<'a> {
+pub type LEUART0_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, LFBPRESC0_SPEC, u8, LEUART0_A, 2, O>;
+impl<'a, const O: u8> LEUART0_W<'a, O> {
     #[doc = "LFBCLKLEUART0 = LFBCLK"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -142,8 +143,10 @@ impl<'a> LEUART0_W<'a> {
         self.variant(LEUART0_A::DIV8)
     }
 }
+#[doc = "Field `CSEN` reader - Capacitive touch sense module Prescaler"]
+pub type CSEN_R = crate::FieldReader<u8, CSEN_A>;
 #[doc = "Capacitive touch sense module Prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CSEN_A {
     #[doc = "0: LFBCLKCSEN = LFBCLK/16"]
@@ -161,8 +164,6 @@ impl From<CSEN_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CSEN` reader - Capacitive touch sense module Prescaler"]
-pub type CSEN_R = crate::FieldReader<u8, CSEN_A>;
 impl CSEN_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -197,8 +198,9 @@ impl CSEN_R {
     }
 }
 #[doc = "Field `CSEN` writer - Capacitive touch sense module Prescaler"]
-pub type CSEN_W<'a> = crate::FieldWriterSafe<'a, u32, LFBPRESC0_SPEC, u8, CSEN_A, 2, 8>;
-impl<'a> CSEN_W<'a> {
+pub type CSEN_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, LFBPRESC0_SPEC, u8, CSEN_A, 2, O>;
+impl<'a, const O: u8> CSEN_W<'a, O> {
     #[doc = "LFBCLKCSEN = LFBCLK/16"]
     #[inline(always)]
     pub fn div16(self) -> &'a mut W {
@@ -240,12 +242,14 @@ impl R {
 impl W {
     #[doc = "Bits 4:5 - Low Energy UART 0 Prescaler"]
     #[inline(always)]
-    pub fn leuart0(&mut self) -> LEUART0_W {
+    #[must_use]
+    pub fn leuart0(&mut self) -> LEUART0_W<4> {
         LEUART0_W::new(self)
     }
     #[doc = "Bits 8:9 - Capacitive touch sense module Prescaler"]
     #[inline(always)]
-    pub fn csen(&mut self) -> CSEN_W {
+    #[must_use]
+    pub fn csen(&mut self) -> CSEN_W<8> {
         CSEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -267,11 +271,10 @@ impl crate::Readable for LFBPRESC0_SPEC {
 #[doc = "`write(|w| ..)` method takes [lfbpresc0::W](W) writer structure"]
 impl crate::Writable for LFBPRESC0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LFBPRESC0 to value 0"]
 impl crate::Resettable for LFBPRESC0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

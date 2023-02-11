@@ -37,7 +37,7 @@ impl From<crate::W<BUF0_DATA_SPEC>> for W {
 #[doc = "Field `DATA` reader - Scan Result Buffer"]
 pub type DATA_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `DATA` writer - Scan Result Buffer"]
-pub type DATA_W<'a> = crate::FieldWriter<'a, u32, BUF0_DATA_SPEC, u16, u16, 16, 0>;
+pub type DATA_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BUF0_DATA_SPEC, u16, u16, 16, O>;
 #[doc = "Field `DATASRC` reader - Result Data Source"]
 pub type DATASRC_R = crate::FieldReader<u8, u8>;
 impl R {
@@ -55,7 +55,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Scan Result Buffer"]
     #[inline(always)]
-    pub fn data(&mut self) -> DATA_W {
+    #[must_use]
+    pub fn data(&mut self) -> DATA_W<0> {
         DATA_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -77,11 +78,10 @@ impl crate::Readable for BUF0_DATA_SPEC {
 #[doc = "`write(|w| ..)` method takes [buf0_data::W](W) writer structure"]
 impl crate::Writable for BUF0_DATA_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BUF0_DATA to value 0"]
 impl crate::Resettable for BUF0_DATA_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

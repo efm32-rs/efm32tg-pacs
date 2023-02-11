@@ -20,11 +20,12 @@ impl From<crate::W<IF0IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `MESSAGE` writer - Set MESSAGE Interrupt Flag"]
-pub type MESSAGE_W<'a> = crate::FieldWriter<'a, u32, IF0IFS_SPEC, u32, u32, 32, 0>;
+pub type MESSAGE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IF0IFS_SPEC, u32, u32, 32, O>;
 impl W {
     #[doc = "Bits 0:31 - Set MESSAGE Interrupt Flag"]
     #[inline(always)]
-    pub fn message(&mut self) -> MESSAGE_W {
+    #[must_use]
+    pub fn message(&mut self) -> MESSAGE_W<0> {
         MESSAGE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -42,11 +43,10 @@ impl crate::RegisterSpec for IF0IFS_SPEC {
 #[doc = "`write(|w| ..)` method takes [if0ifs::W](W) writer structure"]
 impl crate::Writable for IF0IFS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IF0IFS to value 0"]
 impl crate::Resettable for IF0IFS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

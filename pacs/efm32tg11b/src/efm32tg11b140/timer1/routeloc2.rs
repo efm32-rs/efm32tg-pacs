@@ -34,8 +34,10 @@ impl From<crate::W<ROUTELOC2_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `CDTI0LOC` reader - I/O Location"]
+pub type CDTI0LOC_R = crate::FieldReader<u8, CDTI0LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CDTI0LOC_A {
     #[doc = "0: Location 0"]
@@ -55,8 +57,6 @@ impl From<CDTI0LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CDTI0LOC` reader - I/O Location"]
-pub type CDTI0LOC_R = crate::FieldReader<u8, CDTI0LOC_A>;
 impl CDTI0LOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -97,8 +97,9 @@ impl CDTI0LOC_R {
     }
 }
 #[doc = "Field `CDTI0LOC` writer - I/O Location"]
-pub type CDTI0LOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI0LOC_A, 6, 0>;
-impl<'a> CDTI0LOC_W<'a> {
+pub type CDTI0LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI0LOC_A, 6, O>;
+impl<'a, const O: u8> CDTI0LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -125,8 +126,10 @@ impl<'a> CDTI0LOC_W<'a> {
         self.variant(CDTI0LOC_A::LOC4)
     }
 }
+#[doc = "Field `CDTI1LOC` reader - I/O Location"]
+pub type CDTI1LOC_R = crate::FieldReader<u8, CDTI1LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CDTI1LOC_A {
     #[doc = "0: Location 0"]
@@ -146,8 +149,6 @@ impl From<CDTI1LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CDTI1LOC` reader - I/O Location"]
-pub type CDTI1LOC_R = crate::FieldReader<u8, CDTI1LOC_A>;
 impl CDTI1LOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -188,8 +189,9 @@ impl CDTI1LOC_R {
     }
 }
 #[doc = "Field `CDTI1LOC` writer - I/O Location"]
-pub type CDTI1LOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI1LOC_A, 6, 8>;
-impl<'a> CDTI1LOC_W<'a> {
+pub type CDTI1LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI1LOC_A, 6, O>;
+impl<'a, const O: u8> CDTI1LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -216,8 +218,10 @@ impl<'a> CDTI1LOC_W<'a> {
         self.variant(CDTI1LOC_A::LOC4)
     }
 }
+#[doc = "Field `CDTI2LOC` reader - I/O Location"]
+pub type CDTI2LOC_R = crate::FieldReader<u8, CDTI2LOC_A>;
 #[doc = "I/O Location\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum CDTI2LOC_A {
     #[doc = "0: Location 0"]
@@ -237,8 +241,6 @@ impl From<CDTI2LOC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `CDTI2LOC` reader - I/O Location"]
-pub type CDTI2LOC_R = crate::FieldReader<u8, CDTI2LOC_A>;
 impl CDTI2LOC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -279,8 +281,9 @@ impl CDTI2LOC_R {
     }
 }
 #[doc = "Field `CDTI2LOC` writer - I/O Location"]
-pub type CDTI2LOC_W<'a> = crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI2LOC_A, 6, 16>;
-impl<'a> CDTI2LOC_W<'a> {
+pub type CDTI2LOC_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ROUTELOC2_SPEC, u8, CDTI2LOC_A, 6, O>;
+impl<'a, const O: u8> CDTI2LOC_W<'a, O> {
     #[doc = "Location 0"]
     #[inline(always)]
     pub fn loc0(self) -> &'a mut W {
@@ -327,17 +330,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - I/O Location"]
     #[inline(always)]
-    pub fn cdti0loc(&mut self) -> CDTI0LOC_W {
+    #[must_use]
+    pub fn cdti0loc(&mut self) -> CDTI0LOC_W<0> {
         CDTI0LOC_W::new(self)
     }
     #[doc = "Bits 8:13 - I/O Location"]
     #[inline(always)]
-    pub fn cdti1loc(&mut self) -> CDTI1LOC_W {
+    #[must_use]
+    pub fn cdti1loc(&mut self) -> CDTI1LOC_W<8> {
         CDTI1LOC_W::new(self)
     }
     #[doc = "Bits 16:21 - I/O Location"]
     #[inline(always)]
-    pub fn cdti2loc(&mut self) -> CDTI2LOC_W {
+    #[must_use]
+    pub fn cdti2loc(&mut self) -> CDTI2LOC_W<16> {
         CDTI2LOC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -359,11 +365,10 @@ impl crate::Readable for ROUTELOC2_SPEC {
 #[doc = "`write(|w| ..)` method takes [routeloc2::W](W) writer structure"]
 impl crate::Writable for ROUTELOC2_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ROUTELOC2 to value 0"]
 impl crate::Resettable for ROUTELOC2_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

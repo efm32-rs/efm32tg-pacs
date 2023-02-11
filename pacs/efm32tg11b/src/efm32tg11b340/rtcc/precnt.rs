@@ -37,7 +37,7 @@ impl From<crate::W<PRECNT_SPEC>> for W {
 #[doc = "Field `PRECNT` reader - Pre-Counter Value"]
 pub type PRECNT_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `PRECNT` writer - Pre-Counter Value"]
-pub type PRECNT_W<'a> = crate::FieldWriter<'a, u32, PRECNT_SPEC, u16, u16, 15, 0>;
+pub type PRECNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, PRECNT_SPEC, u16, u16, 15, O>;
 impl R {
     #[doc = "Bits 0:14 - Pre-Counter Value"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:14 - Pre-Counter Value"]
     #[inline(always)]
-    pub fn precnt(&mut self) -> PRECNT_W {
+    #[must_use]
+    pub fn precnt(&mut self) -> PRECNT_W<0> {
         PRECNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for PRECNT_SPEC {
 #[doc = "`write(|w| ..)` method takes [precnt::W](W) writer structure"]
 impl crate::Writable for PRECNT_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PRECNT to value 0"]
 impl crate::Resettable for PRECNT_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,15 +37,15 @@ impl From<crate::W<ANACTRL_SPEC>> for W {
 #[doc = "Field `IREFPROG` reader - Reference Current Control."]
 pub type IREFPROG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IREFPROG` writer - Reference Current Control."]
-pub type IREFPROG_W<'a> = crate::FieldWriter<'a, u32, ANACTRL_SPEC, u8, u8, 3, 4>;
+pub type IREFPROG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ANACTRL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `IDACIREFS` reader - Current DAC and Reference Current Scale"]
 pub type IDACIREFS_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `IDACIREFS` writer - Current DAC and Reference Current Scale"]
-pub type IDACIREFS_W<'a> = crate::FieldWriter<'a, u32, ANACTRL_SPEC, u8, u8, 3, 8>;
+pub type IDACIREFS_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ANACTRL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `TRSTPROG` reader - Reset Timing"]
 pub type TRSTPROG_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TRSTPROG` writer - Reset Timing"]
-pub type TRSTPROG_W<'a> = crate::FieldWriter<'a, u32, ANACTRL_SPEC, u8, u8, 3, 20>;
+pub type TRSTPROG_W<'a, const O: u8> = crate::FieldWriter<'a, u32, ANACTRL_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 4:6 - Reference Current Control."]
     #[inline(always)]
@@ -66,17 +66,20 @@ impl R {
 impl W {
     #[doc = "Bits 4:6 - Reference Current Control."]
     #[inline(always)]
-    pub fn irefprog(&mut self) -> IREFPROG_W {
+    #[must_use]
+    pub fn irefprog(&mut self) -> IREFPROG_W<4> {
         IREFPROG_W::new(self)
     }
     #[doc = "Bits 8:10 - Current DAC and Reference Current Scale"]
     #[inline(always)]
-    pub fn idacirefs(&mut self) -> IDACIREFS_W {
+    #[must_use]
+    pub fn idacirefs(&mut self) -> IDACIREFS_W<8> {
         IDACIREFS_W::new(self)
     }
     #[doc = "Bits 20:22 - Reset Timing"]
     #[inline(always)]
-    pub fn trstprog(&mut self) -> TRSTPROG_W {
+    #[must_use]
+    pub fn trstprog(&mut self) -> TRSTPROG_W<20> {
         TRSTPROG_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -98,11 +101,10 @@ impl crate::Readable for ANACTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [anactrl::W](W) writer structure"]
 impl crate::Writable for ANACTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ANACTRL to value 0x70"]
 impl crate::Resettable for ANACTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x70
-    }
+    const RESET_VALUE: Self::Ux = 0x70;
 }

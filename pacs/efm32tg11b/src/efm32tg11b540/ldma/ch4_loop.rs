@@ -37,7 +37,7 @@ impl From<crate::W<CH4_LOOP_SPEC>> for W {
 #[doc = "Field `LOOPCNT` reader - Linked Structure Sequence Loop Counter"]
 pub type LOOPCNT_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `LOOPCNT` writer - Linked Structure Sequence Loop Counter"]
-pub type LOOPCNT_W<'a> = crate::FieldWriter<'a, u32, CH4_LOOP_SPEC, u8, u8, 8, 0>;
+pub type LOOPCNT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH4_LOOP_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Linked Structure Sequence Loop Counter"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Linked Structure Sequence Loop Counter"]
     #[inline(always)]
-    pub fn loopcnt(&mut self) -> LOOPCNT_W {
+    #[must_use]
+    pub fn loopcnt(&mut self) -> LOOPCNT_W<0> {
         LOOPCNT_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for CH4_LOOP_SPEC {
 #[doc = "`write(|w| ..)` method takes [ch4_loop::W](W) writer structure"]
 impl crate::Writable for CH4_LOOP_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CH4_LOOP to value 0"]
 impl crate::Resettable for CH4_LOOP_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

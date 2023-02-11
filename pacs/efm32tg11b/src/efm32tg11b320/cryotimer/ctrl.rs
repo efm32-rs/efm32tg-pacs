@@ -37,13 +37,15 @@ impl From<crate::W<CTRL_SPEC>> for W {
 #[doc = "Field `EN` reader - Enable CRYOTIMER"]
 pub type EN_R = crate::BitReader<bool>;
 #[doc = "Field `EN` writer - Enable CRYOTIMER"]
-pub type EN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 0>;
+pub type EN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
 #[doc = "Field `DEBUGRUN` reader - Debug Mode Run Enable"]
 pub type DEBUGRUN_R = crate::BitReader<bool>;
 #[doc = "Field `DEBUGRUN` writer - Debug Mode Run Enable"]
-pub type DEBUGRUN_W<'a> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, 1>;
+pub type DEBUGRUN_W<'a, const O: u8> = crate::BitWriter<'a, u32, CTRL_SPEC, bool, O>;
+#[doc = "Field `OSCSEL` reader - Select Low Frequency Oscillator"]
+pub type OSCSEL_R = crate::FieldReader<u8, OSCSEL_A>;
 #[doc = "Select Low Frequency Oscillator\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum OSCSEL_A {
     #[doc = "0: Output is driven low"]
@@ -61,8 +63,6 @@ impl From<OSCSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `OSCSEL` reader - Select Low Frequency Oscillator"]
-pub type OSCSEL_R = crate::FieldReader<u8, OSCSEL_A>;
 impl OSCSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -97,8 +97,8 @@ impl OSCSEL_R {
     }
 }
 #[doc = "Field `OSCSEL` writer - Select Low Frequency Oscillator"]
-pub type OSCSEL_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, OSCSEL_A, 2, 2>;
-impl<'a> OSCSEL_W<'a> {
+pub type OSCSEL_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, OSCSEL_A, 2, O>;
+impl<'a, const O: u8> OSCSEL_W<'a, O> {
     #[doc = "Output is driven low"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -120,8 +120,10 @@ impl<'a> OSCSEL_W<'a> {
         self.variant(OSCSEL_A::ULFRCO)
     }
 }
+#[doc = "Field `PRESC` reader - Prescaler Setting"]
+pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 #[doc = "Prescaler Setting\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRESC_A {
     #[doc = "0: LF Oscillator frequency undivided"]
@@ -147,8 +149,6 @@ impl From<PRESC_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRESC` reader - Prescaler Setting"]
-pub type PRESC_R = crate::FieldReader<u8, PRESC_A>;
 impl PRESC_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -207,8 +207,8 @@ impl PRESC_R {
     }
 }
 #[doc = "Field `PRESC` writer - Prescaler Setting"]
-pub type PRESC_W<'a> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, PRESC_A, 3, 5>;
-impl<'a> PRESC_W<'a> {
+pub type PRESC_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, CTRL_SPEC, u8, PRESC_A, 3, O>;
+impl<'a, const O: u8> PRESC_W<'a, O> {
     #[doc = "LF Oscillator frequency undivided"]
     #[inline(always)]
     pub fn div1(self) -> &'a mut W {
@@ -275,22 +275,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Enable CRYOTIMER"]
     #[inline(always)]
-    pub fn en(&mut self) -> EN_W {
+    #[must_use]
+    pub fn en(&mut self) -> EN_W<0> {
         EN_W::new(self)
     }
     #[doc = "Bit 1 - Debug Mode Run Enable"]
     #[inline(always)]
-    pub fn debugrun(&mut self) -> DEBUGRUN_W {
+    #[must_use]
+    pub fn debugrun(&mut self) -> DEBUGRUN_W<1> {
         DEBUGRUN_W::new(self)
     }
     #[doc = "Bits 2:3 - Select Low Frequency Oscillator"]
     #[inline(always)]
-    pub fn oscsel(&mut self) -> OSCSEL_W {
+    #[must_use]
+    pub fn oscsel(&mut self) -> OSCSEL_W<2> {
         OSCSEL_W::new(self)
     }
     #[doc = "Bits 5:7 - Prescaler Setting"]
     #[inline(always)]
-    pub fn presc(&mut self) -> PRESC_W {
+    #[must_use]
+    pub fn presc(&mut self) -> PRESC_W<5> {
         PRESC_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -312,11 +316,10 @@ impl crate::Readable for CTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ctrl::W](W) writer structure"]
 impl crate::Writable for CTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CTRL to value 0"]
 impl crate::Resettable for CTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -40,8 +40,5 @@ impl crate::Readable for SCANDATAX_SPEC {
 }
 #[doc = "`reset()` method sets SCANDATAX to value 0"]
 impl crate::Resettable for SCANDATAX_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

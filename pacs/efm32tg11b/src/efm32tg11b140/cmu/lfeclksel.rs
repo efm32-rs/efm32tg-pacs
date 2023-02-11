@@ -34,8 +34,10 @@ impl From<crate::W<LFECLKSEL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `LFE` reader - Clock Select for LFE"]
+pub type LFE_R = crate::FieldReader<u8, LFE_A>;
 #[doc = "Clock Select for LFE\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum LFE_A {
     #[doc = "0: LFECLK is disabled"]
@@ -53,8 +55,6 @@ impl From<LFE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `LFE` reader - Clock Select for LFE"]
-pub type LFE_R = crate::FieldReader<u8, LFE_A>;
 impl LFE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -89,8 +89,8 @@ impl LFE_R {
     }
 }
 #[doc = "Field `LFE` writer - Clock Select for LFE"]
-pub type LFE_W<'a> = crate::FieldWriter<'a, u32, LFECLKSEL_SPEC, u8, LFE_A, 3, 0>;
-impl<'a> LFE_W<'a> {
+pub type LFE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, LFECLKSEL_SPEC, u8, LFE_A, 3, O>;
+impl<'a, const O: u8> LFE_W<'a, O> {
     #[doc = "LFECLK is disabled"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -122,7 +122,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - Clock Select for LFE"]
     #[inline(always)]
-    pub fn lfe(&mut self) -> LFE_W {
+    #[must_use]
+    pub fn lfe(&mut self) -> LFE_W<0> {
         LFE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -144,11 +145,10 @@ impl crate::Readable for LFECLKSEL_SPEC {
 #[doc = "`write(|w| ..)` method takes [lfeclksel::W](W) writer structure"]
 impl crate::Writable for LFECLKSEL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets LFECLKSEL to value 0"]
 impl crate::Resettable for LFECLKSEL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

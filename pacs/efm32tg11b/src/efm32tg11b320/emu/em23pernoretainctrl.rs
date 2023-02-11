@@ -37,55 +37,58 @@ impl From<crate::W<EM23PERNORETAINCTRL_SPEC>> for W {
 #[doc = "Field `ACMP0DIS` reader - Allow Power Down of ACMP0 During EM23"]
 pub type ACMP0DIS_R = crate::BitReader<bool>;
 #[doc = "Field `ACMP0DIS` writer - Allow Power Down of ACMP0 During EM23"]
-pub type ACMP0DIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 0>;
+pub type ACMP0DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `ACMP1DIS` reader - Allow Power Down of ACMP1 During EM23"]
 pub type ACMP1DIS_R = crate::BitReader<bool>;
 #[doc = "Field `ACMP1DIS` writer - Allow Power Down of ACMP1 During EM23"]
-pub type ACMP1DIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 1>;
+pub type ACMP1DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `PCNT0DIS` reader - Allow Power Down of PCNT0 During EM23"]
 pub type PCNT0DIS_R = crate::BitReader<bool>;
 #[doc = "Field `PCNT0DIS` writer - Allow Power Down of PCNT0 During EM23"]
-pub type PCNT0DIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 2>;
+pub type PCNT0DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `I2C0DIS` reader - Allow Power Down of I2C0 During EM23"]
 pub type I2C0DIS_R = crate::BitReader<bool>;
 #[doc = "Field `I2C0DIS` writer - Allow Power Down of I2C0 During EM23"]
-pub type I2C0DIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 5>;
+pub type I2C0DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `I2C1DIS` reader - Allow Power Down of I2C1 During EM23"]
 pub type I2C1DIS_R = crate::BitReader<bool>;
 #[doc = "Field `I2C1DIS` writer - Allow Power Down of I2C1 During EM23"]
-pub type I2C1DIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 6>;
+pub type I2C1DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `VDAC0DIS` reader - Allow Power Down of DAC0 During EM23"]
 pub type VDAC0DIS_R = crate::BitReader<bool>;
 #[doc = "Field `VDAC0DIS` writer - Allow Power Down of DAC0 During EM23"]
-pub type VDAC0DIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 7>;
+pub type VDAC0DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `ADC0DIS` reader - Allow Power Down of ADC0 During EM23"]
 pub type ADC0DIS_R = crate::BitReader<bool>;
 #[doc = "Field `ADC0DIS` writer - Allow Power Down of ADC0 During EM23"]
-pub type ADC0DIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 9>;
+pub type ADC0DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `LETIMER0DIS` reader - Allow Power Down of LETIMER0 During EM23"]
 pub type LETIMER0DIS_R = crate::BitReader<bool>;
 #[doc = "Field `LETIMER0DIS` writer - Allow Power Down of LETIMER0 During EM23"]
-pub type LETIMER0DIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 10>;
+pub type LETIMER0DIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `WDOG0DIS` reader - Allow Power Down of WDOG0 During EM23"]
 pub type WDOG0DIS_R = crate::BitReader<bool>;
 #[doc = "Field `WDOG0DIS` writer - Allow Power Down of WDOG0 During EM23"]
-pub type WDOG0DIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 11>;
+pub type WDOG0DIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `LESENSE0DIS` reader - Allow Power Down of LESENSE0 During EM23"]
 pub type LESENSE0DIS_R = crate::BitReader<bool>;
 #[doc = "Field `LESENSE0DIS` writer - Allow Power Down of LESENSE0 During EM23"]
-pub type LESENSE0DIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 13>;
+pub type LESENSE0DIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `CSENDIS` reader - Allow Power Down of CSEN During EM23"]
 pub type CSENDIS_R = crate::BitReader<bool>;
 #[doc = "Field `CSENDIS` writer - Allow Power Down of CSEN During EM23"]
-pub type CSENDIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 14>;
+pub type CSENDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `LEUART0DIS` reader - Allow Power Down of LEUART0 During EM23"]
 pub type LEUART0DIS_R = crate::BitReader<bool>;
 #[doc = "Field `LEUART0DIS` writer - Allow Power Down of LEUART0 During EM23"]
-pub type LEUART0DIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 15>;
+pub type LEUART0DIS_W<'a, const O: u8> =
+    crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 #[doc = "Field `LCDDIS` reader - Allow Power Down of LCD During EM23"]
 pub type LCDDIS_R = crate::BitReader<bool>;
 #[doc = "Field `LCDDIS` writer - Allow Power Down of LCD During EM23"]
-pub type LCDDIS_W<'a> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, 17>;
+pub type LCDDIS_W<'a, const O: u8> = crate::BitWriter<'a, u32, EM23PERNORETAINCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Allow Power Down of ACMP0 During EM23"]
     #[inline(always)]
@@ -156,67 +159,80 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Allow Power Down of ACMP0 During EM23"]
     #[inline(always)]
-    pub fn acmp0dis(&mut self) -> ACMP0DIS_W {
+    #[must_use]
+    pub fn acmp0dis(&mut self) -> ACMP0DIS_W<0> {
         ACMP0DIS_W::new(self)
     }
     #[doc = "Bit 1 - Allow Power Down of ACMP1 During EM23"]
     #[inline(always)]
-    pub fn acmp1dis(&mut self) -> ACMP1DIS_W {
+    #[must_use]
+    pub fn acmp1dis(&mut self) -> ACMP1DIS_W<1> {
         ACMP1DIS_W::new(self)
     }
     #[doc = "Bit 2 - Allow Power Down of PCNT0 During EM23"]
     #[inline(always)]
-    pub fn pcnt0dis(&mut self) -> PCNT0DIS_W {
+    #[must_use]
+    pub fn pcnt0dis(&mut self) -> PCNT0DIS_W<2> {
         PCNT0DIS_W::new(self)
     }
     #[doc = "Bit 5 - Allow Power Down of I2C0 During EM23"]
     #[inline(always)]
-    pub fn i2c0dis(&mut self) -> I2C0DIS_W {
+    #[must_use]
+    pub fn i2c0dis(&mut self) -> I2C0DIS_W<5> {
         I2C0DIS_W::new(self)
     }
     #[doc = "Bit 6 - Allow Power Down of I2C1 During EM23"]
     #[inline(always)]
-    pub fn i2c1dis(&mut self) -> I2C1DIS_W {
+    #[must_use]
+    pub fn i2c1dis(&mut self) -> I2C1DIS_W<6> {
         I2C1DIS_W::new(self)
     }
     #[doc = "Bit 7 - Allow Power Down of DAC0 During EM23"]
     #[inline(always)]
-    pub fn vdac0dis(&mut self) -> VDAC0DIS_W {
+    #[must_use]
+    pub fn vdac0dis(&mut self) -> VDAC0DIS_W<7> {
         VDAC0DIS_W::new(self)
     }
     #[doc = "Bit 9 - Allow Power Down of ADC0 During EM23"]
     #[inline(always)]
-    pub fn adc0dis(&mut self) -> ADC0DIS_W {
+    #[must_use]
+    pub fn adc0dis(&mut self) -> ADC0DIS_W<9> {
         ADC0DIS_W::new(self)
     }
     #[doc = "Bit 10 - Allow Power Down of LETIMER0 During EM23"]
     #[inline(always)]
-    pub fn letimer0dis(&mut self) -> LETIMER0DIS_W {
+    #[must_use]
+    pub fn letimer0dis(&mut self) -> LETIMER0DIS_W<10> {
         LETIMER0DIS_W::new(self)
     }
     #[doc = "Bit 11 - Allow Power Down of WDOG0 During EM23"]
     #[inline(always)]
-    pub fn wdog0dis(&mut self) -> WDOG0DIS_W {
+    #[must_use]
+    pub fn wdog0dis(&mut self) -> WDOG0DIS_W<11> {
         WDOG0DIS_W::new(self)
     }
     #[doc = "Bit 13 - Allow Power Down of LESENSE0 During EM23"]
     #[inline(always)]
-    pub fn lesense0dis(&mut self) -> LESENSE0DIS_W {
+    #[must_use]
+    pub fn lesense0dis(&mut self) -> LESENSE0DIS_W<13> {
         LESENSE0DIS_W::new(self)
     }
     #[doc = "Bit 14 - Allow Power Down of CSEN During EM23"]
     #[inline(always)]
-    pub fn csendis(&mut self) -> CSENDIS_W {
+    #[must_use]
+    pub fn csendis(&mut self) -> CSENDIS_W<14> {
         CSENDIS_W::new(self)
     }
     #[doc = "Bit 15 - Allow Power Down of LEUART0 During EM23"]
     #[inline(always)]
-    pub fn leuart0dis(&mut self) -> LEUART0DIS_W {
+    #[must_use]
+    pub fn leuart0dis(&mut self) -> LEUART0DIS_W<15> {
         LEUART0DIS_W::new(self)
     }
     #[doc = "Bit 17 - Allow Power Down of LCD During EM23"]
     #[inline(always)]
-    pub fn lcddis(&mut self) -> LCDDIS_W {
+    #[must_use]
+    pub fn lcddis(&mut self) -> LCDDIS_W<17> {
         LCDDIS_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -238,11 +254,10 @@ impl crate::Readable for EM23PERNORETAINCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [em23pernoretainctrl::W](W) writer structure"]
 impl crate::Writable for EM23PERNORETAINCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EM23PERNORETAINCTRL to value 0"]
 impl crate::Resettable for EM23PERNORETAINCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

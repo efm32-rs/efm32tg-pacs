@@ -37,7 +37,7 @@ impl From<crate::W<QDATA1_SPEC>> for W {
 #[doc = "Field `QDATA1` reader - Quad Data 1 Access"]
 pub type QDATA1_R = crate::FieldReader<u32, u32>;
 #[doc = "Field `QDATA1` writer - Quad Data 1 Access"]
-pub type QDATA1_W<'a> = crate::FieldWriter<'a, u32, QDATA1_SPEC, u32, u32, 32, 0>;
+pub type QDATA1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, QDATA1_SPEC, u32, u32, 32, O>;
 impl R {
     #[doc = "Bits 0:31 - Quad Data 1 Access"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:31 - Quad Data 1 Access"]
     #[inline(always)]
-    pub fn qdata1(&mut self) -> QDATA1_W {
+    #[must_use]
+    pub fn qdata1(&mut self) -> QDATA1_W<0> {
         QDATA1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for QDATA1_SPEC {
 #[doc = "`write(|w| ..)` method takes [qdata1::W](W) writer structure"]
 impl crate::Writable for QDATA1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets QDATA1 to value 0"]
 impl crate::Resettable for QDATA1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

@@ -37,19 +37,19 @@ impl From<crate::W<BITTIMING_SPEC>> for W {
 #[doc = "Field `BRP` reader - Baud Rate Prescaler"]
 pub type BRP_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `BRP` writer - Baud Rate Prescaler"]
-pub type BRP_W<'a> = crate::FieldWriter<'a, u32, BITTIMING_SPEC, u8, u8, 6, 0>;
+pub type BRP_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BITTIMING_SPEC, u8, u8, 6, O>;
 #[doc = "Field `SJW` reader - Synchronization Jump Width"]
 pub type SJW_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `SJW` writer - Synchronization Jump Width"]
-pub type SJW_W<'a> = crate::FieldWriter<'a, u32, BITTIMING_SPEC, u8, u8, 2, 6>;
+pub type SJW_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BITTIMING_SPEC, u8, u8, 2, O>;
 #[doc = "Field `TSEG1` reader - Time Segment Before the Sample Point"]
 pub type TSEG1_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TSEG1` writer - Time Segment Before the Sample Point"]
-pub type TSEG1_W<'a> = crate::FieldWriter<'a, u32, BITTIMING_SPEC, u8, u8, 4, 8>;
+pub type TSEG1_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BITTIMING_SPEC, u8, u8, 4, O>;
 #[doc = "Field `TSEG2` reader - Time Segment After the Sample Point"]
 pub type TSEG2_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `TSEG2` writer - Time Segment After the Sample Point"]
-pub type TSEG2_W<'a> = crate::FieldWriter<'a, u32, BITTIMING_SPEC, u8, u8, 3, 12>;
+pub type TSEG2_W<'a, const O: u8> = crate::FieldWriter<'a, u32, BITTIMING_SPEC, u8, u8, 3, O>;
 impl R {
     #[doc = "Bits 0:5 - Baud Rate Prescaler"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bits 0:5 - Baud Rate Prescaler"]
     #[inline(always)]
-    pub fn brp(&mut self) -> BRP_W {
+    #[must_use]
+    pub fn brp(&mut self) -> BRP_W<0> {
         BRP_W::new(self)
     }
     #[doc = "Bits 6:7 - Synchronization Jump Width"]
     #[inline(always)]
-    pub fn sjw(&mut self) -> SJW_W {
+    #[must_use]
+    pub fn sjw(&mut self) -> SJW_W<6> {
         SJW_W::new(self)
     }
     #[doc = "Bits 8:11 - Time Segment Before the Sample Point"]
     #[inline(always)]
-    pub fn tseg1(&mut self) -> TSEG1_W {
+    #[must_use]
+    pub fn tseg1(&mut self) -> TSEG1_W<8> {
         TSEG1_W::new(self)
     }
     #[doc = "Bits 12:14 - Time Segment After the Sample Point"]
     #[inline(always)]
-    pub fn tseg2(&mut self) -> TSEG2_W {
+    #[must_use]
+    pub fn tseg2(&mut self) -> TSEG2_W<12> {
         TSEG2_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for BITTIMING_SPEC {
 #[doc = "`write(|w| ..)` method takes [bittiming::W](W) writer structure"]
 impl crate::Writable for BITTIMING_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets BITTIMING to value 0x2301"]
 impl crate::Resettable for BITTIMING_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x2301
-    }
+    const RESET_VALUE: Self::Ux = 0x2301;
 }

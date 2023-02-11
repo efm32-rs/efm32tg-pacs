@@ -34,8 +34,10 @@ impl From<crate::W<ADCCTRL_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `ADC0CLKDIV` reader - ADC0 Clock Prescaler"]
+pub type ADC0CLKDIV_R = crate::FieldReader<u8, ADC0CLKDIV_A>;
 #[doc = "ADC0 Clock Prescaler\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADC0CLKDIV_A {
     #[doc = "0: `0`"]
@@ -47,8 +49,6 @@ impl From<ADC0CLKDIV_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADC0CLKDIV` reader - ADC0 Clock Prescaler"]
-pub type ADC0CLKDIV_R = crate::FieldReader<u8, ADC0CLKDIV_A>;
 impl ADC0CLKDIV_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -65,16 +65,19 @@ impl ADC0CLKDIV_R {
     }
 }
 #[doc = "Field `ADC0CLKDIV` writer - ADC0 Clock Prescaler"]
-pub type ADC0CLKDIV_W<'a> = crate::FieldWriter<'a, u32, ADCCTRL_SPEC, u8, ADC0CLKDIV_A, 2, 0>;
-impl<'a> ADC0CLKDIV_W<'a> {
+pub type ADC0CLKDIV_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, ADCCTRL_SPEC, u8, ADC0CLKDIV_A, 2, O>;
+impl<'a, const O: u8> ADC0CLKDIV_W<'a, O> {
     #[doc = "`0`"]
     #[inline(always)]
     pub fn nodivision(self) -> &'a mut W {
         self.variant(ADC0CLKDIV_A::NODIVISION)
     }
 }
+#[doc = "Field `ADC0CLKSEL` reader - ADC0 Clock Select"]
+pub type ADC0CLKSEL_R = crate::FieldReader<u8, ADC0CLKSEL_A>;
 #[doc = "ADC0 Clock Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum ADC0CLKSEL_A {
     #[doc = "0: ADC0 is not clocked"]
@@ -92,8 +95,6 @@ impl From<ADC0CLKSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `ADC0CLKSEL` reader - ADC0 Clock Select"]
-pub type ADC0CLKSEL_R = crate::FieldReader<u8, ADC0CLKSEL_A>;
 impl ADC0CLKSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -128,8 +129,9 @@ impl ADC0CLKSEL_R {
     }
 }
 #[doc = "Field `ADC0CLKSEL` writer - ADC0 Clock Select"]
-pub type ADC0CLKSEL_W<'a> = crate::FieldWriterSafe<'a, u32, ADCCTRL_SPEC, u8, ADC0CLKSEL_A, 2, 4>;
-impl<'a> ADC0CLKSEL_W<'a> {
+pub type ADC0CLKSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, ADCCTRL_SPEC, u8, ADC0CLKSEL_A, 2, O>;
+impl<'a, const O: u8> ADC0CLKSEL_W<'a, O> {
     #[doc = "ADC0 is not clocked"]
     #[inline(always)]
     pub fn disabled(self) -> &'a mut W {
@@ -154,7 +156,7 @@ impl<'a> ADC0CLKSEL_W<'a> {
 #[doc = "Field `ADC0CLKINV` reader - Invert Clock Selected By ADC0CLKSEL"]
 pub type ADC0CLKINV_R = crate::BitReader<bool>;
 #[doc = "Field `ADC0CLKINV` writer - Invert Clock Selected By ADC0CLKSEL"]
-pub type ADC0CLKINV_W<'a> = crate::BitWriter<'a, u32, ADCCTRL_SPEC, bool, 8>;
+pub type ADC0CLKINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, ADCCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bits 0:1 - ADC0 Clock Prescaler"]
     #[inline(always)]
@@ -175,17 +177,20 @@ impl R {
 impl W {
     #[doc = "Bits 0:1 - ADC0 Clock Prescaler"]
     #[inline(always)]
-    pub fn adc0clkdiv(&mut self) -> ADC0CLKDIV_W {
+    #[must_use]
+    pub fn adc0clkdiv(&mut self) -> ADC0CLKDIV_W<0> {
         ADC0CLKDIV_W::new(self)
     }
     #[doc = "Bits 4:5 - ADC0 Clock Select"]
     #[inline(always)]
-    pub fn adc0clksel(&mut self) -> ADC0CLKSEL_W {
+    #[must_use]
+    pub fn adc0clksel(&mut self) -> ADC0CLKSEL_W<4> {
         ADC0CLKSEL_W::new(self)
     }
     #[doc = "Bit 8 - Invert Clock Selected By ADC0CLKSEL"]
     #[inline(always)]
-    pub fn adc0clkinv(&mut self) -> ADC0CLKINV_W {
+    #[must_use]
+    pub fn adc0clkinv(&mut self) -> ADC0CLKINV_W<8> {
         ADC0CLKINV_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -207,11 +212,10 @@ impl crate::Readable for ADCCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [adcctrl::W](W) writer structure"]
 impl crate::Writable for ADCCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets ADCCTRL to value 0"]
 impl crate::Resettable for ADCCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

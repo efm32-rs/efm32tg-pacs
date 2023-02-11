@@ -37,17 +37,19 @@ impl From<crate::W<SCANCTRL_SPEC>> for W {
 #[doc = "Field `REP` reader - Scan Sequence Repetitive Mode"]
 pub type REP_R = crate::BitReader<bool>;
 #[doc = "Field `REP` writer - Scan Sequence Repetitive Mode"]
-pub type REP_W<'a> = crate::BitWriter<'a, u32, SCANCTRL_SPEC, bool, 0>;
+pub type REP_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCANCTRL_SPEC, bool, O>;
 #[doc = "Field `DIFF` reader - Scan Sequence Differential Mode"]
 pub type DIFF_R = crate::BitReader<bool>;
 #[doc = "Field `DIFF` writer - Scan Sequence Differential Mode"]
-pub type DIFF_W<'a> = crate::BitWriter<'a, u32, SCANCTRL_SPEC, bool, 1>;
+pub type DIFF_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCANCTRL_SPEC, bool, O>;
 #[doc = "Field `ADJ` reader - Scan Sequence Result Adjustment"]
 pub type ADJ_R = crate::BitReader<bool>;
 #[doc = "Field `ADJ` writer - Scan Sequence Result Adjustment"]
-pub type ADJ_W<'a> = crate::BitWriter<'a, u32, SCANCTRL_SPEC, bool, 2>;
+pub type ADJ_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCANCTRL_SPEC, bool, O>;
+#[doc = "Field `RES` reader - Scan Sequence Resolution Select"]
+pub type RES_R = crate::FieldReader<u8, RES_A>;
 #[doc = "Scan Sequence Resolution Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum RES_A {
     #[doc = "0: 12-bit resolution"]
@@ -65,8 +67,6 @@ impl From<RES_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `RES` reader - Scan Sequence Resolution Select"]
-pub type RES_R = crate::FieldReader<u8, RES_A>;
 impl RES_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -101,8 +101,8 @@ impl RES_R {
     }
 }
 #[doc = "Field `RES` writer - Scan Sequence Resolution Select"]
-pub type RES_W<'a> = crate::FieldWriterSafe<'a, u32, SCANCTRL_SPEC, u8, RES_A, 2, 3>;
-impl<'a> RES_W<'a> {
+pub type RES_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SCANCTRL_SPEC, u8, RES_A, 2, O>;
+impl<'a, const O: u8> RES_W<'a, O> {
     #[doc = "12-bit resolution"]
     #[inline(always)]
     pub fn _12bit(self) -> &'a mut W {
@@ -124,8 +124,10 @@ impl<'a> RES_W<'a> {
         self.variant(RES_A::OVS)
     }
 }
+#[doc = "Field `REF` reader - Scan Sequence Reference Selection"]
+pub type REF_R = crate::FieldReader<u8, REF_A>;
 #[doc = "Scan Sequence Reference Selection\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum REF_A {
     #[doc = "0: VFS = 1.25V with internal VBGR reference"]
@@ -151,8 +153,6 @@ impl From<REF_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `REF` reader - Scan Sequence Reference Selection"]
-pub type REF_R = crate::FieldReader<u8, REF_A>;
 impl REF_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -211,8 +211,8 @@ impl REF_R {
     }
 }
 #[doc = "Field `REF` writer - Scan Sequence Reference Selection"]
-pub type REF_W<'a> = crate::FieldWriterSafe<'a, u32, SCANCTRL_SPEC, u8, REF_A, 3, 5>;
-impl<'a> REF_W<'a> {
+pub type REF_W<'a, const O: u8> = crate::FieldWriterSafe<'a, u32, SCANCTRL_SPEC, u8, REF_A, 3, O>;
+impl<'a, const O: u8> REF_W<'a, O> {
     #[doc = "VFS = 1.25V with internal VBGR reference"]
     #[inline(always)]
     pub fn _1v25(self) -> &'a mut W {
@@ -254,8 +254,10 @@ impl<'a> REF_W<'a> {
         self.variant(REF_A::CONF)
     }
 }
+#[doc = "Field `AT` reader - Scan Acquisition Time"]
+pub type AT_R = crate::FieldReader<u8, AT_A>;
 #[doc = "Scan Acquisition Time\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum AT_A {
     #[doc = "0: 1 conversion clock cycle acquisition time for scan"]
@@ -285,8 +287,6 @@ impl From<AT_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `AT` reader - Scan Acquisition Time"]
-pub type AT_R = crate::FieldReader<u8, AT_A>;
 impl AT_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -357,8 +357,8 @@ impl AT_R {
     }
 }
 #[doc = "Field `AT` writer - Scan Acquisition Time"]
-pub type AT_W<'a> = crate::FieldWriter<'a, u32, SCANCTRL_SPEC, u8, AT_A, 4, 24>;
-impl<'a> AT_W<'a> {
+pub type AT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, SCANCTRL_SPEC, u8, AT_A, 4, O>;
+impl<'a, const O: u8> AT_W<'a, O> {
     #[doc = "1 conversion clock cycle acquisition time for scan"]
     #[inline(always)]
     pub fn _1cycle(self) -> &'a mut W {
@@ -413,11 +413,11 @@ impl<'a> AT_W<'a> {
 #[doc = "Field `PRSEN` reader - Scan Sequence PRS Trigger Enable"]
 pub type PRSEN_R = crate::BitReader<bool>;
 #[doc = "Field `PRSEN` writer - Scan Sequence PRS Trigger Enable"]
-pub type PRSEN_W<'a> = crate::BitWriter<'a, u32, SCANCTRL_SPEC, bool, 29>;
+pub type PRSEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCANCTRL_SPEC, bool, O>;
 #[doc = "Field `CMPEN` reader - Compare Logic Enable for Scan"]
 pub type CMPEN_R = crate::BitReader<bool>;
 #[doc = "Field `CMPEN` writer - Compare Logic Enable for Scan"]
-pub type CMPEN_W<'a> = crate::BitWriter<'a, u32, SCANCTRL_SPEC, bool, 31>;
+pub type CMPEN_W<'a, const O: u8> = crate::BitWriter<'a, u32, SCANCTRL_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Scan Sequence Repetitive Mode"]
     #[inline(always)]
@@ -463,42 +463,50 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Scan Sequence Repetitive Mode"]
     #[inline(always)]
-    pub fn rep(&mut self) -> REP_W {
+    #[must_use]
+    pub fn rep(&mut self) -> REP_W<0> {
         REP_W::new(self)
     }
     #[doc = "Bit 1 - Scan Sequence Differential Mode"]
     #[inline(always)]
-    pub fn diff(&mut self) -> DIFF_W {
+    #[must_use]
+    pub fn diff(&mut self) -> DIFF_W<1> {
         DIFF_W::new(self)
     }
     #[doc = "Bit 2 - Scan Sequence Result Adjustment"]
     #[inline(always)]
-    pub fn adj(&mut self) -> ADJ_W {
+    #[must_use]
+    pub fn adj(&mut self) -> ADJ_W<2> {
         ADJ_W::new(self)
     }
     #[doc = "Bits 3:4 - Scan Sequence Resolution Select"]
     #[inline(always)]
-    pub fn res(&mut self) -> RES_W {
+    #[must_use]
+    pub fn res(&mut self) -> RES_W<3> {
         RES_W::new(self)
     }
     #[doc = "Bits 5:7 - Scan Sequence Reference Selection"]
     #[inline(always)]
-    pub fn ref_(&mut self) -> REF_W {
+    #[must_use]
+    pub fn ref_(&mut self) -> REF_W<5> {
         REF_W::new(self)
     }
     #[doc = "Bits 24:27 - Scan Acquisition Time"]
     #[inline(always)]
-    pub fn at(&mut self) -> AT_W {
+    #[must_use]
+    pub fn at(&mut self) -> AT_W<24> {
         AT_W::new(self)
     }
     #[doc = "Bit 29 - Scan Sequence PRS Trigger Enable"]
     #[inline(always)]
-    pub fn prsen(&mut self) -> PRSEN_W {
+    #[must_use]
+    pub fn prsen(&mut self) -> PRSEN_W<29> {
         PRSEN_W::new(self)
     }
     #[doc = "Bit 31 - Compare Logic Enable for Scan"]
     #[inline(always)]
-    pub fn cmpen(&mut self) -> CMPEN_W {
+    #[must_use]
+    pub fn cmpen(&mut self) -> CMPEN_W<31> {
         CMPEN_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -520,11 +528,10 @@ impl crate::Readable for SCANCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [scanctrl::W](W) writer structure"]
 impl crate::Writable for SCANCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets SCANCTRL to value 0"]
 impl crate::Resettable for SCANCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

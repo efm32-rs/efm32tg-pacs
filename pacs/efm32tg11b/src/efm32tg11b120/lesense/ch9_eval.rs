@@ -37,17 +37,19 @@ impl From<crate::W<CH9_EVAL_SPEC>> for W {
 #[doc = "Field `COMPTHRES` reader - Decision Threshold for Sensor Data"]
 pub type COMPTHRES_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `COMPTHRES` writer - Decision Threshold for Sensor Data"]
-pub type COMPTHRES_W<'a> = crate::FieldWriter<'a, u32, CH9_EVAL_SPEC, u16, u16, 16, 0>;
+pub type COMPTHRES_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH9_EVAL_SPEC, u16, u16, 16, O>;
 #[doc = "Field `COMP` reader - Select Mode for Threshold Comparison"]
 pub type COMP_R = crate::BitReader<bool>;
 #[doc = "Field `COMP` writer - Select Mode for Threshold Comparison"]
-pub type COMP_W<'a> = crate::BitWriter<'a, u32, CH9_EVAL_SPEC, bool, 16>;
+pub type COMP_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH9_EVAL_SPEC, bool, O>;
 #[doc = "Field `DECODE` reader - Send Result to Decoder"]
 pub type DECODE_R = crate::BitReader<bool>;
 #[doc = "Field `DECODE` writer - Send Result to Decoder"]
-pub type DECODE_W<'a> = crate::BitWriter<'a, u32, CH9_EVAL_SPEC, bool, 17>;
+pub type DECODE_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH9_EVAL_SPEC, bool, O>;
+#[doc = "Field `STRSAMPLE` reader - Enable Storing of Sensor Sample in Result Buffer"]
+pub type STRSAMPLE_R = crate::FieldReader<u8, STRSAMPLE_A>;
 #[doc = "Enable Storing of Sensor Sample in Result Buffer\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum STRSAMPLE_A {
     #[doc = "0: Nothing will be stored in the result buffer."]
@@ -63,8 +65,6 @@ impl From<STRSAMPLE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `STRSAMPLE` reader - Enable Storing of Sensor Sample in Result Buffer"]
-pub type STRSAMPLE_R = crate::FieldReader<u8, STRSAMPLE_A>;
 impl STRSAMPLE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -93,8 +93,9 @@ impl STRSAMPLE_R {
     }
 }
 #[doc = "Field `STRSAMPLE` writer - Enable Storing of Sensor Sample in Result Buffer"]
-pub type STRSAMPLE_W<'a> = crate::FieldWriter<'a, u32, CH9_EVAL_SPEC, u8, STRSAMPLE_A, 2, 18>;
-impl<'a> STRSAMPLE_W<'a> {
+pub type STRSAMPLE_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, CH9_EVAL_SPEC, u8, STRSAMPLE_A, 2, O>;
+impl<'a, const O: u8> STRSAMPLE_W<'a, O> {
     #[doc = "Nothing will be stored in the result buffer."]
     #[inline(always)]
     pub fn disable(self) -> &'a mut W {
@@ -114,9 +115,11 @@ impl<'a> STRSAMPLE_W<'a> {
 #[doc = "Field `SCANRESINV` reader - Enable Inversion of Result"]
 pub type SCANRESINV_R = crate::BitReader<bool>;
 #[doc = "Field `SCANRESINV` writer - Enable Inversion of Result"]
-pub type SCANRESINV_W<'a> = crate::BitWriter<'a, u32, CH9_EVAL_SPEC, bool, 20>;
+pub type SCANRESINV_W<'a, const O: u8> = crate::BitWriter<'a, u32, CH9_EVAL_SPEC, bool, O>;
+#[doc = "Field `MODE` reader - Configure Evaluation Mode"]
+pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 #[doc = "Configure Evaluation Mode\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum MODE_A {
     #[doc = "0: Threshold comparison is used to evaluate sensor result"]
@@ -132,8 +135,6 @@ impl From<MODE_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `MODE` reader - Configure Evaluation Mode"]
-pub type MODE_R = crate::FieldReader<u8, MODE_A>;
 impl MODE_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -162,8 +163,8 @@ impl MODE_R {
     }
 }
 #[doc = "Field `MODE` writer - Configure Evaluation Mode"]
-pub type MODE_W<'a> = crate::FieldWriter<'a, u32, CH9_EVAL_SPEC, u8, MODE_A, 2, 21>;
-impl<'a> MODE_W<'a> {
+pub type MODE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, CH9_EVAL_SPEC, u8, MODE_A, 2, O>;
+impl<'a, const O: u8> MODE_W<'a, O> {
     #[doc = "Threshold comparison is used to evaluate sensor result"]
     #[inline(always)]
     pub fn thres(self) -> &'a mut W {
@@ -215,32 +216,38 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Decision Threshold for Sensor Data"]
     #[inline(always)]
-    pub fn compthres(&mut self) -> COMPTHRES_W {
+    #[must_use]
+    pub fn compthres(&mut self) -> COMPTHRES_W<0> {
         COMPTHRES_W::new(self)
     }
     #[doc = "Bit 16 - Select Mode for Threshold Comparison"]
     #[inline(always)]
-    pub fn comp(&mut self) -> COMP_W {
+    #[must_use]
+    pub fn comp(&mut self) -> COMP_W<16> {
         COMP_W::new(self)
     }
     #[doc = "Bit 17 - Send Result to Decoder"]
     #[inline(always)]
-    pub fn decode(&mut self) -> DECODE_W {
+    #[must_use]
+    pub fn decode(&mut self) -> DECODE_W<17> {
         DECODE_W::new(self)
     }
     #[doc = "Bits 18:19 - Enable Storing of Sensor Sample in Result Buffer"]
     #[inline(always)]
-    pub fn strsample(&mut self) -> STRSAMPLE_W {
+    #[must_use]
+    pub fn strsample(&mut self) -> STRSAMPLE_W<18> {
         STRSAMPLE_W::new(self)
     }
     #[doc = "Bit 20 - Enable Inversion of Result"]
     #[inline(always)]
-    pub fn scanresinv(&mut self) -> SCANRESINV_W {
+    #[must_use]
+    pub fn scanresinv(&mut self) -> SCANRESINV_W<20> {
         SCANRESINV_W::new(self)
     }
     #[doc = "Bits 21:22 - Configure Evaluation Mode"]
     #[inline(always)]
-    pub fn mode(&mut self) -> MODE_W {
+    #[must_use]
+    pub fn mode(&mut self) -> MODE_W<21> {
         MODE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -262,11 +269,10 @@ impl crate::Readable for CH9_EVAL_SPEC {
 #[doc = "`write(|w| ..)` method takes [ch9_eval::W](W) writer structure"]
 impl crate::Writable for CH9_EVAL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets CH9_EVAL to value 0"]
 impl crate::Resettable for CH9_EVAL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

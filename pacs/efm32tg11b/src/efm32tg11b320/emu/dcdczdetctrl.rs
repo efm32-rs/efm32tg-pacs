@@ -37,11 +37,13 @@ impl From<crate::W<DCDCZDETCTRL_SPEC>> for W {
 #[doc = "Field `ZDETILIMSEL` reader - Reverse Current Limit Level Selection for Zero Detector"]
 pub type ZDETILIMSEL_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ZDETILIMSEL` writer - Reverse Current Limit Level Selection for Zero Detector"]
-pub type ZDETILIMSEL_W<'a> = crate::FieldWriter<'a, u32, DCDCZDETCTRL_SPEC, u8, u8, 3, 4>;
+pub type ZDETILIMSEL_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DCDCZDETCTRL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `ZDETBLANKDLY` reader - Reserved for internal use. Do not change."]
 pub type ZDETBLANKDLY_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `ZDETBLANKDLY` writer - Reserved for internal use. Do not change."]
-pub type ZDETBLANKDLY_W<'a> = crate::FieldWriter<'a, u32, DCDCZDETCTRL_SPEC, u8, u8, 2, 8>;
+pub type ZDETBLANKDLY_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DCDCZDETCTRL_SPEC, u8, u8, 2, O>;
 impl R {
     #[doc = "Bits 4:6 - Reverse Current Limit Level Selection for Zero Detector"]
     #[inline(always)]
@@ -57,12 +59,14 @@ impl R {
 impl W {
     #[doc = "Bits 4:6 - Reverse Current Limit Level Selection for Zero Detector"]
     #[inline(always)]
-    pub fn zdetilimsel(&mut self) -> ZDETILIMSEL_W {
+    #[must_use]
+    pub fn zdetilimsel(&mut self) -> ZDETILIMSEL_W<4> {
         ZDETILIMSEL_W::new(self)
     }
     #[doc = "Bits 8:9 - Reserved for internal use. Do not change."]
     #[inline(always)]
-    pub fn zdetblankdly(&mut self) -> ZDETBLANKDLY_W {
+    #[must_use]
+    pub fn zdetblankdly(&mut self) -> ZDETBLANKDLY_W<8> {
         ZDETBLANKDLY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +88,10 @@ impl crate::Readable for DCDCZDETCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dcdczdetctrl::W](W) writer structure"]
 impl crate::Writable for DCDCZDETCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DCDCZDETCTRL to value 0x0150"]
 impl crate::Resettable for DCDCZDETCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x0150
-    }
+    const RESET_VALUE: Self::Ux = 0x0150;
 }

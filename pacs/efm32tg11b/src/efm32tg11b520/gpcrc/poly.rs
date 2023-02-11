@@ -37,7 +37,7 @@ impl From<crate::W<POLY_SPEC>> for W {
 #[doc = "Field `POLY` reader - CRC Polynomial Value"]
 pub type POLY_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `POLY` writer - CRC Polynomial Value"]
-pub type POLY_W<'a> = crate::FieldWriter<'a, u32, POLY_SPEC, u16, u16, 16, 0>;
+pub type POLY_W<'a, const O: u8> = crate::FieldWriter<'a, u32, POLY_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - CRC Polynomial Value"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - CRC Polynomial Value"]
     #[inline(always)]
-    pub fn poly(&mut self) -> POLY_W {
+    #[must_use]
+    pub fn poly(&mut self) -> POLY_W<0> {
         POLY_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for POLY_SPEC {
 #[doc = "`write(|w| ..)` method takes [poly::W](W) writer structure"]
 impl crate::Writable for POLY_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets POLY to value 0"]
 impl crate::Resettable for POLY_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

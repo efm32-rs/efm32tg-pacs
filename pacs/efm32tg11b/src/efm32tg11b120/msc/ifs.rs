@@ -20,60 +20,68 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `ERASE` writer - Set ERASE Interrupt Flag"]
-pub type ERASE_W<'a> = crate::BitWriter<'a, u32, IFS_SPEC, bool, 0>;
+pub type ERASE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `WRITE` writer - Set WRITE Interrupt Flag"]
-pub type WRITE_W<'a> = crate::BitWriter<'a, u32, IFS_SPEC, bool, 1>;
+pub type WRITE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `CHOF` writer - Set CHOF Interrupt Flag"]
-pub type CHOF_W<'a> = crate::BitWriter<'a, u32, IFS_SPEC, bool, 2>;
+pub type CHOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `CMOF` writer - Set CMOF Interrupt Flag"]
-pub type CMOF_W<'a> = crate::BitWriter<'a, u32, IFS_SPEC, bool, 3>;
+pub type CMOF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `PWRUPF` writer - Set PWRUPF Interrupt Flag"]
-pub type PWRUPF_W<'a> = crate::BitWriter<'a, u32, IFS_SPEC, bool, 4>;
+pub type PWRUPF_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `ICACHERR` writer - Set ICACHERR Interrupt Flag"]
-pub type ICACHERR_W<'a> = crate::BitWriter<'a, u32, IFS_SPEC, bool, 5>;
+pub type ICACHERR_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `WDATAOV` writer - Set WDATAOV Interrupt Flag"]
-pub type WDATAOV_W<'a> = crate::BitWriter<'a, u32, IFS_SPEC, bool, 6>;
+pub type WDATAOV_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 #[doc = "Field `LVEWRITE` writer - Set LVEWRITE Interrupt Flag"]
-pub type LVEWRITE_W<'a> = crate::BitWriter<'a, u32, IFS_SPEC, bool, 8>;
+pub type LVEWRITE_W<'a, const O: u8> = crate::BitWriter<'a, u32, IFS_SPEC, bool, O>;
 impl W {
     #[doc = "Bit 0 - Set ERASE Interrupt Flag"]
     #[inline(always)]
-    pub fn erase(&mut self) -> ERASE_W {
+    #[must_use]
+    pub fn erase(&mut self) -> ERASE_W<0> {
         ERASE_W::new(self)
     }
     #[doc = "Bit 1 - Set WRITE Interrupt Flag"]
     #[inline(always)]
-    pub fn write(&mut self) -> WRITE_W {
+    #[must_use]
+    pub fn write(&mut self) -> WRITE_W<1> {
         WRITE_W::new(self)
     }
     #[doc = "Bit 2 - Set CHOF Interrupt Flag"]
     #[inline(always)]
-    pub fn chof(&mut self) -> CHOF_W {
+    #[must_use]
+    pub fn chof(&mut self) -> CHOF_W<2> {
         CHOF_W::new(self)
     }
     #[doc = "Bit 3 - Set CMOF Interrupt Flag"]
     #[inline(always)]
-    pub fn cmof(&mut self) -> CMOF_W {
+    #[must_use]
+    pub fn cmof(&mut self) -> CMOF_W<3> {
         CMOF_W::new(self)
     }
     #[doc = "Bit 4 - Set PWRUPF Interrupt Flag"]
     #[inline(always)]
-    pub fn pwrupf(&mut self) -> PWRUPF_W {
+    #[must_use]
+    pub fn pwrupf(&mut self) -> PWRUPF_W<4> {
         PWRUPF_W::new(self)
     }
     #[doc = "Bit 5 - Set ICACHERR Interrupt Flag"]
     #[inline(always)]
-    pub fn icacherr(&mut self) -> ICACHERR_W {
+    #[must_use]
+    pub fn icacherr(&mut self) -> ICACHERR_W<5> {
         ICACHERR_W::new(self)
     }
     #[doc = "Bit 6 - Set WDATAOV Interrupt Flag"]
     #[inline(always)]
-    pub fn wdataov(&mut self) -> WDATAOV_W {
+    #[must_use]
+    pub fn wdataov(&mut self) -> WDATAOV_W<6> {
         WDATAOV_W::new(self)
     }
     #[doc = "Bit 8 - Set LVEWRITE Interrupt Flag"]
     #[inline(always)]
-    pub fn lvewrite(&mut self) -> LVEWRITE_W {
+    #[must_use]
+    pub fn lvewrite(&mut self) -> LVEWRITE_W<8> {
         LVEWRITE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -91,11 +99,10 @@ impl crate::RegisterSpec for IFS_SPEC {
 #[doc = "`write(|w| ..)` method takes [ifs::W](W) writer structure"]
 impl crate::Writable for IFS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IFS to value 0"]
 impl crate::Resettable for IFS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

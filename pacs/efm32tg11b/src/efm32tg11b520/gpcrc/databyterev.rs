@@ -33,8 +33,5 @@ impl crate::Readable for DATABYTEREV_SPEC {
 }
 #[doc = "`reset()` method sets DATABYTEREV to value 0"]
 impl crate::Resettable for DATABYTEREV_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

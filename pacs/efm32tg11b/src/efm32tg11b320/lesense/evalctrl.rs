@@ -37,7 +37,7 @@ impl From<crate::W<EVALCTRL_SPEC>> for W {
 #[doc = "Field `WINSIZE` reader - Sliding Window and Step Detection Size"]
 pub type WINSIZE_R = crate::FieldReader<u16, u16>;
 #[doc = "Field `WINSIZE` writer - Sliding Window and Step Detection Size"]
-pub type WINSIZE_W<'a> = crate::FieldWriter<'a, u32, EVALCTRL_SPEC, u16, u16, 16, 0>;
+pub type WINSIZE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, EVALCTRL_SPEC, u16, u16, 16, O>;
 impl R {
     #[doc = "Bits 0:15 - Sliding Window and Step Detection Size"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:15 - Sliding Window and Step Detection Size"]
     #[inline(always)]
-    pub fn winsize(&mut self) -> WINSIZE_W {
+    #[must_use]
+    pub fn winsize(&mut self) -> WINSIZE_W<0> {
         WINSIZE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for EVALCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [evalctrl::W](W) writer structure"]
 impl crate::Writable for EVALCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets EVALCTRL to value 0"]
 impl crate::Resettable for EVALCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

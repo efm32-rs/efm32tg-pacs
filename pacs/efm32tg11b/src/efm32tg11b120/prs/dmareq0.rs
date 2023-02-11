@@ -34,8 +34,10 @@ impl From<crate::W<DMAREQ0_SPEC>> for W {
         W(writer)
     }
 }
+#[doc = "Field `PRSSEL` reader - DMA Request 0 PRS Channel Select"]
+pub type PRSSEL_R = crate::FieldReader<u8, PRSSEL_A>;
 #[doc = "DMA Request 0 PRS Channel Select\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
 #[repr(u8)]
 pub enum PRSSEL_A {
     #[doc = "0: PRS Channel 0 selected"]
@@ -61,8 +63,6 @@ impl From<PRSSEL_A> for u8 {
         variant as _
     }
 }
-#[doc = "Field `PRSSEL` reader - DMA Request 0 PRS Channel Select"]
-pub type PRSSEL_R = crate::FieldReader<u8, PRSSEL_A>;
 impl PRSSEL_R {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
@@ -121,8 +121,9 @@ impl PRSSEL_R {
     }
 }
 #[doc = "Field `PRSSEL` writer - DMA Request 0 PRS Channel Select"]
-pub type PRSSEL_W<'a> = crate::FieldWriterSafe<'a, u32, DMAREQ0_SPEC, u8, PRSSEL_A, 3, 6>;
-impl<'a> PRSSEL_W<'a> {
+pub type PRSSEL_W<'a, const O: u8> =
+    crate::FieldWriterSafe<'a, u32, DMAREQ0_SPEC, u8, PRSSEL_A, 3, O>;
+impl<'a, const O: u8> PRSSEL_W<'a, O> {
     #[doc = "PRS Channel 0 selected"]
     #[inline(always)]
     pub fn prsch0(self) -> &'a mut W {
@@ -174,7 +175,8 @@ impl R {
 impl W {
     #[doc = "Bits 6:8 - DMA Request 0 PRS Channel Select"]
     #[inline(always)]
-    pub fn prssel(&mut self) -> PRSSEL_W {
+    #[must_use]
+    pub fn prssel(&mut self) -> PRSSEL_W<6> {
         PRSSEL_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -196,11 +198,10 @@ impl crate::Readable for DMAREQ0_SPEC {
 #[doc = "`write(|w| ..)` method takes [dmareq0::W](W) writer structure"]
 impl crate::Writable for DMAREQ0_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DMAREQ0 to value 0"]
 impl crate::Resettable for DMAREQ0_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

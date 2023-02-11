@@ -37,19 +37,19 @@ impl From<crate::W<PPUPATD1_SPEC>> for W {
 #[doc = "Field `USART3` reader - Universal Synchronous/Asynchronous Receiver/Transmitter 3 access control bit"]
 pub type USART3_R = crate::BitReader<bool>;
 #[doc = "Field `USART3` writer - Universal Synchronous/Asynchronous Receiver/Transmitter 3 access control bit"]
-pub type USART3_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 0>;
+pub type USART3_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `WDOG0` reader - Watchdog access control bit"]
 pub type WDOG0_R = crate::BitReader<bool>;
 #[doc = "Field `WDOG0` writer - Watchdog access control bit"]
-pub type WDOG0_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 1>;
+pub type WDOG0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `WTIMER0` reader - Wide Timer 0 access control bit"]
 pub type WTIMER0_R = crate::BitReader<bool>;
 #[doc = "Field `WTIMER0` writer - Wide Timer 0 access control bit"]
-pub type WTIMER0_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 2>;
+pub type WTIMER0_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 #[doc = "Field `WTIMER1` reader - Wide Timer 1 access control bit"]
 pub type WTIMER1_R = crate::BitReader<bool>;
 #[doc = "Field `WTIMER1` writer - Wide Timer 1 access control bit"]
-pub type WTIMER1_W<'a> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, 3>;
+pub type WTIMER1_W<'a, const O: u8> = crate::BitWriter<'a, u32, PPUPATD1_SPEC, bool, O>;
 impl R {
     #[doc = "Bit 0 - Universal Synchronous/Asynchronous Receiver/Transmitter 3 access control bit"]
     #[inline(always)]
@@ -75,22 +75,26 @@ impl R {
 impl W {
     #[doc = "Bit 0 - Universal Synchronous/Asynchronous Receiver/Transmitter 3 access control bit"]
     #[inline(always)]
-    pub fn usart3(&mut self) -> USART3_W {
+    #[must_use]
+    pub fn usart3(&mut self) -> USART3_W<0> {
         USART3_W::new(self)
     }
     #[doc = "Bit 1 - Watchdog access control bit"]
     #[inline(always)]
-    pub fn wdog0(&mut self) -> WDOG0_W {
+    #[must_use]
+    pub fn wdog0(&mut self) -> WDOG0_W<1> {
         WDOG0_W::new(self)
     }
     #[doc = "Bit 2 - Wide Timer 0 access control bit"]
     #[inline(always)]
-    pub fn wtimer0(&mut self) -> WTIMER0_W {
+    #[must_use]
+    pub fn wtimer0(&mut self) -> WTIMER0_W<2> {
         WTIMER0_W::new(self)
     }
     #[doc = "Bit 3 - Wide Timer 1 access control bit"]
     #[inline(always)]
-    pub fn wtimer1(&mut self) -> WTIMER1_W {
+    #[must_use]
+    pub fn wtimer1(&mut self) -> WTIMER1_W<3> {
         WTIMER1_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -112,11 +116,10 @@ impl crate::Readable for PPUPATD1_SPEC {
 #[doc = "`write(|w| ..)` method takes [ppupatd1::W](W) writer structure"]
 impl crate::Writable for PPUPATD1_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets PPUPATD1 to value 0"]
 impl crate::Resettable for PPUPATD1_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

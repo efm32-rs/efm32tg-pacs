@@ -20,18 +20,20 @@ impl From<crate::W<IFS_SPEC>> for W {
     }
 }
 #[doc = "Field `EXT` writer - Set EXT Interrupt Flag"]
-pub type EXT_W<'a> = crate::FieldWriter<'a, u32, IFS_SPEC, u16, u16, 16, 0>;
+pub type EXT_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IFS_SPEC, u16, u16, 16, O>;
 #[doc = "Field `EM4WU` writer - Set EM4WU Interrupt Flag"]
-pub type EM4WU_W<'a> = crate::FieldWriter<'a, u32, IFS_SPEC, u16, u16, 16, 16>;
+pub type EM4WU_W<'a, const O: u8> = crate::FieldWriter<'a, u32, IFS_SPEC, u16, u16, 16, O>;
 impl W {
     #[doc = "Bits 0:15 - Set EXT Interrupt Flag"]
     #[inline(always)]
-    pub fn ext(&mut self) -> EXT_W {
+    #[must_use]
+    pub fn ext(&mut self) -> EXT_W<0> {
         EXT_W::new(self)
     }
     #[doc = "Bits 16:31 - Set EM4WU Interrupt Flag"]
     #[inline(always)]
-    pub fn em4wu(&mut self) -> EM4WU_W {
+    #[must_use]
+    pub fn em4wu(&mut self) -> EM4WU_W<16> {
         EM4WU_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -49,11 +51,10 @@ impl crate::RegisterSpec for IFS_SPEC {
 #[doc = "`write(|w| ..)` method takes [ifs::W](W) writer structure"]
 impl crate::Writable for IFS_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets IFS to value 0"]
 impl crate::Resettable for IFS_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }

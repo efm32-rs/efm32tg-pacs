@@ -37,11 +37,13 @@ impl From<crate::W<DCDCLNFREQCTRL_SPEC>> for W {
 #[doc = "Field `RCOBAND` reader - LN Mode RCO Frequency Band Selection"]
 pub type RCOBAND_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RCOBAND` writer - LN Mode RCO Frequency Band Selection"]
-pub type RCOBAND_W<'a> = crate::FieldWriter<'a, u32, DCDCLNFREQCTRL_SPEC, u8, u8, 3, 0>;
+pub type RCOBAND_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DCDCLNFREQCTRL_SPEC, u8, u8, 3, O>;
 #[doc = "Field `RCOTRIM` reader - Reserved for internal use. Do not change."]
 pub type RCOTRIM_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `RCOTRIM` writer - Reserved for internal use. Do not change."]
-pub type RCOTRIM_W<'a> = crate::FieldWriter<'a, u32, DCDCLNFREQCTRL_SPEC, u8, u8, 5, 24>;
+pub type RCOTRIM_W<'a, const O: u8> =
+    crate::FieldWriter<'a, u32, DCDCLNFREQCTRL_SPEC, u8, u8, 5, O>;
 impl R {
     #[doc = "Bits 0:2 - LN Mode RCO Frequency Band Selection"]
     #[inline(always)]
@@ -57,12 +59,14 @@ impl R {
 impl W {
     #[doc = "Bits 0:2 - LN Mode RCO Frequency Band Selection"]
     #[inline(always)]
-    pub fn rcoband(&mut self) -> RCOBAND_W {
+    #[must_use]
+    pub fn rcoband(&mut self) -> RCOBAND_W<0> {
         RCOBAND_W::new(self)
     }
     #[doc = "Bits 24:28 - Reserved for internal use. Do not change."]
     #[inline(always)]
-    pub fn rcotrim(&mut self) -> RCOTRIM_W {
+    #[must_use]
+    pub fn rcotrim(&mut self) -> RCOTRIM_W<24> {
         RCOTRIM_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -84,11 +88,10 @@ impl crate::Readable for DCDCLNFREQCTRL_SPEC {
 #[doc = "`write(|w| ..)` method takes [dcdclnfreqctrl::W](W) writer structure"]
 impl crate::Writable for DCDCLNFREQCTRL_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets DCDCLNFREQCTRL to value 0x1000_0000"]
 impl crate::Resettable for DCDCLNFREQCTRL_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0x1000_0000
-    }
+    const RESET_VALUE: Self::Ux = 0x1000_0000;
 }

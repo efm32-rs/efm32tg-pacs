@@ -37,7 +37,7 @@ impl From<crate::W<QDATA1BYTE_SPEC>> for W {
 #[doc = "Field `QDATA1BYTE` reader - Qdata 1 Byte Access"]
 pub type QDATA1BYTE_R = crate::FieldReader<u8, u8>;
 #[doc = "Field `QDATA1BYTE` writer - Qdata 1 Byte Access"]
-pub type QDATA1BYTE_W<'a> = crate::FieldWriter<'a, u32, QDATA1BYTE_SPEC, u8, u8, 8, 0>;
+pub type QDATA1BYTE_W<'a, const O: u8> = crate::FieldWriter<'a, u32, QDATA1BYTE_SPEC, u8, u8, 8, O>;
 impl R {
     #[doc = "Bits 0:7 - Qdata 1 Byte Access"]
     #[inline(always)]
@@ -48,7 +48,8 @@ impl R {
 impl W {
     #[doc = "Bits 0:7 - Qdata 1 Byte Access"]
     #[inline(always)]
-    pub fn qdata1byte(&mut self) -> QDATA1BYTE_W {
+    #[must_use]
+    pub fn qdata1byte(&mut self) -> QDATA1BYTE_W<0> {
         QDATA1BYTE_W::new(self)
     }
     #[doc = "Writes raw bits to the register."]
@@ -70,11 +71,10 @@ impl crate::Readable for QDATA1BYTE_SPEC {
 #[doc = "`write(|w| ..)` method takes [qdata1byte::W](W) writer structure"]
 impl crate::Writable for QDATA1BYTE_SPEC {
     type Writer = W;
+    const ZERO_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
+    const ONE_TO_MODIFY_FIELDS_BITMAP: Self::Ux = 0;
 }
 #[doc = "`reset()` method sets QDATA1BYTE to value 0"]
 impl crate::Resettable for QDATA1BYTE_SPEC {
-    #[inline(always)]
-    fn reset_value() -> Self::Ux {
-        0
-    }
+    const RESET_VALUE: Self::Ux = 0;
 }
