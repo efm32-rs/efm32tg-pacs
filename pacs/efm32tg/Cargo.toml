@@ -33,6 +33,7 @@ efm32tg842 = []
 [dependencies.portable-atomic]
 version = "~1"
 default-features = false
+features = ["critical-section"]
 
 [dependencies.critical-section]
 version = "~1"
