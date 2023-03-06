@@ -24,11 +24,11 @@ efm32tg11b320 = []
 efm32tg11b340 = []
 efm32tg11b520 = []
 efm32tg11b540 = []
+critical-section = ["portable-atomic/critical-section", "dep:critical-section"]
 
 [dependencies.portable-atomic]
 version = "~1"
 default-features = false
-features = ["critical-section"]
 
 [dependencies.critical-section]
 version = "~1"
