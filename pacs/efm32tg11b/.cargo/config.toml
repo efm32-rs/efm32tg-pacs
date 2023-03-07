@@ -1,2 +1,0 @@
-[build]
-rustflags = [ "--cfg=portable_atomic_unsafe_assume_single_core",]
