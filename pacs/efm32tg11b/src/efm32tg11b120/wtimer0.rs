@@ -32,38 +32,8 @@ pub struct RegisterBlock {
     #[doc = "0x3c - I/O Routing Location Register"]
     pub routeloc2: ROUTELOC2,
     _reserved14: [u8; 0x20],
-    #[doc = "0x60 - CC Channel Control Register"]
-    pub cc0_ctrl: CC0_CTRL,
-    #[doc = "0x64 - CC Channel Value Register"]
-    pub cc0_ccv: CC0_CCV,
-    #[doc = "0x68 - CC Channel Value Peek Register"]
-    pub cc0_ccvp: CC0_CCVP,
-    #[doc = "0x6c - CC Channel Buffer Register"]
-    pub cc0_ccvb: CC0_CCVB,
-    #[doc = "0x70 - CC Channel Control Register"]
-    pub cc1_ctrl: CC1_CTRL,
-    #[doc = "0x74 - CC Channel Value Register"]
-    pub cc1_ccv: CC1_CCV,
-    #[doc = "0x78 - CC Channel Value Peek Register"]
-    pub cc1_ccvp: CC1_CCVP,
-    #[doc = "0x7c - CC Channel Buffer Register"]
-    pub cc1_ccvb: CC1_CCVB,
-    #[doc = "0x80 - CC Channel Control Register"]
-    pub cc2_ctrl: CC2_CTRL,
-    #[doc = "0x84 - CC Channel Value Register"]
-    pub cc2_ccv: CC2_CCV,
-    #[doc = "0x88 - CC Channel Value Peek Register"]
-    pub cc2_ccvp: CC2_CCVP,
-    #[doc = "0x8c - CC Channel Buffer Register"]
-    pub cc2_ccvb: CC2_CCVB,
-    #[doc = "0x90 - CC Channel Control Register"]
-    pub cc3_ctrl: CC3_CTRL,
-    #[doc = "0x94 - CC Channel Value Register"]
-    pub cc3_ccv: CC3_CCV,
-    #[doc = "0x98 - CC Channel Value Peek Register"]
-    pub cc3_ccvp: CC3_CCVP,
-    #[doc = "0x9c - CC Channel Buffer Register"]
-    pub cc3_ccvb: CC3_CCVB,
+    #[doc = "0x60..0xa0 - Capture/Compare configuration cluster"]
+    pub cc: [CC; 4],
     #[doc = "0xa0 - DTI Control Register"]
     pub dtctrl: DTCTRL,
     #[doc = "0xa4 - DTI Time Control Register"]
@@ -135,70 +105,11 @@ pub mod routeloc0;
 pub type ROUTELOC2 = crate::Reg<routeloc2::ROUTELOC2_SPEC>;
 #[doc = "I/O Routing Location Register"]
 pub mod routeloc2;
-#[doc = "CC0_CTRL (rw) register accessor: an alias for `Reg<CC0_CTRL_SPEC>`"]
-pub type CC0_CTRL = crate::Reg<cc0_ctrl::CC0_CTRL_SPEC>;
-#[doc = "CC Channel Control Register"]
-pub mod cc0_ctrl;
-#[doc = "CC0_CCV (rw) register accessor: an alias for `Reg<CC0_CCV_SPEC>`"]
-pub type CC0_CCV = crate::Reg<cc0_ccv::CC0_CCV_SPEC>;
-#[doc = "CC Channel Value Register"]
-pub mod cc0_ccv;
-#[doc = "CC0_CCVP (r) register accessor: an alias for `Reg<CC0_CCVP_SPEC>`"]
-pub type CC0_CCVP = crate::Reg<cc0_ccvp::CC0_CCVP_SPEC>;
-#[doc = "CC Channel Value Peek Register"]
-pub mod cc0_ccvp;
-#[doc = "CC0_CCVB (rw) register accessor: an alias for `Reg<CC0_CCVB_SPEC>`"]
-pub type CC0_CCVB = crate::Reg<cc0_ccvb::CC0_CCVB_SPEC>;
-#[doc = "CC Channel Buffer Register"]
-pub mod cc0_ccvb;
-#[doc = "CC1_CTRL (rw) register accessor: an alias for `Reg<CC1_CTRL_SPEC>`"]
-pub type CC1_CTRL = crate::Reg<cc1_ctrl::CC1_CTRL_SPEC>;
-#[doc = "CC Channel Control Register"]
-pub mod cc1_ctrl;
-#[doc = "CC1_CCV (rw) register accessor: an alias for `Reg<CC1_CCV_SPEC>`"]
-pub type CC1_CCV = crate::Reg<cc1_ccv::CC1_CCV_SPEC>;
-#[doc = "CC Channel Value Register"]
-pub mod cc1_ccv;
-#[doc = "CC1_CCVP (r) register accessor: an alias for `Reg<CC1_CCVP_SPEC>`"]
-pub type CC1_CCVP = crate::Reg<cc1_ccvp::CC1_CCVP_SPEC>;
-#[doc = "CC Channel Value Peek Register"]
-pub mod cc1_ccvp;
-#[doc = "CC1_CCVB (rw) register accessor: an alias for `Reg<CC1_CCVB_SPEC>`"]
-pub type CC1_CCVB = crate::Reg<cc1_ccvb::CC1_CCVB_SPEC>;
-#[doc = "CC Channel Buffer Register"]
-pub mod cc1_ccvb;
-#[doc = "CC2_CTRL (rw) register accessor: an alias for `Reg<CC2_CTRL_SPEC>`"]
-pub type CC2_CTRL = crate::Reg<cc2_ctrl::CC2_CTRL_SPEC>;
-#[doc = "CC Channel Control Register"]
-pub mod cc2_ctrl;
-#[doc = "CC2_CCV (rw) register accessor: an alias for `Reg<CC2_CCV_SPEC>`"]
-pub type CC2_CCV = crate::Reg<cc2_ccv::CC2_CCV_SPEC>;
-#[doc = "CC Channel Value Register"]
-pub mod cc2_ccv;
-#[doc = "CC2_CCVP (r) register accessor: an alias for `Reg<CC2_CCVP_SPEC>`"]
-pub type CC2_CCVP = crate::Reg<cc2_ccvp::CC2_CCVP_SPEC>;
-#[doc = "CC Channel Value Peek Register"]
-pub mod cc2_ccvp;
-#[doc = "CC2_CCVB (rw) register accessor: an alias for `Reg<CC2_CCVB_SPEC>`"]
-pub type CC2_CCVB = crate::Reg<cc2_ccvb::CC2_CCVB_SPEC>;
-#[doc = "CC Channel Buffer Register"]
-pub mod cc2_ccvb;
-#[doc = "CC3_CTRL (rw) register accessor: an alias for `Reg<CC3_CTRL_SPEC>`"]
-pub type CC3_CTRL = crate::Reg<cc3_ctrl::CC3_CTRL_SPEC>;
-#[doc = "CC Channel Control Register"]
-pub mod cc3_ctrl;
-#[doc = "CC3_CCV (rw) register accessor: an alias for `Reg<CC3_CCV_SPEC>`"]
-pub type CC3_CCV = crate::Reg<cc3_ccv::CC3_CCV_SPEC>;
-#[doc = "CC Channel Value Register"]
-pub mod cc3_ccv;
-#[doc = "CC3_CCVP (r) register accessor: an alias for `Reg<CC3_CCVP_SPEC>`"]
-pub type CC3_CCVP = crate::Reg<cc3_ccvp::CC3_CCVP_SPEC>;
-#[doc = "CC Channel Value Peek Register"]
-pub mod cc3_ccvp;
-#[doc = "CC3_CCVB (rw) register accessor: an alias for `Reg<CC3_CCVB_SPEC>`"]
-pub type CC3_CCVB = crate::Reg<cc3_ccvb::CC3_CCVB_SPEC>;
-#[doc = "CC Channel Buffer Register"]
-pub mod cc3_ccvb;
+#[doc = "Capture/Compare configuration cluster"]
+pub use self::cc::CC;
+#[doc = r"Cluster"]
+#[doc = "Capture/Compare configuration cluster"]
+pub mod cc;
 #[doc = "DTCTRL (rw) register accessor: an alias for `Reg<DTCTRL_SPEC>`"]
 pub type DTCTRL = crate::Reg<dtctrl::DTCTRL_SPEC>;
 #[doc = "DTI Control Register"]

@@ -11,3 +11,12 @@
 - Regenerated PAC crates with `svd2rust` version `0.28.0` with the enabled `atomics` feature
 - Added `portable-atomic` dependency to reflect crates with the `atomics` feature generated
 - Added `critical-section` dependency to reflect the latest `svd2rust` generation rules
+
+# 0.1.3
+
+- Regenerated PAC crates with SVD pack v4.2.0
+
+# 0.1.4
+
+- Fixed atomic support in PACs (`critical-section` feature introduced with proper dependency features switching)
+- Added an SVD patch for the EFM32TG11B120
