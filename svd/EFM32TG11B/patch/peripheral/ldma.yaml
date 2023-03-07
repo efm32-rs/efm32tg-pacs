@@ -1,0 +1,18 @@
+LDMA:
+  _cluster:
+    "CH%s":
+      description: "Linked DMA Channel configuration cluster"
+      "CH[0-7]_REQSEL":
+        name: "REQSEL"
+      "CH[0-7]_CFG":
+        name: "CFG"
+      "CH[0-7]_LOOP":
+        name: "LOOP"
+      "CH[0-7]_CTRL":
+        name: "CTRL"
+      "CH[0-7]_SRC":
+        name: "SRC"
+      "CH[0-7]_DST":
+        name: "DST"
+      "CH[0-7]_LINK":
+        name: "LINK"

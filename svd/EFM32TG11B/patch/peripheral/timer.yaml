@@ -1,0 +1,12 @@
+WTIMER0:
+  _cluster:
+    "CC%s":
+      description: "Capture/Compare configuration cluster"
+      "CC[0123]_CTRL": 
+        name: "CTRL"
+      "CC[0123]_CCV":
+        name: "CCV"
+      "CC[0123]_CCVP":
+        name: "CCVP"
+      CC[0123]_CCVB:
+        name: "CCVB"
