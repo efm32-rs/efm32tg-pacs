@@ -32,7 +32,7 @@ jobs:
               BUILD_TARGET="$(grep -e 'default-target' Cargo.toml | cut -f 3 -d ' ' | tr -d '"')"
               FEATURES="rt,${TARGET_FEATURE}"
           		
-              if "$BUILD_TARGET" = "thumbv6m-none-eabi"; then
+              if [[ "$BUILD_TARGET" == "thumbv6m-none-eabi" ]]; then
                   FEATURES="${FEATURES},critical-section"
               fi
           		
